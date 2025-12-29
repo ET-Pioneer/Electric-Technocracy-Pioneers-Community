@@ -1,13 +1,10 @@
 # Electric-Technocracy-Pioneers-Community
 https://zenodo.org/communities/electric-technocracy
 
-Electric Technocracy Pioneers is a community for independent researchers exploring future governance, digital systems, and open knowledge. It brings together innovators, analysts, and creators who advance transparent, data‑driven societal models and share multidisciplinary work for global accessibility
-
-
-**Electric Technocracy Pioneers – Community Repository**
-========================================================
-
 Welcome to the **Electric Technocracy Pioneers** repository.This space serves as the **central archive**, **workspace**, and **collaborative hub** for everyone exploring, documenting, and developing the concept of _Electric Technocracy_.**All people are invited to participate** — researchers, creators, analysts, historians, designers, and anyone curious about future governance and transparent digital systems.
+
+Electric Technocracy Pioneers is a community for independent researchers exploring future governance, digital systems, and open knowledge. It brings together innovators, analysts, and creators who advance transparent, data‑driven societal models and share multidisciplinary work for global accessibility
+========================================================
 
 **🌐 Purpose of the Community**
 -------------------------------
@@ -26,7 +23,7 @@ This repository collects and preserves all materials related to Electric Technoc
     
 *   **Historical documentation**
     
-*   **Wiki exports** and collaborative texts
+*   **Wiki exports** and collaborative texts and more
     
 
 Our mission is to build a **shared, evolving knowledge base** that remains accessible to everyone, free from financial or institutional barriers.
