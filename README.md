@@ -90,14 +90,6 @@ The Electric Technocracy Pioneers community is built on:
 
 We aim to understand Electric Technocracy **beyond financial motivations** and outside traditional institutional boundaries.
 
-**📁 Repository Structure**
----------------------------
-
-A typical structure may include:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   /preprint  /slides  /images  /data  /wiki  /supplementary   `
-
-Each folder represents a different type of material contributing to the broader understanding of Electric Technocracy.
 
 **🛠️ How to Contribute**
 -------------------------
@@ -119,3 +111,12 @@ No programming experience is required — only curiosity and willingness to shar
 **Electric Technocracy Pioneers** is a long‑term, open, global effort to document and analyze the structures, ideas, and implications of Electric Technocracy.By contributing, you help build a **transparent, accessible archive** that anyone can study, expand, and reinterpret.
 
 
+**No borders. No masters. Just progress.**
+
+↑ RUN
+
+[BOOT] Initializing system...
+
+[OK ] Code sequence unlocked
+
+[>>>] BEGIN ELECTRONIC PARADISE
