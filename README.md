@@ -31,7 +31,8 @@ Our mission is to build a **shared, evolving knowledge base** that remains acces
 **🤝 Open Participation**
 -------------------------
 
-**Everyone is welcome to contribute.**No coding skills are required.
+**Everyone is welcome to contribute.**
+No coding skills are required.
 
 You may add:
 
