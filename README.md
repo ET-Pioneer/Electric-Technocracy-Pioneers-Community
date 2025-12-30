@@ -111,12 +111,12 @@ No programming experience is required — only curiosity and willingness to shar
 **Electric Technocracy Pioneers** is a long‑term, open, global effort to document and analyze the structures, ideas, and implications of Electric Technocracy.By contributing, you help build a **transparent, accessible archive** that anyone can study, expand, and reinterpret.
 
 
-**No borders. No masters. Just progress.**
+**🗺️ No borders. No masters. Just progress.**
 
-↑ RUN
+**↑ RUN**
 
-[BOOT] Initializing system...
+**[BOOT] Initializing system...**
 
-[OK ] Code sequence unlocked
+**[OK ] Code sequence unlocked**
 
-[>>>] BEGIN ELECTRONIC PARADISE
+**[>>>] BEGIN ELECTRONIC PARADISE**
