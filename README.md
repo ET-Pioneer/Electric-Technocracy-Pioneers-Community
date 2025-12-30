@@ -123,11 +123,7 @@ No programming experience is required — only curiosity and willingness to shar
     
 *   ​**ASI as Neutral Administrator:** An Artificial Superintelligence serves as a logic-based advisor. It evaluates proposals for technical feasibility, resource requirements, systemic risk, and long-term impact. The ASI is **legally prohibited from autonomous rule**, functioning strictly as an administrative execution layer.
 
-### ​**3\. Legal Foundation: The World Succession Deed 1400/98**
-
-​The systemic transition is anchored in the **World Succession Deed (WSD) 1400/98**. This document is presented as a transformative international treaty (State Succession Treaty) that executed the "sale of the world" via a domino effect of state succession. It bundles global sovereignty into a single legal bearer (the **"Buyer"**), thereby delegating the powers of former nation-states to this unified global order.
-
-### ​**4\. Economic Framework: The Tech-Tax Economy**
+### ​**3\. Economic Framework: The Tech-Tax Economy**
 
 *   ​**Post-Scarcity Logic:** ET leverages automation, robotics, and breakthroughs in energy (e.g., **Nuclear Fusion**) and manufacturing (e.g., **Molecular Assemblers**) to drive the marginal cost of production toward zero, transforming scarcity into a logistical management task.
     
@@ -135,7 +131,7 @@ No programming experience is required — only curiosity and willingness to shar
     
 *   ​**Universal Basic Income (UBI):** The Tech-Tax revenue is distributed as an unconditional, inflation-proof dividend to all citizens, effectively decoupling human survival from traditional labor.
 
-### ​**5\. Judicial and Security Systems**
+### ​**4\. Judicial and Security Systems**
 
 *   ​**Algorithmic Judiciary:** Judicial processes are supported by AI systems that consistently and transparently apply democratically enacted laws. This aims to eliminate human bias, corruption, and bureaucratic delay, while remaining subject to human appeal.
     
