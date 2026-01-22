@@ -17,8 +17,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Generate sitemap files
       run: |
@@ -26,19 +24,16 @@ jobs:
 
         BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
 
-        # XML Header
         echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
         echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-        # HTML Header
-        echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>HTML Sitemap – Electric Technocracy Pioneers Community</title></head><body><h1>HTML Sitemap</h1><ul>' > sitemap.html
+        echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>HTML Sitemap</title></head><body><h1>HTML Sitemap</h1><ul>' > sitemap.html
 
-        # Nur HTML-Dateien im Repo, ohne .git und .github
         find . -type f -name "*.html" ! -path "./.git/*" ! -path "./.github/*" | while read file; do
           clean="${file#./}"
           url="$BASE_URL/$clean"
 
-          echo "  <url><loc>$url</loc></url>" >> sitemap.xml
+          echo "<url><loc>$url</loc></url>" >> sitemap.xml
           echo "<li><a href=\"$url\">$clean</a></li>" >> sitemap.html
         done
 
