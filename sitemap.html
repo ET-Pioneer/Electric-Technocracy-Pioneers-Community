@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HTML Sitemap – Electric Technocracy Pioneers Community</title>
+
+<meta name="description" content="HTML sitemap listing all files and folders of the Electric Technocracy Pioneers Community repository.">
+<meta name="robots" content="index, follow">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f4f4f4;
+        color: #222;
+        line-height: 1.6;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #sitemap {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 6px;
+        word-wrap: break-word;
+    }
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>HTML Sitemap</h1>
+
+<div id="sitemap">
+    <ul id="list"></ul>
+</div>
+
+<script>
+async function loadFolder(path, parentElement) {
+    const apiUrl =
+        `https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/${path}?ref=main&t=${Date.now()}`;
+
+    const res = await fetch(apiUrl);
+    const data = await res.json();
+
+    data.sort((a, b) => a.path.localeCompare(b.path));
+
+    for (const item of data) {
+        const li = document.createElement("li");
+
+        if (item.type === "file") {
+            li.innerHTML = `<a href="${item.html_url}" target="_blank">${item.path}</a>`;
+            parentElement.appendChild(li);
+        }
+
+        if (item.type === "dir") {
+            li.innerHTML = `<strong>${item.path}/</strong>`;
+            parentElement.appendChild(li);
+
+            const subList = document.createElement("ul");
+            parentElement.appendChild(subList);
+
+            await loadFolder(item.path, subList);
+        }
+    }
+}
+
+loadFolder("", document.getElementById("list"));
+</script>
+
+</body>
+</html>
