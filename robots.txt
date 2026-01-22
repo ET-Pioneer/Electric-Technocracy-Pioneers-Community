@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.xml
