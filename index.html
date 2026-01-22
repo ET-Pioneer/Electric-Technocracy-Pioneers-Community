@@ -2,58 +2,124 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Electric Technocracy Pioneers Community – Official Repository Index</title>
+<title>Electric Technocracy Pioneers Community – Repository Index</title>
 
-<meta name="description" content="Welcome to the Electric Technocracy Pioneers Community. Explore all documents, PDFs, research files, and resources across the entire repository.">
+<meta name="description" content="Official index of the Electric Technocracy Pioneers Community. Explore all documents, PDFs, research files, and multilingual resources across the entire repository.">
 <meta name="keywords" content="Electric Technocracy, Technocracy, Post-Scarcity, AI Society, Energy Abundance, ET Pioneer, Electric Technocracy Pioneers Community, Micronations, Future Governance, Automation, Open Knowledge">
 
 <style>
+    :root {
+        --bg: #f4f4f4;
+        --text: #222;
+        --card: #fff;
+        --link: #0066cc;
+    }
+    [data-theme="dark"] {
+        --bg: #121212;
+        --text: #e0e0e0;
+        --card: #1e1e1e;
+        --link: #4da3ff;
+    }
+
     body {
         font-family: Arial, sans-serif;
-        margin: 40px;
-        background: #f5f5f5;
-    }
-    h1, h2 {
-        color: #222;
-    }
-    #list {
-        background: white;
+        margin: 0;
         padding: 20px;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
+    header {
+        background: #1a1a1a;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    h1 { margin: 0; font-size: 1.8rem; }
+    h2 { margin-top: 30px; font-size: 1.4rem; }
+
+    #controls {
+        margin: 20px 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    input, select, button {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    #list {
+        background: var(--card);
+        padding: 15px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 20px;
     }
-    li {
-        margin-bottom: 6px;
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; word-wrap: break-word; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+        body { padding: 10px; }
+        h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.2rem; }
     }
 </style>
 </head>
 
 <body>
 
-<h1>Electric Technocracy Pioneers Community</h1>
+<header>
+    <h1>Electric Technocracy Pioneers Community</h1>
+</header>
 
 <p>
-Welcome to the official index page of the <strong>Electric Technocracy Pioneers Community</strong>.  
-This page automatically lists <strong>all files and folders</strong> inside the repository, including PDFs, documents, research papers, and multilingual resources.  
-Use this index to navigate the full structure of the project.
+Welcome to the official index page of the <strong>Electric Technocracy Pioneers Community</strong>.<br>
+This page automatically lists <strong>all files and folders</strong> inside the repository.
 </p>
+
+<div id="controls">
+    <input id="search" type="text" placeholder="Search files...">
+    <select id="filter">
+        <option value="all">All files</option>
+        <option value="pdf">PDF only</option>
+    </select>
+    <button id="toggleTheme">Dark Mode</button>
+</div>
 
 <h2>Repository File Index</h2>
 <ul id="list"></ul>
 
 <script>
-// Recursively load all files and subfolders
+document.getElementById("toggleTheme").onclick = () => {
+    document.body.dataset.theme =
+        document.body.dataset.theme === "dark" ? "light" : "dark";
+};
+
 async function loadFolder(path, parentElement) {
-    const apiUrl = `https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/${path}`;
+    const apiUrl =
+        `https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/${path}?ref=main&t=${Date.now()}`;
+
     const res = await fetch(apiUrl);
     const data = await res.json();
+
+    data.sort((a, b) => a.path.localeCompare(b.path));
 
     for (const item of data) {
         const li = document.createElement("li");
 
         if (item.type === "file") {
+            li.dataset.name = item.path.toLowerCase();
+            li.dataset.type = item.name.toLowerCase().endsWith(".pdf") ? "pdf" : "file";
             li.innerHTML = `<a href="${item.html_url}" target="_blank">${item.path}</a>`;
             parentElement.appendChild(li);
         }
@@ -71,8 +137,21 @@ async function loadFolder(path, parentElement) {
     }
 }
 
-// Start at repository root
 loadFolder("", document.getElementById("list"));
+
+document.getElementById("search").addEventListener("input", function () {
+    const term = this.value.toLowerCase();
+    document.querySelectorAll("#list li[data-name]").forEach(li => {
+        li.style.display = li.dataset.name.includes(term) ? "" : "none";
+    });
+});
+
+document.getElementById("filter").addEventListener("change", function () {
+    const type = this.value;
+    document.querySelectorAll("#list li[data-type]").forEach(li => {
+        li.style.display = (type === "all" || li.dataset.type === type) ? "" : "none";
+    });
+});
 </script>
 
 </body>
