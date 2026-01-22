@@ -84,7 +84,7 @@
 
 <p>
 Welcome to the official index page of the <strong>Electric Technocracy Pioneers Community</strong>.<br>
-This page automatically lists <strong>all files and folders</strong> inside the repository.
+This page lists <strong>all files and folders</strong> based on the generated sitemap.
 </p>
 
 <div id="controls">
@@ -105,39 +105,43 @@ document.getElementById("toggleTheme").onclick = () => {
         document.body.dataset.theme === "dark" ? "light" : "dark";
 };
 
-async function loadFolder(path, parentElement) {
-    const apiUrl =
-        `https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/${path}?ref=main&t=${Date.now()}`;
+async function loadFromSitemap() {
+    const res = await fetch("sitemap.xml");
+    const text = await res.text();
 
-    const res = await fetch(apiUrl);
-    const data = await res.json();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, "application/xml");
+    const locs = Array.from(xml.getElementsByTagName("loc"));
 
-    data.sort((a, b) => a.path.localeCompare(b.path));
+    const list = document.getElementById("list");
+    list.innerHTML = "";
 
-    for (const item of data) {
+    const items = locs
+        .map(node => node.textContent.trim())
+        .filter(url => url && !url.endsWith("/sitemap.xml") && !url.endsWith("/sitemap.html"));
+
+    items.sort((a, b) => a.localeCompare(b));
+
+    for (const url of items) {
         const li = document.createElement("li");
 
-        if (item.type === "file") {
-            li.dataset.name = item.path.toLowerCase();
-            li.dataset.type = item.name.toLowerCase().endsWith(".pdf") ? "pdf" : "file";
-            li.innerHTML = `<a href="${item.html_url}" target="_blank">${item.path}</a>`;
-            parentElement.appendChild(li);
-        }
+        try {
+            const u = new URL(url);
+            const path = u.pathname.replace(/^\/Electric-Technocracy-Pioneers-Community\//, "");
+            const lower = path.toLowerCase();
+            const type = lower.endsWith(".pdf") ? "pdf" : "file";
 
-        if (item.type === "dir") {
-            li.innerHTML = `<strong>${item.path}/</strong>`;
-            parentElement.appendChild(li);
-
-            const subList = document.createElement("ul");
-            subList.style.marginLeft = "20px";
-            parentElement.appendChild(subList);
-
-            await loadFolder(item.path, subList);
+            li.dataset.name = lower;
+            li.dataset.type = type;
+            li.innerHTML = `<a href="${url}" target="_blank">${path || "/"}</a>`;
+            list.appendChild(li);
+        } catch (e) {
+            // falls URL mal nicht parsebar ist, einfach überspringen
         }
     }
 }
 
-loadFolder("", document.getElementById("list"));
+loadFromSitemap();
 
 document.getElementById("search").addEventListener("input", function () {
     const term = this.value.toLowerCase();
