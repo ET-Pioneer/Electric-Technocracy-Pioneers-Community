@@ -7,6 +7,9 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,10 +17,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Generate sitemap files
       run: |
         echo "Generating sitemap.xml and sitemap.html"
+
+        BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
 
         # XML Header
         echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
@@ -26,11 +33,9 @@ jobs:
         # HTML Header
         echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>HTML Sitemap – Electric Technocracy Pioneers Community</title></head><body><h1>HTML Sitemap</h1><ul>' > sitemap.html
 
-        BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
-
-        # Only scan the site folder
-        find Electric-Technocracy-Pioneers-Community -type f | while read file; do
-          clean="${file#Electric-Technocracy-Pioneers-Community/}"
+        # Nur HTML-Dateien im Repo, ohne .git und .github
+        find . -type f -name "*.html" ! -path "./.git/*" ! -path "./.github/*" | while read file; do
+          clean="${file#./}"
           url="$BASE_URL/$clean"
 
           echo "  <url><loc>$url</loc></url>" >> sitemap.xml
@@ -40,14 +45,10 @@ jobs:
         echo '</urlset>' >> sitemap.xml
         echo '</ul></body></html>' >> sitemap.html
 
-    - name: Move sitemap into site folder
-      run: |
-        mv sitemap.xml sitemap.html Electric-Technocracy-Pioneers-Community/
-
     - name: Commit and push sitemap
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add Electric-Technocracy-Pioneers-Community/sitemap.xml Electric-Technocracy-Pioneers-Community/sitemap.html
+        git add sitemap.xml sitemap.html
         git commit -m "Auto-update sitemap" || echo "No changes to commit"
         git push
