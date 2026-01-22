@@ -1,0 +1,55 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: "0 3 * * *"   # täglich um 03:00 Uhr UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Generate sitemap files
+      run: |
+        echo "Generating sitemap.xml and sitemap.html"
+
+        # XML Header
+        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+        # HTML Header
+        echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>HTML Sitemap – Electric Technocracy Pioneers Community</title></head><body><h1>HTML Sitemap</h1><ul>' > sitemap.html
+
+        BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
+
+        # Alle Dateien durchlaufen (ohne .git und .github)
+        find . -type f ! -path "./.git/*" ! -path "./.github/*" | while read file; do
+          clean="${file#./}"
+          url="$BASE_URL/$clean"
+
+          # XML entry
+          echo "  <url><loc>$url</loc></url>" >> sitemap.xml
+
+          # HTML entry
+          echo "<li><a href=\"$url\">$clean</a></li>" >> sitemap.html
+        done
+
+        # XML schließen
+        echo '</urlset>' >> sitemap.xml
+
+        # HTML schließen
+        echo '</ul></body></html>' >> sitemap.html
+
+    - name: Commit and push sitemap
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add sitemap.xml sitemap.html
+        git commit -m "Auto-update sitemap" || echo "No changes to commit"
+        git push
