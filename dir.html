@@ -1,1 +1,253 @@
-dir
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Directory - Electric Technocracy Pioneers Community</title>
+    
+    <meta name="description" content="Automatic directory listing of all files in the Electric Technocracy Pioneers Community repository for search engine indexing.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        :root {
+            --nato-dark: #0a1f46;
+            --nato-blue: #004990;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --text-main: #111111;
+            --link-blue: #0066cc;
+            --border-light: #e0e0e0;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--nato-dark);
+            color: white;
+            padding: 30px 20px;
+            border-bottom: 5px solid var(--nato-blue);
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: var(--nato-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: var(--nato-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-box {
+            background-color: var(--off-white);
+            border-left: 4px solid var(--nato-blue);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .info-box h2 {
+            color: var(--nato-dark);
+            margin-bottom: 10px;
+        }
+
+        #file-list {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        #file-list h2 {
+            color: var(--nato-dark);
+            border-bottom: 2px solid var(--nato-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .file-item {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-item:hover {
+            background-color: var(--off-white);
+        }
+
+        .file-item a {
+            color: var(--link-blue);
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+
+        .file-type {
+            background-color: var(--nato-blue);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-light);
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .error-message {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📁 Repository Directory</h1>
+            <p>Electric Technocracy Pioneers Community - File Index for Search Engines</p>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Homepage</a>
+
+        <div class="info-box">
+            <h2>About This Directory</h2>
+            <p>This page automatically lists all files in the Electric Technocracy Pioneers Community GitHub repository. It is designed to help search engines like Google discover and index all content, including PDFs, documents, images, and other resources.</p>
+            <p><strong>Repository:</strong> <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">ET-Pioneer/Electric-Technocracy-Pioneers-Community</a></p>
+        </div>
+
+        <div id="file-list">
+            <h2>Repository Files</h2>
+            <div class="loading">Loading repository contents via GitHub API...</div>
+        </div>
+
+        <footer>
+            <p>© 2026 Electric Technocracy Pioneers Community | <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community">GitHub Repository</a> | <a href="index.html">Home</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // GitHub repository information
+        const REPO_OWNER = 'ET-Pioneer';
+        const REPO_NAME = 'Electric-Technocracy-Pioneers-Community';
+        const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/main?recursive=1`;
+
+        // Fetch repository contents
+        async function loadRepositoryFiles() {
+            const fileListDiv = document.getElementById('file-list');
+            
+            try {
+                const response = await fetch(GITHUB_API_URL);
+                
+                if (!response.ok) {
+                    throw new Error(`GitHub API returned status ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.tree || data.tree.length === 0) {
+                    fileListDiv.innerHTML = '<h2>Repository Files</h2><p class="error-message">No files found in repository.</p>';
+                    return;
+                }
+                
+                // Filter and sort files
+                const files = data.tree
+                    .filter(item => item.type === 'blob') // Only files, not directories
+                    .sort((a, b) => a.path.localeCompare(b.path));
+                
+                // Build HTML
+                let html = '<h2>Repository Files (' + files.length + ' files)</h2>';
+                
+                files.forEach(file => {
+                    const extension = file.path.split('.').pop().toLowerCase();
+                    const fileUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/main/${file.path}`;
+                    const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${file.path}`;
+                    
+                    html += `
+                        <div class="file-item">
+                            <span class="file-type">${extension}</span>
+                            <a href="${fileUrl}" target="_blank" rel="noopener">${file.path}</a>
+                        </div>
+                    `;
+                });
+                
+                fileListDiv.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading repository files:', error);
+                fileListDiv.innerHTML = `
+                    <h2>Repository Files</h2>
+                    <div class="error-message">
+                        <strong>Error loading files:</strong> ${error.message}<br><br>
+                        Please visit the repository directly: 
+                        <a href="https://github.com/${REPO_OWNER}/${REPO_NAME}" target="_blank">
+                            https://github.com/${REPO_OWNER}/${REPO_NAME}
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Load files when page loads
+        document.addEventListener('DOMContentLoaded', loadRepositoryFiles);
+    </script>
+</body>
+</html>

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/hi_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/index2.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/dir.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/index.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/pt_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/fr_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ru_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/it_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/es_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/de_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ja_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ar_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ms_hub.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap2.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap3.html</loc></url>
-<url><loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/de_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/es_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/fr_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ar_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/pt_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ja_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ru_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/it_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/hi_hub.html"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/ms_hub.html"/>
+    <priority>1.0</priority>
+  </url>
 </urlset>

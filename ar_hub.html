@@ -1,1 +1,653 @@
-ar_hub.html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجتمع رواد التكنوقراطية الكهربائية</title>
+
+    <meta name="description" content="رواد التكنوقراطية الكهربائية هو مركز أبحاث علمي مفتوح ومستودع وصول حر لاستكشاف التكنوقراطية الكهربائية، وحوكمة الذكاء الاصطناعي، والتفرد القضائي، والتفرد التكنولوجي، والذكاء الاصطناعي الفائق (ASI)، والذكاء الاصطناعي العام (AGI)، والديمقراطية الرقمية المباشرة (DDD)، والدخل الأساسي الشامل، وعالم متحد من الوفرة يتجاوز الدول القومية.">
+    <meta name="keywords" content="القانون الدولي، معاهدة، قانون، ناتو، الأمم المتحدة، سلسلة المعاهدات، الذكاء الاصطناعي، ASI, AGI, ذكاء فائق، تكنوقراطية، حوكمة، حكومة، رقمي، كهربائي، ديمقراطية رقمية مباشرة، تفرد قضائي، تفرد، تكنولوجيا، طول العمر، خلافة الدول، وثيقة الخلافة العالمية، Kaufvertrag Urkundenrolle, 1400/98, موسوعة، ويكي">
+    <meta name="author" content="Electric Technocracy Pioneers Community">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Electric Technocracy Pioneers Community">
+    <meta property="og:description" content="مركز أبحاث علمي لحوكمة المستقبل، والتفرد القضائي، ونماذج ما بعد الندرة.">
+    <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png?raw=true">
+    <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Google Programmable Search Engine -->
+    <script async src="https://cse.google.com/cse.js?cx=86021a982e3a14848"></script>
+
+    <style>
+        :root {
+            --nato-dark: #0a1f46;
+            --nato-blue: #004990;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --text-main: #111111;
+            --link-blue: #0066cc;
+            --border-light: #e0e0e0;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--nato-dark);
+            border-bottom: 3px solid var(--nato-blue);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .header-logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: white; 
+            padding: 2px;
+            border-radius: 4px;
+            transition: transform var(--transition-speed);
+        }
+        .header-logo img:hover { transform: scale(1.05); }
+
+        .header-search {
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 0 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .gse-wrapper { width: 100%; }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .desktop-lang select {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background var(--transition-speed);
+        }
+        .desktop-lang select:hover { background: rgba(255,255,255,0.2); }
+        .desktop-lang select option { color: black; }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--white);
+            line-height: 1;
+            transition: transform var(--transition-speed), color var(--transition-speed);
+        }
+        .menu-btn:hover { transform: scale(1.1); color: var(--nato-blue); }
+        .menu-btn:active { transform: scale(0.95); }
+
+        /* --- HAMBURGER MENU OVERLAY --- */
+        .nav-overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1001;
+            top: 0;
+            right: 0;
+            background-color: var(--nato-dark);
+            overflow-x: hidden;
+            transition: 0.4s;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+            padding-top: 20px;
+        }
+
+        .mobile-search-container {
+            padding: 20px 25px;
+            display: none; /* Only visible on mobile */
+        }
+
+        .nav-overlay a {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ccc;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-overlay a:hover {
+            color: var(--white);
+            background-color: rgba(255,255,255,0.1);
+            padding-left: 35px;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px !important;
+            border-bottom: none !important;
+        }
+
+        .mobile-lang-wrapper {
+            padding: 15px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.2);
+        }
+        .mobile-lang-wrapper label {
+            color: white; 
+            display: block; 
+            margin-bottom: 5px; 
+            font-size: 0.9rem;
+        }
+        .mobile-lang-wrapper select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+            font-size: 14px;
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            margin-top: 90px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        section {
+            margin-bottom: 70px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 40px;
+        }
+
+        .linked-header {
+            text-decoration: none;
+            display: block;
+            transition: color var(--transition-speed);
+        }
+        .linked-header:hover h1, .linked-header:hover h2 {
+            text-decoration: underline;
+            color: var(--nato-blue);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--nato-dark);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            border-left: 8px solid var(--nato-dark);
+            padding-left: 15px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--nato-blue);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--nato-blue);
+            padding-left: 15px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .content-visual {
+            flex: 0 0 140px;
+        }
+
+        .content-visual img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .content-visual a:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .content-text {
+            flex: 1;
+            background-color: var(--off-white);
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #ddd;
+            transition: background-color var(--transition-speed);
+        }
+        .content-text:hover { background-color: #f0f2f5; }
+
+        .content-text a {
+            color: var(--link-blue);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+        .content-text a:hover { text-decoration: underline; color: var(--nato-blue); }
+
+        .placeholder-mark {
+            color: #d9534f;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #f1f3f5;
+            color: var(--text-main);
+            padding: 50px 20px;
+            border-top: 5px solid var(--nato-dark);
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: var(--nato-dark);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #444;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            transition: color var(--transition-speed), transform var(--transition-speed);
+        }
+        .footer-col a:hover { color: var(--nato-blue); text-decoration: underline; transform: translateX(5px); }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .header-search { display: none; }
+            .mobile-search-container { display: block; }
+            .desktop-lang { display: none; }
+            .content-wrapper { flex-direction: column; }
+            .content-visual { width: 120px; margin-bottom: 10px; }
+            h1 { font-size: 1.6rem; }
+            .nav-overlay { padding-top: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <a href="index.html">
+                <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png?raw=true" 
+                     alt="ET Pioneers" 
+                     onerror="this.src='https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg?raw=true'">
+            </a>
+        </div>
+
+        <div class="header-search">
+            <div class="gse-wrapper">
+                <div class="gcse-searchbox-only"></div>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <div class="desktop-lang">
+                <select onchange="if (this.value) window.location.href=this.value">
+                    <option value="index.html" >🇬🇧 EN</option>
+                    <option value="de_hub.html">🇩🇪 DE</option>
+                    <option value="es_hub.html">🇪🇸 ES</option>
+                    <option value="fr_hub.html">🇫🇷 FR</option>
+                    <option value="ar_hub.html" selected>🇦🇪 AR</option>
+                    <option value="pt_hub.html">🇵🇹 PT</option>
+                    <option value="ja_hub.html">🇯🇵 JA</option>
+                    <option value="ru_hub.html">🇷🇺 RU</option>
+                    <option value="it_hub.html">🇮🇹 IT</option>
+                    <option value="hi_hub.html">🇮🇳 HI</option>
+                    <option value="ms_hub.html">🇲🇾 MS</option>
+                </select>
+            </div>
+
+            <button class="menu-btn" onclick="openNav()">☰</button>
+        </div>
+    </header>
+
+    <div id="myNav" class="nav-overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        
+        <div class="mobile-search-container">
+            <div class="gse-wrapper">
+                <div class="gcse-searchbox-only"></div>
+            </div>
+        </div>
+
+        <div class="mobile-lang-wrapper">
+            <label>🌐 Select Language:</label>
+            <select onchange="if (this.value) window.location.href=this.value">
+                <option value="index.html" >🇬🇧 English (EN)</option>
+                <option value="de_hub.html">🇩🇪 Deutsch (DE)</option>
+                <option value="es_hub.html">🇪🇸 Español (ES)</option>
+                <option value="fr_hub.html">🇫🇷 Français (FR)</option>
+                <option value="ar_hub.html" selected>🇦🇪 العربية (AR)</option>
+                <option value="pt_hub.html">🇵🇹 Português (PT)</option>
+                <option value="ja_hub.html">🇯🇵 日本語 (JA)</option>
+                <option value="ru_hub.html">🇷🇺 Русский (RU)</option>
+                <option value="it_hub.html">🇮🇹 Italiano (IT)</option>
+                <option value="hi_hub.html">🇮🇳 हिन्दी (HI)</option>
+                <option value="ms_hub.html">🇲🇾 Melayu (MS)</option>
+            </select>
+        </div>
+
+        <a href="https://zenodo.org/communities/electric-technocracy">🪢 Pioneers Community (Zenodo)</a>
+        <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git">⚡ GitHub Repository</a>
+        <a href="https://worldsold.wixsite.com/electric-technocracy">💡 Electric Technocracy HQ</a>
+        <a href="https://wiki.free.nf/">📚 International Treaty Law WIKI</a>
+        <a href="https://worldsold.wixsite.com/global-archive">📑 International Treaty Archive HQ</a>
+        <a href="https://worldsold.wixsite.com/world-sold">🗺️ World Succession Deed HQ</a>
+        <a href="https://paradise.gt.tc">🚀 Start-Page & Electric Paradise</a>
+        <a href="dir.html">📁 Directory (All Files)</a>
+    </div>
+
+    <main>
+        
+        <section>
+            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" class="linked-header">
+                <h1>مجتمع رواد التكنوقراطية الكهربائية</h1>
+            </a>
+            <div class="content-wrapper">
+                <div class="content-visual">
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community">
+                        <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png?raw=true" alt="Electric Technocracy Pioneers Community, An Open Scientific Research Hub for the Future of Governance, Law, and Technology">
+                    </a>
+                </div>
+                <div class="content-text">مجتمع رواد التكنوقراطية الكهربائية هو مركز بحث علمي مفتوح ومستودع يمكن الوصول إليه مخصص لاستكشاف التقاطعات المتطورة بين التكنولوجيا والحكم والقانون. يكمن في قلب مهمتنا دراسة وتطوير المفاهيم التي ستشكل مستقبل الحضارة كما نعرفها. وتشمل هذه:
+<ul>
+    <li><strong>التكنوقراطية الكهربائية:</strong> إطار للحكم يتماشى مع الذكاء الاصطناعي الفائق (ASI)، والأتمتة، واقتصاد ما بعد الندرة، بهدف استبدال الهياكل السياسية والسيادة الوطنية القديمة بنظام حكم موحد ومنسق عالمياً.</li>
+    <li><strong>حوكمة الذكاء الاصطناعي:</strong> دراسة كيفية دمج الذكاء الاصطناعي كمكون محايد وفعال في الحكم، ودعم القرارات القائمة على البيانات والأخلاق والرفاهية المجتمعية طويلة المدى.</li>
+    <li><strong>التفرد القانوني:</strong> استكشاف نظري وعملي لانهيار التعددية السيادية في القانون الدولي، مدفوعاً بالتسارع التكنولوجي، وظهور نظام قانوني موحد قادر على العمل على نطاق الآلة.</li>
+    <li><strong>التفرد التكنولوجي:</strong> دراسة الآثار التحويلية للاختراقات التكنولوجية، لا سيما في الذكاء الاصطناعي العام (AGI)، والذكاء الاصطناعي الفائق (ASI)، والأتمتة المتقدمة، وكيف تجبر هذه الاختراقات على إعادة التفكير في البنى التحتية القانونية والاجتماعية.</li>
+    <li><strong>الدخل الأساسي الشامل (UBI):</strong> البحث في تنفيذ الدخل الأساسي الشامل في إطار مجتمع مؤتمت بالكامل وقائم على الوفرة، والآثار الأخلاقية واللوجستية لتمويل ذلك من خلال ضرائب التكنولوجيا على الأتمتة والعمل المدعوم بالذكاء الاصطناعي.</li>
+    <li><strong>الديمقراطية الرقمية المباشرة (DDD):</strong> التركيز على الجدوى والتصميم العملي لنموذج حكم ديمقراطي حيث يشارك جميع الأفراد باستمرار في صنع القرار عبر منصات رقمية آمنة، مما يلغي الحاجة إلى وسطاء مثل الممثلين المنتخبين.</li>
+    <li><strong>التعاون العالمي خارج الدول القومية:</strong> دراسة عالم ما بعد القومية، حيث يتم تحسين التعاون وتوزيع الموارد واتخاذ القرارات من أجل الصالح العالمي، وتجاوز الانقسامات الإقليمية لإنشاء عالم موحد بالتعاون التكنولوجي والإنساني.</li>
+</ul>
+<h3 style="margin-top:20px; color:var(--nato-blue);">فاشكتسالا يملعلا حوتفملا ‘لوصولاو</h3>
+<p>‘ل نيركفملاو نييميداكأالاو نيثحابلل ةينواعت ةصنمك ةيئابرهكلا تاينقتلا داور عمتجم لمعي:</p>
+<ul>
+    <li>ةئشانلا تاينقتلا اهحرطت يتلا ةينوناقلاو ةيقالخأالاو ةيعامتجالا تايدحتلا ليلحت.</li>
+    <li>ةيعامجلا ةيلوؤسملاو كرتشملا راهدزالا ىلع مئاق لبقتسم نامضل ،ةردنلا دعب ام تاعمتجملل رطاأ ميمصت.</li>
+    <li>ايجولونكتلا رصعل تممصصُ يتلا ةيداصتقالا جذامنلاو ،ةينوناقلا ةمظنأالاو ،تاموكحلا لوح ثوحبلاو جذامنلاو تاودأالا ةكراشمو ريوطت.</li>
+</ul>
+<p style="margin-top:10px;">مدقن ،لوصولا حوتفم عمتجمك:</p>
+<ul>
+    <li>ةينوناقلا تاليلحتلاو ،ةيلمعلا قاروأالاو ،ةيثحبلا قاروأالا نم ممٍ انتم عدوتسم.</li>
+    <li>ةيلبقتسملا ةموكحلا ليكشت ىلاإ فدهت يتلا ةينواعتلا تاودأالاو ،ةيسايسلا رطأالاو ،ةاكاحملا جذامن ىلاإ لوصولا.</li>
+    <li>نييلبقتسملاو ،نيينوناقلا ءاربخلاو ،داصتقالا ءاملعو ،نيينقتلا كلذ يف امب ،تاصصختلا نيب نيمهاسملا نم ةيملاع ةكبش.</li>
+</ul>
+<h3 style="margin-top:20px; color:var(--nato-blue);">فاشكتسالا ىلاإ مضنا</h3>
+<p>،ةردنلا دعب ام داصتقالاو ،يعانطصالا ءاكذلاو ،ايجولونكتلا ىلع دمتعملا مكحلاب نيمتهملا دارفأالا عيمج ةيئابرهكلا تاينقتلا داور عمتجم وعدي عيمجلل اليًداعو اميً ادتسم اليً بقتسم معدي ناأ نكمي اديً يدج اييًعامتجا اريً اطاإ ينبنو ،شقاننو ،ثحبنس ،اعيً م .ةكراشملل يملاعلا نواعتلاو.</p>
+<p style="margin-top:10px;">درفتلاو ،ةيئابرهكلا تاينقتلا لوح ةيراجلا ثاحبأالا فشكتساو حوتفملا انعدوتسم ةرايزب مق ،ةمهاسملاو تامولعملا نم ديزم ىلع لوصحلل يعانطصالا ءاكذلا مكحو ،ينوناقلا.</p>
+<p style="margin-top:10px;"><strong>يجولونكتلا درفتلا هقلختس يذلا ملاعلا ليكشتل انيلاإ مضنا .يقالخاأو ينوناقو ينقت وه لب ؛اييًسايس طقف سيل مكحلا لبقتسم.</strong></p></div>
+            </div>
+        </section>
+
+        <section>
+            <a href="https://worldsold.wixsite.com/electric-technocracy" class="linked-header">
+                <h2>التكنوقراطية الكهربائية: مستقبل الحكم هنا.</h2>
+            </a>
+            <div class="content-wrapper">
+                <div class="content-visual">
+                    <a href="https://worldsold.wixsite.com/electric-technocracy">
+                        <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-logo.jpg?raw=true" alt="Electric Technocracy Logo, ASI, Robots, Humans United">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <div style="font-size: 0.95rem; color: #333;">
+                        ET - النوع الأفضل من المجتمع والحكومة للتفرد التكنولوجي. في مستقبل يتحد فيه الذكاء الاصطناعي الفائق (ASI)، والروبوتات المتقدمة، والتعاون البشري، تقدم Electric Technocracy نموذجًا تحويليًا للحكم، يمزج بين المبادئ التكنوقراطية والديمقراطية الرقمية المباشرة. تصف هذه الرؤية مجتمعًا تطور فيه البشر إلى ما بعد الهياكل الحكومية التقليدية، حيث تم القضاء على الحواجز أمام التعاون العالمي الحقيقي. تم تصميم النموذج للتعامل مع تحديات عالم ما بعد الندرة، مدفوعًا بالتكنولوجيا والوفرة والرفاهية الجماعية.
+<br><br>
+<strong>ما هي التكنوقراطية الكهربائية؟</strong><br>
+في جوهرها، التكنوقراطية الكهربائية هي نظام حكم متقدم يستخدم الذكاء الاصطناعي والأتمتة المتقدمة لإدارة تعقيدات الحكم العالمي في مجتمع ما بعد الندرة. يجمع بين التكنولوجيا المتطورة والمثل الديمقراطية، مما يضمن أن السلطة لا يتم توزيعها بالتساوي بين الأفراد فحسب، بل تتم إدارتها أيضًا بذكاء من قبل أنظمة يمكنها معالجة كميات هائلة من البيانات واتخاذ القرارات المثلى للمجتمع.
+<ul>
+    <li>يعمل الذكاء الاصطناعي الفائق (ASI) كإطار لاتخاذ القرار، حيث يقدم المشورة بشأن السياسات، ويحاكي النتائج طويلة المدى، ويتعامل مع التعقيدات الإدارية.</li>
+    <li>تحل الروبوتات والأتمتة محل العمل اليدوي في القوى العاملة، مما يولد القيمة والثروة دون مدخلات بشرية، مما يسمح للجميع بالاستمتاع بثمار التكنولوجيا دون الحاجة إلى العمل من أجل البقاء.</li>
+    <li>تضمن الديمقراطية الرقمية المباشرة (DDD) أن يكون لجميع المواطنين صوت في كل قرار، مما يلغي الوسطاء السياسيين التقليديين. المشاركة في الحكم ثابتة وشفافة ومتاحة للجميع، بغض النظر عن الموقع.</li>
+</ul>
+يخلق مزيج هذه العناصر شكلاً جديدًا من الحكم حيث تكون أنظمة السلطة شفافة وفعالة وشاملة.
+<br><br>
+<strong>دور الذكاء الاصطناعي الفائق (ASI)</strong><br>
+في التكنوقراطية الكهربائية، لا يعمل ASI ككيان حاكم، ولكن كميسر محايد يدعم ويعزز صنع القرار البشري. يمكن لـ ASI تحليل مجموعات البيانات الضخمة في الوقت الفعلي، وتحسين الرفاهية العالمية، وتقليل التحيز في الحكم. يعمل ASI جنبًا إلى جنب مع البشر، ويقدم الرؤى والتوقعات والتحليلات مع ترك اتخاذ القرار النهائي للإرادة الجماعية للناس.
+<br><br>
+<strong>الروبوتات والأتمتة: العمود الفقري للازدهار</strong><br>
+تتصور التكنوقراطية الكهربائية عالمًا تؤدي فيه الروبوتات والأتمتة العمل الذي كان يحفز النشاط الاقتصادي سابقًا. يحرر هذا التحول التكنولوجي البشرية من الحاجة إلى العمل من أجل البقاء. يسمح اقتصاد ما بعد الندرة بوجود وفرة في جميع المجالات: الغذاء، والطاقة، والرعاية الصحية، والإسكان، والتعليم. تدير الروبوتات الإنتاج الصناعي والنقل، بينما تضمن الخوارزميات المتقدمة التوزيع الأمثل للموارد. يتم تمويل الدخل الأساسي الشامل (UBI) من قبل الأنظمة الآلية نفسها.
+<br><br>
+<strong>البشر المتحدون: نظام حكم عالمي جديد</strong><br>
+في التكنوقراطية الكهربائية، يظل العنصر البشري في قلب الحكم. بينما يتولى الذكاء الاصطناعي والروبوتات معالجة البيانات، فإن القيم والأهداف الإنسانية هي التي توجه مسار المستقبل. يضمن نموذج الديمقراطية الرقمية المباشرة أن يكون لجميع المواطنين وصول مستمر للمشاركة في القرارات، واتصال عالمي، وشفافية كاملة. يصبح دور السياسة التمثيلية التقليدية قديمًا.
+<br><br>
+<strong>مستقبل ما بعد الندرة</strong><br>
+في عالم تحل فيه التكنولوجيا مشاكل الندرة وعدم المساواة، تهدف التكنوقراطية الكهربائية إلى خلق عالم من الوفرة، حيث يحصل كل إنسان على التعليم المجاني، والرعاية الصحية بأفضل التقنيات، والنمو الشخصي. سيؤدي مزيج الحكم بالذكاء الاصطناعي والديمقراطية المباشرة والتعاون العالمي إلى خلق عالم مستقر وسلمي وعادل.
+<br><br>
+<strong>شكل جديد من الحكم</strong><br>
+التكنوقراطية الكهربائية هي أكثر من مجرد نموذج سياسي - إنها نهج رؤيوي لخلق مستقبل قائم على التعاون والتقدم التكنولوجي وازدهار الإنسان. يجمع هذا النظام بين ASI والروبوتات والبشر المتحدين للازدهار في مجتمع متقدم تقنيًا.
+<br><br>
+انضم إلينا بينما نعمل على بناء نظام حكم عالمي مدعوم بالذكاء الاصطناعي يضمن العدالة والمساواة والازدهار لجميع الناس، مدفوعًا بابتكارات اليوم وإمكانيات الغد.
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" style="background-color: var(--nato-blue); color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-block;">
+                            📖 استكشف ويكي التكنوقراطية الكهربائية
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <a href="https://worldsold.wixsite.com/world-sold" class="linked-header">
+                <h2>SINGULARITY IN NATIONAL AND INTERNATIONAL LAW</h2>
+            </a>
+            <div class="content-wrapper">
+                <div class="content-visual">
+                    <a href="https://worldsold.wixsite.com/world-sold">
+                        <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/judicial_singularity.jpg?raw=true" alt="Juridical Singularity: the legal foundation of the technological Singularity">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <span class="placeholder-mark">[PLACEHOLDER: juridical Singularity Beschreibung füge ich selbst ein]</span>
+                    <p>The legal foundation of the technological Singularity. Exploring how international law and treaty systems adapt to rapid technological advancement and the emergence of superintelligent systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <a href="https://wiki.free.nf/" class="linked-header">
+                <h2>International Treaty Law WIKI, The Scholarly Encyclopedia</h2>
+            </a>
+            <div class="content-wrapper">
+                <div class="content-visual">
+                    <a href="https://wiki.free.nf/">
+                        <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/ilawsociallogo.jpg?raw=true" alt="Juridical Singularity wiki the legal experts wiki on international law">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <span class="placeholder-mark">[PLACEHOLDER: International Treaty Law WIKI Beschreibung füge ich selbst ein]</span>
+                    <p>The Encyclopedia for the legal singularity. A comprehensive scholarly resource documenting international treaties, legal frameworks, and the evolution of global governance systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <a href="https://zenodo.org/communities/electric-technocracy" class="linked-header">
+                <h2>Electric Technocracy Pioneers Community Research</h2>
+            </a>
+            <div class="content-wrapper">
+                <div class="content-visual">
+                    <a href="https://zenodo.org/communities/electric-technocracy">
+                        <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et_community.png?raw=true" alt="Electric Technocracy Pioneers Community, Working Paper, Preprints, Scientific Research">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <span class="placeholder-mark">[PLACEHOLDER: Electric Technocracy Pioneers Community Beschreibung füge ich selbst ein]</span>
+                    <p>Technological singularity, judicial singularity, electric Technocracy research Community. Open access to working papers, preprints, and collaborative scientific research on future governance models.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Research & Repo</h3>
+                <a href="https://community.xo.je">🪢 Zenodo Community</a>
+                <a href="https://repository.ct.ws">⚡ GitHub Proxy</a>
+                <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/">Original Repository</a>
+                <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">Community WIKI</a>
+                <a href="https://doi.org/10.5281/zenodo.18073084">DOI: 18073084</a>
+                <a href="https://doi.org/10.5281/zenodo.18028339">DOI: 18028339</a>
+                <a href="https://doi.org/10.5281/zenodo.18012036">DOI: 18012036</a>
+                <a href="https://doi.org/10.5281/zenodo.18216674">DOI: 18216674</a>
+                <a href="https://doi.org/10.5281/zenodo.18505843">DOI: 18505843</a>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Encyclopedia & Law</h3>
+                <a href="https://encyclopedia.pub/entry/59380">Encyclopedia Art. 59380</a>
+                <a href="https://encyclopedia.pub/entry/59410">Encyclopedia Art. 59410</a>
+                <a href="https://encyclopedia.pub/entry/59414">Encyclopedia Art. 59414</a>
+                <a href="https://wiki.free.nf/">International Treaty Law WIKI</a>
+                <a href="https://world.rf.gd">World Succession Deed</a>
+                <a href="https://global-archive.rf.gd">Global Legal Succession Archive</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>HQ & Sites</h3>
+                <a href="https://worldsold.wixsite.com/world-sold">World Succession Deed HQ</a>
+                <a href="https://worldsold.wixsite.com/world-sold/en">WSD HQ (EN)</a>
+                <a href="https://worldsold.wixsite.com/electric-technocracy">Electric Technocracy HQ</a>
+                <a href="https://worldsold.wixsite.com/electric-technocracy/de">ET HQ (DE)</a>
+                <a href="https://worldsold.wixsite.com/global-archive">Global Archive HQ</a>
+                <a href="https://worldsold.wixsite.com/global-archive/de">Global Archive (DE)</a>
+                <a href="https://worldsold.wixsite.com/nwo-store">NWO Store</a>
+                <a href="https://worldsold.wixsite.com/nwo-store/de">NWO Store (DE)</a>
+                <a href="https://worldsold.wixsite.com/navigator">Navigator</a>
+                <a href="https://worldsold.wixsite.com/navigator/de">Navigator (DE)</a>
+                <a href="https://worldsold.wixsite.com/international">International</a>
+                <a href="https://paradise.gt.tc">Start-Page Paradise</a>
+                <a href="https://ep.ct.ws">Electric Technocracy</a>
+                <a href="https://navi.page.gd">WSD Navigator 1400/98</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Media & Content</h3>
+                <a href="https://videos.xo.je">🎥 YouTube Channel</a>
+                <a href="https://nwo.likesyou.org">🎙️ Podcast Show</a>
+                <a href="https://listen.free.nf">🎵 Cassandra Cries (SC)</a>
+                <a href="https://music.page.gd">🪖 Anti-War Music</a>
+                <a href="https://4u.free.nf">📘 eBooks & PDF Downloads</a>
+                <a href="https://open.spotify.com/playlist/6gaGFsnID15ZbtbORp3uRg">🔘 Spotify DJ Playlist</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Social & Chat</h3>
+                <a href="https://chat-wsd.rf.gd">🗣️ NotebookLM Chat WSD</a>
+                <a href="https://chat-et.rf.gd">🗣️ NotebookLM Chat ET</a>
+                <a href="https://www.facebook.com/share/1ER7GbN7kM/">🌐 Facebook World Sold</a>
+                <a href="https://www.facebook.com/share/1DEMSyrrAt/">🤖 Facebook Electric Technocracy</a>
+                <a href="https://www.facebook.com/groups/528455169898378/">🎗️ Humans & Machines Unite</a>
+                <a href="https://www.facebook.com/share/1CZ2JE3Sjb/">🚀 Facebook Profile</a>
+                <a href="https://x.com/WW3Precognition">✖️ X - Cassandra Complex</a>
+                <a href="https://x.com/NWO_BOOKS">✖️ X - Welt verkauft</a>
+                <a href="https://x.com/NWO_Support">✖️ X - NWO Support</a>
+                <a href="https://x.com/Electrocozy">✖️ X - ET Sound Collective</a>
+                <a href="https://podcasts.apple.com/de/podcast/world-sold-world-succession-deed-1400-98-http-world/id1786462631">🍎 Apple Podcast</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Resources & Tools</h3>
+                <a href="https://cse.google.com/cse?cx=86021a982e3a14848">🔍 Specialized Search Engine</a>
+                <a href="https://de.m.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken">🏰 Wiki Kreuzbergkaserne (DE)</a>
+                <a href="https://en.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken">🏰 Wiki Kreuzbergkaserne (EN)</a>
+                <a href="https://turenne-barracks.blogspot.com/2025/12/tasc-tabellion-doerfert-wohnpark-scam.html?m=1">🧿 Corruption Blog</a>
+                <a href="https://notebooklm.google.com/notebook/f422a75d-6b67-412d-b87a-26a8d5c653d9?authuser=1">🧿 Tabellion Scandal Chat</a>
+                <a href="https://u.pcloud.link/publink/show?code=0Z8jWC5Z9eG2iGcELwJdrikBBCArhzNjeu0V">🌪️ PCloud Music Vault</a>
+                <a href="https://e.pcloud.link/publink/show?code=kZyS7NZxAFQ4DPUaCJu9EhLjkXixYefdXO7">☁️ PCloud Videos Vault</a>
+                <a href="https://e.pcloud.link/publink/show?code=0Zhu7NZOByIyjsD1WbWNhaDlHUvCQBAXjF7">💨 PCloud Podcast Vault</a>
+                <a href="https://donate.gt.tc" style="color:#d9534f; font-weight:bold;">🎗️ Support Our Mission</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Electric Technocracy Pioneers Community | Scientific Research Hub
+        </div>
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "300px";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0";
+        }
+        
+        // Close when clicking outside
+        window.addEventListener('click', function(e){   
+            if (!document.getElementById('myNav').contains(e.target) && !document.querySelector('.menu-btn').contains(e.target)){
+                closeNav();
+            }
+        });
+    </script>
+
+</body>
+</html>
