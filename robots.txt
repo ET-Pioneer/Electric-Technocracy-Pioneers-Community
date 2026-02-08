@@ -1,11 +1,3 @@
-# robots.txt for Electric Technocracy Pioneers Community
-# Allow all search engines to index all content
-
 User-agent: *
 Allow: /
-
-# Sitemap location
 Sitemap: https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1

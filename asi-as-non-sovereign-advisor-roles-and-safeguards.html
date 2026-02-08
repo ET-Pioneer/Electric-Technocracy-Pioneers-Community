@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASI as Non-Sovereign Advisor: Roles and Safeguards | Electric Technocracy Pioneers</title>
+    <meta name="description" content="Learn how Artificial Superintelligence (ASI) serves as a non-sovereign advisor in Electric Technocracy. Explore the critical safeguards, from human-in-the-loop escalation to offline watchdog AI, ensuring human sovereignty and ethical alignment. (285 characters)">
+    <meta name="keywords" content="ASI Advisor, Non-Sovereign AI, Human-in-the-Loop, HITL, Human Override, Watchdog AI, CIRL, Value Alignment, Predictive Modeling, Logistics Optimization, AI Safeguards, Kill Switch, Ethics Committee, Transparent AI, Cooperative Inverse Reinforcement Learning, Electric Technocracy, Governance Architecture, Algorithmic Accountability, Strategic Alignment, Data Analysis, Red-Team Testing, Infrastructure Planning, Value Audits, Non-Coercive AI, Technological Stewardship, Planetary Regulation, AI Oversight, Human Agency, Post-National Order, Digital Citizenship">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="ASI as Non-Sovereign Advisor: Roles and Safeguards">
+    <meta property="og:description" content="Learn how Artificial Superintelligence (ASI) serves as a non-sovereign advisor in Electric Technocracy. Explore the critical safeguards, from human-in-the-loop escalation to offline watchdog AI, ensuring human sovereignty and ethical alignment. (285 characters)">
+    <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png?raw=true">
+    <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/asi-as-non-sovereign-advisor-roles-and-safeguards.html">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --nato-blue: #003399;
+            --un-blue: #5B92E5;
+            --tech-blue: #00A3FF;
+            --dark-bg: #0A0E27;
+            --light-blue: #E6F0FF;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue);
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--nato-blue);
+            color: white;
+            min-height: 60px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--tech-blue);
+        }
+        .logo-container img {
+            height: 40px;
+        }
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-arrow {
+            color: white;
+            font-size: 20px;
+            transition: all 0.2s;
+            opacity: 0.8;
+        }
+        .nav-arrow:hover {
+            opacity: 1;
+            color: var(--tech-blue);
+            transform: scale(1.1);
+        }
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 10px;
+            color: white;
+            z-index: 1001;
+        }
+
+        /* --- RESPONSIVE SLIDE VIEWER --- */
+        .slide-viewer {
+            width: 100%;
+            max-width: 1280px;
+            margin: 30px auto;
+            background: var(--dark-bg);
+            box-shadow: 0 20px 50px rgba(0, 51, 153, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            min-height: 720px;
+            height: auto;
+            border: 1px solid var(--un-blue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-content-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Additional Text Section */
+        .additional-text {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 51, 153, 0.1);
+            border-left: 5px solid var(--nato-blue);
+            position: relative;
+            z-index: 5;
+        }
+        .additional-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--nato-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .additional-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: var(--un-blue);
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        .additional-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #334155;
+        }
+        .additional-text ul {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .additional-text li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            padding: 80px 20px 40px;
+            margin-top: 80px;
+            border-top: 4px solid var(--nato-blue);
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .footer-section h4 {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--tech-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .footer-section a:hover {
+            color: var(--tech-blue);
+            padding-left: 5px;
+        }
+        .footer-section .sub-link {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+        
+        /* Side Navigation */
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 100px;
+            background: rgba(0, 51, 153, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 90;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .side-nav:hover {
+            background: var(--nato-blue);
+            width: 60px;
+        }
+        .side-nav.prev { left: 0; border-radius: 0 10px 10px 0; }
+        .side-nav.next { right: 0; border-radius: 10px 0 0 10px; }
+        
+        /* Mobile Menu Overlay */
+        #mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--dark-bg);
+            z-index: 2000;
+            transition: all 0.4s ease-in-out;
+            display: block !important;
+            padding: 50px 30px;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            overflow-y: auto;
+            border-left: 3px solid var(--tech-blue);
+        }
+        #mobile-menu.active {
+            right: 0;
+        }
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .menu-close:hover { transform: rotate(90deg); color: var(--tech-blue); }
+        .menu-item {
+            display: block;
+            color: #cbd5e1;
+            padding: 15px 0;
+            border-bottom: 1px solid #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .menu-item:hover {
+            color: var(--tech-blue);
+            padding-left: 10px;
+        }
+        .slide-grid-item {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            border: 1px solid #1e293b;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        .slide-grid-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--tech-blue);
+            color: white;
+        }
+        .slide-grid-item.active {
+            background: var(--tech-blue);
+            color: white;
+            border-color: var(--tech-blue);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .content-area {
+                flex-direction: column !important;
+                padding: 20px !important;
+                gap: 20px !important;
+            }
+            .slide-viewer {
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                min-height: auto;
+            }
+            .slide-container {
+                height: auto !important;
+                min-height: auto !important;
+            }
+            .header, .footer {
+                padding: 20px !important;
+            }
+            .title {
+                font-size: 24px !important;
+            }
+            .additional-text {
+                margin: 0;
+                border-radius: 0;
+                padding: 30px 20px;
+                border-left: none;
+                border-top: 5px solid var(--nato-blue);
+            }
+            .side-nav { display: none; }
+        }
+
+        
+        
+        .slide-container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 720px;
+    height: auto;
+    background: #0A0E27;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+        .header-section {
+            padding: 40px 60px 20px 60px;
+            border-bottom: 2px solid rgba(0, 163, 255, 0.2);
+        }
+        .slide-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 0;
+        }
+        .title-highlight {
+            color: #00A3FF;
+        }
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            padding: 40px 60px;
+            gap: 30px;
+        }
+        .column {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 163, 255, 0.2);
+            border-radius: 8px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+        }
+        .column-icon {
+            font-size: 36px;
+            color: #00A3FF;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .column-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #00A3FF;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .column-content {
+            flex: 1;
+        }
+        .column-content p {
+            font-size: 15px;
+            color: #B8C5D6;
+            line-height: 1.6;
+            margin: 0 0 12px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .column-content p:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #00A3FF;
+        }
+        .note-box {
+            background: rgba(0, 163, 255, 0.1);
+            border-left: 3px solid #00A3FF;
+            padding: 12px 16px;
+            margin-top: 16px;
+        }
+        .note-box p {
+            font-size: 13px;
+            color: #7EC8E3;
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+        }
+        .note-box p:before {
+            content: none;
+        }
+    
+.content-area { display: flex; flex: 1; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png?raw=true" alt="ET Pioneers Logo">
+            <span class="hidden lg:inline font-extrabold text-sm tracking-widest uppercase">Electric Technocracy Pioneers</span>
+        </a>
+    </div>
+    
+    <div class="nav-controls">
+        <div class="hidden md:flex items-center gap-6 mr-4">
+            <a href="index.html" class="text-xs font-bold uppercase tracking-widest opacity-70 hover:opacity-100 hover:text-tech-blue transition-all">Back to Home</a>
+            <span class="text-xs font-mono opacity-50 bg-black bg-opacity-30 px-3 py-1 rounded-full">Slide 7 / 18</span>
+        </div>
+        <div class="flex gap-4 items-center">
+            <a href="direct-digital-democracy-ddd-the-global-voting-process.html" class="nav-arrow" title="Previous Slide"><i class="fas fa-arrow-left"></i></a>
+            <a href="technology-stack-infrastructure-for-governance-at-scale.html" class="nav-arrow" title="Next Slide"><i class="fas fa-arrow-right"></i></a>
+            <div class="hamburger-menu" onclick="toggleMenu()" title="Menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</header>
+
+<a href="direct-digital-democracy-ddd-the-global-voting-process.html" class="side-nav prev hidden xl:flex"><i class="fas fa-chevron-left fa-2x"></i></a>
+<a href="technology-stack-infrastructure-for-governance-at-scale.html" class="side-nav next hidden xl:flex"><i class="fas fa-chevron-right fa-2x"></i></a>
+
+<div id="mobile-menu">
+    <div class="menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+    <h3 class="text-tech-blue font-extrabold text-xl mb-8 uppercase tracking-tighter">Main Navigation</h3>
+    <a href="https://zenodo.org/communities/electric-technocracy" class="menu-item">🪢 Electric Technocracy Pioneers Community</a>
+    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git" class="menu-item">⚡ GitHub Repository</a>
+    <a href="https://worldsold.wixsite.com/electric-technocracy" class="menu-item">💡 Electric Tecnocracy HQ</a>
+    <a href="https://wiki.free.nf/" class="menu-item">📚 International Treaty Law WIKI</a>
+    <a href="https://worldsold.wixsite.com/global-archive" class="menu-item">📑 International Treaty Archive HQ</a>
+    <a href="https://worldsold.wixsite.com/world-sold" class="menu-item">🗺️ World Succession Deed HQ</a>
+    <a href="https://paradise.gt.tc" class="menu-item">🚀 Start-Page WSD & Electric Paradise</a>
+    <a href="search.html" class="menu-item">🔎 Search</a>
+    <a href="dir.html" class="menu-item">📁 Directory</a>
+    
+    <h3 class="text-tech-blue font-extrabold text-xl mt-12 mb-6 uppercase tracking-tighter">Slide Index</h3>
+    <div class="grid grid-cols-5 gap-3">
+        <a href="electric-technocracy-the-technical-framework-for-post-national-governance.html" class="slide-grid-item ">1</a> <a href="crisis-of-traditional-governance-nation-states-vs-automation.html" class="slide-grid-item ">2</a> <a href="definition-of-electric-technocracy-post-national-architecture.html" class="slide-grid-item ">3</a> <a href="philosophy-of-electric-technocracy-sovereignty-self-unfolding.html" class="slide-grid-item ">4</a> <a href="governance-architecture-of-electric-technocracy-post-national-order.html" class="slide-grid-item ">5</a> <a href="direct-digital-democracy-ddd-the-global-voting-process.html" class="slide-grid-item ">6</a> <a href="asi-as-non-sovereign-advisor-roles-and-safeguards.html" class="slide-grid-item active">7</a> <a href="technology-stack-infrastructure-for-governance-at-scale.html" class="slide-grid-item ">8</a> <a href="economic-revolution-tech-tax-universal-basic-income.html" class="slide-grid-item ">9</a> <a href="humans-tax-free-machines-pay.html" class="slide-grid-item ">10</a> <a href="legal-foundation-world-succession-deed-1400.html" class="slide-grid-item ">11</a> <a href="legal-singularity-treaty-chains-and-the-clean-slate-principle.html" class="slide-grid-item ">12</a> <a href="implementation-stack-the-technical-infrastructure-of-technocracy.html" class="slide-grid-item ">13</a> <a href="social-transformation-the-rise-of-the-wishmaster-economy.html" class="slide-grid-item ">14</a> <a href="longevity-transhumanism-rights-the-biological-upgrade.html" class="slide-grid-item ">15</a> <a href="implementation-roadmap-challenges-the-path-to-global-technocracy.html" class="slide-grid-item ">16</a> <a href="the-electronic-paradise-post-scarcity-outcomes.html" class="slide-grid-item ">17</a> <a href="conclusion-the-great-fork-in-the-road.html" class="slide-grid-item ">18</a>
+    </div>
+</div>
+
+<main>
+    <div class="slide-viewer">
+        <div class="slide-content-wrapper">
+            
+<div class="slide-container">
+<!-- Header Section -->
+<div class="header-section">
+<h1 class="slide-title">
+<span class="title-highlight">ASI</span> as Non‑Sovereign Advisor
+            </h1>
+</div>
+<!-- Three-Column Content -->
+<div class="content-wrapper">
+<!-- Column 1: Roles -->
+<div class="column">
+<div class="column-icon">
+<i class="fas fa-brain"></i>
+</div>
+<h2 class="column-title">
+<p>ASI Roles</p>
+</h2>
+<div class="column-content">
+<p>Predictive modeling of policy outcomes</p>
+<p>Logistics optimization</p>
+<p>Environmental regulation</p>
+<p>Infrastructure planning</p>
+<p>Real-time data analysis</p>
+<div class="note-box">
+<p>No coercive or legislative power—final authority remains with humans</p>
+</div>
+</div>
+</div>
+<!-- Column 2: Safeguards -->
+<div class="column">
+<div class="column-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h2 class="column-title">
+<p>Safeguards</p>
+</h2>
+<div class="column-content">
+<p>Human-in-the-Loop (HITL) escalation</p>
+<p>Human Override protocols</p>
+<p>Offline Watchdog AI monitoring</p>
+<p>Hardware kill switch</p>
+<p>Continuous audits &amp; red-team testing</p>
+<div class="note-box">
+<p>Watchdog AI operates independently, isolated from ASI network to prevent manipulation</p>
+</div>
+</div>
+</div>
+<!-- Column 3: Alignment Methods -->
+<div class="column">
+<div class="column-icon">
+<i class="fas fa-balance-scale"></i>
+</div>
+<h2 class="column-title">
+<p>Alignment Methods</p>
+</h2>
+<div class="column-content">
+<p>CIRL (Cooperative Inverse Reinforcement Learning)</p>
+<p>Value alignment protocols</p>
+<p>Ethics committee oversight</p>
+<p>Transparent decision logic</p>
+<p>Regular value audits</p>
+<div class="note-box">
+<p>ASI intrinsically aligned with human ethical principles and values</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+        </div>
+    </div>
+
+    <div class="additional-text">
+        The ASI Advisory Layer: Intelligence Without Authority
+In an Electric Technocracy, Artificial Superintelligence (ASI) functions as a high-fidelity "world-simulator." It possesses the computational depth to manage the logistics of a planet, but it lacks the legal or moral capacity to rule it. This distinction is the bedrock of the system's safety architecture.
+The Advisor’s Mandate
+The ASI is tasked with the "how," not the "why." If the human population votes to restore a specific ecosystem or transition to a new energy grid, the ASI calculates the most efficient, least disruptive path to achieve that goal. Its predictive modeling identifies second- and third-order consequences that human planners might miss, such as the impact of a new tax structure on global supply chains three years into the future.
+The Triple-Lock Safeguard System
+To ensure the ASI remains a tool and never a master, the architecture employs a "Triple-Lock" security framework:
+Technical Lock (The Kill Switch): Physical and software-level "kill switches" that can isolate or deactivate the ASI. This includes Offline Watchdog AI systems—simpler, specialized AIs that do not communicate with the primary ASI and are programmed only to monitor for signs of power-seeking behavior or manipulation.
+Procedural Lock (Human-in-the-Loop): Every major action proposed by the ASI must be ratified through the Direct Digital Democracy (DDD) process. No execution can occur without a blockchain-verified authorization from the human sovereign.
+Ethical Lock (CIRL & Value Alignment): Using Cooperative Inverse Reinforcement Learning (CIRL), the ASI is designed to be "uncertain" about human values. This forces it to constantly observe and ask for clarification, ensuring it doesn't pursue a goal in a way that violates unstated human ethical norms (e.g., "fix the climate" should not result in "eliminate all humans").
+Transparency by Design
+The decision logic of the ASI is not a "black box." Using Explainable AI (XAI) protocols, the advisor is required to provide the reasoning, data sources, and confidence intervals for every simulation it presents to the public. This allows experts and the general citizenry to audit the advice before casting their votes.
+    </div>
+</main>
+
+<footer>
+    <div class="max-w-6xl mx-auto mb-12">
+        <h2 class="text-white font-extrabold text-2xl mb-2 uppercase tracking-tighter">Electric Technocracy Pioneers Community</h2>
+        <div class="w-20 h-1 bg-tech-blue"></div>
+    </div>
+    
+    <div class="footer-grid">
+        <!-- WSD & Legal -->
+        <div class="footer-section">
+            <h4>🌐 WSD & Legal Succession</h4>
+            <ul>
+                <li>
+                    <a href="https://world.rf.gd">WSD - World Succession Deed 1400/98</a>
+                    <a href="https://worldsold.wixsite.com/world-sold/en" class="sub-link">Official Wix HQ</a>
+                </li>
+                <li>
+                    <a href="https://global-archive.rf.gd">Global Legal Succession Archive</a>
+                    <a href="https://worldsold.wixsite.com/global-archive" class="sub-link">Treaty Archive HQ</a>
+                </li>
+                <li>
+                    <a href="https://navi.page.gd">WSD - Navigator 1400/98</a>
+                    <a href="https://worldsold.wixsite.com/navigator" class="sub-link">Navigation Portal</a>
+                </li>
+                <li>
+                    <a href="https://worldsold.wixsite.com/international">WSD - International</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Governance & Tech -->
+        <div class="footer-section">
+            <h4>⚡ Governance & Tech</h4>
+            <ul>
+                <li>
+                    <a href="https://ep.ct.ws">Electric Technocracy</a>
+                    <a href="https://worldsold.wixsite.com/electric-technocracy" class="sub-link">Technocracy HQ</a>
+                </li>
+                <li>
+                    <a href="https://wiki.free.nf/">International Treaty Law WIKI</a>
+                    <span class="sub-link">Legal Singularity Wiki</span>
+                </li>
+                <li>
+                    <a href="https://wiki.free.nf/index.php/Juridical_Singularity">Juridical Singularity</a>
+                    <span class="sub-link">Technological Singularity in Law</span>
+                </li>
+                <li>
+                    <a href="https://paradise.gt.tc">WSD & Electric Paradise</a>
+                    <span class="sub-link">Start-Page</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Research & Publications -->
+        <div class="footer-section">
+            <h4>📖 Research & Publications</h4>
+            <ul>
+                <li><a href="https://doi.org/10.5281/zenodo.18073084">The Next Civilization</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.18028339">Foundations of Technocracy</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.18012036">The Rise of Technocracy</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.18216674">Drittverwahrung von Verträgen</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.18505843">Legal Singularity in Int. Law</a></li>
+            </ul>
+        </div>
+
+        <!-- Media & Community -->
+        <div class="footer-section">
+            <h4>🎙️ Media & Community</h4>
+            <ul>
+                <li>
+                    <a href="https://videos.xo.je">YouTube Channel</a>
+                    <a href="https://www.youtube.com/@Staatensukzessionsurkunde-1400" class="sub-link">@Staatensukzessionsurkunde-1400</a>
+                </li>
+                <li>
+                    <a href="https://nwo.likesyou.org">Podcast Show</a>
+                    <a href="https://creators.spotify.com/pod/show/world-succession-deed" class="sub-link">Spotify Creators</a>
+                </li>
+                <li>
+                    <a href="https://podcasts.apple.com/de/podcast/world-sold-world-succession-deed-1400-98-http-world/id1786462631">Apple Podcast</a>
+                </li>
+                <li>
+                    <a href="https://community.xo.je">Zenodo Community</a>
+                    <a href="https://zenodo.org/communities/electric-technocracy" class="sub-link">Scientific Hub</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Repository & Resources -->
+        <div class="footer-section">
+            <h4>📁 Repository & Resources</h4>
+            <ul>
+                <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">GitHub Page Community</a></li>
+                <li><a href="https://repository.ct.ws">GitHub Repository</a></li>
+                <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">Community WIKI</a></li>
+                <li><a href="https://4u.free.nf">eBooks & PDF Download</a></li>
+                <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Electric_Technocracy.pdf">Visionary AI Governance PDF</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
+        <p>&copy; 2026 Electric Technocracy Pioneers Community. All rights reserved.</p>
+        <div class="flex gap-6">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="dir.html">Directory</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.getElementById('mobile-menu').classList.remove('active');
+        }
+        if (e.key === "ArrowLeft") {
+            window.location.href = "direct-digital-democracy-ddd-the-global-voting-process.html";
+        }
+        if (e.key === "ArrowRight") {
+            window.location.href = "technology-stack-infrastructure-for-governance-at-scale.html";
+        }
+    });
+
+    
+</script>
+
+</body>
+</html>
