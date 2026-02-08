@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Electric Technocracy Pioneers Community</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Electric Technocracy Pioneers is an open scientific research hub and free‑access repository for exploring Electric Technocracy, AI Governance, the Judicial Singularity, the Technological Singularity, Artificial Superintelligence (ASI), AGI, Direct Digital Democracy (DDD), Universal Basic Income, and a United World of Abundance beyond nation‑states. The platform hosts openly licensed documents, papers, wiki articles, encyclopedia entries, audio, video, images, and slides, supporting global collaboration on post‑scarcity models, future governance, and transparent digital systems.">
+    <meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Electric Technocracy Pioneers Community">
+    <meta property="og:description" content="Open scientific research hub for Electric Technocracy, AI Governance, Judicial Singularity, ASI, Direct Digital Democracy, and post-scarcity models.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Electric Technocracy Pioneers Community">
+    <meta name="twitter:description" content="Open scientific research hub for Electric Technocracy, AI Governance, Judicial Singularity, ASI, Direct Digital Democracy, and post-scarcity models.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Google Programmable Search Engine -->
+    <script async src="https://cse.google.com/cse.js?cx=86021a982e3a14848"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --nato-dark: #0a1f46;
+            --nato-blue: #004990;
+            --nato-light: #3b7bc4;
+            --pure-white: #ffffff;
+            --off-white: #f7f9fc;
+            --text-dark: #1a1a2e;
+            --text-gray: #4a4a5e;
+            --border-color: #d4dde9;
+            --accent-gold: #c9a961;
+            --shadow-sm: 0 2px 8px rgba(0, 73, 144, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 73, 144, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 73, 144, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--pure-white) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header with Logo */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-btn {
+            background: var(--nato-blue);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+
+        .hamburger-btn:hover {
+            background: var(--nato-light);
+            transform: scale(1.05);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
+            padding: 80px 30px 30px;
+        }
+
+        .menu-overlay.active {
+            right: 0;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--nato-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h3 {
+            color: var(--nato-blue);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--nato-blue);
+            padding-bottom: 8px;
+        }
+
+        .menu-link {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .menu-link:hover {
+            background: var(--off-white);
+            color: var(--nato-blue);
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--nato-dark);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--nato-dark);
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--nato-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: 2px solid var(--nato-blue);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--nato-blue);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* PDF Viewer Section */
+        .pdf-viewer-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 2px solid var(--nato-blue);
+        }
+
+        .pdf-viewer-header {
+            background: linear-gradient(135deg, var(--nato-blue), var(--nato-light));
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pdf-viewer-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .responsive-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Search Section */
+        .search-section-wrapper {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 40px;
+            border: 2px solid var(--nato-blue);
+        }
+
+        .main-search-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .main-search-input {
+            flex: 1;
+            background: rgba(0, 73, 144, 0.08);
+            color: var(--text-dark);
+            border: 2px solid var(--nato-blue);
+            padding: 18px 24px;
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .main-search-input:focus {
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 73, 144, 0.1);
+        }
+
+        .main-search-button {
+            background: var(--nato-blue);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .main-search-button:hover {
+            background: var(--nato-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 73, 144, 0.3);
+        }
+
+        .results-container {
+            display: none;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .search-query-display {
+            background: rgba(0, 73, 144, 0.05);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .search-query-display strong {
+            color: var(--nato-blue);
+            font-size: 1.1rem;
+        }
+
+        .search-section {
+            background: var(--off-white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--nato-blue);
+        }
+
+        .search-section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--border-color);
+            position: relative;
+        }
+
+        .search-section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--nato-blue), var(--accent-gold));
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .search-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nato-dark);
+            margin: 0;
+        }
+
+        .search-section p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .wiki-search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wiki-search-input {
+            flex: 1;
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .wiki-search-input:focus {
+            border-color: var(--nato-blue);
+            box-shadow: 0 0 0 3px rgba(0, 73, 144, 0.1);
+        }
+
+        .wiki-search-button {
+            background: var(--accent-gold);
+            color: var(--nato-dark);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .wiki-search-button:hover {
+            background: #d4b56f;
+            transform: translateY(-2px);
+        }
+
+        .search-engines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .engine-link {
+            display: block;
+            background: linear-gradient(135deg, var(--nato-blue), var(--nato-light));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .engine-link:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .engine-link.google {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+        }
+
+        .engine-link.bing {
+            background: linear-gradient(135deg, #008373, #00b294);
+        }
+
+        .engine-link.duckduckgo {
+            background: linear-gradient(135deg, #de5833, #f47b20);
+        }
+
+        /* Directory Index Section */
+        .directory-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+            border: 2px solid var(--nato-blue);
+        }
+
+        .directory-header {
+            background: linear-gradient(135deg, var(--nato-blue), var(--nato-light));
+            color: white;
+            padding: 20px;
+            margin: -40px -40px 30px -40px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .directory-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .info-box {
+            background-color: var(--off-white);
+            border-left: 4px solid var(--nato-blue);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: var(--nato-dark);
+            margin-bottom: 10px;
+        }
+
+        #file-list {
+            background-color: var(--off-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 300px;
+        }
+
+        #file-list h3 {
+            color: var(--nato-dark);
+            border-bottom: 2px solid var(--nato-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .file-item {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .file-item:hover {
+            background-color: rgba(0, 73, 144, 0.05);
+        }
+
+        .file-item a {
+            color: var(--nato-blue);
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+
+        .file-type {
+            background-color: var(--nato-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .error-message {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: #856404;
+        }
+
+        /* Google CSE Styling */
+        .gsc-control-cse {
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .gsc-input-box {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 8px !important;
+            background: white !important;
+        }
+
+        .gsc-search-button {
+            background: var(--accent-gold) !important;
+            border: none !important;
+            border-radius: 0 8px 8px 0 !important;
+        }
+
+        .gsc-result {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 8px !important;
+            padding: 15px !important;
+            margin-bottom: 15px !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-overlay {
+                width: 100%;
+                right: -100%;
+            }
+
+            .page-wrapper {
+                padding: 10px;
+            }
+
+            .page-header {
+                padding: 20px 15px;
+            }
+
+            .header-logo {
+                max-width: 200px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .back-link {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .search-section-wrapper {
+                padding: 20px 15px;
+            }
+
+            .search-section-wrapper h2 {
+                font-size: 1.5rem;
+            }
+
+            .main-search-form {
+                flex-direction: column;
+            }
+
+            .main-search-input {
+                padding: 14px 18px;
+                font-size: 16px;
+            }
+
+            .main-search-button {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .search-section {
+                padding: 20px 15px;
+            }
+
+            .search-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .wiki-search-form {
+                flex-direction: column;
+            }
+
+            .wiki-search-input,
+            .wiki-search-button {
+                width: 100%;
+            }
+
+            .search-engines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-viewer-section {
+                margin-bottom: 30px;
+            }
+
+            .pdf-viewer-header {
+                padding: 15px;
+            }
+
+            .pdf-viewer-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .responsive-iframe-container {
+                height: 400px;
+            }
+
+            .directory-section {
+                padding: 20px 15px;
+            }
+
+            .directory-header {
+                margin: -20px -15px 20px -15px;
+                padding: 15px;
+            }
+
+            .directory-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .info-box {
+                padding: 15px;
+            }
+
+            .file-item {
+                padding: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .file-type {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .header-logo {
+                max-width: 180px;
+            }
+
+            .search-section-wrapper h2 {
+                font-size: 1.3rem;
+            }
+
+            .responsive-iframe-container {
+                height: 300px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .responsive-iframe-container {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">☰</button>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" onclick="toggleMenu()" aria-label="Close Menu">✕</button>
+        
+        <div class="menu-section">
+            <h3>🪢 Community</h3>
+            <a href="https://zenodo.org/communities/electric-technocracy" target="_blank" class="menu-link">Electric Technocracy Pioneers Community</a>
+            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git" target="_blank" class="menu-link">⚡ GitHub Repository</a>
+            <a href="https://worldsold.wixsite.com/electric-technocracy" target="_blank" class="menu-link">💡 Electric Technocracy HQ</a>
+        </div>
+
+        <div class="menu-section">
+            <h3>📚 Resources</h3>
+            <a href="https://wiki.free.nf/" target="_blank" class="menu-link">International Treaty Law WIKI</a>
+            <a href="https://worldsold.wixsite.com/global-archive" target="_blank" class="menu-link">📑 Treaty Archive HQ</a>
+            <a href="https://worldsold.wixsite.com/world-sold" target="_blank" class="menu-link">🗺️ World Succession Deed HQ</a>
+            <a href="https://paradise.gt.tc" target="_blank" class="menu-link">🚀 Start-Page WSD & Electric Paradise</a>
+            <a href="dir.html" class="menu-link">📁 Directory</a>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">← Back to Main Page</a>
+
+        <!-- Header -->
+        <div class="page-header">
+            <h1>Unified Search &amp; Resource Portal</h1>
+            <p>Search across all Electric Technocracy resources, wikis, document viewer, and complete file directory</p>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section-wrapper">
+            <h2 style="font-size: 2rem; color: var(--nato-dark); margin-bottom: 20px; text-align: center;">🔍 Unified Search Portal</h2>
+            
+            <form class="main-search-form" onsubmit="performSearch(event)">
+                <input 
+                    type="text" 
+                    id="mainSearchInput" 
+                    class="main-search-input" 
+                    placeholder="Enter your search query..." 
+                    required
+                    autofocus
+                >
+                <button type="submit" class="main-search-button">🔍 Search All</button>
+            </form>
+
+            <div id="resultsContainer" class="results-container">
+                <div id="queryDisplay" class="search-query-display">
+                    <strong>Searching for:</strong> <span id="queryText"></span>
+                </div>
+
+                <!-- Electric Technocracy Wiki -->
+                <div class="search-section">
+                    <div class="search-section-header">
+                        <span class="section-icon">⚡</span>
+                        <h2>Electric Technocracy Wiki</h2>
+                    </div>
+                    <p>Search the official Electric Technocracy Pioneers Community Wiki</p>
+                    <form class="wiki-search-form" id="etWikiForm" action="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" method="get" target="_blank">
+                        <input type="text" name="query" id="etWikiQuery" class="wiki-search-input" placeholder="Search ET Wiki..." readonly>
+                        <button type="submit" class="wiki-search-button">Search ET Wiki →</button>
+                    </form>
+                </div>
+
+                <!-- Google Custom Search -->
+                <div class="search-section">
+                    <div class="search-section-header">
+                        <span class="section-icon">🔎</span>
+                        <h2>Google Custom Search</h2>
+                    </div>
+                    <p>Specialized search engine for Electric Technocracy content</p>
+                    <div class="gcse-search"></div>
+                </div>
+
+                <!-- One World Wiki -->
+                <div class="search-section">
+                    <div class="search-section-header">
+                        <span class="section-icon">🌍</span>
+                        <h2>One World Wiki</h2>
+                    </div>
+                    <p>Search the One World project documentation and resources</p>
+                    <form class="wiki-search-form" id="owWikiForm" action="https://github.com/MrAnonymousNWO/One_World/wiki" method="get" target="_blank">
+                        <input type="text" name="query" id="owWikiQuery" class="wiki-search-input" placeholder="Search One World Wiki..." readonly>
+                        <button type="submit" class="wiki-search-button">Search OW Wiki →</button>
+                    </form>
+                </div>
+
+                <!-- International Treaty Law Wiki -->
+                <div class="search-section">
+                    <div class="search-section-header">
+                        <span class="section-icon">⚖️</span>
+                        <h2>International Treaty Law Wiki</h2>
+                    </div>
+                    <p>Search the comprehensive international law encyclopedia</p>
+                    <form class="wiki-search-form" id="itlWikiForm" action="https://wiki.free.nf/index.php" method="get" target="_blank">
+                        <input type="text" name="search" id="itlWikiQuery" class="wiki-search-input" placeholder="Search Treaty Law Wiki..." readonly>
+                        <button type="submit" class="wiki-search-button">Search ITL Wiki →</button>
+                    </form>
+                </div>
+
+                <!-- Web Search Engines -->
+                <div class="search-section">
+                    <div class="search-section-header">
+                        <span class="section-icon">🌐</span>
+                        <h2>Web Search Engines</h2>
+                    </div>
+                    <p>Search the broader web with your query</p>
+                    <div class="search-engines-grid" id="webSearchEngines"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Viewer Section -->
+        <div class="pdf-viewer-section">
+            <div class="pdf-viewer-header">
+                <span class="section-icon">📄</span>
+                <h2>Document Viewer</h2>
+            </div>
+            <div class="responsive-iframe-container">
+                <iframe
+                    src="https://MrAnonymousNWO.github.io/One_World/wix_et_doc_iframe.html"
+                    title="One World Document Viewer"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+
+        <!-- Directory Index Section -->
+        <div class="directory-section">
+            <div class="directory-header">
+                <h2>📁 Repository File Directory</h2>
+                <p>Complete file index for search engine indexing</p>
+            </div>
+
+            <div class="info-box">
+                <h3>About This Directory</h3>
+                <p>This section automatically lists all files in the Electric Technocracy Pioneers Community GitHub repository. It helps search engines discover and index all content, including PDFs, documents, images, and other resources.</p>
+                <p><strong>Repository:</strong> <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">ET-Pioneer/Electric-Technocracy-Pioneers-Community</a></p>
+            </div>
+
+            <div id="file-list">
+                <h3>Repository Files</h3>
+                <div class="loading">Loading repository contents via GitHub API...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Main Hubs</h3>
+                    <a href="https://world.rf.gd" target="_blank" class="footer-link">🌐 WSD - World Succession Deed</a>
+                    <a href="https://global-archive.rf.gd" target="_blank" class="footer-link">🌐 Legal Succession Archive</a>
+                    <a href="https://ep.ct.ws" target="_blank" class="footer-link">🌐 Electric Technocracy</a>
+                    <a href="https://wiki.free.nf/" target="_blank" class="footer-link">📚 Treaty Law WIKI</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Research & Publications</h3>
+                    <a href="https://doi.org/10.5281/zenodo.18073084" target="_blank" class="footer-link">📖 The Next Civilization</a>
+                    <a href="https://doi.org/10.5281/zenodo.18028339" target="_blank" class="footer-link">📖 Foundations of Electric Technocracy</a>
+                    <a href="https://doi.org/10.5281/zenodo.18012036" target="_blank" class="footer-link">📖 The Rise of Electric Technocracy</a>
+                    <a href="https://doi.org/10.5281/zenodo.18505843" target="_blank" class="footer-link">📖 Legal Singularity in International Law</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Media & Social</h3>
+                    <a href="https://www.youtube.com/@Staatensukzessionsurkunde-1400" target="_blank" class="footer-link">🎥 YouTube Channel</a>
+                    <a href="https://creators.spotify.com/pod/show/world-succession-deed" target="_blank" class="footer-link">🎙️ Podcast Show</a>
+                    <a href="https://www.facebook.com/share/1ER7GbN7kM/" target="_blank" class="footer-link">🌐 Facebook</a>
+                    <a href="https://x.com/WW3Precognition" target="_blank" class="footer-link">✖️ Twitter/X</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="https://donate.gt.tc" target="_blank" class="footer-link">🎗️ Support Mission</a>
+                    <a href="https://nwo.page.gd" target="_blank" class="footer-link">🛍️ Support Shop</a>
+                    <a href="https://merch.page.gd" target="_blank" class="footer-link">🛒 Merch Store</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Electric Technocracy Pioneers Community | Open Research Hub for a Post-Scarcity World</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank" style="color: var(--accent-gold); text-decoration: none;">GitHub Repository</a> | 
+                    <a href="https://zenodo.org/communities/electric-technocracy" target="_blank" style="color: var(--accent-gold); text-decoration: none;">Zenodo Community</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== MENU FUNCTIONALITY ====================
+        
+        function toggleMenu() {
+            const menu = document.getElementById('menuOverlay');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menuOverlay');
+            const hamburger = document.querySelector('.hamburger-btn');
+            
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        // ==================== SEARCH FUNCTIONALITY ====================
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlQuery = urlParams.get('q');
+        
+        if (urlQuery) {
+            document.getElementById('mainSearchInput').value = urlQuery;
+            performSearchWithQuery(urlQuery);
+        }
+
+        function performSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('mainSearchInput').value.trim();
+            if (query) {
+                performSearchWithQuery(query);
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('q', query);
+                window.history.pushState({}, '', newUrl);
+            }
+        }
+
+        function performSearchWithQuery(query) {
+            document.getElementById('resultsContainer').classList.add('active');
+            document.getElementById('queryText').textContent = query;
+            
+            document.getElementById('etWikiQuery').value = query;
+            document.getElementById('owWikiQuery').value = query;
+            document.getElementById('itlWikiQuery').value = query;
+            
+            const gscInput = document.querySelector('.gsc-input input');
+            if (gscInput) {
+                gscInput.value = query;
+                const searchButton = document.querySelector('.gsc-search-button');
+                if (searchButton) {
+                    searchButton.click();
+                }
+            }
+            
+            populateWebSearchEngines(query);
+            document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function populateWebSearchEngines(query) {
+            const encodedQuery = encodeURIComponent(query);
+            const container = document.getElementById('webSearchEngines');
+            
+            const engines = [
+                {
+                    name: 'Google',
+                    url: `https://www.google.com/search?q=${encodedQuery}`,
+                    class: 'google',
+                    icon: '🔍'
+                },
+                {
+                    name: 'Bing',
+                    url: `https://www.bing.com/search?q=${encodedQuery}`,
+                    class: 'bing',
+                    icon: '🔎'
+                },
+                {
+                    name: 'DuckDuckGo',
+                    url: `https://duckduckgo.com/?q=${encodedQuery}`,
+                    class: 'duckduckgo',
+                    icon: '🦆'
+                }
+            ];
+            
+            container.innerHTML = engines.map(engine => `
+                <a href="${engine.url}" target="_blank" class="engine-link ${engine.class}">
+                    <span style="font-size: 1.5rem; display: block; margin-bottom: 8px;">${engine.icon}</span>
+                    Search on ${engine.name}
+                </a>
+            `).join('');
+        }
+
+        window.__gcse = {
+            callback: function() {
+                const query = document.getElementById('mainSearchInput').value.trim();
+                if (query) {
+                    const gscInput = document.querySelector('.gsc-input input');
+                    if (gscInput) {
+                        gscInput.value = query;
+                    }
+                }
+            }
+        };
+
+        // ==================== DIRECTORY FUNCTIONALITY ====================
+        
+        const REPO_OWNER = 'ET-Pioneer';
+        const REPO_NAME = 'Electric-Technocracy-Pioneers-Community';
+        const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/main?recursive=1`;
+
+        async function loadRepositoryFiles() {
+            const fileListDiv = document.getElementById('file-list');
+            
+            try {
+                const response = await fetch(GITHUB_API_URL);
+                
+                if (!response.ok) {
+                    throw new Error(`GitHub API returned status ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.tree || data.tree.length === 0) {
+                    fileListDiv.innerHTML = '<h3>Repository Files</h3><p class="error-message">No files found in repository.</p>';
+                    return;
+                }
+                
+                const files = data.tree
+                    .filter(item => item.type === 'blob')
+                    .sort((a, b) => a.path.localeCompare(b.path));
+                
+                let html = `<h3>Repository Files (${files.length} files)</h3>`;
+                
+                files.forEach(file => {
+                    const extension = file.path.split('.').pop().toLowerCase();
+                    const fileUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/main/${file.path}`;
+                    
+                    html += `
+                        <div class="file-item">
+                            <span class="file-type">${extension}</span>
+                            <a href="${fileUrl}" target="_blank" rel="noopener">${file.path}</a>
+                        </div>
+                    `;
+                });
+                
+                fileListDiv.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading repository files:', error);
+                fileListDiv.innerHTML = `
+                    <h3>Repository Files</h3>
+                    <div class="error-message">
+                        <strong>Error loading files:</strong> ${error.message}<br><br>
+                        Please visit the repository directly: 
+                        <a href="https://github.com/${REPO_OWNER}/${REPO_NAME}" target="_blank">
+                            https://github.com/${REPO_OWNER}/${REPO_NAME}
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadRepositoryFiles);
+    </script>
+
+</body>
+</html>
