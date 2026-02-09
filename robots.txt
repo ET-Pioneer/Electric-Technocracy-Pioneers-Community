@@ -6,5 +6,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.xml
-https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.php
-https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/sitemap.html
