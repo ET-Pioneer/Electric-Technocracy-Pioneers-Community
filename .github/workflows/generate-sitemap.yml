@@ -1,4 +1,4 @@
-name: Generate Sitemap
+name: Generate Full Index and Sitemap (Grouped)
 
 on:
   push:
@@ -18,34 +18,53 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Generate sitemap files
+    - name: Generate grouped index_files.html and sitemap.xml
       run: |
-        echo "Generating sitemap.xml and sitemap.html"
-
         BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
 
         echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
         echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-        echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>HTML Sitemap</title></head><body><h1>HTML Sitemap</h1><ul>' > sitemap.html
+        echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Repository File Index</title></head><body>' > index_files.html
+        echo '<h1>Repository File Index (Grouped by Folder)</h1>' >> index_files.html
 
-        find . -type f -name "*.html" ! -path "./.git/*" ! -path "./.github/*" | while read file; do
+        # Collect all files
+        mapfile -t files < <(find . -type f ! -path "./.git/*" ! -path "./.github/*" | sort)
+
+        current_dir=""
+
+        for file in "${files[@]}"; do
           clean="${file#./}"
+          dir="$(dirname "$clean")"
           url="$BASE_URL/$clean"
 
+          # Start new folder section
+          if [[ "$dir" != "$current_dir" ]]; then
+            if [[ -n "$current_dir" ]]; then
+              echo "</ul>" >> index_files.html
+            fi
+            echo "<h2>$dir</h2><ul>" >> index_files.html
+            current_dir="$dir"
+          fi
+
+          # Add file entry
+          echo "<li><a href=\"$url\">$clean</a></li>" >> index_files.html
+
+          # Add to sitemap
           echo "<url><loc>$url</loc></url>" >> sitemap.xml
-          echo "<li><a href=\"$url\">$clean</a></li>" >> sitemap.html
         done
 
-        echo '</urlset>' >> sitemap.xml
-        echo '</ul></body></html>' >> sitemap.html
+        # Close last list + HTML
+        echo "</ul></body></html>" >> index_files.html
+        echo "</urlset>" >> sitemap.xml
 
-    - name: Commit and push sitemap using PAT
+    - name: Commit and push generated files
       env:
         TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add sitemap.xml sitemap.html
-        git commit -m "Auto-update sitemap" || echo "No changes to commit"
+
+        git add sitemap.xml index_files.html
+        git commit -m "Auto-update grouped sitemap and index" || echo "No changes to commit"
         git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:main
