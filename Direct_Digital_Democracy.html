@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Direct Digital Democracy: Blockchain Governance & ASI</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Discover the Direct Digital Democracy process within Electric Technocracy. Learn how blockchain-verified voting, ASI simulations, and citizen submissions replace traditional politics to ensure transparent execution and human sovereignty in a post-national world.">
+    <meta name="keywords" content="Direct Digital Democracy, Blockchain Voting, ASI Simulations, Citizen Submissions, Global Deliberation, Algorithmic Governance, Electric Technocracy, World Succession Deed 1400/98, Transparent Audit, Liquid Democracy, Human Sovereignty, Digital Citizenship, Post-Nationalism, Global Reset, Automated Execution, Impact Modeling, Biometric ID, Decentralized Power, Peace, Resource Management, Technology Tax, UBI, Future of Voting, Smart Contracts, Open-Source Law, Policy Refinement, Digital Sovereignty, Non-Coercion, Collective Intelligence, Electronic Paradise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/electric_tech.html">
+    <meta name="theme-color" content="#004990">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Direct Digital Democracy: Blockchain Governance & ASI">
+    <meta property="og:description" content="Discover the Direct Digital Democracy process within Electric Technocracy. Learn how blockchain-verified voting, ASI simulations, and citizen submissions replace traditional politics to ensure transparent execution and human sovereignty in a post-national world.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    <meta property="og:image:alt" content="Electric Technocracy Pioneers Community — Open Research Hub">
+    <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/electric_tech.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Direct Digital Democracy: Blockchain Governance & ASI">
+    <meta name="twitter:description" content="Discover the Direct Digital Democracy process within Electric Technocracy. Blockchain-verified voting, ASI simulations, and citizen submissions replace traditional politics.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap');
+
+        :root {
+            --nato-dark: #0a1f46;
+            --nato-blue: #004990;
+            --nato-light: #3b7bc4;
+            --pure-white: #ffffff;
+            --off-white: #f7f9fc;
+            --text-dark: #1a1a2e;
+            --text-gray: #4a4a5e;
+            --border-color: #d4dde9;
+            --accent-gold: #c9a961;
+            --accent-cyan: #00A3FF;
+            --bg-dark: #0A0E27;
+            --shadow-sm: 0 2px 8px rgba(0, 73, 144, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 73, 144, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 73, 144, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--pure-white) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-logo {
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--nato-dark);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header .title-highlight {
+            color: var(--accent-cyan);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-btn {
+            background: var(--nato-blue);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+
+        .hamburger-btn:hover {
+            background: var(--nato-light);
+            transform: scale(1.05);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
+            padding: 80px 30px 30px;
+        }
+
+        .menu-overlay.active {
+            right: 0;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--nato-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h3 {
+            color: var(--nato-blue);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--nato-blue);
+            padding-bottom: 8px;
+        }
+
+        .menu-link {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .menu-link:hover {
+            background: var(--off-white);
+            color: var(--nato-blue);
+            transform: translateX(5px);
+        }
+
+        .hero-section {
+            background: var(--bg-dark);
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .circuit-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-icon {
+            color: var(--accent-cyan);
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #B8C5D6;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .theme-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .theme-tag {
+            background: rgba(0, 163, 255, 0.15);
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .accent-line {
+            width: 120px;
+            height: 4px;
+            background: var(--accent-cyan);
+            margin: 20px auto;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--border-color);
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--nato-dark);
+        }
+
+        .info-card {
+            background: var(--off-white);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .info-card h3 {
+            color: var(--nato-dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .info-card img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .dual-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .philosophy-quote {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 163, 255, 0.06), rgba(0, 73, 144, 0.04));
+            border: 1px solid rgba(0, 163, 255, 0.18);
+            border-radius: 12px;
+            padding: 28px 22px;
+            margin-bottom: 26px;
+        }
+
+        .philosophy-quote-icon {
+            color: var(--accent-cyan);
+            font-size: 42px;
+            opacity: 0.45;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .philosophy-quote-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--nato-dark);
+            line-height: 1.45;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .philosophy-quote-text .quote-highlight {
+            color: var(--accent-cyan);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .principle-item {
+            background: var(--off-white);
+            border: 1px solid rgba(0, 163, 255, 0.18);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 10px;
+            padding: 18px 18px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.25s ease;
+        }
+
+        .principle-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(0, 163, 255, 0.35);
+        }
+
+        .principle-ico {
+            color: var(--accent-cyan);
+            font-size: 22px;
+            line-height: 1;
+            margin-top: 2px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .principle-title {
+            font-weight: 800;
+            color: var(--nato-dark);
+            margin-bottom: 4px;
+        }
+
+        .principle-desc {
+            color: var(--text-gray);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .page-footer {
+            background: var(--nato-dark);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .reference-text {
+            font-size: 12px;
+            color: #6B7A8F;
+            font-family: 'Roboto Mono', monospace;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-overlay {
+                width: 100%;
+            }
+            .page-wrapper {
+                padding: 10px;
+            }
+            .page-header {
+                padding: 30px 15px;
+            }
+            .header-logo {
+                max-width: 250px;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .hero-section {
+                padding: 40px 20px;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .content-section {
+                padding: 25px 20px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .dual-column {
+                grid-template-columns: 1fr;
+            }
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+            .philosophy-quote-text {
+                font-size: 1.15rem;
+            }
+            .theme-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+            .theme-tag {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+            .header-logo {
+                max-width: 200px;
+            }
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            .section-icon {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="hamburger-menu">
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">☰</button>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" onclick="toggleMenu()" aria-label="Close Menu">✕</button>
+        
+        <div class="menu-section">
+            <h3>🪢 Community</h3>
+            <a href="https://zenodo.org/communities/electric-technocracy" target="_blank" class="menu-link">Electric Technocracy Pioneers Community</a>
+            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git" target="_blank" class="menu-link">⚡ GitHub Repository</a>
+            <a href="https://worldsold.wixsite.com/electric-technocracy" target="_blank" class="menu-link">💡 Electric Technocracy HQ</a>
+        </div>
+
+        <div class="menu-section">
+            <h3>📚 Resources</h3>
+            <a href="https://wiki.free.nf/" target="_blank" class="menu-link">International Treaty Law WIKI</a>
+            <a href="https://worldsold.wixsite.com/global-archive" target="_blank" class="menu-link">📑 Treaty Archive HQ</a>
+            <a href="https://worldsold.wixsite.com/world-sold" target="_blank" class="menu-link">🗺️ World Succession Deed HQ</a>
+            <a href="https://paradise.gt.tc" target="_blank" class="menu-link">🚀 Start-Page WSD &amp; Electric Paradise</a>
+            <a href="search.html" class="menu-link">🔎 Search</a>
+            <a href="dir.html" class="menu-link">📁 Directory</a>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+
+        <div class="page-header">
+            <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Electric Technocracy Pioneers" class="header-logo">
+            <h1><span class="title-highlight">Electric Technocracy</span> Pioneers Community</h1>
+            <p>Open scientific research hub for exploring Electric Technocracy, AI Governance, Judicial Singularity, ASI, Direct Digital Democracy, and post-scarcity models</p>
+        </div>
+
+        <div class="hero-section">
+            <canvas class="circuit-bg" id="circuitCanvas"></canvas>
+            <div class="hero-content">
+                <div class="hero-icon">⚡</div>
+                <h2 class="hero-title">Electric Technocracy</h2>
+                <p class="hero-subtitle">A Technical Framework for Post‑National Governance</p>
+                <div class="accent-line"></div>
+                <div class="theme-tags">
+                    <span class="theme-tag">Post-National Governance</span>
+                    <span class="theme-tag">Direct Digital Democracy</span>
+                    <span class="theme-tag">ASI Advisory</span>
+                    <span class="theme-tag">Tech Tax → UBI</span>
+                    <span class="theme-tag">Legal Basis: WSD 1400/98</span>
+                </div>
+                <p class="reference-text">Encyclopedia.pub (entry 59380) • Zenodo DOI: 10.5281/zenodo.18012036 • 10.5281/zenodo.18028339</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🧭</span>
+                <h2 class="section-title">Core Philosophy &amp; Principles</h2>
+            </div>
+
+            <div class="philosophy-quote">
+                <div class="philosophy-quote-icon">❝</div>
+                <p class="philosophy-quote-text">
+                    Technology serves humanity; <span class="quote-highlight">humanity remains sovereign</span>. Intelligence guides decisions; <span class="quote-highlight">collective wisdom authorizes them</span>.
+                </p>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="principle-title">Human Sovereignty</div>
+                        <div class="principle-desc">Final authority via global votes; ASI advises, humans decide.</div>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-lock-open"></i></div>
+                    <div>
+                        <div class="principle-title">Transparency by Design</div>
+                        <div class="principle-desc">Open-source algorithms, auditable ledgers, blockchain verification.</div>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div>
+                        <div class="principle-title">Non-Coercion</div>
+                        <div class="principle-desc">Voluntary participation, algorithmic accountability, human override.</div>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-lightbulb"></i></div>
+                    <div>
+                        <div class="principle-title">Rights of Self-Unfolding</div>
+                        <div class="principle-desc">Education, creativity, mobility, freedom from economic necessity.</div>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-leaf"></i></div>
+                    <div>
+                        <div class="principle-title">Ecological Integration</div>
+                        <div class="principle-desc">Sustainability as core principle; planetary boundaries respected.</div>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-ico"><i class="fas fa-infinity"></i></div>
+                    <div>
+                        <div class="principle-title">Longevity &amp; Enhancement</div>
+                        <div class="principle-desc">Life extension, ethical transhumanism, conscious evolution.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 40px;">
+                <h3><i class="fas fa-brain" style="color: var(--accent-cyan); margin-right: 10px;"></i>The Philosophical Core: Human-Centric Automation</h3>
+                <p>The fundamental premise of Electric Technocracy is that technology should liberate rather than enslave. It moves away from the "logic of scarcity"—where survival is tied to labor—toward a "logic of abundance" facilitated by machines.</p>
+                <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8; margin-top: 15px;">
+                    <li style="margin-bottom: 15px;"><strong style="color: var(--nato-dark);">Sovereignty of the Collective:</strong> Unlike traditional technocracies where "experts" rule, here the Artificial Superintelligence (ASI) acts only as a high-level advisor and simulator. The final authority for all legislative and societal decisions remains with the human population through Direct Digital Democracy (DDD).</li>
+                    <li style="margin-bottom: 15px;"><strong style="color: var(--nato-dark);">The Ethical Singularity:</strong> As machines become more capable, the system shifts the economic burden to them. This is viewed as a "technological dividend" where the wealth generated by automation is distributed to all, ensuring that human rights include the right to self-unfolding—the freedom to pursue education, creativity, and personal growth without economic pressure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🏗️</span>
+                <h2 class="section-title">The Structural Transition to Electric Technocracy</h2>
+            </div>
+
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-chart-line" style="color: var(--accent-cyan); margin-right: 10px;"></i>From Labor to Machine-Driven Abundance</h3>
+                    <p>The traditional economic model, rooted in the logic of scarcity, necessitates human labor as the primary driver of value. Electric Technocracy identifies the current technological inflection point as the catalyst for a fundamental transition. By leveraging Artificial Superintelligence (ASI) and advanced robotics, the system decouples human survival from physical or cognitive toil. This "technological dividend" is not captured by a narrow elite but redistributed through a technology tax, financing a Universal Basic Income (UBI) that ensures dignity as a baseline for all citizens.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-vote-yea" style="color: var(--accent-cyan); margin-right: 10px;"></i>Direct Digital Democracy and the Role of ASI</h3>
+                    <p>In this framework, governance is transformed from a representative partisan struggle into a streamlined, data-driven process. The ASI serves as a high-level simulator and administrative advisor, capable of processing planetary-scale variables to offer optimized policy options. However, the authority remains strictly anthropocentric. Through Direct Digital Democracy, the collective human population authorizes decisions via blockchain-verified voting, ensuring that while intelligence guides the system, wisdom and consent remain human prerogatives.</p>
+                </div>
+            </div>
+
+            <div class="dual-column" style="margin-top: 30px;">
+                <div class="info-card">
+                    <h3><i class="fas fa-balance-scale" style="color: var(--accent-cyan); margin-right: 10px;"></i>Legal Singularity: World Succession Deed 1400/98</h3>
+                    <p>The realization of this global state is predicated on a specific legal instrument: the World Succession Deed 1400/98. This document represents a "Legal Singularity," a decisive break from the fragmented system of nation-states. It facilitates a global restart of the legal system, replacing geopolitical friction and military competition with a unified administrative structure. By resolving the "treaty chain" of the old world, the Deed establishes a permanent state of peace, allowing resources previously wasted on defense to be redirected toward longevity research and ecological restoration.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-dna" style="color: var(--accent-cyan); margin-right: 10px;"></i>Ethical Transhumanism and Self-Unfolding</h3>
+                    <p>Beyond material security, the core philosophy emphasizes the "Right of Self-Unfolding." In a world where machines manage the necessities of life, the human experience shifts toward creative, intellectual, and conscious evolution. Ethical transhumanism—focused on life extension and cognitive enhancement—is treated as a public good. The ultimate goal is the achievement of an "Electronic Paradise," where humanity is liberated to explore the full potential of its consciousness within a sustainable, technologically optimized environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🏛️</span>
+                <h2 class="section-title">Governance Architecture: Beyond Nation-States</h2>
+            </div>
+
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-network-wired" style="color: var(--accent-cyan); margin-right: 10px;"></i>Post-National Architecture</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Abolition of nation-states:</strong> Westphalian model dissolves; planetary administration replaces competing territorial governments</li>
+                        <li style="margin-bottom: 15px;"><strong>Planetary-scale alignment:</strong> Governance architecture matched to global risks—climate, finance, cyber, pandemics—that transcend borders</li>
+                        <li style="margin-bottom: 15px;"><strong>Unified global law:</strong> Single interoperable legal framework replaces overlapping national jurisdictions and treaty conflicts</li>
+                        <li style="margin-bottom: 15px;"><strong>Elimination of war drivers:</strong> Territorial competition and resource conflict neutralized through shared access and coordination</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-code-branch" style="color: var(--accent-cyan); margin-right: 10px;"></i>Digital Citizenship &amp; Algorithmic Ecology</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Digital citizenship:</strong> Identity verified by biometric systems; universal access to governance platforms replaces national passports</li>
+                        <li style="margin-bottom: 15px;"><strong>Open-source governance:</strong> All algorithms, fiscal flows, and policy logic publicly auditable; transparency as constitutional principle <span style="font-style: italic; color: #6B7A8F;">(Floridi 2020)</span></li>
+                        <li style="margin-bottom: 15px;"><strong>Algorithmic ecology:</strong> Self-regulating coordination balancing local autonomy with global stability through distributed AI nodes</li>
+                        <li style="margin-bottom: 15px;"><strong>Reduced administrative redundancy:</strong> Unified systems eliminate duplicate bureaucracies, conflicting regulations, and inefficient coordination</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 30px;">
+                <h3><i class="fas fa-globe-americas" style="color: var(--accent-cyan); margin-right: 10px;"></i>Dissolution of the Westphalian Model</h3>
+                <p>The traditional nation-state system, defined by territorial borders and competing interests, is increasingly incapable of managing planetary-scale risks. Electric Technocracy advocates for the orderly dissolution of the Westphalian model, replacing fragmented jurisdictions with a unified governance architecture. This transition is anchored in the World Succession Deed 1400/98, which serves as the legal bridge to a global restart, ensuring a seamless succession from national power structures to a singular, interoperable legal reality.</p>
+            </div>
+
+            <div class="dual-column" style="margin-top: 30px;">
+                <div class="info-card">
+                    <h3><i class="fas fa-user-shield" style="color: var(--accent-cyan); margin-right: 10px;"></i>Algorithmic Ecology and Digital Citizenship</h3>
+                    <p>In this new era, citizenship is no longer a matter of geographic accident but a digital reality. Verified via biometric systems, every individual gains universal access to governance platforms, bypassing the need for national passports. This "Algorithmic Ecology" balances local autonomy with global stability through distributed AI nodes. By making all fiscal flows and policy logics publicly auditable on the blockchain, transparency becomes the primary constitutional principle, eliminating the administrative redundancy and corruption inherent in old-world bureaucracies.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-chess-knight" style="color: var(--accent-cyan); margin-right: 10px;"></i>Strategic Alignment and Elimination of Conflict</h3>
+                    <p>The elimination of nation-states removes the primary drivers of war: territorial competition and resource hoarding. By centralizing the management of global commons—such as finance, climate, and advanced technology—through Artificial Superintelligence (ASI), resources are allocated based on logic and human need rather than geopolitical leverage. This strategic alignment redirects trillions in former defense spending toward longevity, ecological restoration, and the maintenance of a post-scarcity economy for all humanity.</p>
+                </div>
+            </div>
+
+            <p class="reference-text" style="margin-top: 20px;">Sources: Held (2006) Models of Global Governance • Floridi (2020) • Encyclopedia.pub entry 59380</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🌍</span>
+                <h2 class="section-title">The Crisis of Traditional Governance</h2>
+            </div>
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-globe-americas" style="color: var(--accent-cyan); margin-right: 10px;"></i>Nation-State Obsolescence</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Global risks transcend borders:</strong> Climate instability, financial contagion, and cyber threats bypass territorial sovereignty</li>
+                        <li style="margin-bottom: 15px;"><strong>Governance-reality mismatch:</strong> Digital networks operate globally while political institutions remain territorial <span style="font-style: italic; color: #6B7A8F;">(Floridi 2020)</span></li>
+                        <li style="margin-bottom: 15px;"><strong>Inadequate coordination:</strong> National interests conflict with planetary-scale challenges requiring unified response</li>
+                        <li style="margin-bottom: 15px;"><strong>Structural inefficiency:</strong> Redundant bureaucracies, competing regulations, and administrative fragmentation</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-robot" style="color: var(--accent-cyan); margin-right: 10px;"></i>Automation Crisis</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Labor displacement at scale:</strong> <span style="color: var(--accent-cyan); font-weight: 700;">40–47%</span> of existing jobs susceptible to automation <span style="font-style: italic; color: #6B7A8F;">(Frey &amp; Osborne)</span></li>
+                        <li style="margin-bottom: 15px;"><strong>Tax base erosion:</strong> Labor-based taxation systems collapse as AI and robotics replace human productivity</li>
+                        <li style="margin-bottom: 15px;"><strong>Welfare model failure:</strong> Traditional employment-linked social safety nets become unsustainable <span style="font-style: italic; color: #6B7A8F;">(Brynjolfsson &amp; McAfee)</span></li>
+                        <li style="margin-bottom: 15px;"><strong>Need for computational governance:</strong> Complexity demands algorithmic coordination and transparent AI-assisted decision-making <span style="font-style: italic; color: #6B7A8F;">(Walther 2025)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reference-text" style="margin-top: 20px;">Sources: Brynjolfsson &amp; McAfee (2016) • Frey &amp; Osborne (2017) • Floridi (2020) • Walther (2025)</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">💡</span>
+                <h2 class="section-title">What is Electric Technocracy?</h2>
+            </div>
+            <div class="info-card">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-logo.jpg" alt="Electric Technocracy Logo">
+                <h3>Definition &amp; Architecture</h3>
+                <p>Electric Technocracy is a comprehensive governance framework that envisions the transition from traditional nation-states to a unified, technologically-driven global system. Built on the foundation of the World Succession Deed (WSD) 1400/98, this model proposes a post-national structure where Artificial Superintelligence (ASI) serves as an advisory body for objective decision-making.</p>
+            </div>
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-network-wired" style="color: var(--accent-cyan); margin-right: 10px;"></i>Core Principles</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Post-national governance model:</strong> Replaces nation-state system with digitally coordinated, automation-supported planetary order</li>
+                        <li style="margin-bottom: 15px;"><strong>Direct Digital Democracy (DDD):</strong> Citizens propose, deliberate, and vote on legislation via cryptographically secured platforms</li>
+                        <li style="margin-bottom: 15px;"><strong>ASI as non-sovereign advisor:</strong> Artificial Superintelligence provides analysis, simulation, and optimization but holds no autonomous political authority</li>
+                        <li style="margin-bottom: 15px;"><strong>Humanity remains sovereign:</strong> All decision-making power resides with collective human consent <span style="font-style: italic; color: #6B7A8F;">(Encyclopedia.pub 59380)</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-cogs" style="color: var(--accent-cyan); margin-right: 10px;"></i>Key Mechanisms &amp; Goals</h3>
+                    <ul style="list-style: none; padding-left: 0; color: var(--text-gray); line-height: 1.8;">
+                        <li style="margin-bottom: 15px;"><strong>Tech Tax → UBI:</strong> Economy funded by machine taxation; <span style="color: var(--accent-cyan); font-weight: 700;">Universal Basic Income</span> as technological dividend; humans tax-free</li>
+                        <li style="margin-bottom: 15px;"><strong>Post-scarcity sustainability:</strong> Machine productivity, renewable energy, and circular economies eliminate structural scarcity</li>
+                        <li style="margin-bottom: 15px;"><strong>Transparency &amp; ecology:</strong> Open-source algorithms, blockchain verification, and ecological integration as foundational principles</li>
+                        <li style="margin-bottom: 15px;"><strong>Ultimate objectives:</strong> Elimination of war, longevity for all, planetary administration based on equality and human flourishing</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reference-text" style="margin-top: 20px;">Source: Encyclopedia.pub entry 59380 • Zenodo DOI: 10.5281/zenodo.18028339 • Goeritz R. (2024)</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">⚖️</span>
+                <h2 class="section-title">The Juridical Singularity and the Global Succession</h2>
+            </div>
+            <div class="info-card">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/judicial_singularity.jpg" alt="Juridical Singularity Logo">
+                <h3>From Territorial Sovereignty to Algorithmic Legitimacy</h3>
+                <p>The traditional nation-state model has reached its structural limits. Territorial governance is no longer capable of managing globalized digital networks and the exponential growth of artificial intelligence. The solution lies in the activation of the "Juridical Singularity"—a unique legal event that utilizes existing international frameworks to transition into a unified global system.</p>
+            </div>
+            <div class="info-card">
+                <h3>The World Succession Deed 1400/98</h3>
+                <p>Central to this transformation is the World Succession Deed 1400/98. This document represents a pivotal legal instrument that initiates a global restart. By invoking the principles of state succession and the "Treaty Chain," it bridges the gap between old sovereign entities and a new form of technocratic governance. This is not a violation of international law, but its ultimate fulfillment through a singular, irreversible act of succession.</p>
+            </div>
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3>The Treaty Chain as a Transition Mechanism</h3>
+                    <p>The concept of the Treaty Chain (Vertragskette) ensures legal continuity. It links historical agreements—such as the NATO Status of Forces Agreement (SOFA) and various supplementary protocols—into a cohesive legal history. By activating this chain, the new global administration inherits the rights and obligations of the previous systems, preventing a legal vacuum while enabling the implementation of an algorithmic world order guided by Artificial Superintelligence (ASI).</p>
+                </div>
+                <div class="info-card">
+                    <h3>From Scarcity to the Electronic Paradise</h3>
+                    <p>The ultimate goal of this transition is the establishment of the "Electronic Paradise." In this system, the abundance generated by automated labor and AI-driven efficiency is redistributed through a technology tax. This funds a Universal Basic Income (UBI), decoupling human survival from traditional labor and ending the era of scarcity-driven conflict. The Juridical Singularity is the legal doorway to this post-scarcity civilization.</p>
+                </div>
+            </div>
+            <div class="theme-tags" style="margin-top: 20px;">
+                <span class="theme-tag">Pacta Sunt Servanda</span>
+                <span class="theme-tag">Jus Cogens 2.0</span>
+                <span class="theme-tag">Automated Justice</span>
+                <span class="theme-tag">NATO SOFA</span>
+                <span class="theme-tag">Treaty Chain</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">📜</span>
+                <h2 class="section-title">The World Succession Deed 1400/98</h2>
+            </div>
+
+            <div class="info-card">
+                <h3>The Foundation of a New Era</h3>
+                <p>The World Succession Deed 1400/98 is not merely a contract; it is the cornerstone of a global transition. Historically, international law was defined by the competition of sovereign nation-states. This deed marks the "Legal Singularity," an irreversible point where the old legal systems are reset to accommodate a unified world. By moving beyond the fiction of independent power centers, humanity can finally address global challenges through a singular, efficient framework known as Electric Technocracy.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>The Mechanism of Electric Technocracy</h3>
+                <p>At the heart of this vision is the integration of Artificial Superintelligence (ASI) and robotics. Unlike previous industrial revolutions that burdened the working class, the rise of the machines in an Electric Technocracy serves to liberate mankind. Through a comprehensive technology tax, the unprecedented wealth generated by automated labor is funneled directly back to the population via an Unconditional Basic Income (UBI). This ensures that abundance is a shared reality rather than a concentrated privilege.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Humanity in a Post-Scarcity World</h3>
+                <p>The transition to this "Electronic Paradise" redefines what it means to be human. With the elimination of economic necessity, individuals are free to pursue the "Rights of Self-Unfolding"—focusing on creativity, education, and ethical transhumanism. The goal is a peaceful, borderless society where technology facilitates longevity and collective wisdom, guided by direct democratic participation. The World Succession Deed provides the legal legitimacy to turn this technological utopia into a stable, global reality.</p>
+            </div>
+
+            <div class="theme-tags" style="margin-top: 18px;">
+                <span class="theme-tag">World Succession Deed</span>
+                <span class="theme-tag">Legal Singularity</span>
+                <span class="theme-tag">Human Sovereignty</span>
+                <span class="theme-tag">Technology Tax → UBI</span>
+                <span class="theme-tag">Electronic Paradise</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🪢</span>
+                <h2 class="section-title">Electric Technocracy Pioneers Community</h2>
+            </div>
+            <div class="info-card">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et_community.png" alt="ET Community Logo">
+                <h3>Open Scientific Research Hub</h3>
+                <p>The Electric Technocracy Pioneers Community is an open-access repository and collaborative research platform dedicated to exploring the future of governance, law, and society. We host openly licensed documents, research papers, wiki articles, encyclopedia entries, and multimedia content supporting global collaboration on post-scarcity models, future governance systems, and transparent digital frameworks.</p>
+                <p>Our community brings together researchers, futurists, legal experts, technologists, and visionaries working toward a united world of abundance beyond traditional nation-states. All resources are freely accessible to support the advancement of knowledge and the transition to Electric Technocracy.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">🗳️</span>
+                <h2 class="section-title">Direct Digital Democracy (DDD)</h2>
+            </div>
+
+            <div class="info-card" style="background: linear-gradient(135deg, rgba(0, 163, 255, 0.06), rgba(0, 73, 144, 0.04)); border-left: 4px solid var(--accent-cyan);">
+                <h3><i class="fas fa-vote-yea" style="color: var(--accent-cyan); margin-right: 10px;"></i>Secure Global Participation Through Blockchain-Verified Voting</h3>
+                <p>Direct Digital Democracy represents a fundamental transformation of governance from representative partisan systems to direct citizen participation. Through cryptographically secured platforms, every individual holds equal voice in legislative decisions, enabled by transparent blockchain verification and ASI-powered impact modeling.</p>
+            </div>
+
+            <div style="background: #0A0E27; border-radius: 12px; padding: 40px; margin: 30px 0; position: relative; overflow: hidden;">
+                <canvas id="processCircuitCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.08; pointer-events: none;"></canvas>
+                
+                <div style="position: relative; z-index: 10;">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #FFFFFF; margin-bottom: 30px; text-align: center;">The 5-Step DDD Process</h3>
+                    
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 163, 255, 0.3); border-radius: 12px; padding: 25px 15px; text-align: center; transition: all 0.3s ease;">
+                            <div style="width: 40px; height: 40px; background: #00A3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0A0E27; margin: 0 auto 15px;">1</div>
+                            <i class="fas fa-lightbulb" style="font-size: 32px; color: #00A3FF; display: block; margin-bottom: 15px;"></i>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px;">Citizen Submissions</div>
+                            <div style="font-size: 13px; color: #9BA8B8; line-height: 1.4;">Ideas and problems submitted by any global citizen</div>
+                        </div>
+                        
+                        <div style="font-size: 28px; color: #00A3FF; opacity: 0.5;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 163, 255, 0.3); border-radius: 12px; padding: 25px 15px; text-align: center; transition: all 0.3s ease;">
+                            <div style="width: 40px; height: 40px; background: #00A3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0A0E27; margin: 0 auto 15px;">2</div>
+                            <i class="fas fa-brain" style="font-size: 32px; color: #00A3FF; display: block; margin-bottom: 15px;"></i>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px;">ASI Simulations</div>
+                            <div style="font-size: 13px; color: #9BA8B8; line-height: 1.4;">Impact modeling and outcome predictions by superintelligence</div>
+                        </div>
+                        
+                        <div style="font-size: 28px; color: #00A3FF; opacity: 0.5;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 163, 255, 0.3); border-radius: 12px; padding: 25px 15px; text-align: center; transition: all 0.3s ease;">
+                            <div style="width: 40px; height: 40px; background: #00A3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0A0E27; margin: 0 auto 15px;">3</div>
+                            <i class="fas fa-comments" style="font-size: 32px; color: #00A3FF; display: block; margin-bottom: 15px;"></i>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px;">Global Deliberation</div>
+                            <div style="font-size: 13px; color: #9BA8B8; line-height: 1.4;">Public portals for discussion and refinement</div>
+                        </div>
+                        
+                        <div style="font-size: 28px; color: #00A3FF; opacity: 0.5;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 163, 255, 0.3); border-radius: 12px; padding: 25px 15px; text-align: center; transition: all 0.3s ease;">
+                            <div style="width: 40px; height: 40px; background: #00A3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0A0E27; margin: 0 auto 15px;">4</div>
+                            <i class="fas fa-vote-yea" style="font-size: 32px; color: #00A3FF; display: block; margin-bottom: 15px;"></i>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px;">Secure Voting</div>
+                            <div style="font-size: 13px; color: #9BA8B8; line-height: 1.4;">Blockchain + optional liquid delegation</div>
+                        </div>
+                        
+                        <div style="font-size: 28px; color: #00A3FF; opacity: 0.5;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 163, 255, 0.3); border-radius: 12px; padding: 25px 15px; text-align: center; transition: all 0.3s ease;">
+                            <div style="width: 40px; height: 40px; background: #00A3FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #0A0E27; margin: 0 auto 15px;">5</div>
+                            <i class="fas fa-check-circle" style="font-size: 32px; color: #00A3FF; display: block; margin-bottom: 15px;"></i>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px;">Execution &amp; Audit</div>
+                            <div style="font-size: 13px; color: #9BA8B8; line-height: 1.4;">Transparent implementation with continuous monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dual-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-lightbulb" style="color: var(--accent-cyan); margin-right: 10px;"></i>1. Citizen Submissions</h3>
+                    <p><strong>Universal Access:</strong> Any global citizen can submit policy proposals, identify problems, or suggest improvements through decentralized governance portals</p>
+                    <p style="margin-top: 10px;"><strong>No Gatekeepers:</strong> Elimination of political parties and representatives; direct pathway from individual to planetary decision-making</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-brain" style="color: var(--accent-cyan); margin-right: 10px;"></i>2. ASI Simulations</h3>
+                    <p><strong>Impact Modeling:</strong> Artificial Superintelligence analyzes proposals using planetary-scale data to predict outcomes, resource requirements, and unintended consequences</p>
+                    <p style="margin-top: 10px;"><strong>Advisory Role:</strong> ASI provides analysis but holds no decision authority; humans retain final sovereignty</p>
+                </div>
+            </div>
+
+            <div class="dual-column" style="margin-top: 30px;">
+                <div class="info-card">
+                    <h3><i class="fas fa-comments" style="color: var(--accent-cyan); margin-right: 10px;"></i>3. Global Deliberation</h3>
+                    <p><strong>Public Portals:</strong> Open discussion platforms where citizens debate proposals, ask questions, and refine policy details collaboratively</p>
+                    <p style="margin-top: 10px;"><strong>Collective Intelligence:</strong> Transparent argumentation and evidence-based discussion replace backroom political negotiations</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-vote-yea" style="color: var(--accent-cyan); margin-right: 10px;"></i>4. Secure Voting</h3>
+                    <p><strong>Blockchain Verification:</strong> Cryptographically secured voting ensures one person, one vote with complete anonymity and auditability</p>
+                    <p style="margin-top: 10px;"><strong>Liquid Delegation:</strong> Optional: citizens may delegate voting power to trusted experts on specific topics while retaining override capability</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 30px;">
+                <h3><i class="fas fa-check-circle" style="color: var(--accent-cyan); margin-right: 10px;"></i>5. Execution &amp; Audit</h3>
+                <p><strong>Transparent Implementation:</strong> All policy execution tracked on public ledgers; automated smart contracts enforce compliance without human discretion</p>
+                <p style="margin-top: 10px;"><strong>Continuous Monitoring:</strong> Real-time data feeds show implementation progress, resource allocation, and outcome metrics accessible to all citizens</p>
+                <p style="margin-top: 10px;"><strong>Accountability Loop:</strong> Failures trigger automatic review processes; successful policies inform future ASI modeling</p>
+            </div>
+
+            <div class="info-card" style="margin-top: 30px; background: var(--off-white); border-left: 4px solid var(--accent-cyan);">
+                <h3><i class="fas fa-shield-alt" style="color: var(--accent-cyan); margin-right: 10px;"></i>The Technical Architecture of Participation</h3>
+                <p>Direct Digital Democracy eliminates the intermediary layer of professional politicians and party machinery. By anchoring identity in biometric verification and decisions in blockchain consensus, the system ensures that governance power cannot be captured by elites or corrupted through lobbying. The World Succession Deed 1400/98 provides the legal foundation for this transition, establishing human sovereignty as the constitutional bedrock while utilizing ASI as a non-sovereign computational advisor.</p>
+            </div>
+
+            <div class="dual-column" style="margin-top: 30px;">
+                <div class="info-card">
+                    <h3><i class="fas fa-users-cog" style="color: var(--accent-cyan); margin-right: 10px;"></i>From Representative to Direct Sovereignty</h3>
+                    <p>Traditional democracy was constrained by communication limitations—requiring representatives to travel to capitals and vote on behalf of constituents. Digital infrastructure removes this bottleneck. Every citizen becomes a legislator, participating directly in decisions that affect their lives. Political parties, campaign finance, and lobbying become obsolete relics of an analog era. The elimination of this intermediary class redirects power to its rightful source: the collective human population.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-network-wired" style="color: var(--accent-cyan); margin-right: 10px;"></i>Algorithmic Facilitation Without Control</h3>
+                    <p>The ASI layer serves as a sophisticated decision-support system, not a ruler. It processes complex interdependencies—climate models, economic flows, resource constraints—at speeds and scales impossible for human cognition alone. But the ASI cannot execute policy; it can only advise. This architectural separation ensures that while intelligence guides the process, wisdom and consent remain exclusively human. Non-coercion and human override are hardcoded into the system's constitutional logic.</p>
+                </div>
+            </div>
+
+            <p class="reference-text" style="margin-top: 20px;">Sources: Encyclopedia.pub entry 59380 • Zenodo DOI: 10.5281/zenodo.18028339 • Goeritz R. (2024)</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2 class="section-title">International Treaty Law WIKI</h2>
+            </div>
+            <div class="info-card">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/ilawsociallogo.jpg" alt="International Law Wiki Logo">
+                <h3>Comprehensive Legal Encyclopedia</h3>
+                <p>The International Treaty Law WIKI serves as a comprehensive encyclopedia documenting international law, treaty systems, state succession principles, and the legal foundations for global governance transformation. This resource provides in-depth analysis of the Treaty Chain mechanism, the World Succession Deed 1400/98, and the juridical basis for post-national governance structures.</p>
+                <p>Accessible at <a href="https://wiki.free.nf/" target="_blank" style="color: var(--accent-cyan); font-weight: 600;">wiki.free.nf</a>, the WIKI offers open-access legal research supporting the theoretical and practical implementation of Electric Technocracy.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Main Hubs</h3>
+                    <a href="https://world.rf.gd" target="_blank" class="footer-link">🌐 WSD - World Succession Deed</a>
+                    <a href="https://global-archive.rf.gd" target="_blank" class="footer-link">🌐 Legal Succession Archive</a>
+                    <a href="https://ep.ct.ws" target="_blank" class="footer-link">🌐 Electric Technocracy</a>
+                    <a href="https://wiki.free.nf/" target="_blank" class="footer-link">📚 Treaty Law WIKI</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Research &amp; Publications</h3>
+                    <a href="https://doi.org/10.5281/zenodo.18073084" target="_blank" class="footer-link">📖 The Next Civilization</a>
+                    <a href="https://doi.org/10.5281/zenodo.18028339" target="_blank" class="footer-link">📖 Foundations of Electric Technocracy</a>
+                    <a href="https://doi.org/10.5281/zenodo.18012036" target="_blank" class="footer-link">📖 The Rise of Electric Technocracy</a>
+                    <a href="https://doi.org/10.5281/zenodo.18505843" target="_blank" class="footer-link">📖 Legal Singularity in International Law</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Media &amp; Social</h3>
+                    <a href="https://www.youtube.com/@Staatensukzessionsurkunde-1400" target="_blank" class="footer-link">🎥 YouTube Channel</a>
+                    <a href="https://creators.spotify.com/pod/show/world-succession-deed" target="_blank" class="footer-link">🎙️ Podcast Show</a>
+                    <a href="https://www.facebook.com/share/1ER7GbN7kM/" target="_blank" class="footer-link">🌐 Facebook</a>
+                    <a href="https://x.com/WW3Precognition" target="_blank" class="footer-link">✖️ Twitter/X</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="https://donate.gt.tc" target="_blank" class="footer-link">🎗️ Support Mission</a>
+                    <a href="https://nwo.page.gd" target="_blank" class="footer-link">🛍️ Support Shop</a>
+                    <a href="https://merch.page.gd" target="_blank" class="footer-link">🛒 Merch Store</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Electric Technocracy Pioneers Community | Open Research Hub for a Post-Scarcity World</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank" style="color: var(--accent-gold); text-decoration: none;">GitHub Repository</a> | 
+                    <a href="https://zenodo.org/communities/electric-technocracy" target="_blank" style="color: var(--accent-gold); text-decoration: none;">Zenodo Community</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menuOverlay');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menuOverlay');
+            const hamburger = document.querySelector('.hamburger-btn');
+            
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        const canvas = document.getElementById('circuitCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 1400;
+        canvas.height = 400;
+       
+        ctx.strokeStyle = '#00A3FF';
+        ctx.lineWidth = 1;
+       
+        for (let i = 0; i < 400; i += 60) {
+            ctx.beginPath();
+            ctx.moveTo(0, i);
+            ctx.lineTo(1400, i);
+            ctx.stroke();
+        }
+       
+        for (let i = 0; i < 1400; i += 80) {
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, 400);
+            ctx.stroke();
+        }
+       
+        ctx.fillStyle = '#00A3FF';
+        for (let y = 0; y < 400; y += 120) {
+            for (let x = 0; x < 1400; x += 160) {
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+       
+        ctx.strokeStyle = '#00A3FF';
+        ctx.lineWidth = 1.5;
+        for (let i = 0; i < 12; i++) {
+            const x1 = Math.random() * 1400;
+            const y1 = Math.random() * 400;
+            const x2 = x1 + (Math.random() * 200 - 100);
+            const y2 = y1 + (Math.random() * 200 - 100);
+           
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+        }
+
+        const processCanvas = document.getElementById('processCircuitCanvas');
+        if (processCanvas) {
+            const pctx = processCanvas.getContext('2d');
+            const pRect = processCanvas.getBoundingClientRect();
+            processCanvas.width = pRect.width;
+            processCanvas.height = pRect.height;
+            
+            pctx.strokeStyle = '#00A3FF';
+            pctx.lineWidth = 1;
+            
+            for (let i = 0; i < processCanvas.height; i += 80) {
+                pctx.beginPath();
+                pctx.moveTo(0, i);
+                pctx.lineTo(processCanvas.width, i);
+                pctx.stroke();
+            }
+            
+            for (let i = 0; i < processCanvas.width; i += 100) {
+                pctx.beginPath();
+                pctx.moveTo(i, 0);
+                pctx.lineTo(i, processCanvas.height);
+                pctx.stroke();
+            }
+        }
+    </script>
+
+</body>
+</html>

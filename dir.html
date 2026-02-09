@@ -1,253 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repository Directory - Electric Technocracy Pioneers Community</title>
-    
-    <meta name="description" content="Automatic directory listing of all files in the Electric Technocracy Pioneers Community repository for search engine indexing.">
-    <meta name="robots" content="index, follow">
-    
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <style>
-        :root {
-            --nato-dark: #0a1f46;
-            --nato-blue: #004990;
-            --white: #ffffff;
-            --off-white: #f8f9fa;
-            --text-main: #111111;
-            --link-blue: #0066cc;
-            --border-light: #e0e0e0;
-            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repository Directory - Electric Technocracy Pioneers Community</title>
+<meta name="description" content="Electric Technocracy Pioneers is an open scientific research hub and free-access repository for exploring Electric Technocracy, AI Governance, the Judicial Singularity, and future governance models.">
+<meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
+<meta name="robots" content="index, follow">
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<link rel="canonical" href="[https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/](https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/)">
 
-        body {
-            background-color: var(--white);
-            color: var(--text-main);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            padding: 20px;
-        }
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="ET-Pioneers">
 
-        header {
-            background-color: var(--nato-dark);
-            color: white;
-            padding: 30px 20px;
-            border-bottom: 5px solid var(--nato-blue);
-            margin-bottom: 30px;
-            border-radius: 4px;
-        }
+<meta property="og:type" content="website">
+<meta property="og:url" content="[https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/](https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/)">
+<meta property="og:title" content="Electric Technocracy Pioneers Community">
+<meta property="og:description" content="Open research hub for Electric Technocracy, AI Governance, and the Singularity. Access documents, wiki entries, and technical papers.">
+<meta property="og:image" content="[https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png](https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png)">
 
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="[https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/](https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/)">
+<meta property="twitter:title" content="Electric Technocracy Pioneers Community">
+<meta property="twitter:description" content="Open scientific research hub for AI Governance and Direct Digital Democracy.">
+<meta property="twitter:image" content="[https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png](https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png)">
 
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+<style>
+    :root {
+        --nato-dark: #0a1f46;
+        --nato-blue: #004990;
+        --white: #ffffff;
+        --off-white: #f8f9fa;
+        --text-main: #111111;
+        --link-blue: #0066cc;
+        --border-light: #e0e0e0;
+        --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        --footer-bg: #f1f3f5;
+    }
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: var(--nato-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .back-link:hover {
-            background-color: var(--nato-dark);
-        }
+    body {
+        background-color: var(--white);
+        color: var(--text-main);
+        font-family: var(--font-main);
+        line-height: 1.6;
+        padding: 20px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    header {
+        background-color: var(--nato-dark);
+        color: white;
+        padding: 30px 20px;
+        border-bottom: 5px solid var(--nato-blue);
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
 
-        .info-box {
-            background-color: var(--off-white);
-            border-left: 4px solid var(--nato-blue);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-        }
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
 
-        .info-box h2 {
-            color: var(--nato-dark);
-            margin-bottom: 10px;
-        }
+    header p {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
 
-        #file-list {
-            background-color: white;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            padding: 20px;
-            min-height: 400px;
-        }
+    .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: var(--nato-blue);
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-        #file-list h2 {
-            color: var(--nato-dark);
-            border-bottom: 2px solid var(--nato-blue);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+    .back-link:hover {
+        background-color: var(--nato-dark);
+    }
 
-        .file-item {
-            padding: 12px;
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
-        .file-item:hover {
-            background-color: var(--off-white);
-        }
+    .info-box {
+        background-color: var(--off-white);
+        border-left: 4px solid var(--nato-blue);
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
 
-        .file-item a {
-            color: var(--link-blue);
-            text-decoration: none;
-            flex: 1;
-        }
+    .info-box h2 {
+        color: var(--nato-dark);
+        margin-bottom: 10px;
+    }
 
-        .file-item a:hover {
-            text-decoration: underline;
-        }
+    #file-list {
+        background-color: white;
+        border: 1px solid var(--border-light);
+        border-radius: 4px;
+        padding: 20px;
+        min-height: 400px;
+    }
 
-        .file-type {
-            background-color: var(--nato-blue);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+    #file-list h2 {
+        color: var(--nato-dark);
+        border-bottom: 2px solid var(--nato-blue);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-            font-style: italic;
-        }
+    .file-item {
+        padding: 12px;
+        border-bottom: 1px solid var(--border-light);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border-light);
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
+    .file-item:hover {
+        background-color: var(--off-white);
+    }
 
-        .error-message {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-    </style>
+    .file-item a {
+        color: var(--link-blue);
+        text-decoration: none;
+        flex: 1;
+    }
+
+    .file-item a:hover {
+        text-decoration: underline;
+    }
+
+    .file-type {
+        background-color: var(--nato-blue);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* Footer Design */
+    footer {
+        margin-top: 60px;
+        padding: 40px 20px;
+        background-color: var(--footer-bg);
+        border-top: 5px solid var(--nato-dark);
+        border-radius: 4px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-col h3 {
+        color: var(--nato-dark);
+        font-size: 1rem;
+        border-bottom: 2px solid var(--nato-blue);
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .footer-col a {
+        color: #444;
+        text-decoration: none;
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+        transition: all 0.2s ease;
+        display: block;
+    }
+
+    .footer-col a:hover {
+        color: var(--link-blue);
+        padding-left: 5px;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid var(--border-light);
+        color: #777;
+        font-size: 0.85rem;
+    }
+
+    .copyright a {
+        color: var(--nato-blue);
+        text-decoration: none;
+    }
+
+    .error-message {
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+</style>
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📁 Repository Directory</h1>
-            <p>Electric Technocracy Pioneers Community - File Index for Search Engines</p>
-        </header>
+<div class="container">
+<header>
+<h1>📁 Repository Directory</h1>
+<p>Electric Technocracy Pioneers Community - File Index for Search Engines</p>
+</header>
+    <a href="index.html" class="back-link">← Back to Homepage</a>
 
-        <a href="index.html" class="back-link">← Back to Homepage</a>
-
-        <div class="info-box">
-            <h2>About This Directory</h2>
-            <p>This page automatically lists all files in the Electric Technocracy Pioneers Community GitHub repository. It is designed to help search engines like Google discover and index all content, including PDFs, documents, images, and other resources.</p>
-            <p><strong>Repository:</strong> <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">ET-Pioneer/Electric-Technocracy-Pioneers-Community</a></p>
-        </div>
-
-        <div id="file-list">
-            <h2>Repository Files</h2>
-            <div class="loading">Loading repository contents via GitHub API...</div>
-        </div>
-
-        <footer>
-            <p>© 2026 Electric Technocracy Pioneers Community | <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community">GitHub Repository</a> | <a href="index.html">Home</a></p>
-        </footer>
+    <div class="info-box">
+        <h2>About This Directory</h2>
+        <p>This page automatically lists all files in the Electric Technocracy Pioneers Community GitHub repository. It is designed to help search engines like Google discover and index all content, including PDFs, documents, images, and other resources.</p>
+        <p><strong>Repository:</strong> <a href="[https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community](https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community)" target="_blank">ET-Pioneer/Electric-Technocracy-Pioneers-Community</a></p>
     </div>
 
-    <script>
-        // GitHub repository information
-        const REPO_OWNER = 'ET-Pioneer';
-        const REPO_NAME = 'Electric-Technocracy-Pioneers-Community';
-        const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/main?recursive=1`;
+    <div id="file-list">
+        <h2>Repository Files</h2>
+        <div class="loading">Loading repository contents via GitHub API...</div>
+    </div>
 
-        // Fetch repository contents
-        async function loadRepositoryFiles() {
-            const fileListDiv = document.getElementById('file-list');
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Main Hubs</h3>
+                    <a href="https://world.rf.gd" target="_blank" class="footer-link">🌐 WSD 1400/98</a>
+                    <a href="https://worldsold.wixsite.com/world-sold/en" target="_blank" class="footer-link">🗺️ WSD HQ (EN)</a>
+                    <a href="https://global-archive.rf.gd" target="_blank" class="footer-link">📑 Legal Archive</a>
+                    <a href="https://worldsold.wixsite.com/global-archive" target="_blank" class="footer-link">📚 Archive HQ</a>
+                    <a href="https://ep.ct.ws" target="_blank" class="footer-link">⚡ Electric Technocracy</a>
+                    <a href="https://worldsold.wixsite.com/electric-technocracy" target="_blank" class="footer-link">💡 ET HQ</a>
+                    <a href="https://navi.page.gd" target="_blank" class="footer-link">🧭 Navigator 1400/98</a>
+                    <a href="https://worldsold.wixsite.com/navigator" target="_blank" class="footer-link">🗺️ Navigator HQ</a>
+                    <a href="https://worldsold.wixsite.com/international" target="_blank" class="footer-link">🌍 WSD International</a>
+                    <a href="https://paradise.gt.tc" target="_blank" class="footer-link">🚀 Electric Paradise</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Research & Publications</h3>
+                    <a href="https://doi.org/10.5281/zenodo.18073084" target="_blank" class="footer-link">📖 The Next Civilization</a>
+                    <a href="https://doi.org/10.5281/zenodo.18028339" target="_blank" class="footer-link">📖 Foundations of ET</a>
+                    <a href="https://doi.org/10.5281/zenodo.18012036" target="_blank" class="footer-link">📖 Rise of ET</a>
+                    <a href="https://doi.org/10.5281/zenodo.18216674" target="_blank" class="footer-link">📖 Drittverwahrung (DE)</a>
+                    <a href="https://doi.org/10.5281/zenodo.18505843" target="_blank" class="footer-link">📖 Legal Singularity</a>
+                    <a href="https://zenodo.org/communities/electric-technocracy" target="_blank" class="footer-link">🗂️ Zenodo Community</a>
+                    <a href="https://4u.free.nf" target="_blank" class="footer-link">📘 eBooks & PDFs</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Community & Resources</h3>
+                    <a href="https://community.xo.je" target="_blank" class="footer-link">🪢 ET Pioneers</a>
+                    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/" target="_blank" class="footer-link">💡 GitHub Page</a>
+                    <a href="https://repository.ct.ws" target="_blank" class="footer-link">⚡ GitHub Repo</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" target="_blank" class="footer-link">📁 Community Wiki</a>
+                    <a href="https://wiki.free.nf/" target="_blank" class="footer-link">📚 Treaty Law Wiki</a>
+                    <a href="https://wiki.free.nf/index.php/Juridical_Singularity" target="_blank" class="footer-link">🕳️ Juridical Singularity</a>
+                    <a href="https://cse.google.com/cse?cx=86021a982e3a14848" target="_blank" class="footer-link">🔍 Search Engine</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Encyclopedia & Articles</h3>
+                    <a href="https://encyclopedia.pub/entry/59380" target="_blank" class="footer-link">📜 Electric Technocracy</a>
+                    <a href="https://encyclopedia.pub/entry/59410" target="_blank" class="footer-link">📜 Treaty Chains</a>
+                    <a href="https://encyclopedia.pub/entry/59414" target="_blank" class="footer-link">📜 Third-Party Custody</a>
+                    <a href="https://de.m.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken" target="_blank" class="footer-link">🏰 Kreuzberg (DE)</a>
+                    <a href="https://en.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken" target="_blank" class="footer-link">🏰 Kreuzberg (EN)</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Media & Videos</h3>
+                    <a href="https://videos.xo.je" target="_blank" class="footer-link">🎥 Video Portal</a>
+                    <a href="https://www.youtube.com/@Staatensukzessionsurkunde-1400" target="_blank" class="footer-link">📺 YouTube Channel</a>
+                    <a href="https://youtu.be/cbyME1y4m4o" target="_blank" class="footer-link">📽️ UBI Explainer</a>
+                    <a href="https://youtu.be/zGXLeYJsAtc" target="_blank" class="footer-link">🌍 Dream Your State</a>
+                    <a href="https://youtu.be/KTL6imKT3_w" target="_blank" class="footer-link">🗺️ Start Your Country</a>
+                    <a href="https://youtu.be/ToPHDtEA-JI" target="_blank" class="footer-link">📜 Modern Microstate</a>
+                    <a href="https://youtu.be/WsJetlIjF5Q" target="_blank" class="footer-link">🛠️ DIY Sovereignty</a>
+                    <a href="https://youtu.be/JSk13GnVMdU" target="_blank" class="footer-link">🚀 Nation in 30 Days</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Podcasts & Audio</h3>
+                    <a href="https://nwo.likesyou.org" target="_blank" class="footer-link">🎙️ Podcast Portal</a>
+                    <a href="https://creators.spotify.com/pod/show/world-succession-deed" target="_blank" class="footer-link">🎧 Spotify Podcast</a>
+                    <a href="https://podcasts.apple.com/de/podcast/world-sold-world-succession-deed-1400-98-http-world/id1786462631" target="_blank" class="footer-link">🍏 Apple Podcast</a>
+                    <a href="https://open.spotify.com/episode/1oTeGrNnXazJmkBdyH0Uhz" target="_blank" class="footer-link">🎧 UBI Episode</a>
+                    <a href="https://listen.free.nf" target="_blank" class="footer-link">🎧 SoundCloud</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Music & Protest</h3>
+                    <a href="https://open.spotify.com/artist/4y6vveUrD0JDdymjTUWTx3" target="_blank" class="footer-link">🎶 ET Sound Collective</a>
+                    <a href="https://open.spotify.com/playlist/6gaGFsnID15ZbtbORp3uRg" target="_blank" class="footer-link">🔘 DJ Playlist</a>
+                    <a href="https://music.page.gd" target="_blank" class="footer-link">🪖 Anti-War Music</a>
+                    <a href="https://u.pcloud.link/publink/show?code=0Z8jWC5Z9eG2iGcELwJdrikBBCArhzNjeu0V" target="_blank" class="footer-link">🌪️ Music Vault</a>
+                    <a href="https://e.pcloud.link/publink/show?code=kZyS7NZxAFQ4DPUaCJu9EhLjkXixYefdXO7" target="_blank" class="footer-link">☁️ Videos Vault</a>
+                    <a href="https://e.pcloud.link/publink/show?code=0Zhu7NZOByIyjsD1WbWNhaDlHUvCQBAXjF7" target="_blank" class="footer-link">💨 Podcast Vault</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>AI Chats & Interactive</h3>
+                    <a href="https://chat-wsd.rf.gd" target="_blank" class="footer-link">🗣️ WSD Chat</a>
+                    <a href="https://chat-et.rf.gd" target="_blank" class="footer-link">🗣️ ET Paradise Chat</a>
+                    <a href="https://chat-kb.rf.gd" target="_blank" class="footer-link">🗣️ Nation Building Chat</a>
+                    <a href="https://micro.page.gd" target="_blank" class="footer-link">🏝️ Micronation Portal</a>
+                    <a href="https://micronation.page.gd" target="_blank" class="footer-link">🏝️ Found Your State</a>
+                    <a href="https://notebooklm.google.com/notebook/50392ebe-71ad-45fa-8301-362415be9890" target="_blank" class="footer-link">🌚 Blacksite Berlin AI</a>
+                    <a href="https://notebooklm.google.com/notebook/f422a75d-6b67-412d-b87a-26a8d5c653d9" target="_blank" class="footer-link">🧿 Tabellion Scandal AI</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Stories & Blogs</h3>
+                    <a href="https://g.co/gemini/share/9fe07106afff" target="_blank" class="footer-link">🖼️ Slactivist's Guide</a>
+                    <a href="https://ab.page.gd" target="_blank" class="footer-link">📜 Buyer's Memoir</a>
+                    <a href="https://blacksite.iblogger.org" target="_blank" class="footer-link">🌚 Blacksite Blog</a>
+                    <a href="https://ubi.gt.tc" target="_blank" class="footer-link">📚 UBI Portal</a>
+                    <a href="https://g.co/gemini/share/4a457895642b" target="_blank" class="footer-link">🖼️ Wishmaster Story</a>
+                    <a href="https://worldsold.wixsite.com/electric-technocracy/post/ubi-unconditional-basic-income-electronic-technocracy" target="_blank" class="footer-link">👍 UBI Blog (EN)</a>
+                    <a href="https://worldsold.wixsite.com/electric-technocracy/de/post/bge-bedingungsloses-grundeinkommen-elektronische-technokratie" target="_blank" class="footer-link">👍 BGE Blog (DE)</a>
+                    <a href="https://worldsold.wixsite.com/world-sold/en/post/ai-chat-now-or-never-establish-your-own-state" target="_blank" class="footer-link">🏴 Found State (EN)</a>
+                    <a href="https://worldsold.wixsite.com/world-sold/post/deinen-eigenen-staat-gruenden-souveraenität-mit-ki-chat-begleitung" target="_blank" class="footer-link">🏴 Staat gründen (DE)</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>PDF Resources</h3>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Electric_Technocracy.pdf" target="_blank" class="footer-link">🔗 ET Vision System</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/English_turenne_barracks_treaty_1400_98_06_10_1998_nato_brd_nl.PDF" target="_blank" class="footer-link">📑 Treaty 1400/98</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Micronation_Made_Easy.pdf" target="_blank" class="footer-link">🏝️ Micronations Easy</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/State_Founding_for_Dummies_How_to_Start_Your_Own_Country.pdf" target="_blank" class="footer-link">®️ State for Dummies</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Trillions%20for%20the%20Future-AI%2C%20Power%2C%20and%20Post-Scarcity%20-%20Electric%20Technocracy.pdf" target="_blank" class="footer-link">🤖 Trillions Future</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20Universal%20Basic%20Income%20And%20The%20Electric%20Technocracy.pdf" target="_blank" class="footer-link">💱 UBI & ET</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20and%20the%20Future%20of%20Humanity%20%E2%80%93%20From%20Work%20to%20Electric%20Technocracy.pdf" target="_blank" class="footer-link">💲 UBI Future</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World-Sold-Non-fiction-Succession-Deed.pdf" target="_blank" class="footer-link">⚖️ WSD Explained</a>
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World_Sold_State_succession_deed_1400.pdf" target="_blank" class="footer-link">🗺️ World Sold Treaty</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Archives & Documents</h3>
+                    <a href="https://mranonymousnwo.github.io/One_World/" target="_blank" class="footer-link">👁️ Treaty Viewer</a>
+                    <a href="https://archive.org/details/turenne_kaserne_vertrag_1400_98_06_10_1998_nato_brd_nl_vn_itu_hns" target="_blank" class="footer-link">📝 Federal Archives</a>
+                    <a href="https://drive.google.com/drive/folders/1aq6KJnGlzD7ZieVDD5wTHbE_2hfoi2pw" target="_blank" class="footer-link">☁️ Google Drive</a>
+                    <a href="https://mega.nz/folder/0qN23TzB#6EFkueLyOaZEWD4aLNk1fQ" target="_blank" class="footer-link">☁️ Mega.nz Drive</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Social Media</h3>
+                    <a href="https://www.facebook.com/share/1ER7GbN7kM/" target="_blank" class="footer-link">🌐 FB World Sold</a>
+                    <a href="https://www.facebook.com/share/1DEMSyrrAt/" target="_blank" class="footer-link">🤖 FB Electric Tech</a>
+                    <a href="https://www.facebook.com/groups/528455169898378/" target="_blank" class="footer-link">🎗️ FB Humans & Machines</a>
+                    <a href="https://www.facebook.com/share/1CZ2JE3Sjb/" target="_blank" class="footer-link">🚀 FB Profile</a>
+                    <a href="https://x.com/WW3Precognition" target="_blank" class="footer-link">✖️ X: Cassandra</a>
+                    <a href="https://x.com/i/lists/1890805076249182663" target="_blank" class="footer-link">📃 X List Cassandra</a>
+                    <a href="https://x.com/NWO_BOOKS" target="_blank" class="footer-link">✖️ X: Welt verkauft</a>
+                    <a href="https://x.com/i/lists/1880937835307425922" target="_blank" class="footer-link">📄 X List Welt</a>
+                    <a href="https://x.com/NWO_Support" target="_blank" class="footer-link">✖️ X: NWO Support</a>
+                    <a href="https://x.com/i/lists/1952924134679150999" target="_blank" class="footer-link">📄 X List Support</a>
+                    <a href="https://x.com/Electrocozy" target="_blank" class="footer-link">✖️ X: ET Sound</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Corruption & Scandals</h3>
+                    <a href="https://turenne-barracks.blogspot.com/2025/12/tasc-tabellion-doerfert-wohnpark-scam.html?m=1" target="_blank" class="footer-link">🧿 TASC Corruption Blog</a>
+                    <a href="https://notebooklm.google.com/notebook/f422a75d-6b67-412d-b87a-26a8d5c653d9" target="_blank" class="footer-link">🧿 Tabellion AI Chat</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Support Our Mission</h3>
+                    <a href="https://donate.gt.tc" target="_blank" class="footer-link">🎗️ Donate</a>
+                    <a href="https://nwo.page.gd" target="_blank" class="footer-link">🛍️ Support Shop</a>
+                    <a href="https://merch.page.gd" target="_blank" class="footer-link">🛒 Merch Store</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Electric Technocracy Pioneers Community | Open Research Hub for a Post-Scarcity World</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">GitHub Repository</a> | 
+                    <a href="https://zenodo.org/communities/electric-technocracy" target="_blank">Zenodo Community</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const REPO_OWNER = 'ET-Pioneer';
+    const REPO_NAME = 'Electric-Technocracy-Pioneers-Community';
+    const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/main?recursive=1`;
+
+    async function loadRepositoryFiles() {
+        const fileListDiv = document.getElementById('file-list');
+        
+        try {
+            const response = await fetch(GITHUB_API_URL);
+            if (!response.ok) throw new Error(`GitHub API returned status ${response.status}`);
             
-            try {
-                const response = await fetch(GITHUB_API_URL);
-                
-                if (!response.ok) {
-                    throw new Error(`GitHub API returned status ${response.status}`);
-                }
-                
-                const data = await response.json();
-                
-                if (!data.tree || data.tree.length === 0) {
-                    fileListDiv.innerHTML = '<h2>Repository Files</h2><p class="error-message">No files found in repository.</p>';
-                    return;
-                }
-                
-                // Filter and sort files
-                const files = data.tree
-                    .filter(item => item.type === 'blob') // Only files, not directories
-                    .sort((a, b) => a.path.localeCompare(b.path));
-                
-                // Build HTML
-                let html = '<h2>Repository Files (' + files.length + ' files)</h2>';
-                
-                files.forEach(file => {
-                    const extension = file.path.split('.').pop().toLowerCase();
-                    const fileUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/main/${file.path}`;
-                    const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${file.path}`;
-                    
-                    html += `
-                        <div class="file-item">
-                            <span class="file-type">${extension}</span>
-                            <a href="${fileUrl}" target="_blank" rel="noopener">${file.path}</a>
-                        </div>
-                    `;
-                });
-                
-                fileListDiv.innerHTML = html;
-                
-            } catch (error) {
-                console.error('Error loading repository files:', error);
-                fileListDiv.innerHTML = `
-                    <h2>Repository Files</h2>
-                    <div class="error-message">
-                        <strong>Error loading files:</strong> ${error.message}<br><br>
-                        Please visit the repository directly: 
-                        <a href="https://github.com/${REPO_OWNER}/${REPO_NAME}" target="_blank">
-                            https://github.com/${REPO_OWNER}/${REPO_NAME}
-                        </a>
+            const data = await response.json();
+            if (!data.tree || data.tree.length === 0) {
+                fileListDiv.innerHTML = '<h2>Repository Files</h2><p class="error-message">No files found in repository.</p>';
+                return;
+            }
+            
+            const files = data.tree
+                .filter(item => item.type === 'blob')
+                .sort((a, b) => a.path.localeCompare(b.path));
+            
+            let html = '<h2>Repository Files (' + files.length + ' files)</h2>';
+            files.forEach(file => {
+                const extension = file.path.split('.').pop().toLowerCase();
+                const fileUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/main/${file.path}`;
+                html += `
+                    <div class="file-item">
+                        <span class="file-type">${extension}</span>
+                        <a href="${fileUrl}" target="_blank" rel="noopener">${file.path}</a>
                     </div>
                 `;
-            }
+            });
+            
+            fileListDiv.innerHTML = html;
+        } catch (error) {
+            fileListDiv.innerHTML = `
+                <h2>Repository Files</h2>
+                <div class="error-message">
+                    <strong>Error loading files:</strong> ${error.message}<br><br>
+                    Please visit: <a href="[https://github.com/$](https://github.com/$){REPO_OWNER}/${REPO_NAME}" target="_blank">Repository</a>
+                </div>
+            `;
         }
+    }
 
-        // Load files when page loads
-        document.addEventListener('DOMContentLoaded', loadRepositoryFiles);
-    </script>
+    document.addEventListener('DOMContentLoaded', loadRepositoryFiles);
+</script>
+
 </body>
 </html>

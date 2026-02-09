@@ -1350,13 +1350,12 @@
         function closeNav() {
             document.getElementById("myNav").style.width = "0";
         }
-        
         function changeLanguage() {
-            const desktopLang = document.getElementById('language');
-            const mobileLang = document.getElementById('mobileLang');
-            const lang = desktopLang ? desktopLang.value : mobileLang.value;
-            
-            const langMap = {
+    // Prioritize whichever select triggered the event
+    const eventSelect = event?.target || document.activeElement;
+    const lang = eventSelect?.value || '';
+    
+    const langMap = {
                 'en': 'index.html',
                 'de': 'de_hub.html',
                 'es': 'es_hub.html',
