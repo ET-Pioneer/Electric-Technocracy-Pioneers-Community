@@ -167,6 +167,7 @@ No programming experience is required — only curiosity and willingness to shar
   />
 </div>
 
+
 **🗺️ No borders. No masters. Just progress.**
 
 **↑ RUN**
