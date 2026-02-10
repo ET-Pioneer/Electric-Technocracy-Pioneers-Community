@@ -1,10 +1,13 @@
+Richtig.
+
+
 name: Full Indexing: Repo + Pages + Wiki + Search
 
 on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 3   *"
   workflow_dispatch:
 
 permissions:
@@ -19,22 +22,109 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Ensure .nojekyll exists
-      run: echo "" > .nojekyll
+      run: |
+        echo "" > .nojekyll
 
     - name: Clone Wiki repository
       run: |
         git clone https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_repo
 
-    - name: Mirror Wiki into /wiki and generate SEO HTML
+    - name: Generate full index and sitemap
       run: |
+        BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
+        WIKIURLBASE="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki"
+
+        # --- Create sitemap header ---
+        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+        # --- Create HTML index with SEO header + search ---
+        cat > index_files.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Electric Technocracy Community Search Portal – AI Governance for a Post-Scarcity Future</title>
+
+<meta name="description" content="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models. Join global thinkers shaping ethical, sustainable, AI-driven civilization frameworks.">
+
+<meta name="keywords" content="Electric Technocracy, AI governance, AGI safety, UBI, Longevity, Post-scarcity, Futurism, Decentralized governance, Ethical AI, AI alignment, Digital democracy, Technocratic systems, AI policy, Sustainable innovation, Transhumanism, Life extension, Community governance, AI-driven society, Future civilization, Open-source governance, Collective intelligence, AI ethics, Automation economy, Universal basic income, Post-labor society, AI research community, Next-gen governance, Societal transformation, Tech-enabled democracy, Global coordination">
+
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+
+searchBox {
+  width: 100%; padding: 12px; font-size: 16px;
+  border: 1px solid #ccc; border-radius: 6px;
+  margin-bottom: 20px;
+}
+h1 { margin-top: 0; }
+h2, h3 { margin-top: 24px; }
+</style>
+</head>
+
+<body>
+<h1>Electric Technocracy Community – Global File & Wiki Index</h1>
+<input type="text" id="searchBox" placeholder="Search files, wiki pages, PDFs, images…">
+EOF
+
+        echo '<h2>Repository Files</h2>' >> index_files.html
+
+        # --- Index Repository Files (grouped by folder) ---
+        mapfile -t files < <(find . -type f ! -path "./.git/" ! -path "./.github/" | sort)
+
+        current_dir=""
+
+        for file in "${files[@]}"; do
+          clean="${file#./}"
+          dir="$(dirname "$clean")"
+          url="$BASE_URL/$clean"
+          lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          if [[ "$dir" != "$current_dir" ]]; then
+            if [[ -n "$current_dir" ]]; then
+              echo "</ul>" >> index_files.html
+            fi
+            echo "<h3>$dir</h3><ul>" >> index_files.html
+            current_dir="$dir"
+          fi
+
+          echo "<li><a href=\"$url\">$clean</a></li>" >> index_files.html
+          echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
+        done
+
+        echo "</ul>" >> index_files.html
+
+        # --- Index Wiki Pages ---
+        echo '<h2>Wiki Pages</h2><ul>' >> index_files.html
+
+        if ls wiki_repo/*.md > /dev/null 2>&1; then
+          for file in wiki_repo/*.md; do
+            page="$(basename "$file" .md)"
+            url="$WIKIURLBASE/$page"
+            lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+            echo "<li><a href=\"$url\">Wiki: $page</a></li>" >> index_files.html
+            echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
+          done
+        fi
+
+        echo "</ul>" >> index_files.html
+- name: Mirror Wiki into /wiki and generate SEO HTML
+      run: |
+        # Clean old mirrors
         rm -rf wiki wiki_html
         mkdir -p wiki wiki_html
 
-        cp -a wiki_repo/*.md wiki/ || echo "No .md files found in wiki_repo"
+        # Copy raw wiki markdown files
+        cp -a wikirepo/*.md wiki/ || echo "No .md files found in wikirepo"
 
+        # SEO metadata
         META_DESC="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models."
         META_KEYS="Electric Technocracy, AI governance, AGI safety, UBI, Longevity, Post-scarcity, Futurism, Decentralized governance, Ethical AI, AI alignment, Digital democracy, Technocratic systems, AI policy, Sustainable innovation, Transhumanism, Life extension, Community governance, AI-driven society, Future civilization, Open-source governance, Collective intelligence, AI ethics, Automation economy, Universal basic income, Post-labor society, AI research community, Next-gen governance, Societal transformation, Tech-enabled democracy, Global coordination"
 
+        # Generate HTML wrappers for each wiki page
         for file in wiki/*.md; do
           [ -e "$file" ] || continue
           base="$(basename "$file" .md)"
@@ -53,87 +143,31 @@ jobs:
 <body>
 <pre>
 EOF
+
           cat "$file" >> "$out"
           echo "</pre></body></html>" >> "$out"
         done
-
-    - name: Generate full index and sitemap
-      run: |
-        BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
-
-        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-
-        cat > index_files.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Electric Technocracy Community Search Portal – AI Governance for a Post-Scarcity Future</title>
-<meta name="description" content="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models.">
-<meta name="keywords" content="Electric Technocracy, AI governance, AGI safety, UBI, Longevity, Post-scarcity, Futurism, Decentralized governance, Ethical AI, AI alignment, Digital democracy, Technocratic systems, AI policy, Sustainable innovation, Transhumanism, Life extension, Community governance, AI-driven society, Future civilization, Open-source governance, Collective intelligence, AI ethics, Automation economy, Universal basic income, Post-labor society, AI research community, Next-gen governance, Societal transformation, Tech-enabled democracy, Global coordination">
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-#searchBox { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px; }
-h1 { margin-top: 0; }
-h2, h3 { margin-top: 24px; }
-</style>
-</head>
-<body>
-<h1>Electric Technocracy Community – Global File & Wiki Index</h1>
-<input type="text" id="searchBox" placeholder="Search files, wiki pages, PDFs, images…">
-EOF
-
-        echo '<h2>Repository Files</h2>' >> index_files.html
-
-        mapfile -t files < <(find . -type f ! -path "./.git/*" ! -path "./.github/*" | sort)
-
-        current_dir=""
-
-        for file in "${files[@]}"; do
-          clean="${file#./}"
-          dir="$(dirname "$clean")"
-          url="$BASE_URL/$clean"
-          lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          if [[ "$dir" != "$current_dir" ]]; then
-            if [[ -n "$current_dir" ]]; then echo "</ul>" >> index_files.html; fi
-            echo "<h3>$dir</h3><ul>" >> index_files.html
-            current_dir="$dir"
-          fi
-
-          echo "<li><a href=\"$url\">$clean</a></li>" >> index_files.html
-          echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
-        done
-
-        echo "</ul>" >> index_files.html
-
-        echo '<h2>Wiki Pages (HTML SEO Version)</h2><ul>' >> index_files.html
-
-        for file in wiki_html/*.html; do
-          page="$(basename "$file")"
-          url="$BASE_URL/wiki_html/$page"
-          lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          echo "<li><a href=\"$url\">$page</a></li>" >> index_files.html
-          echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
-        done
-
-        echo "</ul>" >> index_files.html
-
+        # --- Add search script and close HTML ---
         cat >> index_files.html << 'EOF'
 <script>
 document.getElementById("searchBox").addEventListener("input", function () {
-    const q = this.value.toLowerCase();
-    document.querySelectorAll("h2, h3").forEach(section => {
+    const query = this.value.toLowerCase();
+    const sections = document.querySelectorAll("h2, h3");
+
+    sections.forEach(section => {
         const list = section.nextElementSibling;
         if (!list || list.tagName !== "UL") return;
+
         let visible = false;
-        list.querySelectorAll("li").forEach(item => {
-            const match = item.textContent.toLowerCase().includes(q);
+        const items = list.querySelectorAll("li");
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const match = text.includes(query);
             item.style.display = match ? "" : "none";
             if (match) visible = true;
         });
+
         section.style.display = visible ? "" : "none";
         list.style.display = visible ? "" : "none";
     });
@@ -143,6 +177,7 @@ document.getElementById("searchBox").addEventListener("input", function () {
 </html>
 EOF
 
+        # --- Close sitemap ---
         echo '</urlset>' >> sitemap.xml
 
     - name: Commit and push generated files
@@ -151,6 +186,7 @@ EOF
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add sitemap.xml index_files.html wiki wiki_html .nojekyll
-        git commit -m "Full auto-index update (Repo + Pages + Wiki Mirror + SEO HTML + Search)" || echo "No changes to commit"
+
+        git add sitemap.xml index_files.html .nojekyll
+        git commit -m "Full auto-index update (Repo + Pages + Wiki + Search)" || echo "No changes to commit"
         git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:main
