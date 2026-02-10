@@ -152,7 +152,12 @@ No programming experience is required — only curiosity and willingness to shar
 **Electric Technocracy Pioneers** is a long‑term, open, global effort to document and analyze the structures, ideas, and implications of Electric Technocracy.By contributing, you help build a **transparent, accessible archive** that anyone can study, expand, and reinterpret.
 
 <div align="center">
-  <img src="URL" width="250" />
+  <img 
+    src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/et-pioneers.png"
+    width="250"
+    style="clip-path: circle(50% at 50% 50%);"
+    alt="Electric Technocracy Pioneers Community"
+  />
 </div>
 
 **🗺️ No borders. No masters. Just progress.**
