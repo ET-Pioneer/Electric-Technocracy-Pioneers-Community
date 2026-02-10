@@ -5,6 +5,9 @@ Welcome to the **Electric Technocracy Pioneers** repository.This space serves as
 
 Electric Technocracy Pioneers is a community for independent researchers exploring future governance, digital systems, and open knowledge. It brings together innovators, analysts, and creators who advance transparent, data‑driven societal models and share multidisciplinary work for global accessibility
 ========================================================
+<div align="center">
+  <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/fd7f7466bd726df8a47407d08b458ef372132068/images/logo/et_community.png?raw=true" width="250" height="250" />
+</div>
 
 **🌐 Purpose of the Community**
 -------------------------------
