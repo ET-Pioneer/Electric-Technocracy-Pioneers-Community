@@ -31,19 +31,41 @@ jobs:
           rm -rf wiki_encyclopedia
           mkdir -p wiki_encyclopedia
 
-      - name: Convert Wiki Markdown to HTML using template
+      - name: Install Asciidoctor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y asciidoctor
+
+      - name: Convert Wiki Markdown and AsciiDoc to HTML using template
         run: |
           TEMPLATE="wiki_encyclopedia.html"
 
+          # Process Markdown files
           for file in wiki_repo/*.md; do
             [ -e "$file" ] || continue
             base="$(basename "$file" .md)"
             output="wiki_encyclopedia/${base}.html"
 
-            # Extract Markdown content
             CONTENT=$(sed 's/$/<br>/' "$file")
 
-            # Insert into template
+            awk -v content="$CONTENT" '
+              /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
+                print content
+                next
+              }
+              { print }
+            ' "$TEMPLATE" > "$output"
+          done
+
+          # Process AsciiDoc files
+          for file in wiki_repo/*.adoc; do
+            [ -e "$file" ] || continue
+            base="$(basename "$file" .adoc)"
+            output="wiki_encyclopedia/${base}.html"
+
+            asciidoctor -o temp_adoc.html "$file"
+            CONTENT=$(sed 's/$/<br>/' temp_adoc.html)
+
             awk -v content="$CONTENT" '
               /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
                 print content
@@ -79,7 +101,6 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          # Add all files
           find . -type f \
             ! -path "./.git/*" \
             ! -path "./.github/*" \
