@@ -41,10 +41,29 @@ jobs:
             title="Electric Technocracy Wiki – ${base}"
             out="wiki_html/${base}.html"
 
+            # Write HTML header
             cat > "$out" <<EOF
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$title</title>
+<meta name="description" content="$META_DESC">
+<meta name="keywords" content="$META_KEYS">
+</head>
+<body>
+<pre>
+EOF
 
+            # Insert markdown content
             cat "$file" >> "$out"
-            echo "</pre></body></html>" >> "$out"
+
+            # Close HTML
+            cat >> "$out" <<EOF
+</pre>
+</body>
+</html>
+EOF
           done
 
       - name: Generate full index and sitemap
@@ -54,7 +73,11 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
+          # Start index file
           cat > index_files.html << 'EOF'
+<h1>Repository Index</h1>
+<input id="searchBox" placeholder="Search..." style="width:100%;padding:8px;font-size:16px;margin-bottom:20px;">
+EOF
 
           echo '<h2>Repository Files</h2>' >> index_files.html
 
@@ -65,7 +88,6 @@ jobs:
             | sort)
 
           current_dir=""
-
           for file in "${files[@]}"; do
             clean="${file#./}"
             dir="$(dirname "$clean")"
@@ -101,6 +123,7 @@ jobs:
 
           echo "</ul>" >> index_files.html
 
+          # Add search script
           cat >> index_files.html << 'EOF'
 <script>
 document.getElementById("searchBox").addEventListener("input", function () {
