@@ -42,17 +42,7 @@ jobs:
             out="wiki_html/${base}.html"
 
             cat > "$out" <<EOF
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>${title}</title>
-<meta name="description" content="${META_DESC}">
-<meta name="keywords" content="${META_KEYS}">
-</head>
-<body>
-<pre>
-EOF
+
             cat "$file" >> "$out"
             echo "</pre></body></html>" >> "$out"
           done
