@@ -1,8 +1,8 @@
-name: "Full Indexing: Repo + Pages + Wiki + Search"
+name: "Full Indexing: Repo + Pages + Wiki + Templates"
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   schedule:
     - cron: "0 3 * * *"
   workflow_dispatch:
@@ -26,125 +26,70 @@ jobs:
           rm -rf wiki_repo
           git clone https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_repo
 
-      - name: Mirror Wiki into /wiki and generate SEO HTML
+      - name: Prepare wiki output directory
         run: |
-          rm -rf wiki wiki_html
-          mkdir -p wiki wiki_html
-          cp -a wiki_repo/*.md wiki/ 2>/dev/null || echo "No .md files found in wiki_repo"
+          rm -rf wiki_encyclopedia
+          mkdir -p wiki_encyclopedia
 
-          META_DESC="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models."
-          META_KEYS="Electric Technocracy, AI governance, AGI safety, UBI, Longevity, Post-scarcity, Futurism, Decentralized governance, Ethical AI, AI alignment, Digital democracy, Technocratic systems, AI policy, Sustainable innovation, Transhumanism, Life extension, Community governance, AI-driven society, Future civilization, Open-source governance, Collective intelligence, AI ethics, Automation economy, Universal basic income, Post-labor society, AI research community, Next-gen governance, Societal transformation, Tech-enabled democracy, Global coordination"
+      - name: Convert Wiki Markdown to HTML using template
+        run: |
+          TEMPLATE="wiki_encyclopedia.html"
 
-          for file in wiki/*.md; do
+          for file in wiki_repo/*.md; do
             [ -e "$file" ] || continue
             base="$(basename "$file" .md)"
-            title="Electric Technocracy Wiki – ${base}"
-            out="wiki_html/${base}.html"
+            output="wiki_encyclopedia/${base}.html"
 
-            # Write HTML header
-            cat > "$out" << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>$title</title>
-<meta name="description" content="$META_DESC">
-<meta name="keywords" content="$META_KEYS">
-</head>
-<body>
-<pre>
-EOF
+            # Extract Markdown content
+            CONTENT=$(sed 's/$/<br>/' "$file")
 
-            # Insert markdown content
-            cat "$file" >> "$out"
-
-            # Close HTML
-            cat >> "$out" << 'EOF'
-</pre>
-</body>
-</html>
-EOF
+            # Insert into template
+            awk -v content="$CONTENT" '
+              /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
+                print content
+                next
+              }
+              { print }
+            ' "$TEMPLATE" > "$output"
           done
 
-      - name: Generate full index and sitemap
+      - name: Generate directory listing using template
+        run: |
+          TEMPLATE="directory.html"
+          OUTPUT="directory.html"
+
+          FILELIST=$(find . -type f \
+            ! -path "./.git/*" \
+            ! -path "./.github/*" \
+            ! -path "./wiki_repo/*" \
+            | sed 's/^.\///' | sort)
+
+          awk -v content="$FILELIST" '
+            /<!-- WORKFLOW WILL INSERT DIRECTORY CONTENT HERE -->/ {
+              print content
+              next
+            }
+            { print }
+          ' "$TEMPLATE" > "$OUTPUT"
+
+      - name: Generate sitemap.xml
         run: |
           BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
 
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          # Start index file
-          cat > index_files.html << 'EOF'
-<h1>Repository Index</h1>
-<input id="searchBox" placeholder="Search..." style="width:100%;padding:8px;font-size:16px;margin-bottom:20px;">
-EOF
-
-          echo '<h2>Repository Files</h2>' >> index_files.html
-
-          mapfile -t files < <(find . -type f \
+          # Add all files
+          find . -type f \
             ! -path "./.git/*" \
             ! -path "./.github/*" \
             ! -path "./wiki_repo/*" \
-            | sort)
-
-          current_dir=""
-          for file in "${files[@]}"; do
-            clean="${file#./}"
-            dir="$(dirname "$clean")"
-            url="$BASE_URL/$clean"
-            lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-            if [[ "$dir" != "$current_dir" ]]; then
-              if [[ -n "$current_dir" ]]; then echo "</ul>" >> index_files.html; fi
-              echo "<h3>$dir</h3><ul>" >> index_files.html
-              current_dir="$dir"
-            fi
-
-            echo "<li><a href=\"$url\">$clean</a></li>" >> index_files.html
-            echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
-          done
-
-          if [[ -n "$current_dir" ]]; then
-            echo "</ul>" >> index_files.html
-          fi
-
-          echo '<h2>Wiki Pages (HTML SEO Version)</h2><ul>' >> index_files.html
-
-          shopt -s nullglob
-          for file in wiki_html/*.html; do
-            page="$(basename "$file")"
-            url="$BASE_URL/wiki_html/$page"
-            lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-            echo "<li><a href=\"$url\">$page</a></li>" >> index_files.html
-            echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
-          done
-          shopt -u nullglob
-
-          echo "</ul>" >> index_files.html
-
-          # Add search script
-          cat >> index_files.html << 'EOF'
-<script>
-document.getElementById("searchBox").addEventListener("input", function () {
-    const q = this.value.toLowerCase();
-    document.querySelectorAll("h2, h3").forEach(section => {
-        const list = section.nextElementSibling;
-        if (!list || list.tagName !== "UL") return;
-        let visible = false;
-        list.querySelectorAll("li").forEach(item => {
-            const match = item.textContent.toLowerCase().includes(q);
-            item.style.display = match ? "" : "none";
-            if (match) visible = true;
-        });
-        section.style.display = visible ? "" : "none";
-        list.style.display = visible ? "" : "none";
-    });
-});
-</script>
-</body>
-</html>
-EOF
+            | while read file; do
+                clean="${file#./}"
+                url="$BASE_URL/$clean"
+                lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+                echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
+              done
 
           echo '</urlset>' >> sitemap.xml
 
@@ -154,6 +99,6 @@ EOF
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add sitemap.xml index_files.html wiki wiki_html .nojekyll
-          git commit -m "Full auto-index update (Repo + Pages + Wiki Mirror + SEO HTML + Search)" || echo "No changes to commit"
-          git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:master
+          git add sitemap.xml directory.html wiki_encyclopedia .nojekyll
+          git commit -m "Automated index update (Repo + Wiki + Templates + Sitemap)" || echo "No changes to commit"
+          git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:main
