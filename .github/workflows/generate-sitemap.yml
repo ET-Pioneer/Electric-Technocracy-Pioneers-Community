@@ -1,4 +1,4 @@
-name: "Full Indexing: Repo + Pages + Wiki + Templates"
+name: "Full Indexing: Render ALL Wiki Formats"
 
 on:
   push:
@@ -31,48 +31,45 @@ jobs:
           rm -rf wiki_encyclopedia
           mkdir -p wiki_encyclopedia
 
-      - name: Install Asciidoctor
+      - name: Install converters (Pandoc + Asciidoctor)
         run: |
           sudo apt-get update
-          sudo apt-get install -y asciidoctor
+          sudo apt-get install -y pandoc asciidoctor
 
-      - name: Convert Wiki Markdown and AsciiDoc to HTML using template
+      - name: Convert ALL Wiki formats to HTML using template
         run: |
           TEMPLATE="wiki_encyclopedia.html"
 
-          # Process Markdown files
-          for file in wiki_repo/*.md; do
-            [ -e "$file" ] || continue
-            base="$(basename "$file" .md)"
-            output="wiki_encyclopedia/${base}.html"
+          # Supported extensions
+          EXTENSIONS="md adoc mediawiki creole org rst textile pod rdoc txt"
 
-            CONTENT=$(sed 's/$/<br>/' "$file")
+          for ext in $EXTENSIONS; do
+            for file in wiki_repo/*.$ext; do
+              [ -e "$file" ] || continue
 
-            awk -v content="$CONTENT" '
-              /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
-                print content
-                next
-              }
-              { print }
-            ' "$TEMPLATE" > "$output"
-          done
+              base="$(basename "$file" .$ext)"
+              output="wiki_encyclopedia/${base}.html"
 
-          # Process AsciiDoc files
-          for file in wiki_repo/*.adoc; do
-            [ -e "$file" ] || continue
-            base="$(basename "$file" .adoc)"
-            output="wiki_encyclopedia/${base}.html"
+              # Convert based on type
+              case "$ext" in
+                adoc)
+                  asciidoctor -o temp.html "$file"
+                  ;;
+                *)
+                  pandoc "$file" -f $ext -t html -o temp.html
+                  ;;
+              esac
 
-            asciidoctor -o temp_adoc.html "$file"
-            CONTENT=$(sed 's/$/<br>/' temp_adoc.html)
+              CONTENT=$(sed 's/$/<br>/' temp.html)
 
-            awk -v content="$CONTENT" '
-              /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
-                print content
-                next
-              }
-              { print }
-            ' "$TEMPLATE" > "$output"
+              awk -v content="$CONTENT" '
+                /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
+                  print content
+                  next
+                }
+                { print }
+              ' "$TEMPLATE" > "$output"
+            done
           done
 
       - name: Generate directory listing using template
@@ -121,5 +118,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add sitemap.xml directory.html wiki_encyclopedia .nojekyll
-          git commit -m "Automated index update (Repo + Wiki + Templates + Sitemap)" || echo "No changes to commit"
+          git commit -m "Automated index update (ALL Wiki Formats Rendered)" || echo "No changes to commit"
           git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:main
