@@ -1,8 +1,8 @@
-name: Full Indexing: Repo + Pages + Wiki + Search
+name: "Full Indexing: Repo + Pages + Wiki + Search"
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   schedule:
     - cron: "0 3 * * *"
   workflow_dispatch:
