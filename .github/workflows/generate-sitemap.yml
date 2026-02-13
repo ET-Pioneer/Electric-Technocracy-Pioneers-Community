@@ -30,7 +30,6 @@ jobs:
         run: |
           rm -rf wiki wiki_html
           mkdir -p wiki wiki_html
-
           cp -a wiki_repo/*.md wiki/ 2>/dev/null || echo "No .md files found in wiki_repo"
 
           META_DESC="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models."
