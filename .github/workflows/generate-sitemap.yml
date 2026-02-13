@@ -55,24 +55,6 @@ jobs:
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
           cat > index_files.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Electric Technocracy Community Search Portal – AI Governance for a Post-Scarcity Future</title>
-<meta name="description" content="Electric Technocracy Community exploring AI governance, AGI safety, UBI, longevity, post-scarcity systems, and future-ready societal models.">
-<meta name="keywords" content="Electric Technocracy, AI governance, AGI safety, UBI, Longevity, Post-scarcity, Futurism, Decentralized governance, Ethical AI, AI alignment, Digital democracy, Technocratic systems, AI policy, Sustainable innovation, Transhumanism, Life extension, Community governance, AI-driven society, Future civilization, Open-source governance, Collective intelligence, AI ethics, Automation economy, Universal basic income, Post-labor society, AI research community, Next-gen governance, Societal transformation, Tech-enabled democracy, Global coordination">
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-#searchBox { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px; }
-h1 { margin-top: 0; }
-h2, h3 { margin-top: 24px; }
-</style>
-</head>
-<body>
-<h1>Electric Technocracy Community – Global File & Wiki Index</h1>
-<input type="text" id="searchBox" placeholder="Search files, wiki pages, PDFs, images…">
-EOF
 
           echo '<h2>Repository Files</h2>' >> index_files.html
 
