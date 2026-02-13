@@ -42,7 +42,7 @@ jobs:
             out="wiki_html/${base}.html"
 
             # Write HTML header
-            cat > "$out" <<EOF
+            cat > "$out" << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +59,7 @@ EOF
             cat "$file" >> "$out"
 
             # Close HTML
-            cat >> "$out" <<EOF
+            cat >> "$out" << 'EOF'
 </pre>
 </body>
 </html>
