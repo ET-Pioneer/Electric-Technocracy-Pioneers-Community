@@ -23,11 +23,6 @@ jobs:
       - name: Ensure .nojekyll exists
         run: echo "" > .nojekyll
 
-      - name: Clone Wiki repository fresh
-        run: |
-          rm -rf wiki_repo
-          git clone --depth=1 https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_repo
-
       - name: Prepare wiki output directory
         run: |
           rm -rf wiki_encyclopedia
@@ -38,14 +33,14 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y pandoc asciidoctor
 
-      - name: Convert ALL Wiki formats to HTML using template
+      - name: Convert ALL local formats to HTML using template
         run: |
           TEMPLATE="wiki_encyclopedia.html"
           EXTENSIONS="md mediawiki creole org rst textile pod rdoc txt adoc"
 
           for ext in $EXTENSIONS; do
             shopt -s nullglob
-            for file in wiki_repo/*.$ext; do
+            for file in *.$ext; do
               base="${file##*/}"
               base="${base%.$ext}"
               output="wiki_encyclopedia/${base}.html"
@@ -82,7 +77,6 @@ jobs:
           FILELIST=$(find . -type f \
             ! -path "./.git/*" \
             ! -path "./.github/*" \
-            ! -path "./wiki_repo/*" \
             | sed 's|^\./||' | sort)
 
           awk -v content="$FILELIST" '
@@ -105,7 +99,6 @@ jobs:
           find . -type f \
             ! -path "./.git/*" \
             ! -path "./.github/*" \
-            ! -path "./wiki_repo/*" \
             | while read file; do
                 clean="${file#./}"
                 url="$BASE_URL/$clean"
