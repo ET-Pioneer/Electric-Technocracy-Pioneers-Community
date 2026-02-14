@@ -92,7 +92,8 @@ jobs:
                   ;;
               esac
 
-              CONTENT=$(sed 's/$/<br>/' temp.html)
+              # FIX: HTML unverändert einfügen (kein sed, kein <br>)
+              CONTENT="$(cat temp.html)"
 
               awk -v content="$CONTENT" '
                 /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
@@ -142,7 +143,7 @@ jobs:
               done
 
           echo '</urlset>' >> sitemap.xml
- 
+
       - name: Commit and push generated files
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
