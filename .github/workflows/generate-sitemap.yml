@@ -55,7 +55,7 @@ jobs:
                 textile) pandoc "$file" -f textile -t html -o temp.html ;;
                 pod) pandoc "$file" -f pod -t html -o temp.html ;;
                 rdoc) pandoc "$file" -f rdoc -t html -o temp.html ;;
-                txt) pandoc "$file" -f plain -t html -o temp.html ;;
+                txt) pandoc "$file" -f markdown -t html -o temp.html ;;   # FIXED
               esac
 
               awk -v content="$(cat temp.html)" '
