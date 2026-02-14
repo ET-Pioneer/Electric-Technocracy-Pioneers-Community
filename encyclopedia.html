@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Electric Technocracy Encyclopedia – Index</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Electric Technocracy Encyclopedia – structured index of all One World wiki articles rendered into HTML.">
+<meta name="keywords" content="Electric Technocracy, Encyclopedia, One World, Wiki, Global Governance, Technocracy, Open Knowledge">
+<meta name="author" content="Electric Technocracy Pioneers Community">
+<link rel="canonical" href="https://mranonymousnwo.github.io/One_World/encyclopedia.html">
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f5f5f5;
+    color: #222;
+    display: flex;
+}
+
+/* -------------------- SIDEBAR -------------------- */
+#sidebar {
+    width: 260px;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 0;
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+#sidebar a:hover {
+    opacity: 1;
+}
+
+/* -------------------- MOBILE SIDEBAR -------------------- */
+#mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    #mobile-toggle {
+        display: block;
+    }
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+#content {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+}
+
+@media (max-width: 900px) {
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    background: #0f0f0f;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+header p {
+    opacity: 0.8;
+}
+
+/* -------------------- BUTTON BAR -------------------- */
+.button-bar {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.button-bar a {
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.button-bar a:hover {
+    background: #444;
+}
+
+/* -------------------- INDEX SECTION -------------------- */
+#index-intro {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+#index-intro h2 {
+    margin-top: 0;
+}
+
+#index-intro p {
+    line-height: 1.5;
+}
+
+/* -------------------- INDEX LIST -------------------- */
+#index-list {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #333;
+}
+
+#index-list h3 {
+    margin-top: 0;
+}
+
+#index-links a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 4px 0;
+    font-size: 0.95rem;
+}
+#index-links a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+</style>
+
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebarContainer = document.getElementById("sidebar-links");
+    const indexContainer = document.getElementById("index-links");
+
+    const folder = "wiki_encyclopedia/";
+
+    fetch(folder)
+        .then(response => response.text())
+        .then(text => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, "text/html");
+            const links = [...doc.querySelectorAll("a")];
+
+            const items = [];
+
+            links.forEach(link => {
+                const href = link.getAttribute("href");
+                if (!href || !href.endsWith(".html")) return;
+
+                const name = href.replace(".html", "");
+                const label = decodeURIComponent(name).replace(/_/g, " ");
+
+                items.push({ href, label });
+            });
+
+            items.sort((a, b) => a.label.localeCompare(b.label, "en"));
+
+            items.forEach(item => {
+                const side = document.createElement("a");
+                side.href = folder + item.href;
+                side.textContent = item.label;
+                sidebarContainer.appendChild(side);
+
+                const idx = document.createElement("a");
+                idx.href = folder + item.href;
+                idx.textContent = item.label;
+                indexContainer.appendChild(idx);
+            });
+        })
+        .catch(err => {
+            console.error("Failed to load wiki_encyclopedia directory listing:", err);
+        });
+});
+</script>
+
+</head>
+<body>
+
+<div id="mobile-toggle" onclick="toggleSidebar()">☰ Menu</div>
+
+<!-- SIDEBAR -->
+<div id="sidebar">
+    <h2>📚 All Wiki Articles</h2>
+    <div id="sidebar-links"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content">
+
+<header>
+    <h1>Electric Technocracy Encyclopedia</h1>
+    <p>Structured knowledge for a transparent, data‑driven, future‑ready civilization</p>
+</header>
+
+<div class="button-bar">
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
+    <a href="https://repository.ct.ws">💡 Repository</a>
+    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
+    <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
+</div>
+
+<section id="index-intro">
+    <h2>Encyclopedia Index</h2>
+    <p>
+        Welcome to the central index of the Electric Technocracy Encyclopedia.
+        All articles cloned from the One World Wiki and rendered into static HTML
+        appear automatically in the sidebar and the list below.
+    </p>
+    <p>
+        This encyclopedia provides structured, accessible knowledge for a transparent,
+        accountable, and data‑driven global civilization.
+    </p>
+</section>
+
+<section id="index-list">
+    <h3>📑 All Articles</h3>
+    <div id="index-links"></div>
+</section>
+
+<footer>
+    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
+</footer>
+
+</div>
+</body>
+</html>
