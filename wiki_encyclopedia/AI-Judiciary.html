@@ -2,109 +2,230 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <title>Electric Technocracy Encyclopedia – Article</title>
-
-<meta name="description" content="Encyclopedia entry from the Electric Technocracy Pioneers Community, covering governance models, AI alignment, digital democracy, open knowledge systems, and future-ready societal frameworks.">
-
-<meta name="keywords" content="Electric Technocracy, Technocracy, AI Governance, AGI Safety, Digital Democracy, Open Knowledge, Future Systems, Post-Scarcity, Universal Basic Income, Sustainable Innovation, Transhumanism, Life Extension, Global Coordination, Ethical AI, AI Alignment, Automation Economy, Open Research, Governance Models, Digital Systems, Legal Resources, International Law, Treaty Law, Documentation Architecture, MediaWiki, Web Platform Optimization, Knowledge Indexing, SEO Encyclopedia, Research Community, Global Risks, Nuclear Security">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* Base layout */
+/* -------------------- GLOBAL -------------------- */
 body {
-    font-family: Georgia, serif;
-    background: #f9f9f9;
     margin: 0;
-    padding: 0;
+    font-family: Georgia, serif;
+    background: #f5f5f5;
     color: #222;
+    display: flex;
 }
 
-/* Header */
+/* -------------------- SIDEBAR -------------------- */
+#sidebar {
+    width: 260px;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 0;
+    opacity: 0.85;
+}
+#sidebar a:hover {
+    opacity: 1;
+}
+
+/* -------------------- MOBILE SIDEBAR -------------------- */
+#mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    #mobile-toggle {
+        display: block;
+    }
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+#content {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+}
+
+@media (max-width: 900px) {
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* -------------------- HEADER -------------------- */
 header {
     background: #0f0f0f;
-    color: #ffffff;
-    padding: 30px 20px;
-    text-align: center;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
 }
 header h1 {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 header p {
-    margin: 10px 0 0;
-    font-size: 1rem;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* Main content */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* -------------------- BUTTON BAR -------------------- */
+.button-bar {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+.button-bar a {
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.button-bar a:hover {
+    background: #444;
+}
+
+/* -------------------- ARTICLE -------------------- */
 article {
-    background: #ffffff;
+    background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
-article h2 {
-    margin-top: 40px;
-    font-size: 1.8rem;
+
+/* -------------------- TOC -------------------- */
+#toc {
+    background: #fafafa;
+    padding: 15px;
+    border-left: 4px solid #333;
+    margin-bottom: 30px;
 }
-article h3 {
-    margin-top: 30px;
-    font-size: 1.3rem;
+#toc h3 {
+    margin-top: 0;
 }
-article p {
-    line-height: 1.6;
-    font-size: 1rem;
+#toc a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 4px 0;
+}
+#toc a:hover {
+    text-decoration: underline;
 }
 
-/* Footer */
+/* -------------------- FOOTER -------------------- */
 footer {
-    margin-top: 60px;
-    background: #0f0f0f;
-    color: #ffffff;
+    margin-top: 40px;
     padding: 20px;
+    background: #0f0f0f;
+    color: #fff;
     text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-    article {
-        padding: 20px;
-    }
-    article h2 {
-        font-size: 1.5rem;
-    }
-    article h3 {
-        font-size: 1.2rem;
-    }
-    article p {
-        font-size: 0.95rem;
-    }
+    border-radius: 10px;
 }
 </style>
 
+<script>
+/* Mobile sidebar toggle */
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+
+/* Auto-generate TOC */
+document.addEventListener("DOMContentLoaded", () => {
+    const article = document.querySelector("article");
+    const toc = document.getElementById("toc-list");
+
+    if (!article) return;
+
+    const headers = article.querySelectorAll("h1, h2, h3");
+
+    headers.forEach((h, i) => {
+        const id = "section-" + i;
+        h.id = id;
+
+        const link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = h.textContent;
+
+        toc.appendChild(link);
+    });
+});
+</script>
+
 </head>
 <body>
+
+<div id="mobile-toggle" onclick="toggleSidebar()">☰ Menu</div>
+
+<!-- -------------------- SIDEBAR -------------------- -->
+<div id="sidebar">
+    <h2>📚 All Wiki Articles</h2>
+    <!-- The workflow will auto-generate this list -->
+    <!-- You can also manually add links here -->
+</div>
+
+<!-- -------------------- MAIN CONTENT -------------------- -->
+<div id="content">
 
 <header>
     <h1>Electric Technocracy Encyclopedia</h1>
     <p>Structured knowledge for a transparent, data‑driven, future‑ready civilization</p>
 </header>
 
-<main>
-<article>
+<!-- BUTTON BAR -->
+<div class="button-bar">
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
+    <a href="https://repository.ct.ws">💡 Repository</a>
+    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
+    <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
+</div>
 
+<!-- TOC -->
+<div id="toc">
+    <h3>📑 Inhaltsverzeichnis</h3>
+    <div id="toc-list"></div>
+</div>
+
+<article>
 <h1 id="the-ai-judiciary-justice-at-the-speed-of-light">The AI
 Judiciary: Justice at the Speed of Light</h1>
 <h2 id="introduction-the-end-of-human-error-in-law">1. Introduction: The
@@ -458,13 +579,12 @@ Singularity, AI Governance, One World Archive, Electric Paradise, NATO
 Succession, International Treaties, Third-Party Custody, Zenodo Electric
 Technocracy, Micronations Made Easy, Post-National World, KI Revolution,
 Welt verkauft, Protest Music</p>
-
 </article>
-</main>
 
 <footer>
     Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
 </footer>
 
+</div>
 </body>
 </html>
