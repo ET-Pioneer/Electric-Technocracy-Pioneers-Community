@@ -28,6 +28,11 @@ jobs:
           rm -rf wiki_encyclopedia
           mkdir -p wiki_encyclopedia
 
+      # 🔥 TEMPORÄRES KLONEN DES WIKIS (NICHT dauerhaft, KEIN Submodul)
+      - name: Clone Wiki temporarily
+        run: |
+          git clone --depth=1 https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_temp
+
       - name: Install converters (Pandoc + Asciidoctor)
         run: |
           sudo apt-get update -y
@@ -40,7 +45,8 @@ jobs:
 
           for ext in $EXTENSIONS; do
             shopt -s nullglob
-            for file in *.$ext; do
+            # 🔥 WICHTIG: Wiki-Dateien aus wiki_temp lesen
+            for file in wiki_temp/*.$ext; do
               base="${file##*/}"
               base="${base%.$ext}"
               output="wiki_encyclopedia/${base}.html"
@@ -55,7 +61,7 @@ jobs:
                 textile) pandoc "$file" -f textile -t html -o temp.html ;;
                 pod) pandoc "$file" -f pod -t html -o temp.html ;;
                 rdoc) pandoc "$file" -f rdoc -t html -o temp.html ;;
-                txt) pandoc "$file" -f markdown -t html -o temp.html ;;   # FIXED
+                txt) pandoc "$file" -f markdown -t html -o temp.html ;;
               esac
 
               awk -v content="$(cat temp.html)" '
@@ -68,6 +74,10 @@ jobs:
             done
             shopt -u nullglob
           done
+
+      # 🔥 TEMPORÄRES WIKI WIRD WIEDER GELÖSCHT
+      - name: Cleanup temporary wiki
+        run: rm -rf wiki_temp
 
       - name: Generate directory listing using template
         run: |
