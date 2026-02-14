@@ -92,8 +92,7 @@ jobs:
                   ;;
               esac
 
-              # FIX: HTML unverändert einfügen (kein sed, kein <br>)
-              CONTENT="$(cat temp.html)"
+              CONTENT=$(sed 's/$/<br>/' temp.html)
 
               awk -v content="$CONTENT" '
                 /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
