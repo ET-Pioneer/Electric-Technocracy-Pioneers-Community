@@ -1,676 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Electric Technocracy Encyclopedia – Article</title>
+  <meta charset="UTF-8" />
+  <title>Electric Technocracy Encyclopedia – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Electric Technocracy Encyclopedia is the structured knowledge hub of the Electric Technocracy Pioneers Community, covering AI Governance, the Judicial Singularity, Direct Digital Democracy, and future-ready governance models.">
-<meta name="keywords" content="Electric Technocracy, Encyclopedia, Wiki, International Law, Treaty, NATO, United Nations, Artificial Intelligence, AI Governance, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Open Access, Research, Archive">
-<meta name="robots" content="index, follow">
+  <style>
+    /* =========================
+       DESIGN-SYSTEM: COLORS, FONTS, SPACING
+       ========================= */
+    :root {
+      --bg-body: #05060a;
+      --bg-surface: #0c0f18;
+      --bg-surface-alt: #111624;
+      --bg-header: #05060a;
+      --bg-sidebar: #05060a;
+      --border-subtle: #252a3a;
+      --accent: #4fd1c5;
+      --accent-soft: rgba(79, 209, 197, 0.12);
+      --text-main: #f5f7ff;
+      --text-muted: #a0aec0;
+      --text-soft: #7b8499;
+      --link: #63b3ed;
+      --link-hover: #90cdf4;
+      --danger: #f56565;
 
-<link rel="canonical" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
 
-<link rel="icon" type="image/x-icon" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon.ico">
-<link rel="icon" type="image/png" sizes="96x96" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon-96x96.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/apple-touch-icon.png">
-<link rel="icon" type="image/svg+xml" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon.svg">
-<link rel="manifest" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/site.webmanifest">
-<meta name="apple-mobile-web-app-title" content="ET-Pioneers">
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
-<meta property="og:title" content="Electric Technocracy Encyclopedia – Electric Technocracy Pioneers Community">
-<meta property="og:description" content="Structured encyclopedia for Electric Technocracy, AI Governance, the Judicial Singularity, and future governance models.">
-<meta property="og:image" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png">
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
-<meta property="twitter:title" content="Electric Technocracy Encyclopedia – ET Pioneers">
-<meta property="twitter:description" content="Open, structured encyclopedia for Electric Technocracy, AI Governance, and Direct Digital Democracy.">
-<meta property="twitter:image" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png">
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+        Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-<style>
-/* -------------------- GLOBAL -------------------- */
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background: #f5f5f5;
-    color: #222;
-    display: flex;
-    max-width: 199%;
-}
-
-/* -------------------- SIDEBAR -------------------- */
-#sidebar {
-    width: 260px;
-    background: #111;
-    color: #fff;
-    height: 100vh;
-    overflow-y: auto;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-#sidebar h2 {
-    font-size: 1.2rem;
-    margin-top: 0;
-}
-
-#sidebar a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 6px 0;
-    opacity: 0.85;
-    transition: 0.2s;
-}
-#sidebar a:hover {
-    opacity: 1;
-    padding-left: 8px;
-}
-
-/* -------------------- MOBILE SIDEBAR -------------------- */
-#mobile-toggle {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    background: #111;
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-@media (max-width: 900px) {
-    #sidebar {
-        transform: translateX(-100%);
-        transition: 0.3s;
+      --max-width: 1200px;
     }
-    #sidebar.open {
-        transform: translateX(0);
+
+    * {
+      box-sizing: border-box;
     }
-    #mobile-toggle {
-        display: block;
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #151a2b 0, #05060a 55%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
-}
 
-/* -------------------- MAIN CONTENT -------------------- */
-#content {
-    margin-left: 260px;
-    padding: 30px;
-    max-width: 900px;
-}
-
-@media (max-width: 900px) {
-    #content {
-        margin-left: 0;
-        padding: 20px;
+    a {
+      color: var(--link);
+      text-decoration: none;
     }
-}
 
-/* -------------------- HEADER -------------------- */
-header {
-    background: #0f0f0f;
-    color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-}
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-header p {
-    opacity: 0.8;
-}
-
-/* -------------------- BUTTON BAR -------------------- */
-.button-bar {
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.button-bar a {
-    background: #222;
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-.button-bar a:hover {
-    background: #444;
-}
-
-/* -------------------- ARTICLE -------------------- */
-article {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-/* -------------------- TOC -------------------- */
-#toc {
-    background: #fafafa;
-    padding: 15px;
-    border-left: 4px solid #333;
-    margin-bottom: 30px;
-}
-#toc h3 {
-    margin-top: 0;
-}
-#toc a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 4px 0;
-}
-#toc a:hover {
-    text-decoration: underline;
-}
-
-/* -------------------- FOOTER -------------------- */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #0f0f0f;
-    color: #fff;
-    text-align: center;
-    border-radius: 10px;
-}
-footer a {
-    color: #fff;
-    text-decoration: none;
-    background: #333;
-    padding: 8px 14px;
-    border-radius: 6px;
-}
-footer a:hover {
-    background: #555;
-}
-</style>
-
-<script>
-/* Mobile sidebar toggle */
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("open");
-}
-
-/* Auto-generate TOC */
-document.addEventListener("DOMContentLoaded", () => {
-    const article = document.querySelector("article");
-    const toc = document.getElementById("toc-list");
-
-    if (!article) return;
-
-    const headers = article.querySelectorAll("h1, h2, h3");
-
-    headers.forEach((h, i) => {
-        const id = "section-" + i;
-        h.id = id;
-
-        const link = document.createElement("a");
-        link.href = "#" + id;
-        link.textContent = h.textContent;
-
-        toc.appendChild(link);
-    });
-});
-
-/* -------------------- DYNAMIC SIDEBAR LOADING -------------------- */
-async function loadSidebar() {
-    const sidebar = document.getElementById("sidebar");
-
-    const apiURL = "https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/wiki_encyclopedia";
-
-    try {
-        const response = await fetch(apiURL);
-        const files = await response.json();
-
-        files
-            .filter(f => f.name.endsWith(".html"))
-            .forEach(file => {
-                const link = document.createElement("a");
-                link.href = "https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/" + file.name;
-                link.textContent = file.name.replace(".html", "");
-                sidebar.appendChild(link);
-            });
-
-    } catch (e) {
-        console.error("Sidebar loading failed:", e);
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
     }
-}
 
-document.addEventListener("DOMContentLoaded", loadSidebar);
-</script>
+    /* =========================
+       HEADER + UNIVERSAL NAV
+       ========================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(
+        to right,
+        rgba(5, 6, 10, 0.98),
+        rgba(5, 6, 10, 0.96)
+      );
+      border-bottom: 1px solid rgba(79, 209, 197, 0.25);
+      backdrop-filter: blur(14px);
+    }
 
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-md) var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #4fd1c5, #1a202c);
+      box-shadow: 0 0 18px rgba(79, 209, 197, 0.7);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.is-active {
+      color: var(--text-main);
+      border-color: var(--accent);
+    }
+
+    /* =========================
+       LAYOUT: SIDEBAR + CONTENT
+       ========================= */
+    .page-shell {
+      max-width: var(--max-width);
+      margin: var(--space-xl) auto;
+      padding: 0 var(--space-md) var(--space-xl);
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: var(--space-xl);
+    }
+
+    @media (max-width: 900px) {
+      .page-shell {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================
+       SIDEBAR (MODERNISIERT)
+       ========================= */
+    .sidebar {
+      background: linear-gradient(
+        145deg,
+        var(--bg-sidebar),
+        var(--bg-surface-alt)
+      );
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      max-height: calc(100vh - 140px);
+      position: sticky;
+      top: 88px;
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+    }
+
+    .sidebar-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .sidebar-scroll {
+      overflow-y: auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+
+    .sidebar-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .sidebar-scroll::-webkit-scrollbar-thumb {
+      background: rgba(79, 209, 197, 0.5);
+      border-radius: 999px;
+    }
+
+    .sidebar-section {
+      margin-bottom: var(--space-md);
+    }
+
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .sidebar-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.25rem 0.15rem;
+      border-radius: var(--radius-sm);
+      display: block;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .sidebar-list a:hover {
+      background: rgba(79, 209, 197, 0.08);
+      color: var(--text-main);
+    }
+
+    .sidebar-list a.is-active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* =========================
+       MAIN CONTENT / ARTICLE
+       ========================= */
+    .content {
+      background: radial-gradient(circle at top left, #151a2b 0, #05060a 55%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: var(--space-xl);
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        padding: var(--space-lg);
+      }
+    }
+
+    .article-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-title {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-lg);
+    }
+
+    .article-meta span + span::before {
+      content: "•";
+      margin: 0 0.4rem;
+      color: var(--text-soft);
+    }
+
+    .article-body {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+
+    .article-body h2 {
+      font-size: 1.2rem;
+      margin-top: var(--space-lg);
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body h3 {
+      font-size: 1.05rem;
+      margin-top: var(--space-md);
+      margin-bottom: 0.25rem;
+    }
+
+    .article-body p {
+      margin: 0 0 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1rem 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .article-body code {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .article-body pre {
+      background: #050816;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       LINK-BLÖCKE (GANZ KLICKBAR)
+       ========================= */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .link-block {
+      display: block;
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.8)
+      );
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        border-color 0.12s ease, background 0.12s ease;
+    }
+
+    .link-block:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+      border-color: rgba(79, 209, 197, 0.7);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 1),
+        rgba(15, 23, 42, 0.95)
+      );
+    }
+
+    .link-block-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .link-block-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    .link-block-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* =========================
+       BILDER IM TEXT (STABIL)
+       ========================= */
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .img-left {
+      float: left;
+      margin: 0 1.5rem 1rem 0;
+      max-width: 40%;
+    }
+
+    .img-right {
+      float: right;
+      margin: 0 0 1rem 1.5rem;
+      max-width: 40%;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    .site-footer {
+      max-width: var(--max-width);
+      margin: 0 auto var(--space-lg);
+      padding: 0 var(--space-md);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    @media (max-width: 700px) {
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- =========================
+       HEADER + UNIVERSAL NAV
+       ========================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-badge"></span>
+        Electric Technocracy Encyclopedia
+      </div>
 
-<div id="mobile-toggle" onclick="toggleSidebar()">☰ Menu</div>
+      <nav class="main-nav">
+        <ul>
+          <!-- "is-active" je nach Seite setzen -->
+          <li><a href="/Electric-Technocracy-Pioneers-Community/index.html">HQ</a></li>
+          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html" class="is-active">Encyclopedia</a></li>
+          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Implementation-Roadmap.html">Roadmap</a></li>
+          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Juridical-Singularity.html">Juridical Singularity</a></li>
+          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Technology-Stack.html">Tech Stack</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- -------------------- SIDEBAR -------------------- -->
-<div id="sidebar">
-    <h2>📚 All Wiki Articles</h2>
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">⬅ Back to Main</a>
-</div>
+  <!-- =========================
+       LAYOUT: SIDEBAR + CONTENT
+       ========================= -->
+  <main class="page-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Encyclopedia</div>
+        <div class="sidebar-subtitle">
+          Curated entries on Electric Technocracy, AI governance, and systemic transitions.
+        </div>
+      </div>
 
-<!-- -------------------- MAIN CONTENT -------------------- -->
-<div id="content">
+      <div class="sidebar-scroll">
+        <section class="sidebar-section">
+          <div class="sidebar-section-title">Core entries</div>
+          <ul class="sidebar-list">
+            <li>
+              <a href="Home.html" class="is-active">Overview & Scope</a>
+            </li>
+            <li>
+              <a href="Juridical-Singularity.html">Juridical Singularity</a>
+            </li>
+            <li>
+              <a href="Implementation-Roadmap.html">Implementation Roadmap</a>
+            </li>
+            <li>
+              <a href="Technology-Stack.html">Technology Stack</a>
+            </li>
+          </ul>
+        </section>
 
-<header>
-    <h1>Electric Technocracy Encyclopedia</h1>
-    <p>Structured knowledge for a transparent, data‑driven, future‑ready civilization</p>
-</header>
+        <section class="sidebar-section">
+          <div class="sidebar-section-title">External references</div>
+          <ul class="sidebar-list">
+            <li>
+              <a href="https://encyclopedia.pub/entry/59508" target="_blank">
+                MDPI Encyclopedia: Juridical Singularity
+              </a>
+            </li>
+            <li>
+              <a href="https://grokipedia.com/search" target="_blank">
+                Grokipedia – Cross‑index
+              </a>
+            </li>
+          </ul>
+        </section>
 
-<!-- BUTTON BAR -->
-<div class="button-bar">
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
-    <a href="https://repository.ct.ws">💡 Repository</a>
-    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
-    <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
-    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
-    <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
-</div>
+        <section class="sidebar-section">
+          <div class="sidebar-section-title">Project context</div>
+          <ul class="sidebar-list">
+            <li>
+              <a href="/Electric-Technocracy-Pioneers-Community/index.html">
+                Community HQ
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">
+                GitHub Repository
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </aside>
 
-<!-- TOC -->
-<div id="toc">
-    <h3>📑 Inhaltsverzeichnis</h3>
-    <div id="toc-list"></div>
-</div>
+    <!-- CONTENT -->
+    <section class="content">
+      <header>
+        <div class="article-kicker">Electric Technocracy Encyclopedia</div>
+        <h1 class="article-title">Home – Scope, Architecture, and Juridical Thresholds</h1>
+        <div class="article-meta">
+          <span>Living document</span>
+          <span>Version 0.1</span>
+          <span>Curated by Electric Technocracy Pioneers</span>
+        </div>
+      </header>
 
-<article>
-<h1 id="electric-technocracy-pioneers-community-headquarter">🌐 Electric
-Technocracy Pioneers Community Headquarter</h1>
-<div data-align="center">
-<p><img 
-    src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/et-pioneers.png"
-    width="250"
-    style="clip-path: circle(50% at 50% 50%);"
-    alt="Electric Technocracy Pioneers Community"
-  /></p>
-</div>
-<hr />
-<h2 id="navigation-quick-links">📑 Navigation &amp; Quick Links</h2>
-<details>
-<summary>
-<b>🍔 Click to Expand Hamburger Menu</b>
-</summary>
-<ul>
-<li>🪢 <a
-href="https://zenodo.org/communities/electric-technocracy">Electric
-Technocracy Pioneers Community (Zenodo)</a></li>
-<li>⚡ <a
-href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git">GitHub
-Repository</a></li>
-<li>💡 <a
-href="https://worldsold.wixsite.com/electric-technocracy">Electric
-Technocracy HQ</a></li>
-<li>📚 <a href="https://wiki.free.nf/">International Treaty Law
-WIKI</a></li>
-<li>📑 <a
-href="https://worldsold.wixsite.com/global-archive">International Treaty
-Archive HQ</a></li>
-<li>🗺️ <a href="https://worldsold.wixsite.com/world-sold">World
-Succession Deed HQ</a></li>
-<li>🚀 <a href="https://paradise.gt.tc">Start-Page WSD &amp; Electric
-Paradise</a></li>
-<li>📁 <a href="dir.html">Repository Directory</a></li>
-</ul>
-</details>
-<hr />
-<h2 id="about-the-pioneers-community">🏛️ About the Pioneers
-Community</h2>
-<p><strong>Electric Technocracy Pioneers</strong> is an open scientific
-research hub and free‑access repository for exploring Electric
-Technocracy, AI Governance, the Judicial Singularity, the Technological
-Singularity, Artificial Superintelligence (ASI), AGI, Direct Digital
-Democracy (DDD), Universal Basic Income, and a United World of Abundance
-beyond nation‑states.</p>
-<p>The platform hosts openly licensed documents, papers, wiki articles,
-encyclopedia entries, audio, video, images, and slides, supporting
-global collaboration on post‑scarcity models, future governance, and
-transparent digital systems.</p>
-<hr />
-<h2
-id="electric-technocracy---a-visionary-ai-supported-direct-digital-democracy">⚡
-Electric Technocracy - A Visionary AI supported Direct Digital
-Democracy</h2>
-<div data-align="center">
-<p><a href="https://ep.ct.ws"> <img 
-      src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/et-logo.jpg"
-      width="300"
-      alt="Electric Technocracy Logo"
-    /> </a></p>
-</div>
-<p><strong>Electric Technocracy (ET)</strong> is the governance form
-that aligns with current and future technological development. It
-replaces traditional party politics with efficient, data-driven
-administration managed by Artificial Superintelligence (ASI). *
-<strong>Direct Digital Democracy:</strong> The population decides
-directly on proposals via secure online voting. *
-<strong>Post-Scarcity:</strong> Automation and robotics generate
-unprecedented wealth, distributed through a <strong>Universal Basic
-Income (UBI)</strong>. * <strong>Abolition of Nations:</strong> Moving
-toward a united, peaceful world without the friction of national borders
-or partisan conflicts.</p>
-<hr />
-<h2 id="singularity-in-national-and-international-law">⚖️ SINGULARITY IN
-NATIONAL AND INTERNATIONAL LAW</h2>
-<div data-align="center">
-<p><a href="https://world.rf.gd"> <img 
-      src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/judicial_singularity.jpg"
-      width="300"
-      alt="Juridical Singularity"
-    /> </a></p>
-</div>
-<p>The <strong>Judicial Singularity</strong> is the legal foundation of
-the Technological Singularity. It represents the singular act of
-international law that enables a global restart of the legal system. *
-<strong>World Succession Deed 1400/98:</strong> The irreversible legal
-reality that serves as the catalyst for global succession. *
-<strong>Treaty Chains:</strong> Utilizing international treaty
-frameworks (NATO SOFA, HNS) to transition from national sovereignty to a
-global techno-legal order.</p>
-<hr />
-<h2 id="international-treaty-law-wiki">📚 International Treaty Law
-WIKI</h2>
-<div data-align="center">
-<p><a href="https://wiki.free.nf/"> <img 
-      src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/ilawsociallogo.jpg"
-      width="300"
-      alt="International Treaty Law WIKI"
-    /> </a></p>
-</div>
-<p>The <strong>International Treaty Law WIKI</strong> is the scholarly
-encyclopedia for the Juridical Singularity. It serves as a central
-knowledge base for legal experts and researchers to document the
-evolution of international law towards a post-state era. It provides
-deep insights into the mechanisms of state succession and multilateral
-treaty structures.</p>
-<hr />
-<h2 id="scientific-research-community">🔬 Scientific Research &amp;
-Community</h2>
-<div data-align="center">
-<p><a href="https://community.xo.je"> <img 
-      src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/et_community.png"
-      width="300"
-      alt="ET Pioneers Community"
-    /> </a></p>
-</div>
-<p>The community focuses on <strong>Legal Engineering</strong>,
-<strong>Future Governance</strong>, and <strong>Post-Scarcity
-Economics</strong>. We publish working papers and preprints on Zenodo
-and GitHub to ensure that the transition to an AI-driven society is
-transparent, legally sound, and beneficial for all humanity.</p>
-<hr />
-<h1
-id="world-succession-deed-wsd-140098-electric-technocracy-link-collection">World
-Succession Deed (WSD 1400/98) &amp; Electric Technocracy – Link
-Collection</h1>
-<h2 id="main-websites-entry-points">1. 🌐 Main Websites &amp; Entry
-Points</h2>
-<ul>
-<li>https://world.rf.gd → 🌐 WSD - World Succession Deed 1400/98</li>
-<li>https://worldsold.wixsite.com/world-sold/en → 🌐 WSD - World
-Succession Deed 1400/98 (English)</li>
-<li>https://global-archive.rf.gd → 🌐 WSD – Global Legal Succession
-Archive for Law and International Treaties</li>
-<li>https://worldsold.wixsite.com/global-archive → 🌐 WSD – Global Legal
-Succession Archive (Wix)</li>
-<li>https://ep.ct.ws → 🌐 Electric Technocracy</li>
-<li>https://worldsold.wixsite.com/electric-technocracy → 🌐 Electric
-Technocracy (Wix)</li>
-<li>https://navi.page.gd → 🌐 WSD - Navigator 1400/98</li>
-<li>https://worldsold.wixsite.com/navigator → 🌐 WSD - Navigator 1400/98
-(Wix)</li>
-<li>https://worldsold.wixsite.com/international → 🌐 WSD -
-International</li>
-<li>https://paradise.gt.tc → 🚀 Start-Page WSD &amp; Electric
-Paradise</li>
-</ul>
-<h2 id="wikis-knowledge-databases">2. 📚 Wikis &amp; Knowledge
-Databases</h2>
-<ul>
-<li>https://wiki.free.nf/ → 📚 International Treaty Law WIKI (Legal
-Singularity Wiki)</li>
-<li>https://wiki.free.nf/index.php/Juridical_Singularity → 🕳️
-Technological Singularity needs Singularity in Law</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki
-→ 💡 Electric Technocracy Pioneers Community WIKI</li>
-<li>https://github.com/MrAnonymousNWO/One_World/wiki → 🌍 One World
-GitHub WIKI</li>
-<li>https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/
-→ 💡 GitHub Page Pioneers Community</li>
-<li>https://repository.ct.ws → 💡 Electric Technocracy Pioneers
-Community GitHub Repository</li>
-<li>https://github.com/MrAnonymousNWO/One_World/ → 🌏 One World GitHub
-Repository Vault</li>
-</ul>
-<h2 id="ebooks-pdf-downloads">3. 📘 eBooks &amp; PDF Downloads</h2>
-<ul>
-<li>https://4u.free.nf → 📘 Read the eBooks &amp; Download free PDF</li>
-</ul>
-<h2 id="important-pdf-documents-github-pdf-vault">4. 🔗 Important PDF
-Documents (GitHub PDF Vault)</h2>
-<ul>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Electric_Technocracy.pdf
-→ 🔗 Electric Technocracy - Visionary AI Governance System</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/English_turenne_barracks_treaty_1400_98_06_10_1998_nato_brd_nl.PDF
-→ 📑 Kaufvertrag Urkundenrolle 1400/98 (World Succession Deed -
-Staatensukzessionsurkunde)</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Micronation_Made_Easy.pdf
-→ 🏝️ Micronations Made Easy</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/State_Founding_for_Dummies_How_to_Start_Your_Own_Country.pdf
-→ ®️ Starting a State for Dummies</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Trillions%20for%20the%20Future-AI%2C%20Power%2C%20and%20Post-Scarcity%20-%20Electric%20Technocracy.pdf
-→ 🤖 Trillions for the Future - the Way to ASI &amp; the technological
-singularity</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20Universal%20Basic%20Income%20And%20The%20Electric%20Technocracy.pdf
-→ 💱 Universal Basic Income and the Electric Technocracy</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20and%20the%20Future%20of%20Humanity%20%E2%80%93%20From%20Work%20to%20Electric%20Technocracy.pdf
-→ 💲 Unconditional Basic Income, Tech Tax, and a World Without Nation
-States in the Electric Technocracy: Humans Tax-Free</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World-Sold-Non-fiction-Succession-Deed.pdf
-→ ⚖️ World Succession Deed: Global Succession Explained</li>
-<li>https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World_Sold_State_succession_deed_1400.pdf
-→ 🗺️ World Sold: The WSD 1400 Treaty</li>
-</ul>
-<h2 id="zenodo-doi-publications">5. 📖 Zenodo DOI Publications</h2>
-<ul>
-<li>https://doi.org/10.5281/zenodo.18073084 → 📖 The Next Civilization -
-Why Electric Technocracy Matters Now</li>
-<li>https://doi.org/10.5281/zenodo.18028339 → 📖 Foundations of Electric
-Technocracy</li>
-<li>https://doi.org/10.5281/zenodo.18012036 → 📖 The Rise of the
-Electric Technocracy - Governance for a Post-Scarcity Society</li>
-<li>https://doi.org/10.5281/zenodo.18216674 → 📖 Drittverwahrung von
-nationalen und internationalen Verträgen</li>
-<li>https://doi.org/10.5281/zenodo.18505843 → 📖 LEGAL SINGULARITY IN
-INTERNATIONAL LAW</li>
-</ul>
-<h2 id="backup-folders-viewers">6. ☁️ Backup Folders &amp; Viewers</h2>
-<ul>
-<li>https://mranonymousnwo.github.io/One_World/ → 🌎 One World Archive
-Vault &amp; PDF Viewer</li>
-<li>https://drive.google.com/drive/folders/1aq6KJnGlzD7ZieVDD5wTHbE_2hfoi2pw
-→ ☁️ Document Backup Google Drive</li>
-<li>https://mega.nz/folder/0qN23TzB#6EFkueLyOaZEWD4aLNk1fQ → ☁️ Document
-Backup Mega.nz Drive</li>
-<li>https://archive.org/details/turenne_kaserne_vertrag_1400_98_06_10_1998_nato_brd_nl_vn_itu_hns
-→ 📝 The German Federal Archives in Koblenz published the original
-treaty based on international law</li>
-</ul>
-<h2 id="encyclopedia.pub-articles">7. 📚 Encyclopedia.pub Articles</h2>
-<ul>
-<li>https://encyclopedia.pub/entry/59380 → 📜 Electric Technocracy -
-Reinventing Democracy through Technology</li>
-<li>https://encyclopedia.pub/entry/59410 → 📜 Treaty Chains in National
-and International Law Systems</li>
-<li>https://encyclopedia.pub/entry/59414 → 📜 Third-Party Custody of
-National and International Agreements</li>
-</ul>
-<h2 id="search-tools-wikipedia">8. 🔍 Search Tools &amp; Wikipedia</h2>
-<ul>
-<li>https://cse.google.com/cse?cx=86021a982e3a14848 → 🔍 Specialized
-Search Engine GSE</li>
-<li>https://de.m.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken →
-🏰 Wikipedia Kreuzbergkaserne (German)</li>
-<li>https://en.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken → 🏰
-Wikipedia Kreuzbergkaserne (English)</li>
-</ul>
-<h2 id="notebooklm-ai-chats">9. 🗣️ NotebookLM AI Chats</h2>
-<ul>
-<li>https://chat-wsd.rf.gd → 🗣️ Join the NotebookLM Chat WSD</li>
-<li>https://chat-et.rf.gd → 🗣️ Join the NotebookLM Chat Electronic
-Paradise</li>
-<li>https://chat-kb.rf.gd → 🗣️ Join the NotebookLM Chat Nation
-Building</li>
-<li>https://micro.page.gd → 🗣️ Nation Building (Related)</li>
-<li>https://notebooklm.google.com/notebook/50392ebe-71ad-45fa-8301-362415be9890?authuser=1
-→ NotebookLM Blacksite Berlin AI Chat</li>
-<li>https://notebooklm.google.com/notebook/f422a75d-6b67-412d-b87a-26a8d5c653d9?authuser=1
-→ 🧿 Tabellion Doerfert Scandal NotebookLM Chat</li>
-</ul>
-<h2 id="communities-social-media">10. 🪢 Communities &amp; Social
-Media</h2>
-<ul>
-<li>https://community.xo.je → 🪢 Electric Technocracy Pioneers
-Community</li>
-<li>https://zenodo.org/communities/electric-technocracy → 🪢 Electric
-Technocracy Pioneers Community (Zenodo)</li>
-<li>https://www.facebook.com/share/1ER7GbN7kM/ → 🌐 Facebook World
-Sold</li>
-<li>https://www.facebook.com/share/1DEMSyrrAt/ → 🤖 Facebook Electric
-Technocracy</li>
-<li>https://www.facebook.com/groups/528455169898378/ → 🎗️ Facebook
-Humans &amp; Machines Unite</li>
-<li>https://www.facebook.com/share/1CZ2JE3Sjb/ → 🚀 Facebook
-Profile</li>
-<li>https://x.com/WW3Precognition → ✖️ X (Twitter) - Cassandra Complex /
-WW3 Precognition</li>
-<li>https://x.com/i/lists/1890805076249182663?t=Ha_ioLR_itUriLE_7WdZMg&amp;s=09
-→ 📃 X List (WW3 Precognition)</li>
-<li>https://x.com/NWO_BOOKS → ✖️ X (Twitter) - Welt verkauft
-offiziell</li>
-<li>https://x.com/i/lists/1880937835307425922?t=1TaGjr6ExIAK0QYFePTV8g&amp;s=09
-→ 📄 X List (NWO BOOKS)</li>
-<li>https://x.com/NWO_Support → ✖️ X (Twitter) - NWO Support</li>
-<li>https://x.com/i/lists/1952924134679150999 → Liste X List (NWO
-Support)</li>
-<li>https://x.com/Electrocozy → ✖️ X (Twitter) - Electric Technocracy
-Sound Collective</li>
-</ul>
-<h2 id="youtube-channels-videos">11. 🎥 YouTube Channels &amp;
-Videos</h2>
-<ul>
-<li>https://videos.xo.je → 🎥 YouTube Channel</li>
-<li>https://www.youtube.com/<span class="citation"
-data-cites="Staatensukzessionsurkunde-1400">@Staatensukzessionsurkunde-1400</span>
-→ 🎥 YouTube Channel (Main)</li>
-<li>https://youtu.be/cbyME1y4m4o → 📽️ YouTube Explainer Video Universal
-Basic Income (UBI)</li>
-<li>https://youtu.be/zGXLeYJsAtc → 🌍 Video: Dream Your Own State into
-Reality</li>
-<li>https://youtu.be/KTL6imKT3_w → 🗺️ Video: How to Start Your Own
-Country (Without Getting Arrested)</li>
-<li>https://youtu.be/ToPHDtEA-JI → 📜 Video: Flags, Laws, and No Man’s
-Land: The Anatomy of a Modern Microstate</li>
-<li>https://youtu.be/WsJetlIjF5Q → 🛠️ DIY Micronation Sovereignty:
-Constitution &amp; Step-by-step Instructions to Declare
-Independence</li>
-<li>https://youtu.be/JSk13GnVMdU → 🚀 Video: Your Nation in 30 Days:
-Idea, Territory, Concept, Plan</li>
-<li>https://e.pcloud.link/publink/show?code=kZyS7NZxAFQ4DPUaCJu9EhLjkXixYefdXO7
-→ ☁️ PCloud Videos Vault</li>
-</ul>
-<h2 id="podcasts-audio">12. 🎙️ Podcasts &amp; Audio</h2>
-<ul>
-<li>https://nwo.likesyou.org → 🎙️ Podcast Show</li>
-<li>https://creators.spotify.com/pod/show/world-succession-deed → 🎙️
-Podcast Show (Spotify)</li>
-<li>https://podcasts.apple.com/de/podcast/world-sold-world-succession-deed-1400-98-http-world/id1786462631
-→ 🍏 Apple Podcast</li>
-<li>https://open.spotify.com/episode/1oTeGrNnXazJmkBdyH0Uhz → 🎧 Podcast
-Episode Universal Basic Income (UBI)</li>
-<li>https://open.spotify.com/artist/4y6vveUrD0JDdymjTUWTx3?si=1-UAvXfkSLG0dofoYeKhqQ
-→ 🎶 Electric Technocracy Sound Collective on Spotify</li>
-<li>https://open.spotify.com/playlist/6gaGFsnID15ZbtbORp3uRg?si=oePYMsn7RhWGfq4XFTEUZg
-→ 🔘 Spotify DJ Playlist (Electric Technocracy Sound Collective)</li>
-<li>https://listen.free.nf → 🎧 Cassandra Cries - Icecold AI Music vs
-WWIII on SoundCloud</li>
-<li>https://music.page.gd → 🪖 This is Anti-War Music</li>
-<li>https://u.pcloud.link/publink/show?code=0Z8jWC5Z9eG2iGcELwJdrikBBCArhzNjeu0V
-→ 🌪️ PCloud Music Vault</li>
-<li>https://e.pcloud.link/publink/show?code=0Zhu7NZOByIyjsD1WbWNhaDlHUvCQBAXjF7
-→ 💨 PCloud Podcast Vault</li>
-</ul>
-<h2 id="blogs-storybooks-miscellaneous">13. 🪩 Blogs, Storybooks &amp;
-Miscellaneous</h2>
-<ul>
-<li>https://g.co/gemini/share/9fe07106afff → 🖼️ Micronation Storybook:
-The Slactivist’s Guide to Saving a Forest (By Declaring It a
-Country)</li>
-<li>https://micronation.page.gd → 🏝️ Found Your Own State</li>
-<li>https://ab.page.gd → 📜 The Buyer’s Memoir: A Journey to Unwitting
-Sovereignty</li>
-<li>https://blacksite.iblogger.org → 🌚 Blacksite Blog</li>
-<li>https://ubi.gt.tc → 📚 Universal / Unconditional Basic Income
-(UBI)</li>
-<li>https://g.co/gemini/share/4a457895642b → 🖼️ UBI Storybook:
-Wishmaster and the Paradise of Machines</li>
-<li>https://worldsold.wixsite.com/electric-technocracy/post/ubi-unconditional-basic-income-electronic-technocracy
-→ 🪩 Blogpost: UBI - Unconditional Basic Income and Electronic
-Technocracy</li>
-<li>https://worldsold.wixsite.com/electric-technocracy/de/post/bge-bedingungsloses-grundeinkommen-elektronische-technokratie
-→ 🪩 Blogpost: BGE - Bedingungsloses Grundeinkommen und die
-Elektronische Technokratie</li>
-<li>https://worldsold.wixsite.com/world-sold/en/post/ai-chat-now-or-never-establish-your-own-state
-→ 🏴 Blogpost: Now or Never: Found Your Own State – Sovereignty with AI
-Support</li>
-<li>https://worldsold.wixsite.com/world-sold/post/deinen-eigenen-staat-gruenden-souveraenität-mit-ki-chat-begleitung
-→ 🏴 Blogpost: Jetzt oder nie: Deinen eigenen Staat gründen –
-Souveränität mit KI-Chat Begleitung</li>
-<li>https://turenne-barracks.blogspot.com/2025/12/tasc-tabellion-doerfert-wohnpark-scam.html?m=1
-→ 🧿 Turenne-Barracks Tabellion/ TASC Bau AG Corruption Blog</li>
-</ul>
-<h2 id="support-donations">14. 🎗️ Support &amp; Donations</h2>
-<ul>
-<li>https://donate.gt.tc → 🎗️ Support our Mission</li>
-<li>https://nwo.page.gd → 🛍️ Support Shop</li>
-<li>https://merch.page.gd → 🛒 Support Store</li>
-</ul>
-<h2 id="keywords-international-law-related-topics">15. 🔑 Keywords
-(International Law &amp; Related Topics)</h2>
-<h2
-id="international-law-treaty-chain-state-succession-vienna-convention-on-succession-of-states-nato-treaty-united-nations-charter-succession-deed-legal-singularity-third-party-custody-global-succession-archive-juridical-singularity-post-scarcity-governance-electric-technocracy-technological-singularity-universal-basic-income-micronations-state-founding-asi-governance-international-treaties-nato-agreements-un-resolutions-succession-law-treaty-obligations-state-sovereignty-legal-succession-diplomatic-immunity-human-rights-treaties-environmental-pacts-arms-control-agreements-peace-treaties">International
-Law, Treaty Chain, State Succession, Vienna Convention on Succession of
-States, NATO Treaty, United Nations Charter, Succession Deed, Legal
-Singularity, Third-Party Custody, Global Succession Archive, Juridical
-Singularity, Post-Scarcity Governance, Electric Technocracy,
-Technological Singularity, Universal Basic Income, Micronations, State
-Founding, ASI Governance, International Treaties, NATO Agreements, UN
-Resolutions, Succession Law, Treaty Obligations, State Sovereignty,
-Legal Succession, Diplomatic Immunity, Human Rights Treaties,
-Environmental Pacts, Arms Control Agreements, Peace Treaties</h2>
-<p>© No Copyright 2026 - Electric Technocracy Pioneers Community | <a
-href="https://donate.gt.tc">🎗️ Support our Mission</a></p>
-</article>
+      <article class="article-body">
+        <p>
+          This encyclopedia consolidates the conceptual, juridical, and technical foundations of an
+          Electric Technocracy: a governance architecture where law, infrastructure, and computation
+          converge into a transparent, measurable, and globally accessible system.
+        </p>
 
-<footer>
-    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility  
-    <br><br>
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/all_links.html">🔗 All Links</a>
-</footer>
+        <h2>Purpose of this encyclopedia</h2>
+        <p>
+          The goal is not to describe a distant utopia, but to document concrete thresholds:
+          irreversible points where legal, technical, and institutional structures cross into a new
+          regime. Each entry is designed as a stable reference node that can be cited, forked, and
+          mirrored across platforms.
+        </p>
 
-</div>
+        <div class="link-grid">
+          <a class="link-block" href="Juridical-Singularity.html">
+            <div class="link-block-meta">Core concept</div>
+            <div class="link-block-title">Juridical Singularity</div>
+            <div class="link-block-desc">
+              Law’s irreversible point of no return: when legal systems become structurally
+              inseparable from computational infrastructures.
+            </div>
+          </a>
+
+          <a class="link-block" href="Implementation-Roadmap.html">
+            <div class="link-block-meta">Process</div>
+            <div class="link-block-title">Implementation Roadmap</div>
+            <div class="link-block-desc">
+              From fragmented nation‑state governance to a measurable, interoperable, and
+              computation‑aligned technocratic stack.
+            </div>
+          </a>
+
+          <a class="link-block" href="Technology-Stack.html">
+            <div class="link-block-meta">Infrastructure</div>
+            <div class="link-block-title">Technology Stack</div>
+            <div class="link-block-desc">
+              Protocols, data models, and coordination layers required to sustain an Electric
+              Technocracy at planetary scale.
+            </div>
+          </a>
+        </div>
+
+        <h2>How to read and extend this space</h2>
+        <p>
+          Each article is written to be both human‑legible and structurally indexable: headings map
+          to conceptual layers, while link blocks expose canonical entry points for external
+          systems, search engines, and parallel encyclopedias.
+        </p>
+
+        <h3>Versioning and forks</h3>
+        <p>
+          The encyclopedia is designed to be forked, mirrored, and re‑contextualized. GitHub
+          repositories, wikis, and static mirrors are treated as first‑class citizens, not as
+          secondary exports.
+        </p>
+
+        <h3>Relation to external encyclopedias</h3>
+        <p>
+          Entries such as <em>Juridical Singularity</em> are cross‑linked to external publications
+          (e.g. MDPI Encyclopedia) to maintain a bridge between peer‑reviewed academic work and
+          experimental governance prototypes.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>
+      Electric Technocracy Pioneers Community — Open research hub for AI governance & technocratic
+      futures.
+    </div>
+    <div>CC‑BY‑SA where applicable · Fork, mirror, and extend.</div>
+  </footer>
 </body>
 </html>
