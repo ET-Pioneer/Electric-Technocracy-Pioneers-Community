@@ -142,7 +142,7 @@ jobs:
               done
 
           echo '</urlset>' >> sitemap.xml
-
+ 
       - name: Commit and push generated files
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
