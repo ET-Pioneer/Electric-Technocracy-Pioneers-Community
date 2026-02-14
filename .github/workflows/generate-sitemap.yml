@@ -15,18 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (no submodules)
         uses: actions/checkout@v4
         with:
-          submodules: false   # WICHTIG: verhindert den Submodule-Fehler
+          submodules: false
 
       - name: Ensure .nojekyll exists
         run: echo "" > .nojekyll
 
-      - name: Clone Wiki repository
+      - name: Clone Wiki repository fresh
         run: |
           rm -rf wiki_repo
-          git clone https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_repo
+          git clone --depth=1 https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.wiki.git wiki_repo
 
       - name: Prepare wiki output directory
         run: |
@@ -35,7 +35,7 @@ jobs:
 
       - name: Install converters (Pandoc + Asciidoctor)
         run: |
-          sudo apt-get update
+          sudo apt-get update -y
           sudo apt-get install -y pandoc asciidoctor
 
       - name: Convert ALL Wiki formats to HTML using template
@@ -44,10 +44,10 @@ jobs:
           EXTENSIONS="md mediawiki creole org rst textile pod rdoc txt adoc"
 
           for ext in $EXTENSIONS; do
+            shopt -s nullglob
             for file in wiki_repo/*.$ext; do
-              [ -e "$file" ] || continue
-
-              base="$(basename "$file" .$ext)"
+              base="${file##*/}"
+              base="${base%.$ext}"
               output="wiki_encyclopedia/${base}.html"
 
               case "$ext" in
@@ -63,9 +63,7 @@ jobs:
                 txt) pandoc "$file" -f plain -t html -o temp.html ;;
               esac
 
-              CONTENT="$(cat temp.html)"
-
-              awk -v content="$CONTENT" '
+              awk -v content="$(cat temp.html)" '
                 /<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->/ {
                   print content
                   next
@@ -73,6 +71,7 @@ jobs:
                 { print }
               ' "$TEMPLATE" > "$output"
             done
+            shopt -u nullglob
           done
 
       - name: Generate directory listing using template
@@ -84,7 +83,7 @@ jobs:
             ! -path "./.git/*" \
             ! -path "./.github/*" \
             ! -path "./wiki_repo/*" \
-            | sed 's/^.\///' | sort)
+            | sed 's|^\./||' | sort)
 
           awk -v content="$FILELIST" '
             /<!-- WORKFLOW WILL INSERT DIRECTORY CONTENT HERE -->/ {
@@ -98,8 +97,10 @@ jobs:
         run: |
           BASE_URL="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community"
 
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          {
+            echo '<?xml version="1.0" encoding="UTF-8"?>'
+            echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          } > sitemap.xml
 
           find . -type f \
             ! -path "./.git/*" \
@@ -108,9 +109,7 @@ jobs:
             | while read file; do
                 clean="${file#./}"
                 url="$BASE_URL/$clean"
-
-                esc_url=$(printf '%s\n' "$url" | sed 's/&/\&amp;/g; s/</\&lt;/g')
-
+                esc_url=$(printf '%s' "$url" | sed 's/&/\&amp;/g; s/</\&lt;/g')
                 lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                 echo "<url><loc>$esc_url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
               done
