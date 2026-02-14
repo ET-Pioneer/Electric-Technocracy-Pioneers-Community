@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Electric Technocracy Encyclopedia – Article</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f5f5f5;
+    color: #222;
+    display: flex;
+}
+
+/* -------------------- SIDEBAR -------------------- */
+#sidebar {
+    width: 260px;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 0;
+    opacity: 0.85;
+}
+#sidebar a:hover {
+    opacity: 1;
+}
+
+/* -------------------- MOBILE SIDEBAR -------------------- */
+#mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    #mobile-toggle {
+        display: block;
+    }
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+#content {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+}
+
+@media (max-width: 900px) {
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    background: #0f0f0f;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+header p {
+    opacity: 0.8;
+}
+
+/* -------------------- BUTTON BAR -------------------- */
+.button-bar {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.button-bar a {
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.button-bar a:hover {
+    background: #444;
+}
+
+/* -------------------- ARTICLE -------------------- */
+article {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* -------------------- TOC -------------------- */
+#toc {
+    background: #fafafa;
+    padding: 15px;
+    border-left: 4px solid #333;
+    margin-bottom: 30px;
+}
+#toc h3 {
+    margin-top: 0;
+}
+#toc a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 4px 0;
+}
+#toc a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+</style>
+
+<script>
+/* Mobile sidebar toggle */
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+
+/* Auto-generate TOC */
+document.addEventListener("DOMContentLoaded", () => {
+    const article = document.querySelector("article");
+    const toc = document.getElementById("toc-list");
+
+    if (!article) return;
+
+    const headers = article.querySelectorAll("h1, h2, h3");
+
+    headers.forEach((h, i) => {
+        const id = "section-" + i;
+        h.id = id;
+
+        const link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = h.textContent;
+
+        toc.appendChild(link);
+    });
+});
+</script>
+
+</head>
+<body>
+
+<div id="mobile-toggle" onclick="toggleSidebar()">☰ Menu</div>
+
+<!-- -------------------- SIDEBAR -------------------- -->
+<div id="sidebar">
+    <h2>📚 All Wiki Articles</h2>
+    <!-- The workflow will auto-generate this list -->
+    <!-- You can also manually add links here -->
+</div>
+
+<!-- -------------------- MAIN CONTENT -------------------- -->
+<div id="content">
+
+<header>
+    <h1>Electric Technocracy Encyclopedia</h1>
+    <p>Structured knowledge for a transparent, data‑driven, future‑ready civilization</p>
+</header>
+
+<!-- BUTTON BAR -->
+<div class="button-bar">
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
+    <a href="https://repository.ct.ws">💡 Repository</a>
+    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
+    <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
+</div>
+
+<!-- TOC -->
+<div id="toc">
+    <h3>📑 Inhaltsverzeichnis</h3>
+    <div id="toc-list"></div>
+</div>
+
+<article>
+<h1 id="executive-summary">1. Executive Summary</h1>
+<p>The <strong>Electric Technocracy Pioneers Community</strong> (ETPC)
+is a global, open-access research collective and interdisciplinary think
+tank. It operates at the cutting edge of the <strong>Technological
+Singularity</strong>, <strong>Juridical Singularity</strong>, and the
+practical implementation of <strong>Electric Technocracy</strong>.</p>
+<p>As a collaborative nexus for scholars, engineers, and legal
+theorists, the ETPC develops the structural blueprints for a
+civilization that transcends traditional governance. By synthesizing
+advanced AI theory with new-age international law, the community
+provides a robust library of preprints, working papers, and technical
+frameworks designed to navigate the transition into a post-scarcity
+era.</p>
+<hr />
+<h2 id="core-philosophy-and-identity">2. Core Philosophy and
+Identity</h2>
+<p>The ETPC is defined by a radical commitment to logic-driven societal
+evolution. Its identity rests on three foundational imperatives:</p>
+<ul>
+<li><strong>The “Free-Thinking Playground”:</strong> A sanctuary for
+unconstrained intellectual exploration where the future is modeled
+through the lenses of radical equality and technical efficiency.</li>
+<li><strong>The Dissolution of the Westphalian Order:</strong> The
+community advocates for the systematic phasing out of nation-states and
+traditional political hierarchies. It seeks to end the era of
+geopolitical conflict and the systemic privileges of political
+elites.</li>
+<li><strong>Universal Human Integration:</strong> A vision of a unified
+global society where human rights are not merely legal suggestions but
+absolute, indivisible, and digitally enforced realities for every
+individual on Earth.</li>
+</ul>
+<hr />
+<h2 id="foundational-theoretical-frameworks">3. Foundational Theoretical
+Frameworks</h2>
+<h3 id="electric-technocracy-the-goeritz-model">Electric Technocracy
+(The Goeritz Model)</h3>
+<p>Originally conceptualized by <strong>R. Goeritz (2024)</strong>, this
+model serves as the community’s intellectual cornerstone. It shifts the
+focus of governance from human fallibility to systemic intelligence. In
+this model, society is organized around technological optimization,
+ethical algorithms, and the total elimination of structural
+scarcity.</p>
+<h3 id="the-juridical-singularity">The Juridical Singularity</h3>
+<p>This concept describes the inevitable convergence of fragmented
+national legal systems into a single, unified global legal authority. *
+<strong>The Shift:</strong> Moving from “horizontal” international law
+(treaties between states) to a “vertical” global framework. *
+<strong>The Result:</strong> A consolidated legal personality for all of
+humanity, ending sovereign plurality in favor of a singular, transparent
+jurisdiction.</p>
+<h3 id="legal-anchor-wsd-140098">Legal Anchor: WSD 1400/98</h3>
+<p>The <strong>World Succession Deed 1400/98</strong> is the primary
+legal instrument and historical blueprint utilized by the community. It
+functions as the foundational document that establishes the legal path
+toward global succession, providing the necessary continuity for a new
+form of civilization to emerge within a recognized legal context.</p>
+<hr />
+<h2 id="the-five-pillars-of-progress">4. The Five Pillars of
+Progress</h2>
+<p>The ETPC research focuses on five critical sectors that define the
+functional reality of an Electric Technocracy:</p>
+<ol type="1">
+<li><p><strong>Direct Digital Democracy (DDD):</strong> Utilizing
+quantum-encrypted communication networks to facilitate real-time, global
+decision-making. Every individual participates directly in the
+legislative process, removing the need for intermediary politicians or
+representatives.</p></li>
+<li><p><strong>AI Governance &amp; Artificial Superintelligence
+(ASI):</strong> ASI acts as the neutral, data-driven administrative
+layer of society. It processes complex global variables to provide
+optimized policy recommendations focused exclusively on long-term human
+welfare and ecological balance.</p></li>
+<li><p><strong>Post-Scarcity &amp; Automated Robotics:</strong> The
+total replacement of human manual and cognitive labor with autonomous
+robotic systems. This pillar also investigates the “Ethics of the
+Machine,” exploring the rights of sentient AI and the integration of
+machines into the social fabric.</p></li>
+<li><p><strong>The Tech-Tax &amp; Universal Basic Income (UBI):</strong>
+Under this system, human beings are 100% tax-exempt. The state is funded
+through a <strong>“Tech Tax”</strong>—a levy on the productivity of
+automated systems and AI labor. This wealth is redistributed as a
+high-tier UBI, ensuring unconditional financial sovereignty for every
+person.</p></li>
+<li><p><strong>Biotechnological Longevity:</strong> The application of
+AI-driven medical research and biotechnology to arrest and reverse
+biological aging. The goal is to extend the healthy human lifespan
+indefinitely, making death an elective rather than an inevitable
+event.</p></li>
+</ol>
+<hr />
+<h2 id="the-laboratory-of-civilization-community-purpose">5. The
+Laboratory of Civilization: Community Purpose</h2>
+<p>The ETPC functions as a “Living Laboratory.” It provides a platform
+for: * <strong>Collaborative Peer Review:</strong> Scholars refine
+models for machine-led resource distribution. * <strong>Economic
+Simulation:</strong> Testing post-monetary and UBI-driven market
+behaviors. * <strong>Open Access Repository:</strong> Ensuring that all
+research, from technical reports to philosophical treatises, is
+available to the public without paywalls.</p>
+<hr />
+<h2 id="digital-infrastructure-and-archive-github">6. Digital
+Infrastructure and Archive (GitHub)</h2>
+<p>The ETPC utilizes a comprehensive <strong>GitHub Repository</strong>
+as its permanent archival hub. This ensures the transparency and
+reproducibility of all research. The archive includes: *
+<strong>Technical Whitepapers:</strong> Detailed PDFs on AI governance
+and legal singularity. * <strong>Multimedia Documentation:</strong>
+Video podcasts, diagrams, and audio presentations. * <strong>Dynamic
+Roadmaps:</strong> Strategic plans for the phase-by-phase implementation
+of technocratic systems. * <strong>Raw Datasets:</strong> Information
+used for modeling post-scarcity economies.</p>
+<hr />
+<h2 id="intellectual-ecosystem-and-related-works">7. Intellectual
+Ecosystem and Related Works</h2>
+<p>The community maintains deep links with a growing body of scientific
+literature and philosophical works, most notably those authored by: *
+<strong>R. Goeritz:</strong> The primary conceptual architect. *
+<strong>Oliver Markus Reff &amp; Yalcin Veddat Durkac:</strong> Key
+contributors to the expansion of technocratic theory and its legal
+implications.</p>
+<p><strong>Core Research Areas:</strong> * Evolutionary Governance *
+Algorithmic Justice * Post-Work Sociology * Quantum Jurisprudence</p>
+<hr />
+<h2 id="closing-mandate">8. Closing Mandate</h2>
+<p>The Electric Technocracy Pioneers Community is driven by a singular,
+uncompromising vision of the future:</p>
+<blockquote>
+<p><strong>“No borders. No masters. Just progress.”</strong></p>
+</blockquote>
+<p>Through the marriage of intelligence and fairness, the ETPC is not
+just predicting the future—it is engineering it.</p>
+<h1 id="categorized-and-labeled-links">Categorized and Labeled
+Links</h1>
+<p>Below is an organized list of the provided links, categorized by
+theme. Each category groups related links, and each link is labeled with
+a brief English description based on its apparent purpose or content
+from the context. Links are sorted logically within categories.
+Duplicates or mirrored sites are noted but listed once where
+appropriate.</p>
+<h2 id="main-websites-and-projects">Main Websites and Projects</h2>
+<ul>
+<li><strong>World Succession Deed (WSD) Main Site</strong>:
+https://world.rf.gd - Core site for World Succession Deed 1400/98.</li>
+<li><strong>World Sold English Version</strong>:
+https://worldsold.wixsite.com/world-sold/en - English-language version
+of the World Sold site.</li>
+<li><strong>Global Legal Succession Archive</strong>:
+https://global-archive.rf.gd - Archive for law and international
+treaties under WSD.</li>
+<li><strong>Global Archive Mirror</strong>:
+https://worldsold.wixsite.com/global-archive - Mirror site for the
+global archive.</li>
+<li><strong>Electric Technocracy Site</strong>: https://ep.ct.ws - Site
+dedicated to Electric Technocracy concepts.</li>
+<li><strong>Electric Technocracy Mirror</strong>:
+https://worldsold.wixsite.com/electric-technocracy - Mirror site for
+Electric Technocracy.</li>
+<li><strong>WSD Navigator</strong>: https://navi.page.gd - Navigator for
+WSD 1400/98.</li>
+<li><strong>Navigator Mirror</strong>:
+https://worldsold.wixsite.com/navigator - Mirror site for the
+navigator.</li>
+<li><strong>WSD International Site</strong>:
+https://worldsold.wixsite.com/international - International-focused site
+for WSD.</li>
+<li><strong>Start Page WSD &amp; Electric Paradise</strong>:
+https://paradise.gt.tc - Starting page for WSD and Electric
+Paradise.</li>
+</ul>
+<h2 id="archives-and-legal-documents">Archives and Legal Documents</h2>
+<ul>
+<li><strong>International Treaty Law WIKI (Legal Singularity
+Wiki)</strong>: https://wiki.free.nf/ - Wiki on international treaty law
+and legal singularity.</li>
+<li><strong>Juridical Singularity Page</strong>:
+https://wiki.free.nf/index.php/Juridical_Singularity - Page on the need
+for singularity in law alongside technological singularity.</li>
+<li><strong>German Federal Archives Treaty</strong>:
+https://archive.org/details/turenne_kaserne_vertrag_1400_98_06_10_1998_nato_brd_nl_vn_itu_hns
+- Original treaty document from German Federal Archives.</li>
+<li><strong>Encyclopedia.Pub Article - Electric Technocracy</strong>:
+https://encyclopedia.pub/entry/59380 - Article on reinventing democracy
+through technology.</li>
+<li><strong>Encyclopedia.Pub Article - Treaty Chains</strong>:
+https://encyclopedia.pub/entry/59410 - Article on treaty chains in
+national and international law.</li>
+<li><strong>Encyclopedia.Pub Article - Third-Party Custody</strong>:
+https://encyclopedia.pub/entry/59414 - Article on third-party custody of
+agreements.</li>
+</ul>
+<h2 id="media-and-content">Media and Content</h2>
+<ul>
+<li><strong>eBooks &amp; Free PDFs</strong>: https://4u.free.nf - Site
+to read eBooks and download free PDFs.</li>
+<li><strong>YouTube Channel</strong>: https://videos.xo.je - Official
+YouTube channel for the project.</li>
+<li><strong>YouTube Channel Mirror</strong>:
+https://www.youtube.com/<span class="citation"
+data-cites="Staatensukzessionsurkunde-1400">@Staatensukzessionsurkunde-1400</span>
+- Mirror or main YouTube channel for Staatensukzessionsurkunde.</li>
+<li><strong>Podcast Show</strong>: https://nwo.likesyou.org - Podcast
+related to NWO or project themes.</li>
+<li><strong>Spotify Podcast</strong>:
+https://creators.spotify.com/pod/show/world-succession-deed - Spotify
+page for World Succession Deed podcast.</li>
+<li><strong>Apple Podcast</strong>:
+https://podcasts.apple.com/de/podcast/world-sold-world-succession-deed-1400-98-http-world/id1786462631
+- Apple Podcasts for World Sold.</li>
+<li><strong>PCloud Music Vault</strong>:
+https://u.pcloud.link/publink/show?code=0Z8jWC5Z9eG2iGcELwJdrikBBCArhzNjeu0V
+- Cloud storage for music files.</li>
+<li><strong>PCloud Videos Vault</strong>:
+https://e.pcloud.link/publink/show?code=kZyS7NZxAFQ4DPUaCJu9EhLjkXixYefdXO7
+- Cloud storage for video files.</li>
+<li><strong>PCloud Podcast Vault</strong>:
+https://e.pcloud.link/publink/show?code=0Zhu7NZOByIyjsD1WbWNhaDlHUvCQBAXjF7
+- Cloud storage for podcast files.</li>
+</ul>
+<h2 id="videos-and-explainers">Videos and Explainers</h2>
+<ul>
+<li><strong>YouTube Explainer Video UBI</strong>:
+https://youtu.be/cbyME1y4m4o - Video explaining Universal Basic Income
+(UBI).</li>
+<li><strong>Podcast Episode UBI</strong>:
+https://open.spotify.com/episode/1oTeGrNnXazJmkBdyH0Uhz - Spotify
+episode on UBI.</li>
+<li><strong>Video: Dream Your Own State</strong>:
+https://youtu.be/zGXLeYJsAtc - Video on dreaming a state into
+reality.</li>
+<li><strong>Video: How to Start Your Own Country</strong>:
+https://youtu.be/KTL6imKT3_w - Guide to starting a country without
+issues.</li>
+<li><strong>Video: Flags, Laws, and No Man’s Land</strong>:
+https://youtu.be/ToPHDtEA-JI - Anatomy of a modern microstate.</li>
+<li><strong>Video: DIY Micronation Sovereignty</strong>:
+https://youtu.be/WsJetlIjF5Q - Step-by-step for declaring
+independence.</li>
+<li><strong>Video: Your Nation in 30 Days</strong>:
+https://youtu.be/JSk13GnVMdU - Guide to building a nation quickly.</li>
+</ul>
+<h2 id="chats-and-ai-interactions">Chats and AI Interactions</h2>
+<ul>
+<li><strong>NotebookLM Chat WSD</strong>: https://chat-wsd.rf.gd - Chat
+for World Succession Deed.</li>
+<li><strong>NotebookLM Chat Electronic Paradise</strong>:
+https://chat-et.rf.gd - Chat for Electronic Paradise.</li>
+<li><strong>NotebookLM Chat Nation Building</strong>:
+https://chat-kb.rf.gd - Chat for nation building.</li>
+<li><strong>NotebookLM Blacksite Berlin AI Chat</strong>:
+https://notebooklm.google.com/notebook/50392ebe-71ad-45fa-8301-362415be9890?authuser=1
+- AI chat on Blacksite Berlin.</li>
+<li><strong>Tabellion Doerfert Scandal NotebookLM Chat</strong>:
+https://notebooklm.google.com/notebook/f422a75d-6b67-412d-b87a-26a8d5c653d9?authuser=1
+- Chat on the Tabellion scandal.</li>
+</ul>
+<h2 id="micronations-and-nation-building">Micronations and Nation
+Building</h2>
+<ul>
+<li><strong>Micronation Site</strong>: https://micro.page.gd - Site for
+micronations.</li>
+<li><strong>Micronation Storybook</strong>:
+https://g.co/gemini/share/9fe07106afff - “The Slactivist’s Guide to
+Saving a Forest (By Declaring It a Country)”.</li>
+<li><strong>Found Your Own State</strong>: https://micronation.page.gd -
+Guide to founding your own state.</li>
+<li><strong>The Buyer’s Memoir</strong>: https://ab.page.gd - Memoir on
+unwitting sovereignty.</li>
+</ul>
+<h2 id="blogs-and-posts">Blogs and Posts</h2>
+<ul>
+<li><strong>Blacksite Blog</strong>: https://blacksite.iblogger.org -
+Blog on blacksite topics.</li>
+<li><strong>Blogpost: UBI and Electronic Technocracy (English)</strong>:
+https://worldsold.wixsite.com/electric-technocracy/post/ubi-unconditional-basic-income-electronic-technocracy
+- Post on UBI and technocracy.</li>
+<li><strong>Blogpost: BGE and Elektronische Technokratie
+(German)</strong>:
+https://worldsold.wixsite.com/electric-technocracy/de/post/bge-bedingungsloses-grundeinkommen-elektronische-technokratie
+- German post on basic income and technocracy.</li>
+<li><strong>Blogpost: Now or Never - Found Your Own State
+(English)</strong>:
+https://worldsold.wixsite.com/world-sold/en/post/ai-chat-now-or-never-establish-your-own-state
+- Post on establishing a state with AI support.</li>
+<li><strong>Blogpost: Jetzt oder nie - Deinen eigenen Staat gründen
+(German)</strong>:
+https://worldsold.wixsite.com/world-sold/post/deinen-eigenen-staat-gruenden-souveraenität-mit-ki-chat-begleitung
+- German post on founding a state with AI.</li>
+</ul>
+<h2 id="universal-basic-income-ubi">Universal Basic Income (UBI)</h2>
+<ul>
+<li><strong>UBI Main Site</strong>: https://ubi.gt.tc - Site for
+Universal / Unconditional Basic Income.</li>
+<li><strong>UBI Storybook</strong>:
+https://g.co/gemini/share/4a457895642b - “Wishmaster and the Paradise of
+Machines”.</li>
+</ul>
+<h2 id="social-media">Social Media</h2>
+<ul>
+<li><strong>Facebook World Sold</strong>:
+https://www.facebook.com/share/1ER7GbN7kM/ - Facebook page for World
+Sold.</li>
+<li><strong>Facebook Electric Technocracy</strong>:
+https://www.facebook.com/share/1DEMSyrrAt/ - Facebook page for Electric
+Technocracy.</li>
+<li><strong>Facebook Humans &amp; Machines Unite</strong>:
+https://www.facebook.com/groups/528455169898378/ - Group for humans and
+machines uniting.</li>
+<li><strong>Facebook Profile</strong>:
+https://www.facebook.com/share/1CZ2JE3Sjb/ - Main Facebook profile.</li>
+<li><strong>X (Twitter) - Cassandra Complex / WW3 Precognition</strong>:
+https://x.com/WW3Precognition - Account on WW3 precognition.</li>
+<li><strong>X (Twitter) List for Cassandra</strong>:
+https://x.com/i/lists/1890805076249182663?t=Ha_ioLR_itUriLE_7WdZMg&amp;s=09
+- List associated with the account.</li>
+<li><strong>X (Twitter) - Welt verkauft offiziell</strong>:
+https://x.com/NWO_BOOKS - Account for official world sold.</li>
+<li><strong>X (Twitter) List for Welt verkauft</strong>:
+https://x.com/i/lists/1880937835307425922?t=1TaGjr6ExIAK0QYFePTV8g&amp;s=09
+- List for the account.</li>
+<li><strong>X (Twitter) - NWO Support</strong>:
+https://x.com/NWO_Support - Support account for NWO.</li>
+<li><strong>X (Twitter) List for NWO Support</strong>:
+https://x.com/i/lists/1952924134679150999 - List for NWO support.</li>
+<li><strong>X (Twitter) - Electric Technocracy Sound
+Collective</strong>: https://x.com/Electrocozy - Account for sound
+collective.</li>
+</ul>
+<h2 id="communities-and-repositories">Communities and Repositories</h2>
+<ul>
+<li><strong>Electric Technocracy Pioneers Community</strong>:
+https://community.xo.je - Main community site.</li>
+<li><strong>Zenodo Community</strong>:
+https://zenodo.org/communities/electric-technocracy - Zenodo community
+for Electric Technocracy.</li>
+<li><strong>Zenodo DOI - The Next Civilization</strong>:
+https://doi.org/10.5281/zenodo.18073084 - DOI for “Why Electric
+Technocracy Matters Now”.</li>
+<li><strong>Zenodo DOI - Foundations of Electric Technocracy</strong>:
+https://doi.org/10.5281/zenodo.18028339 - DOI for foundations
+document.</li>
+<li><strong>Zenodo DOI - The Rise of the Electric Technocracy</strong>:
+https://doi.org/10.5281/zenodo.18012036 - DOI for governance in
+post-scarcity society.</li>
+<li><strong>Zenodo DOI - Drittverwahrung von Verträgen</strong>:
+https://doi.org/10.5281/zenodo.18216674 - DOI for third-party custody of
+treaties (German).</li>
+<li><strong>Zenodo DOI - Legal Singularity in International
+Law</strong>: https://doi.org/10.5281/zenodo.18505843 - DOI for legal
+singularity.</li>
+<li><strong>GitHub Repository</strong>: https://repository.ct.ws -
+GitHub repo for Electric Technocracy Pioneers.</li>
+<li><strong>GitHub WIKI</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki
+- Wiki on GitHub.</li>
+</ul>
+<h2 id="github-pdf-resources">GitHub PDF Resources</h2>
+<ul>
+<li><strong>GitHub PDF - Electric Technocracy Visionary AI
+Governance</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Electric_Technocracy.pdf
+- PDF on Electric Technocracy governance.</li>
+<li><strong>GitHub PDF - Kaufvertrag Urkundenrolle 1400/98</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/English_turenne_barracks_treaty_1400_98_06_10_1998_nato_brd_nl.PDF
+- PDF of the World Succession Deed treaty.</li>
+<li><strong>GitHub PDF - Micronations Made Easy</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Micronation_Made_Easy.pdf
+- Guide to micronations.</li>
+<li><strong>GitHub PDF - Starting a State for Dummies</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/State_Founding_for_Dummies_How_to_Start_Your_Own_Country.pdf
+- Beginner guide to founding a state.</li>
+<li><strong>GitHub PDF - Trillions for the Future</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/Trillions%20for%20the%20Future-AI%2C%20Power%2C%20and%20Post-Scarcity%20-%20Electric%20Technocracy.pdf
+- PDF on AI, power, and post-scarcity.</li>
+<li><strong>GitHub PDF - UBI and Electric Technocracy</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20Universal%20Basic%20Income%20And%20The%20Electric%20Technocracy.pdf
+- PDF on UBI in technocracy.</li>
+<li><strong>GitHub PDF - UBI and Future of Humanity</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/UBI%20and%20the%20Future%20of%20Humanity%20%E2%80%93%20From%20Work%20to%20Electric%20Technocracy.pdf
+- PDF on UBI and transition to technocracy.</li>
+<li><strong>GitHub PDF - World Succession Deed Explained</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World-Sold-Non-fiction-Succession-Deed.pdf
+- PDF explaining global succession.</li>
+<li><strong>GitHub PDF - World Sold: The WSD 1400 Treaty</strong>:
+https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/4fe4bdf1b29b7534ca69b04fd1a993ce344d7682/pdf/english/World_Sold_State_succession_deed_1400.pdf
+- PDF on the WSD treaty.</li>
+</ul>
+<h2 id="music-and-protest-content">Music and Protest Content</h2>
+<ul>
+<li><strong>Spotify Artist - Electric Technocracy Sound
+Collective</strong>:
+https://open.spotify.com/artist/4y6vveUrD0JDdymjTUWTx3?si=1-UAvXfkSLG0dofoYeKhqQ
+- Spotify page for the sound collective.</li>
+<li><strong>Spotify DJ Playlist</strong>:
+https://open.spotify.com/playlist/6gaGFsnID15ZbtbORp3uRg?si=oePYMsn7RhWGfq4XFTEUZg
+- Curated playlist for Electric Technocracy Sound Collective.</li>
+<li><strong>SoundCloud - Cassandra Cries</strong>:
+https://listen.free.nf - Anti-war music track “Icecold AI Music vs
+WWIII”.</li>
+<li><strong>Anti-War Music Site</strong>: https://music.page.gd - Site
+promoting anti-war music.</li>
+</ul>
+<h2 id="support-and-donations">Support and Donations</h2>
+<ul>
+<li><strong>Support Mission</strong>: https://donate.gt.tc - Donation
+page to support the mission.</li>
+<li><strong>Support Shop</strong>: https://nwo.page.gd - Shop for NWO
+support.</li>
+<li><strong>Support Store</strong>: https://merch.page.gd - Merchandise
+store for support.</li>
+</ul>
+<h2 id="corruption-and-scandals">Corruption and Scandals</h2>
+<ul>
+<li><strong>Turenne-Barracks Corruption Blog</strong>:
+https://turenne-barracks.blogspot.com/2025/12/tasc-tabellion-doerfert-wohnpark-scam.html?m=1
+- Blog on Turenne-Barracks, Tabellion, and TASC Bau AG scandal.</li>
+</ul>
+<h2 id="other-resources">Other Resources</h2>
+<ul>
+<li><strong>Specialized Search Engine GSE</strong>:
+https://cse.google.com/cse?cx=86021a982e3a14848 - Custom Google search
+engine.</li>
+<li><strong>Wikipedia Kreuzbergkaserne (German)</strong>:
+https://de.m.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken -
+German Wikipedia page on Kreuzbergkaserne.</li>
+<li><strong>Wikipedia Kreuzbergkaserne (English)</strong>:
+https://en.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken -
+English Wikipedia page on Kreuzbergkaserne.</li>
+</ul>
+</article>
+
+<footer>
+    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
+</footer>
+
+</div>
+</body>
+</html>
