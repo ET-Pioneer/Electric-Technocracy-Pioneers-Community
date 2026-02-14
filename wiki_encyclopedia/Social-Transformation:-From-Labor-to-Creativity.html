@@ -2,149 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Electric Technocracy Encyclopedia – Home</title>
+  <title>All Links – Electric Technocracy Encyclopedia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     /* =========================
-       DESIGN-SYSTEM: COLORS, FONTS, SPACING
+       DESIGN SYSTEM
        ========================= */
     :root {
       --bg-body: #05060a;
       --bg-surface: #0c0f18;
       --bg-surface-alt: #111624;
-      --bg-header: #05060a;
-      --bg-sidebar: #05060a;
       --border-subtle: #252a3a;
       --accent: #4fd1c5;
       --accent-soft: rgba(79, 209, 197, 0.12);
       --text-main: #f5f7ff;
       --text-muted: #a0aec0;
       --text-soft: #7b8499;
-      --link: #63b3ed;
-      --link-hover: #90cdf4;
-      --danger: #f56565;
-
-      --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
-
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
-
-      --space-xs: 0.25rem;
-      --space-sm: 0.5rem;
-      --space-md: 1rem;
-      --space-lg: 1.5rem;
-      --space-xl: 2rem;
-
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
-        Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
       --max-width: 1200px;
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #151a2b 0, #05060a 55%);
+      background: #05060a;
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--link-hover);
-      text-decoration: underline;
+      font-family: system-ui, sans-serif;
     }
 
     /* =========================
-       HEADER + UNIVERSAL NAV
+       HEADER + NAV
        ========================= */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: linear-gradient(
-        to right,
-        rgba(5, 6, 10, 0.98),
-        rgba(5, 6, 10, 0.96)
-      );
+      background: #05060a;
       border-bottom: 1px solid rgba(79, 209, 197, 0.25);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: var(--space-md) var(--space-md);
+      padding: 1rem;
+      z-index: 1000;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: var(--space-md);
+      align-items: center;
     }
 
     .logo {
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    .logo-badge {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #4fd1c5, #1a202c);
-      box-shadow: 0 0 18px rgba(79, 209, 197, 0.7);
-    }
-
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.25rem;
-      margin: 0;
-      padding: 0;
-      font-size: 0.9rem;
-    }
-
-    .main-nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding-bottom: 0.15rem;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.is-active {
-      color: var(--text-main);
-      border-color: var(--accent);
+    /* Hamburger */
+    .hamburger {
+      font-size: 1.6rem;
+      cursor: pointer;
+      user-select: none;
     }
 
     /* =========================
-       LAYOUT: SIDEBAR + CONTENT
+       HAMBURGER MENU PANEL
+       ========================= */
+    .menu-panel {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100vh;
+      background: #0c0f18;
+      border-left: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      z-index: 2000;
+    }
+
+    .menu-panel.open {
+      right: 0;
+    }
+
+    .menu-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .menu-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.4rem;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .menu-list a:hover {
+      background: rgba(79, 209, 197, 0.15);
+      color: var(--text-main);
+    }
+
+    /* =========================
+       LAYOUT
        ========================= */
     .page-shell {
       max-width: var(--max-width);
-      margin: var(--space-xl) auto;
-      padding: 0 var(--space-md) var(--space-xl);
+      margin: 2rem auto;
+      padding: 0 1rem;
       display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: var(--space-xl);
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
     }
 
     @media (max-width: 900px) {
@@ -154,31 +130,15 @@
     }
 
     /* =========================
-       SIDEBAR (MODERNISIERT)
+       SIDEBAR (DYNAMIC ARTICLES)
        ========================= */
     .sidebar {
-      background: linear-gradient(
-        145deg,
-        var(--bg-sidebar),
-        var(--bg-surface-alt)
-      );
-      border-radius: var(--radius-lg);
+      background: var(--bg-surface-alt);
       border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: var(--space-md);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      max-height: calc(100vh - 140px);
-      position: sticky;
-      top: 88px;
-      overflow: hidden;
-    }
-
-    .sidebar-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
     }
 
     .sidebar-title {
@@ -186,249 +146,44 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--text-soft);
-    }
-
-    .sidebar-subtitle {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .sidebar-scroll {
-      overflow-y: auto;
-      padding-right: 4px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent) transparent;
-    }
-
-    .sidebar-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .sidebar-scroll::-webkit-scrollbar-thumb {
-      background: rgba(79, 209, 197, 0.5);
-      border-radius: 999px;
-    }
-
-    .sidebar-section {
-      margin-bottom: var(--space-md);
-    }
-
-    .sidebar-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .sidebar-section-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
 
     .sidebar-list {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-      font-size: 0.85rem;
+      gap: 0.4rem;
     }
 
     .sidebar-list a {
       color: var(--text-muted);
       text-decoration: none;
-      padding: 0.25rem 0.15rem;
-      border-radius: var(--radius-sm);
+      padding: 0.35rem;
+      border-radius: 6px;
       display: block;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background 0.2s;
     }
 
     .sidebar-list a:hover {
-      background: rgba(79, 209, 197, 0.08);
+      background: rgba(79, 209, 197, 0.15);
       color: var(--text-main);
     }
 
-    .sidebar-list a.is-active {
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
     /* =========================
-       MAIN CONTENT / ARTICLE
+       CONTENT
        ========================= */
     .content {
-      background: radial-gradient(circle at top left, #151a2b 0, #05060a 55%);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: var(--space-xl);
+      padding: 2rem;
     }
 
-    @media (max-width: 700px) {
-      .content {
-        padding: var(--space-lg);
-      }
-    }
-
-    .article-kicker {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .article-title {
-      font-size: 1.8rem;
-      line-height: 1.2;
-      margin: 0 0 0.5rem;
-    }
-
-    .article-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: var(--space-lg);
-    }
-
-    .article-meta span + span::before {
-      content: "•";
-      margin: 0 0.4rem;
-      color: var(--text-soft);
-    }
-
-    .article-body {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: var(--text-main);
-    }
-
-    .article-body h2 {
-      font-size: 1.2rem;
-      margin-top: var(--space-lg);
-      margin-bottom: 0.4rem;
-    }
-
-    .article-body h3 {
-      font-size: 1.05rem;
-      margin-top: var(--space-md);
-      margin-bottom: 0.25rem;
-    }
-
-    .article-body p {
-      margin: 0 0 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .article-body ul,
-    .article-body ol {
-      margin: 0 0 1rem 1.2rem;
-      color: var(--text-muted);
-    }
-
-    .article-body code {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      background: rgba(15, 23, 42, 0.9);
-      padding: 0.1rem 0.35rem;
-      border-radius: 4px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .article-body pre {
-      background: #050816;
-      padding: 0.9rem 1rem;
-      border-radius: var(--radius-md);
-      overflow-x: auto;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-    }
-
-    /* =========================
-       LINK-BLÖCKE (GANZ KLICKBAR)
-       ========================= */
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--space-md);
-      margin: var(--space-lg) 0;
-    }
-
-    .link-block {
-      display: block;
-      padding: var(--space-md);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      background: linear-gradient(
-        145deg,
-        rgba(15, 23, 42, 0.95),
-        rgba(15, 23, 42, 0.8)
-      );
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-        border-color 0.12s ease, background 0.12s ease;
-    }
-
-    .link-block:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
-      border-color: rgba(79, 209, 197, 0.7);
-      background: linear-gradient(
-        145deg,
-        rgba(15, 23, 42, 1),
-        rgba(15, 23, 42, 0.95)
-      );
-    }
-
-    .link-block-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .link-block-meta {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin-bottom: 0.35rem;
-    }
-
-    .link-block-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* =========================
-       BILDER IM TEXT (STABIL)
-       ========================= */
-    .article-body img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1.5rem auto;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .img-left {
-      float: left;
-      margin: 0 1.5rem 1rem 0;
-      max-width: 40%;
-    }
-
-    .img-right {
-      float: right;
-      margin: 0 0 1rem 1.5rem;
-      max-width: 40%;
-    }
-
-    .clearfix::after {
-      content: "";
-      display: block;
-      clear: both;
+    .content h1 {
+      margin-top: 0;
     }
 
     /* =========================
@@ -436,199 +191,144 @@
        ========================= */
     .site-footer {
       max-width: var(--max-width);
-      margin: 0 auto var(--space-lg);
-      padding: 0 var(--space-md);
-      font-size: 0.8rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
       color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: var(--space-md);
     }
 
-    @media (max-width: 700px) {
-      .site-footer {
-        flex-direction: column;
-      }
+    .back-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(79, 209, 197, 0.25);
     }
   </style>
-</head>
-<body>
-  <!-- =========================
-       HEADER + UNIVERSAL NAV
-       ========================= -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="logo">
-        <span class="logo-badge"></span>
-        Electric Technocracy Encyclopedia
-      </div>
 
-      <nav class="main-nav">
-        <ul>
-          <!-- "is-active" je nach Seite setzen -->
-          <li><a href="/Electric-Technocracy-Pioneers-Community/index.html">HQ</a></li>
-          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html" class="is-active">Encyclopedia</a></li>
-          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Implementation-Roadmap.html">Roadmap</a></li>
-          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Juridical-Singularity.html">Juridical Singularity</a></li>
-          <li><a href="/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Technology-Stack.html">Tech Stack</a></li>
-        </ul>
-      </nav>
-    </div>
+  <script>
+    function toggleMenu() {
+      document.querySelector(".menu-panel").classList.toggle("open");
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Electric Technocracy Encyclopedia</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
 
-  <!-- =========================
-       LAYOUT: SIDEBAR + CONTENT
-       ========================= -->
+  <!-- HAMBURGER MENU -->
+  <aside class="menu-panel">
+    <div class="menu-title">External Links</div>
+    <ul class="menu-list">
+
+      <!-- All your links here -->
+      <li><a href="https://world.rf.gd" target="_blank">🌐 WSD - World Succession Deed 1400/98</a></li>
+      <li><a href="https://worldsold.wixsite.com/world-sold/en" target="_blank">WSD – Wix Mirror</a></li>
+
+      <li><a href="https://global-archive.rf.gd" target="_blank">🌐 WSD – Global Legal Succession Archive</a></li>
+      <li><a href="https://worldsold.wixsite.com/global-archive" target="_blank">WSD – Global Archive (Wix)</a></li>
+
+      <li><a href="https://ep.ct.ws" target="_blank">🌐 Electric Technocracy</a></li>
+      <li><a href="https://worldsold.wixsite.com/electric-technocracy" target="_blank">Electric Technocracy (Wix)</a></li>
+
+      <li><a href="https://navi.page.gd" target="_blank">🌐 WSD - Navigator 1400/98</a></li>
+      <li><a href="https://worldsold.wixsite.com/navigator" target="_blank">Navigator (Wix)</a></li>
+
+      <li><a href="https://worldsold.wixsite.com/international" target="_blank">🌐 WSD - International</a></li>
+
+      <li><a href="https://wiki.free.nf/" target="_blank">📚 International Treaty Law WIKI</a></li>
+
+      <li><a href="https://4u.free.nf" target="_blank">📘 eBooks & PDF Downloads</a></li>
+
+      <li><a href="https://videos.xo.je" target="_blank">🎥 YouTube Mirror</a></li>
+      <li><a href="https://www.youtube.com/@Staatensukzessionsurkunde-1400" target="_blank">YouTube Channel</a></li>
+
+      <li><a href="https://nwo.likesyou.org" target="_blank">🎙️ Podcast Show</a></li>
+      <li><a href="https://creators.spotify.com/pod/show/world-succession-deed" target="_blank">Podcast (Spotify)</a></li>
+
+      <li><a href="https://paradise.gt.tc" target="_blank">🚀 Start-Page WSD & Electric Paradise</a></li>
+
+      <li><a href="https://wiki.free.nf/index.php/Juridical_Singularity" target="_blank">🕳️ Juridical Singularity (Wiki)</a></li>
+
+      <li><a href="https://community.xo.je" target="_blank">🪢 Electric Technocracy Pioneers Community</a></li>
+      <li><a href="https://zenodo.org/communities/electric-technocracy" target="_blank">Zenodo Community</a></li>
+
+      <li><a href="https://doi.org/10.5281/zenodo.18073084" target="_blank">📖 The Next Civilization</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.18028339" target="_blank">📖 Foundations of Electric Technocracy</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.18012036" target="_blank">📖 Rise of the Electric Technocracy</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.18216674" target="_blank">📖 Drittverwahrung</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.18505843" target="_blank">📖 Legal Singularity in International Law</a></li>
+
+      <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/" target="_blank">💡 GitHub Page</a></li>
+      <li><a href="https://repository.ct.ws" target="_blank">💡 GitHub Repository Mirror</a></li>
+      <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" target="_blank">💡 GitHub Wiki</a></li>
+
+      <li><a href="https://mranonymousnwo.github.io/One_World/" target="_blank">🌎 One World Archive Vault</a></li>
+      <li><a href="https://github.com/MrAnonymousNWO/One_World/" target="_blank">🌏 One World Repository</a></li>
+      <li><a href="https://github.com/MrAnonymousNWO/One_World/wiki" target="_blank">🌍 One World Wiki</a></li>
+
+      <li><a href="https://encyclopedia.pub/entry/59508" target="_blank">📜 Juridical Singularity (MDPI)</a></li>
+      <li><a href="https://encyclopedia.pub/entry/59380" target="_blank">📜 Electric Technocracy (MDPI)</a></li>
+      <li><a href="https://encyclopedia.pub/entry/59410" target="_blank">📜 Treaty Chains</a></li>
+      <li><a href="https://encyclopedia.pub/entry/59414" target="_blank">📜 Third-Party Custody</a></li>
+
+      <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search#gsc.tab=0" target="_blank">🔎 Unified Search Engine</a></li>
+      <li><a href="https://cse.google.com/cse?cx=86021a982e3a14848" target="_blank">🔍 Specialized Search Engine</a></li>
+
+      <li><a href="https://de.m.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken" target="_blank">🏰 Wikipedia DE</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Kreuzbergkaserne_Zweibr%C3%BCcken" target="_blank">🏰 Wikipedia EN</a></li>
+
+    </ul>
+  </aside>
+
+  <!-- PAGE LAYOUT -->
   <main class="page-shell">
+
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <div class="sidebar-header">
-        <div class="sidebar-title">Encyclopedia</div>
-        <div class="sidebar-subtitle">
-          Curated entries on Electric Technocracy, AI governance, and systemic transitions.
-        </div>
-      </div>
-
-      <div class="sidebar-scroll">
-        <section class="sidebar-section">
-          <div class="sidebar-section-title">Core entries</div>
-          <ul class="sidebar-list">
-            <li>
-              <a href="Home.html" class="is-active">Overview & Scope</a>
-            </li>
-            <li>
-              <a href="Juridical-Singularity.html">Juridical Singularity</a>
-            </li>
-            <li>
-              <a href="Implementation-Roadmap.html">Implementation Roadmap</a>
-            </li>
-            <li>
-              <a href="Technology-Stack.html">Technology Stack</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="sidebar-section">
-          <div class="sidebar-section-title">External references</div>
-          <ul class="sidebar-list">
-            <li>
-              <a href="https://encyclopedia.pub/entry/59508" target="_blank">
-                MDPI Encyclopedia: Juridical Singularity
-              </a>
-            </li>
-            <li>
-              <a href="https://grokipedia.com/search" target="_blank">
-                Grokipedia – Cross‑index
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="sidebar-section">
-          <div class="sidebar-section-title">Project context</div>
-          <ul class="sidebar-list">
-            <li>
-              <a href="/Electric-Technocracy-Pioneers-Community/index.html">
-                Community HQ
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community" target="_blank">
-                GitHub Repository
-              </a>
-            </li>
-          </ul>
-        </section>
-      </div>
+      <div class="sidebar-title">HTML Articles</div>
+      <ul class="sidebar-list">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Juridical-Singularity.html">Juridical Singularity</a></li>
+        <li><a href="Implementation-Roadmap.html">Implementation Roadmap</a></li>
+        <li><a href="Technology-Stack.html">Technology Stack</a></li>
+        <li><a href="all_links.html" class="is-active">All Links</a></li>
+      </ul>
     </aside>
 
     <!-- CONTENT -->
     <section class="content">
-      <header>
-        <div class="article-kicker">Electric Technocracy Encyclopedia</div>
-        <h1 class="article-title">Home – Scope, Architecture, and Juridical Thresholds</h1>
-        <div class="article-meta">
-          <span>Living document</span>
-          <span>Version 0.1</span>
-          <span>Curated by Electric Technocracy Pioneers</span>
-        </div>
-      </header>
-
-      <article class="article-body">
-        <p>
-          This encyclopedia consolidates the conceptual, juridical, and technical foundations of an
-          Electric Technocracy: a governance architecture where law, infrastructure, and computation
-          converge into a transparent, measurable, and globally accessible system.
-        </p>
-
-        <h2>Purpose of this encyclopedia</h2>
-        <p>
-          The goal is not to describe a distant utopia, but to document concrete thresholds:
-          irreversible points where legal, technical, and institutional structures cross into a new
-          regime. Each entry is designed as a stable reference node that can be cited, forked, and
-          mirrored across platforms.
-        </p>
-
-        <div class="link-grid">
-          <a class="link-block" href="Juridical-Singularity.html">
-            <div class="link-block-meta">Core concept</div>
-            <div class="link-block-title">Juridical Singularity</div>
-            <div class="link-block-desc">
-              Law’s irreversible point of no return: when legal systems become structurally
-              inseparable from computational infrastructures.
-            </div>
-          </a>
-
-          <a class="link-block" href="Implementation-Roadmap.html">
-            <div class="link-block-meta">Process</div>
-            <div class="link-block-title">Implementation Roadmap</div>
-            <div class="link-block-desc">
-              From fragmented nation‑state governance to a measurable, interoperable, and
-              computation‑aligned technocratic stack.
-            </div>
-          </a>
-
-          <a class="link-block" href="Technology-Stack.html">
-            <div class="link-block-meta">Infrastructure</div>
-            <div class="link-block-title">Technology Stack</div>
-            <div class="link-block-desc">
-              Protocols, data models, and coordination layers required to sustain an Electric
-              Technocracy at planetary scale.
-            </div>
-          </a>
-        </div>
-
-        <h2>How to read and extend this space</h2>
-        <p>
-          Each article is written to be both human‑legible and structurally indexable: headings map
-          to conceptual layers, while link blocks expose canonical entry points for external
-          systems, search engines, and parallel encyclopedias.
-        </p>
-
-        <h3>Versioning and forks</h3>
-        <p>
-          The encyclopedia is designed to be forked, mirrored, and re‑contextualized. GitHub
-          repositories, wikis, and static mirrors are treated as first‑class citizens, not as
-          secondary exports.
-        </p>
-
-        <h3>Relation to external encyclopedias</h3>
-        <p>
-          Entries such as <em>Juridical Singularity</em> are cross‑linked to external publications
-          (e.g. MDPI Encyclopedia) to maintain a bridge between peer‑reviewed academic work and
-          experimental governance prototypes.
-        </p>
-      </article>
+      <h1>All External Links</h1>
+      <p>
+        This page contains the complete curated link collection for the Electric Technocracy
+        Pioneers Community, WSD, international treaty archives, encyclopedias, research hubs,
+        and global governance resources.
+      </p>
+      <p>
+        Use the hamburger menu (☰) to access all links.
+      </p>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div>
-      Electric Technocracy Pioneers Community — Open research hub for AI governance & technocratic
-      futures.
-    </div>
-    <div>CC‑BY‑SA where applicable · Fork, mirror, and extend.</div>
+    <div>Electric Technocracy Pioneers Community</div>
+    <a class="back-btn" href="/Electric-Technocracy-Pioneers-Community/index.html">⬅️ Back to Root</a>
   </footer>
+
 </body>
 </html>
