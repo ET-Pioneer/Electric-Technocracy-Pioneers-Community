@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: false   # WICHTIG: verhindert den Submodule-Fehler
 
       - name: Ensure .nojekyll exists
         run: echo "" > .nojekyll
@@ -41,6 +39,8 @@ jobs:
       - name: Convert ALL Wiki formats to HTML using template
         run: |
           TEMPLATE="wiki_encyclopedia.html"
+
+          # Supported extensions
           EXTENSIONS="md mediawiki creole org rst textile pod rdoc txt adoc"
 
           for ext in $EXTENSIONS; do
@@ -51,18 +51,48 @@ jobs:
               output="wiki_encyclopedia/${base}.html"
 
               case "$ext" in
-                adoc) asciidoctor -o temp.html "$file" ;;
-                md) pandoc "$file" -f markdown -t html -o temp.html ;;
-                mediawiki) pandoc "$file" -f mediawiki -t html -o temp.html ;;
-                creole) pandoc "$file" -f creole -t html -o temp.html ;;
-                org) pandoc "$file" -f org -t html -o temp.html ;;
-                rst) pandoc "$file" -f rst -t html -o temp.html ;;
-                textile) pandoc "$file" -f textile -t html -o temp.html ;;
-                pod) pandoc "$file" -f pod -t html -o temp.html ;;
-                rdoc) pandoc "$file" -f rdoc -t html -o temp.html ;;
-                txt) pandoc "$file" -f plain -t html -o temp.html ;;
+                adoc)
+                  asciidoctor -o temp.html "$file"
+                  ;;
+
+                md)
+                  pandoc "$file" -f markdown -t html -o temp.html
+                  ;;
+
+                mediawiki)
+                  pandoc "$file" -f mediawiki -t html -o temp.html
+                  ;;
+
+                creole)
+                  pandoc "$file" -f creole -t html -o temp.html
+                  ;;
+
+                org)
+                  pandoc "$file" -f org -t html -o temp.html
+                  ;;
+
+                rst)
+                  pandoc "$file" -f rst -t html -o temp.html
+                  ;;
+
+                textile)
+                  pandoc "$file" -f textile -t html -o temp.html
+                  ;;
+
+                pod)
+                  pandoc "$file" -f pod -t html -o temp.html
+                  ;;
+
+                rdoc)
+                  pandoc "$file" -f rdoc -t html -o temp.html
+                  ;;
+
+                txt)
+                  pandoc "$file" -f markdown -t html -o temp.html
+                  ;;
               esac
 
+              # FIX: HTML unverändert einfügen (kein sed, kein <br>)
               CONTENT="$(cat temp.html)"
 
               awk -v content="$CONTENT" '
@@ -108,20 +138,18 @@ jobs:
             | while read file; do
                 clean="${file#./}"
                 url="$BASE_URL/$clean"
-
-                esc_url=$(printf '%s\n' "$url" | sed 's/&/\&amp;/g; s/</\&lt;/g')
-
                 lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-                echo "<url><loc>$esc_url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
+                echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
               done
 
           echo '</urlset>' >> sitemap.xml
 
       - name: Commit and push generated files
+        env:
+          TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-
-          git add .
-          git commit -m "Automated full wiki indexing" || echo "No changes to commit"
-          git push
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml directory.html wiki_encyclopedia .nojekyll
+          git commit -m "Automated index update (ALL Wiki Formats Rendered)" || echo "No changes to commit"
+          git push https://$TOKEN@github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community.git HEAD:main
