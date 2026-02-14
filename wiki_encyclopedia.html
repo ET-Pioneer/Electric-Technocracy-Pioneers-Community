@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Electric Technocracy Encyclopedia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    /* ===== DESIGN SYSTEM ===== */
     :root {
       --bg-body: #05060a;
       --bg-surface: #0c0f18;
@@ -22,6 +21,8 @@
       --max-width: 1200px;
     }
 
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       background: var(--bg-body);
@@ -29,7 +30,7 @@
       font-family: system-ui, sans-serif;
     }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     .site-header {
       position: sticky;
       top: 0;
@@ -61,7 +62,7 @@
       user-select: none;
     }
 
-    /* ===== HAMBURGER MENU ===== */
+    /* HAMBURGER MENU */
     .menu-panel {
       position: fixed;
       top: 0;
@@ -76,9 +77,7 @@
       z-index: 2000;
     }
 
-    .menu-panel.open {
-      right: 0;
-    }
+    .menu-panel.open { right: 0; }
 
     .menu-title {
       font-size: 1rem;
@@ -111,7 +110,7 @@
       color: var(--text-main);
     }
 
-    /* ===== LAYOUT ===== */
+    /* LAYOUT */
     .page-shell {
       max-width: var(--max-width);
       margin: 2rem auto;
@@ -127,7 +126,7 @@
       }
     }
 
-    /* ===== SIDEBAR ===== */
+    /* SIDEBAR */
     .sidebar {
       background: var(--bg-surface-alt);
       border: 1px solid var(--border-subtle);
@@ -173,7 +172,7 @@
       color: var(--accent) !important;
     }
 
-    /* ===== CONTENT ===== */
+    /* CONTENT */
     .content {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -189,7 +188,7 @@
       border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .site-footer {
       max-width: var(--max-width);
       margin: 2rem auto;
@@ -235,11 +234,11 @@
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
 
-  <!-- HAMBURGER MENU (EXTERNAL LINKS) -->
+  <!-- HAMBURGER MENU (EXTERNAL LINKS – optional, vom Workflow befüllbar) -->
   <aside class="menu-panel">
     <div class="menu-title">External Links</div>
     <ul class="menu-list">
-      <!-- Dein Workflow fügt hier die externen Links ein -->
+      <!-- Hier kannst du statisch oder per Workflow deine externen Links einfügen -->
     </ul>
   </aside>
 
@@ -252,7 +251,7 @@
       <ul class="sidebar-list" id="wikiSidebar"></ul>
     </aside>
 
-    <!-- CONTENT (WORKFLOW INSERTS ARTICLE HERE) -->
+    <!-- CONTENT (WORKFLOW SETZT HIER DEN ARTIKEL EIN) -->
     <section class="content" id="articleContent">
       <!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->
     </section>
@@ -267,8 +266,9 @@
     </div>
   </footer>
 
-  <!-- ===== DYNAMIC SIDEBAR: READ H1 TITLES ===== -->
+  <!-- DYNAMIC SIDEBAR: H1-TITEL AUS ALLEN WIKI-HTML-SEITEN -->
   <script>
+    // Alle Wiki-HTML-Dateien im Ordner wiki_encyclopedia
     const wikiFiles = [
       "Home.html",
       "Juridical-Singularity.html",
@@ -278,17 +278,27 @@
     ];
 
     const sidebar = document.getElementById("wikiSidebar");
-    const current = location.pathname.split("/").pop();
+
+    // Verzeichnis-Pfad dynamisch aus der aktuellen URL ableiten
+    // z.B. /Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/
+    const dirPath = location.pathname.replace(/[^\/]+$/, "");
+
+    const currentFile = location.pathname.split("/").pop();
 
     wikiFiles.forEach(file => {
-      fetch(file)
-        .then(res => res.text())
+      const url = dirPath + file;
+
+      fetch(url)
+        .then(res => res.ok ? res.text() : "")
         .then(html => {
-          const h1 = new DOMParser().parseFromString(html, "text/html").querySelector("h1");
+          if (!html) return;
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const h1 = doc.querySelector("h1");
           const title = h1 ? h1.textContent.trim() : file.replace(".html", "");
-          const active = file === current ? "is-active" : "";
+          const active = (file === currentFile) ? "is-active" : "";
           sidebar.innerHTML += `<li><a href="${file}" class="${active}">${title}</a></li>`;
-        });
+        })
+        .catch(err => console.log("Fehler beim Laden:", url, err));
     });
   </script>
 
