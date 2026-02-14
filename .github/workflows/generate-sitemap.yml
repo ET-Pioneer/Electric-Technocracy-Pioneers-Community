@@ -128,8 +128,12 @@ jobs:
             | while read file; do
                 clean="${file#./}"
                 url="$BASE_URL/$clean"
-                lastmod=$(date -u +"%Y-%m-%dT%Y-%m-%dT%H:%M:%SZ")
-                echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
+
+                # XML-escaping für & und < (Sicherheitshalber)
+                esc_url=$(printf '%s\n' "$url" | sed 's/&/\&amp;/g; s/</\&lt;/g')
+
+                lastmod=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+                echo "<url><loc>$esc_url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
               done
 
           echo '</urlset>' >> sitemap.xml
