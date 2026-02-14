@@ -5,6 +5,30 @@
 <title>Electric Technocracy Encyclopedia – Article</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Electric Technocracy Encyclopedia is the structured knowledge hub of the Electric Technocracy Pioneers Community, covering AI Governance, the Judicial Singularity, Direct Digital Democracy, and future-ready governance models.">
+<meta name="keywords" content="Electric Technocracy, Encyclopedia, Wiki, International Law, Treaty, NATO, United Nations, Artificial Intelligence, AI Governance, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Open Access, Research, Archive">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
+
+<link rel="icon" type="image/x-icon" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/favicon.svg">
+<link rel="manifest" href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="ET-Pioneers">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
+<meta property="og:title" content="Electric Technocracy Encyclopedia – Electric Technocracy Pioneers Community">
+<meta property="og:description" content="Structured encyclopedia for Electric Technocracy, AI Governance, the Judicial Singularity, and future governance models.">
+<meta property="og:image" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/Home.html">
+<meta property="twitter:title" content="Electric Technocracy Encyclopedia – ET Pioneers">
+<meta property="twitter:description" content="Open, structured encyclopedia for Electric Technocracy, AI Governance, and Direct Digital Democracy.">
+<meta property="twitter:image" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/og-image.png">
 
 <style>
 /* -------------------- GLOBAL -------------------- */
@@ -14,6 +38,7 @@ body {
     background: #f5f5f5;
     color: #222;
     display: flex;
+    max-width: 199%;
 }
 
 /* -------------------- SIDEBAR -------------------- */
@@ -41,9 +66,11 @@ body {
     text-decoration: none;
     padding: 6px 0;
     opacity: 0.85;
+    transition: 0.2s;
 }
 #sidebar a:hover {
     opacity: 1;
+    padding-left: 8px;
 }
 
 /* -------------------- MOBILE SIDEBAR -------------------- */
@@ -158,6 +185,16 @@ footer {
     text-align: center;
     border-radius: 10px;
 }
+footer a {
+    color: #fff;
+    text-decoration: none;
+    background: #333;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+footer a:hover {
+    background: #555;
+}
 </style>
 
 <script>
@@ -186,6 +223,32 @@ document.addEventListener("DOMContentLoaded", () => {
         toc.appendChild(link);
     });
 });
+
+/* -------------------- DYNAMIC SIDEBAR LOADING -------------------- */
+async function loadSidebar() {
+    const sidebar = document.getElementById("sidebar");
+
+    const apiURL = "https://api.github.com/repos/ET-Pioneer/Electric-Technocracy-Pioneers-Community/contents/wiki_encyclopedia";
+
+    try {
+        const response = await fetch(apiURL);
+        const files = await response.json();
+
+        files
+            .filter(f => f.name.endsWith(".html"))
+            .forEach(file => {
+                const link = document.createElement("a");
+                link.href = "https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/" + file.name;
+                link.textContent = file.name.replace(".html", "");
+                sidebar.appendChild(link);
+            });
+
+    } catch (e) {
+        console.error("Sidebar loading failed:", e);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadSidebar);
 </script>
 
 </head>
@@ -196,8 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- -------------------- SIDEBAR -------------------- -->
 <div id="sidebar">
     <h2>📚 All Wiki Articles</h2>
-    <!-- The workflow will auto-generate this list -->
-    <!-- You can also manually add links here -->
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">⬅ Back to Main</a>
 </div>
 
 <!-- -------------------- MAIN CONTENT -------------------- -->
@@ -859,7 +921,9 @@ Bedingungsloses Grundeinkommen</p>
 </article>
 
 <footer>
-    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
+    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility  
+    <br><br>
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/all_links.html">🔗 All Links</a>
 </footer>
 
 </div>
