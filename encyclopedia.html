@@ -5,12 +5,13 @@
 <title>Electric Technocracy Encyclopedia – Index</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO -->
 <meta name="description" content="Electric Technocracy Encyclopedia – structured index of all One World wiki articles rendered into HTML.">
 <meta name="keywords" content="Electric Technocracy, Encyclopedia, One World, Wiki, Global Governance, Technocracy, Open Knowledge">
 <meta name="author" content="Electric Technocracy Pioneers Community">
 <link rel="canonical" href="https://mranonymousnwo.github.io/One_World/encyclopedia.html">
+
+<!-- Markdown Renderer -->
+<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
 
 <style>
 /* -------------------- GLOBAL -------------------- */
@@ -128,44 +129,13 @@ header p {
     background: #444;
 }
 
-/* -------------------- INDEX SECTION -------------------- */
-#index-intro {
+/* -------------------- ARTICLE -------------------- */
+article {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
-}
-
-#index-intro h2 {
-    margin-top: 0;
-}
-
-#index-intro p {
-    line-height: 1.5;
-}
-
-/* -------------------- INDEX LIST -------------------- */
-#index-list {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #333;
-}
-
-#index-list h3 {
-    margin-top: 0;
-}
-
-#index-links a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 4px 0;
-    font-size: 0.95rem;
-}
-#index-links a:hover {
-    text-decoration: underline;
+    margin-top: 25px;
 }
 
 /* -------------------- FOOTER -------------------- */
@@ -185,48 +155,59 @@ function toggleSidebar() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sidebarContainer = document.getElementById("sidebar-links");
-    const indexContainer = document.getElementById("index-links");
+    const sidebar = document.getElementById("sidebar-links");
+    const article = document.querySelector("article");
 
-    const folder = "wiki_encyclopedia/";
+    // GitHub API: list files in docs/wiki_encyclopedia
+    const api = "https://api.github.com/repos/MrAnonymousNWO/One_World/contents/docs/wiki_encyclopedia";
 
-    fetch(folder)
-        .then(response => response.text())
-        .then(text => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, "text/html");
-            const links = [...doc.querySelectorAll("a")];
+    fetch(api)
+        .then(r => r.json())
+        .then(files => {
+            const mdFiles = files.filter(f => f.name.endsWith(".md"));
+            mdFiles.sort((a, b) => a.name.localeCompare(b.name));
 
-            const items = [];
+            // Sidebar + click handler
+            mdFiles.forEach(f => {
+                const base = f.name.replace(".md", "");
+                const label = base.replace(/_/g, " ");
 
-            links.forEach(link => {
-                const href = link.getAttribute("href");
-                if (!href || !href.endsWith(".html")) return;
+                const link = document.createElement("a");
+                link.href = "#";
+                link.textContent = label;
 
-                const name = href.replace(".html", "");
-                const label = decodeURIComponent(name).replace(/_/g, " ");
+                link.onclick = () => loadArticle(base);
 
-                items.push({ href, label });
+                sidebar.appendChild(link);
             });
 
-            items.sort((a, b) => a.label.localeCompare(b.label, "en"));
-
-            items.forEach(item => {
-                const side = document.createElement("a");
-                side.href = folder + item.href;
-                side.textContent = item.label;
-                sidebarContainer.appendChild(side);
-
-                const idx = document.createElement("a");
-                idx.href = folder + item.href;
-                idx.textContent = item.label;
-                indexContainer.appendChild(idx);
-            });
-        })
-        .catch(err => {
-            console.error("Failed to load wiki_encyclopedia directory listing:", err);
+            // Load default article
+            loadArticle("Home");
         });
 });
+
+// Load and render Markdown
+function loadArticle(name) {
+    const article = document.querySelector("article");
+    const url = `https://raw.githubusercontent.com/MrAnonymousNWO/One_World/main/docs/wiki_encyclopedia/${name}.md`;
+
+    fetch(url)
+        .then(r => r.text())
+        .then(md => {
+            const converter = new showdown.Converter({
+                tables: true,
+                ghCompatibleHeaderId: true,
+                simplifiedAutoLink: true,
+                strikethrough: true,
+                tasklists: true
+            });
+
+            article.innerHTML = converter.makeHtml(md);
+        })
+        .catch(() => {
+            article.innerHTML = "<p style='color:red'>Article not found.</p>";
+        });
+}
 </script>
 
 </head>
@@ -249,32 +230,13 @@ document.addEventListener("DOMContentLoaded", () => {
 </header>
 
 <div class="button-bar">
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
-    <a href="https://repository.ct.ws">💡 Repository</a>
-    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
     <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
-    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
     <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
-    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
 </div>
 
-<section id="index-intro">
-    <h2>Encyclopedia Index</h2>
-    <p>
-        Welcome to the central index of the Electric Technocracy Encyclopedia.
-        All articles cloned from the One World Wiki and rendered into static HTML
-        appear automatically in the sidebar and the list below.
-    </p>
-    <p>
-        This encyclopedia provides structured, accessible knowledge for a transparent,
-        accountable, and data‑driven global civilization.
-    </p>
-</section>
-
-<section id="index-list">
-    <h3>📑 All Articles</h3>
-    <div id="index-links"></div>
-</section>
+<article>
+Loading…
+</article>
 
 <footer>
     Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
