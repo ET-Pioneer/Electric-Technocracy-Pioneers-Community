@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Electric Technocracy Encyclopedia – Article</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f5f5f5;
+    color: #222;
+    display: flex;
+}
+
+/* -------------------- SIDEBAR -------------------- */
+#sidebar {
+    width: 260px;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 0;
+    opacity: 0.85;
+}
+#sidebar a:hover {
+    opacity: 1;
+}
+
+/* -------------------- MOBILE SIDEBAR -------------------- */
+#mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    #mobile-toggle {
+        display: block;
+    }
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+#content {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+}
+
+@media (max-width: 900px) {
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    background: #0f0f0f;
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+header p {
+    opacity: 0.8;
+}
+
+/* -------------------- BUTTON BAR -------------------- */
+.button-bar {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.button-bar a {
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.button-bar a:hover {
+    background: #444;
+}
+
+/* -------------------- ARTICLE -------------------- */
+article {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* -------------------- TOC -------------------- */
+#toc {
+    background: #fafafa;
+    padding: 15px;
+    border-left: 4px solid #333;
+    margin-bottom: 30px;
+}
+#toc h3 {
+    margin-top: 0;
+}
+#toc a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 4px 0;
+}
+#toc a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+</style>
+
+<script>
+/* Mobile sidebar toggle */
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+
+/* Auto-generate TOC */
+document.addEventListener("DOMContentLoaded", () => {
+    const article = document.querySelector("article");
+    const toc = document.getElementById("toc-list");
+
+    if (!article) return;
+
+    const headers = article.querySelectorAll("h1, h2, h3");
+
+    headers.forEach((h, i) => {
+        const id = "section-" + i;
+        h.id = id;
+
+        const link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = h.textContent;
+
+        toc.appendChild(link);
+    });
+});
+</script>
+
+</head>
+<body>
+
+<div id="mobile-toggle" onclick="toggleSidebar()">☰ Menu</div>
+
+<!-- -------------------- SIDEBAR -------------------- -->
+<div id="sidebar">
+    <h2>📚 All Wiki Articles</h2>
+    <!-- The workflow will auto-generate this list -->
+    <!-- You can also manually add links here -->
+</div>
+
+<!-- -------------------- MAIN CONTENT -------------------- -->
+<div id="content">
+
+<header>
+    <h1>Electric Technocracy Encyclopedia</h1>
+    <p>Structured knowledge for a transparent, data‑driven, future‑ready civilization</p>
+</header>
+
+<!-- BUTTON BAR -->
+<div class="button-bar">
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a>
+    <a href="https://repository.ct.ws">💡 Repository</a>
+    <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Wiki</a>
+    <a href="https://mranonymousnwo.github.io/One_World/">🌎 One World Archive</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/">🌏 One World Repo</a>
+    <a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 One World Wiki</a>
+    <a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html">🔍 Search</a>
+</div>
+
+<!-- TOC -->
+<div id="toc">
+    <h3>📑 Inhaltsverzeichnis</h3>
+    <div id="toc-list"></div>
+</div>
+
+<article>
+<!-- WORKFLOW WILL INSERT WIKI ARTICLE CONTENT HERE -->
+</article>
+
+<footer>
+    Electric Technocracy Pioneers Community — Open Knowledge for Global Accessibility
+</footer>
+
+</div>
+</body>
+</html>
