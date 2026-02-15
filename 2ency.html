@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Electric Technocracy Pioneers Community Encyclopedia is an open scientific research hub and free‑access wiki repository for exploring Electric Technocracy, AI Governance, the Judicial Singularity, the Technological Singularity, Artificial Superintelligence (ASI), AGI, Direct Digital Democracy (DDD), Universal Basic Income, and a United World of Abundance beyond nation‑states.">
-    <meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial, intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
+    <meta name="description" content="Electric Technocracy Pioneers Community Encyclopedia - An open scientific research hub exploring Electric Technocracy, AI Governance, the Judicial Singularity, and the vision of a United World of Abundance.">
+    <meta name="keywords" content="Electric Technocracy, AI Governance, Judicial Singularity, Direct Digital Democracy, Universal Basic Income, World Succession Deed, Encyclopedia">
     <meta name="author" content="Electric Technocracy Pioneers Community">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/encyclopedia.html">
     <meta property="og:title" content="Electric Technocracy Encyclopedia">
-    <meta property="og:description" content="Electric Technocracy Pioneers Community Encyclopedia is an open scientific research hub and free‑access wiki repository for exploring Electric Technocracy, AI Governance, the Judicial Singularity, the Technological Singularity, Artificial Superintelligence (ASI), AGI, Direct Digital Democracy (DDD), Universal Basic Income, and a United World of Abundance beyond nation‑states.">
+    <meta property="og:description" content="Open scientific research hub for Electric Technocracy, AI Governance, and future governance systems.">
     <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/encyclopedia.html">
     <meta property="twitter:title" content="Electric Technocracy Encyclopedia">
-    <meta property="twitter:description" content="Electric Technocracy Pioneers Community Encyclopedia is an open scientific research hub and free‑access wiki repository for exploring Electric Technocracy, AI Governance, the Judicial Singularity, the Technological Singularity, Artificial Superintelligence (ASI), AGI, Direct Digital Democracy (DDD), Universal Basic Income, and a United World of Abundance beyond nation‑states.">
-    <meta property="twitter:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    <meta property="twitter:description" content="Open scientific research hub for Electric Technocracy and future governance.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
     
     <title>Electric Technocracy Encyclopedia</title>
     
     <style>
-        /* CSS Reset and Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
@@ -51,15 +46,13 @@
             background-color: var(--white);
             color: var(--black);
             line-height: 1.6;
-            overflow-x: hidden;
-            width: 100%;
         }
         
-        /* Header Styles */
+        /* Header */
         header {
             background-color: var(--nato-blue);
             color: var(--white);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -67,23 +60,13 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 100%;
         }
         
         .header-left { display: flex; align-items: center; gap: 1rem; }
-        
-        .header-logo {
-            height: 40px;
-            width: auto;
-            max-width: 150px;
-            object-fit: contain;
-            transition: var(--transition);
-        }
-        
+        .header-logo { height: 40px; width: auto; object-fit: contain; transition: var(--transition); }
         .header-logo:hover { transform: scale(1.05); }
         
         .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
-        
         .header-search input {
             width: 100%;
             padding: 0.6rem 1.2rem;
@@ -93,7 +76,6 @@
             outline: none;
             transition: var(--transition);
         }
-        
         .header-search input:focus { box-shadow: 0 0 0 3px rgba(255,255,255,0.3); }
         
         .hamburger-menu {
@@ -105,7 +87,6 @@
             padding: 0.5rem;
             transition: var(--transition);
         }
-        
         .hamburger-menu:hover { transform: scale(1.1); opacity: 0.8; }
         
         /* Navigation Sidebar (Hamburger) */
@@ -123,7 +104,6 @@
             overflow-y: auto;
             padding: 2rem 1.5rem;
         }
-        
         .nav-sidebar.open { right: 0; }
         
         .nav-sidebar-close {
@@ -147,9 +127,7 @@
         }
         
         .nav-sidebar ul { list-style: none; }
-        
         .nav-sidebar li { margin-bottom: 0.8rem; }
-        
         .nav-sidebar a {
             color: var(--black);
             text-decoration: none;
@@ -159,8 +137,11 @@
             transition: var(--transition);
             font-size: 0.95rem;
         }
-        
-        .nav-sidebar a:hover { background-color: var(--nato-blue); color: var(--white); transform: translateX(-5px); }
+        .nav-sidebar a:hover {
+            background-color: var(--nato-blue);
+            color: var(--white);
+            transform: translateX(-5px);
+        }
         
         .nav-overlay {
             position: fixed;
@@ -172,145 +153,203 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
-            z-index: 1500;
+            z-index: 1999;
         }
-        
         .nav-overlay.active { opacity: 1; visibility: visible; }
         
         /* Hero Box */
         .hero-box {
-            background-color: var(--nato-blue);
+            background: linear-gradient(135deg, var(--nato-blue-dark), var(--nato-blue-light));
             color: var(--white);
-            padding: 2.5rem 2rem;
-            margin: 1.5rem;
-            border-radius: 15px;
+            padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,73,144,0.3);
-            width: calc(100% - 3rem);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .hero-box h1 { font-size: 2rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .hero-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
         
         .hero-gif {
             max-width: 300px;
-            width: 100%;
-            height: auto;
             margin: 1.5rem auto;
-            display: block;
             border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
         
-        .hero-box p { font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 1.5rem auto 0; }
+        .hero-box p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
         
         /* Main Layout */
         .page-shell {
-            display: grid;
-            grid-template-columns: 280px 1fr;
+            display: flex;
+            max-width: 1400px;
+            margin: 2rem auto;
             gap: 2rem;
             padding: 0 1.5rem;
-            width: 100%;
-            min-height: calc(100vh - 400px);
         }
         
-        /* Sidebar (Wiki Articles) */
+        /* Wiki Sidebar (Left - Dynamic) */
         .wiki-sidebar {
+            width: 280px;
+            flex-shrink: 0;
             background-color: var(--gray-light);
+            border-radius: 10px;
             padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--gray-medium);
-            height: fit-content;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
-            top: 100px;
+            top: 80px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
         }
         
         .wiki-sidebar h3 {
             color: var(--nato-blue);
+            font-size: 1.2rem;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--nato-blue);
+            text-transform: uppercase;
         }
         
-        .wiki-sidebar ul { list-style: none; }
-        
-        .wiki-sidebar li { margin-bottom: 0.5rem; }
-        
-        .wiki-sidebar a {
+        .sidebar-link {
             color: var(--black);
             text-decoration: none;
             display: block;
             padding: 0.6rem 0.8rem;
-            border-radius: 6px;
+            border-radius: 5px;
             transition: var(--transition);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-link:hover {
+            background-color: var(--nato-blue);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-link.active {
+            background-color: var(--nato-blue-light);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .loading {
+            color: var(--gray-dark);
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
             font-size: 0.9rem;
         }
         
-        .wiki-sidebar a:hover { background-color: var(--nato-blue); color: var(--white); }
-        
-        .is-active { background-color: rgba(0, 73, 144, 0.1) !important; color: var(--nato-blue) !important; font-weight: 600; }
-        
-        /* Content Area */
+        /* Main Content */
         .main-content {
+            flex: 1;
             background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--gray-medium);
-            width: 100%;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            min-height: 500px;
         }
         
-        .main-content h1 { color: var(--nato-blue); margin-bottom: 1.5rem; font-size: 2.2rem; }
+        .main-content h1 {
+            color: var(--nato-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
         
-        .main-content h2 { color: var(--nato-blue-dark); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.6rem; }
+        .main-content h2 {
+            color: var(--nato-blue-dark);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
         
-        .main-content p { margin-bottom: 1.2rem; line-height: 1.8; font-size: 1.05rem; }
+        .main-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
         
-        .main-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0; border: 1px solid var(--gray-medium); }
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
         
         /* Footer */
         footer {
-            background-color: var(--nato-blue);
+            background-color: var(--nato-blue-dark);
             color: var(--white);
-            padding: 3.5rem 2rem 2rem;
-            margin-top: 3rem;
-            width: 100%;
+            padding: 3rem 1.5rem 1rem;
+            margin-top: 4rem;
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
         }
         
-        .footer-section { background-color: var(--nato-blue-dark); padding: 1.5rem; border-radius: 10px; }
-        
-        .footer-section h3 { margin-bottom: 1.2rem; font-size: 1.1rem; border-bottom: 2px solid var(--white); padding-bottom: 0.5rem; text-transform: uppercase; }
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            border-bottom: 2px solid var(--nato-blue-light);
+            padding-bottom: 0.5rem;
+        }
         
         .footer-section ul { list-style: none; }
-        
-        .footer-section li { margin-bottom: 0.7rem; }
-        
-        .footer-section a { color: var(--white); text-decoration: none; transition: var(--transition); font-size: 0.9rem; display: inline-block; }
-        
-        .footer-section a:hover { color: var(--nato-blue-light); transform: translateX(5px); }
-        
-        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.85rem; opacity: 0.8; }
-        
-        /* Responsive */
-        @media (max-width: 900px) {
-            .page-shell { grid-template-columns: 1fr; }
-            .wiki-sidebar { position: static; margin-bottom: 2rem; }
-            .header-search { display: none; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a {
+            color: var(--gray-medium);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .footer-section a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+            display: inline-block;
         }
         
-        @media (max-width: 600px) {
-            .hero-box { margin: 1rem; padding: 1.5rem; width: calc(100% - 2rem); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--nato-blue);
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-shell { flex-direction: column; }
+            .wiki-sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+            .header-search { display: none; }
+            .hero-box h1 { font-size: 1.8rem; }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-box { padding: 2rem 1rem; }
             .hero-box h1 { font-size: 1.5rem; }
             .main-content { padding: 1.5rem; }
-            header { padding: 0.8rem 1rem; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -336,12 +375,11 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="encyclopedia.html">Encyclopedia Index</a></li>
-            <li><a href="directory.html">Directory Listing</a></li>
+            <li><a href="dir.html">Directory Listing</a></li>
         </ul>
         <h2 style="margin-top:2rem">External Links</h2>
         <ul>
             <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">GitHub Page</a></li>
-            <li><a href="https://repository.ct.ws">GitHub Repository</a></li>
             <li><a href="https://wiki.free.nf/">International Treaty Law WIKI</a></li>
             <li><a href="https://worldsold.wixsite.com/world-sold">World Succession Deed HQ</a></li>
             <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
@@ -357,10 +395,11 @@
     
     <!-- Main Content Layout -->
     <main class="page-shell">
-        <!-- Left Sidebar (Dynamic Articles) -->
+        <!-- Left Sidebar (Dynamic Articles from JSON) -->
         <aside class="wiki-sidebar">
-            <h3>Wiki Articles</h3>
-            <ul id="wikiSidebar"></ul>
+            <h3>📚 Wiki Articles</h3>
+            <div class="loading">Loading articles...</div>
+            <div id="sidebar-links"></div>
         </aside>
         
         <!-- Main Content -->
@@ -373,6 +412,9 @@
             <p>The Electric Technocracy Pioneers Community Encyclopedia is an open scientific research hub and free‑access wiki repository dedicated to exploring the future of governance, technology, and society. Our platform serves as a comprehensive resource for understanding Electric Technocracy, AI Governance, the Judicial Singularity, and the vision of a United World of Abundance beyond traditional nation‑states.</p>
             
             <p>This encyclopedia hosts openly licensed documents, research papers, wiki articles, encyclopedia entries, audio recordings, video presentations, images, and slide decks. We support global collaboration on post‑scarcity economic models, future governance frameworks, and transparent digital systems.</p>
+            
+            <h2>Core Topics</h2>
+            <p>Browse our comprehensive collection of articles covering Electric Technocracy, Direct Digital Democracy, Artificial Superintelligence, Post-Scarcity Economics, the Judicial Singularity, and the implementation roadmap for future governance systems.</p>
         </article>
     </main>
     
@@ -419,127 +461,152 @@
         </div>
     </footer>
     
+    <!-- JavaScript: Dynamische Sidebar -->
     <script>
-        // Menu Toggle
+        // ============================================
+        // HAMBURGER MENU
+        // ============================================
         function toggleMenu() {
             document.getElementById("navSidebar").classList.toggle("open");
             document.getElementById("navOverlay").classList.toggle("active");
         }
         
-        // List of Wiki files (this list can be auto-generated by your workflow into a JSON file or updated here)
-        const wikiArticles = [
-            "wiki_encyclopedia/wikihome.html",
-            "wiki_encyclopedia/Juridical-Singularity.html",
-            "wiki_encyclopedia/Implementation-Roadmap.html",
-            "wiki_encyclopedia/Technology-Stack.html",
-            "wiki_encyclopedia/Electric-Technocracy.html",
-            "wiki_encyclopedia/Direct-Digital-Democracy.html",
-            "wiki_encyclopedia/Artificial-Superintelligence.html",
-            "wiki_encyclopedia/Post-Scarcity-Economics.html"
-        ];
+        // ============================================
+        // DYNAMISCHE SIDEBAR AUS articles.json
+        // ============================================
         
-        const sidebar = document.getElementById("wikiSidebar");
-        const currentFile = location.pathname.split("/").pop();
-
+        const articlesIndexUrl = "wiki_encyclopedia/articles.json";
+        
+        /**
+         * 1. Titel aus HTML-Datei extrahieren
+         */
         async function fetchArticleTitle(url) {
             try {
                 const response = await fetch(url);
-                if (!response.ok) return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
-                const htmlText = await response.text();
+                if (!response.ok) {
+                    // Fallback: Dateiname als Titel
+                    return url.split("/").pop()
+                        .replace(".html", "")
+                        .replace(/-/g, " ")
+                        .replace(/_/g, " ");
+                }
+                
+                const html = await response.text();
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(htmlText, "text/html");
-                const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
-                return heading ? heading.textContent.trim() : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                const doc = parser.parseFromString(html, "text/html");
+                
+                // Priorität: h1 → h2 → title → Dateiname
+                const heading =
+                    doc.querySelector("h1") ||
+                    doc.querySelector("h2") ||
+                    doc.querySelector("title");
+                
+                return heading && heading.textContent.trim()
+                    ? heading.textContent.trim()
+                    : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                    
             } catch (e) {
-                return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                console.error(`Fehler beim Laden von ${url}:`, e);
+                return url.split("/").pop()
+                    .replace(".html", "")
+                    .replace(/-/g, " ")
+                    .replace(/_/g, " ");
             }
         }
-
-        async function buildSidebar() {
-            sidebar.innerHTML = "";
-            for (const path of wikiArticles) {
-                const title = await fetchArticleTitle(path);
-                const li = document.createElement("li");
-                const a = document.createElement("a");
-                a.href = path;
-                a.textContent = title;
-                if (path.split("/").pop() === currentFile) a.classList.add("is-active");
-                li.appendChild(a);
-                sidebar.appendChild(li);
-            }
-        }
-
-        // Initialize Sidebar
-        document.addEventListener("DOMContentLoaded", buildSidebar);
         
-        // Simple Search
-        document.getElementById("wikiSearch").addEventListener("input", function(e) {
-            const term = e.target.value.toLowerCase();
-            const items = sidebar.querySelectorAll("li");
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(term) ? "block" : "none";
+        /**
+         * 2. Sidebar aus articles.json generieren
+         */
+        async function buildSidebar() {
+            const container = document.getElementById("sidebar-links");
+            const loading = document.querySelector(".loading");
+            
+            if (!container) {
+                console.error("❌ Sidebar container nicht gefunden!");
+                return;
+            }
+            
+            try {
+                // articles.json laden (wird vom Workflow generiert)
+                const res = await fetch(articlesIndexUrl);
+                
+                if (!res.ok) {
+                    throw new Error(`articles.json nicht gefunden: ${res.status}`);
+                }
+                
+                const list = await res.json();
+                
+                console.log(`✅ ${list.length} Artikel aus articles.json geladen`);
+                
+                // Loading-Anzeige entfernen
+                if (loading) loading.remove();
+                
+                // Alphabetisch sortieren (optional, aber sinnvoll)
+                list.sort((a, b) => a.path.localeCompare(b.path));
+                
+                // Aktuelle Seite ermitteln
+                const currentPath = window.location.pathname.split('/').pop();
+                
+                // Für jeden Artikel: Titel laden und Link erstellen
+                for (const entry of list) {
+                    const url = entry.path;
+                    const title = await fetchArticleTitle(url);
+                    
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.textContent = title;
+                    link.className = "sidebar-link";
+                    
+                    // Aktive Seite hervorheben
+                    if (url.endsWith(currentPath) || window.location.pathname.endsWith(url)) {
+                        link.classList.add("active");
+                    }
+                    
+                    container.appendChild(link);
+                }
+                
+                console.log(`✅ Sidebar erfolgreich mit ${list.length} Artikeln aufgebaut`);
+                
+            } catch (error) {
+                console.error("❌ Fehler beim Laden der Sidebar:", error);
+                if (loading) {
+                    loading.textContent = "⚠️ Artikel konnten nicht geladen werden";
+                    loading.style.color = "#cc0000";
+                }
+            }
+        }
+        
+        /**
+         * 3. Suchfunktion
+         */
+        function initSearch() {
+            const searchInput = document.getElementById("wikiSearch");
+            if (!searchInput) return;
+            
+            searchInput.addEventListener("input", function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const links = document.querySelectorAll(".sidebar-link");
+                
+                links.forEach(link => {
+                    const text = link.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        link.style.display = "block";
+                    } else {
+                        link.style.display = "none";
+                    }
+                });
             });
+        }
+        
+        /**
+         * 4. Initialisierung beim Seitenladen
+         */
+        document.addEventListener("DOMContentLoaded", async function() {
+            console.log("🚀 Encyclopedia wird initialisiert...");
+            await buildSidebar();
+            initSearch();
+            console.log("✅ Encyclopedia bereit");
         });
     </script>
-    <script>
-const articlesIndexUrl = "wiki_encyclopedia/articles.json";
-
-/* 1. Titel aus HTML extrahieren */
-async function fetchArticleTitle(url) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      return url.split("/").pop().replace(".html", "");
-    }
-
-    const html = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
-
-    const heading =
-      doc.querySelector("h1") ||
-      doc.querySelector("h2") ||
-      doc.querySelector("title");
-
-    return heading
-      ? heading.textContent.trim()
-      : url.split("/").pop().replace(".html", "");
-  } catch (e) {
-    return url.split("/").pop().replace(".html", "");
-  }
-}
-
-/* 2. Sidebar generieren */
-async function buildSidebar() {
-  const container = document.getElementById("sidebar-links");
-  if (!container) return;
-
-  const res = await fetch(articlesIndexUrl);
-  const list = await res.json();
-
-  // Alphabetisch sortieren (optional, aber sinnvoll)
-  list.sort((a, b) => a.path.localeCompare(b.path));
-
-  for (const entry of list) {
-    const url = entry.path;
-    const title = await fetchArticleTitle(url);
-
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = title;
-    link.className = "sidebar-link";
-
-    // Aktive Seite hervorheben
-    if (window.location.pathname.endsWith(url)) {
-      link.classList.add("active");
-    }
-
-    container.appendChild(link);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", buildSidebar);
-</script>
 </body>
 </html>
