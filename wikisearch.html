@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Search Electric Technocracy Encyclopedia">
-    <title>Search - Electric Technocracy Encyclopedia</title>
+    <meta name="description" content="Search the Electric Technocracy Encyclopedia for research, documents, and records.">
+    <title>Wiki Search - Electric Technocracy Encyclopedia</title>
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
@@ -40,22 +40,18 @@
             background-color: var(--pearl-blue);
             color: var(--white);
             padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             width: 100%;
         }
         
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-        
-        .header-logo-link { display: flex; align-items: center; text-decoration: none; }
-        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; transition: var(--transition); }
-        .header-logo:hover { transform: scale(1.05); }
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; }
         
         .hamburger-menu {
             background: none;
@@ -70,8 +66,8 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 350px;
-            max-width: 85vw;
+            width: 400px;
+            max-width: 90vw;
             height: 100vh;
             background-color: var(--white);
             box-shadow: -5px 0 15px rgba(0,0,0,0.2);
@@ -100,6 +96,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--pearl-blue);
             font-size: 1.1rem;
+            text-transform: uppercase;
         }
         .nav-sidebar h2:first-of-type { margin-top: 0; }
         .nav-sidebar ul { list-style: none; }
@@ -114,10 +111,13 @@
             border-radius: 5px;
             transition: var(--transition);
             font-size: 0.9rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .nav-sidebar a:hover {
             background-color: var(--pearl-blue);
             color: var(--white);
+            transform: translateX(-5px);
         }
         
         .nav-overlay {
@@ -135,15 +135,15 @@
         .nav-overlay.active { opacity: 1; visibility: visible; }
         
         .search-container {
-            width: 100%;
             max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
         }
         
         .search-box {
             background: var(--white);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             width: 100%;
@@ -156,118 +156,56 @@
             word-wrap: break-word;
         }
         
-        .search-form {
+        .search-input-group {
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             margin-bottom: 2rem;
-            width: 100%;
         }
         
-        .search-form input {
+        .search-input-group input {
             flex: 1;
-            min-width: 0;
             padding: 1rem 1.5rem;
             border: 2px solid var(--gray-medium);
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
             outline: none;
             transition: var(--transition);
+            min-width: 0;
         }
         
-        .search-form input:focus {
-            border-color: var(--pearl-blue);
-            box-shadow: 0 0 0 3px rgba(16, 44, 84, 0.1);
-        }
+        .search-input-group input:focus { border-color: var(--pearl-blue); }
         
-        .search-form button {
-            background: var(--pearl-blue);
+        .search-input-group button {
+            background-color: var(--pearl-blue);
             color: var(--white);
             border: none;
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 0 2rem;
+            border-radius: 30px;
             cursor: pointer;
+            font-weight: 600;
             transition: var(--transition);
-            white-space: nowrap;
         }
         
-        .search-form button:hover {
-            background: var(--pearl-blue-light);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 44, 84, 0.3);
-        }
+        .search-input-group button:hover { background-color: var(--pearl-blue-light); }
         
-        .search-info {
-            color: var(--gray-dark);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            word-wrap: break-word;
-        }
-        
-        .search-results {
-            margin-top: 2rem;
-            width: 100%;
-        }
-        
+        .results-list { list-style: none; width: 100%; }
         .result-item {
-            background: var(--gray-light);
             padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--pearl-blue);
+            border-bottom: 1px solid var(--gray-light);
             transition: var(--transition);
-            width: 100%;
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
-        
-        .result-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .result-item h3 {
-            color: var(--pearl-blue);
-            margin-bottom: 0.5rem;
-            word-wrap: break-word;
-        }
-        
-        .result-item h3 a {
+        .result-item:hover { background-color: var(--gray-light); }
+        .result-item a {
             color: var(--pearl-blue);
             text-decoration: none;
-            transition: var(--transition);
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
         }
-        
-        .result-item h3 a:hover {
-            color: var(--pearl-blue-light);
-        }
-        
-        .result-snippet {
-            color: var(--gray-dark);
-            line-height: 1.6;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        
-        .result-snippet mark {
-            background: #ffeb3b;
-            padding: 0.2rem;
-            border-radius: 3px;
-        }
-        
-        .no-results {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: var(--gray-dark);
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            color: var(--pearl-blue);
-            font-style: italic;
-        }
+        .result-item p { color: var(--gray-dark); font-size: 0.95rem; }
         
         footer {
             background-color: var(--pearl-blue-dark);
@@ -310,109 +248,86 @@
             color: var(--gray-medium);
         }
         
-        @media (max-width: 640px) {
-            .search-container {
-                margin: 1rem auto;
-                padding: 0 0.5rem;
-            }
-            
-            .search-box {
-                padding: 1.5rem 1rem;
-            }
-            
-            .search-box h1 {
-                font-size: 1.5rem;
-            }
-            
-            .search-form {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .search-form input,
-            .search-form button {
-                width: 100%;
-                padding: 0.9rem 1rem;
-            }
-            
-            .result-item {
-                padding: 1rem;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+        @media (max-width: 600px) {
+            .search-input-group { flex-direction: column; }
+            .search-input-group button { padding: 1rem; }
+            .search-box { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" class="header-logo-link" target="_blank">
-                <img src="images/logo/et-pioneers.png" alt="ET Pioneers" class="header-logo" onerror="this.src='images/logo/et-pioneers.jpg';">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Logo" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg'">
             </a>
-            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
         </div>
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
     </header>
-    
+
     <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
     <aside class="nav-sidebar" id="navSidebar">
         <button class="nav-sidebar-close" onclick="toggleMenu()">×</button>
         
-        <h2>🪢 Electric Technocracy</h2>
+        <h2>Main Navigation</h2>
         <ul>
             <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="encyclopedia.html">📚 Encyclopedia</a></li>
-            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a></li>
-            <li><a href="https://repository.ct.ws">💡 GitHub Repository</a></li>
-            <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Community WIKI</a></li>
-        </ul>
-        
-        <h2>🌍 One World Archive</h2>
-        <ul>
-            <li><a href="https://mranonymousnwo.github.io/One_World/">🌎 Archive Vault</a></li>
-            <li><a href="https://github.com/MrAnonymousNWO/One_World/">🌏 Repository</a></li>
-            <li><a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 WIKI</a></li>
-        </ul>
-        
-        <h2>📚 Knowledge Resources</h2>
-        <ul>
-            <li><a href="https://wiki.free.nf/">📚 Treaty Law WIKI</a></li>
-            <li><a href="https://worldsold.wixsite.com/global-archive">📑 Archive HQ</a></li>
-            <li><a href="https://worldsold.wixsite.com/world-sold">🗺️ WSD HQ</a></li>
-            <li><a href="https://paradise.gt.tc">🚀 Electric Paradise</a></li>
-        </ul>
-        
-        <h2>🔍 Navigation</h2>
-        <ul>
+            <li><a href="encyclopedia.html">📖 Encyclopedia Index</a></li>
+            <li><a href="wiki_encyclopedia/wikihome.html">🏠 Wiki Home</a></li>
             <li><a href="wikisearch.html">🔎 Search</a></li>
-            <li><a href="dir.html">📁 Directory</a></li>
-            <li><a href="directory.html">📑 Linklist</a></li>
+            <li><a href="directory.html">📁 Directory / Linklist</a></li>
+        </ul>
+
+        <h2>🪢 Pioneers Community</h2>
+        <ul>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/" target="_blank">💡 GitHub Page Pioneers Community</a></li>
+            <li><a href="https://repository.ct.ws" target="_blank">💡 GitHub Repository</a></li>
+            <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" target="_blank">💡 Community WIKI</a></li>
+        </ul>
+
+        <h2>🌎 One World Project</h2>
+        <ul>
+            <li><a href="https://mranonymousnwo.github.io/One_World/" target="_blank">🌎 One World Archive Vault</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/" target="_blank">🌏 One World GitHub Repository</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/wiki" target="_blank">🌍 One World GitHub WIKI</a></li>
+        </ul>
+
+        <h2>⚖️ Legal & International</h2>
+        <ul>
+            <li><a href="https://wiki.free.nf/" target="_blank">📚 International Treaty Law WIKI</a></li>
+            <li><a href="https://worldsold.wixsite.com/global-archive" target="_blank">📑 International Treaty Archive HQ</a></li>
+            <li><a href="https://worldsold.wixsite.com/world-sold" target="_blank">🗺️ World Succession Deed HQ</a></li>
+        </ul>
+
+        <h2>🚀 Resources</h2>
+        <ul>
+            <li><a href="https://paradise.gt.tc" target="_blank">🚀 Start-Page WSD & Paradise</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html" target="_blank">🔎 Search (External)</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/dir.html" target="_blank">📁 Directory (External)</a></li>
         </ul>
     </aside>
-    
+
     <div class="search-container">
         <div class="search-box">
-            <h1>🔍 Search Encyclopedia</h1>
-            
-            <form class="search-form" onsubmit="performSearch(event)">
-                <input type="text" id="searchInput" placeholder="Enter search term..." autofocus>
-                <button type="submit">Search</button>
-            </form>
-            
-            <div id="searchInfo" class="search-info" style="display:none;"></div>
-            <div id="loadingIndicator" class="loading" style="display:none;">Searching articles...</div>
-            <div id="searchResults" class="search-results"></div>
+            <h1>Encyclopedia Search</h1>
+            <div class="search-input-group">
+                <input type="text" id="searchInput" placeholder="Type to search articles..." onkeyup="handleSearch(event)">
+                <button onclick="performSearch()">Search</button>
+            </div>
+            <div id="resultsCount" style="margin-bottom: 1rem; color: var(--gray-dark);"></div>
+            <div id="searchResults" class="results-list">
+                <!-- Results will appear here -->
+            </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>Core Resources</h3>
                 <ul>
                     <li><a href="https://world.rf.gd">World Succession Deed</a></li>
+                    <li><a href="https://global-archive.rf.gd">Legal Succession Archive</a></li>
                     <li><a href="https://ep.ct.ws">Electric Technocracy</a></li>
                 </ul>
             </div>
@@ -420,140 +335,78 @@
                 <h3>Knowledge Base</h3>
                 <ul>
                     <li><a href="https://wiki.free.nf/">Treaty Law WIKI</a></li>
+                    <li><a href="https://4u.free.nf">eBooks & PDF Downloads</a></li>
                     <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Publications</h3>
-                <ul>
-                    <li><a href="https://doi.org/10.5281/zenodo.18073084">The Next Civilization</a></li>
-                    <li><a href="https://doi.org/10.5281/zenodo.18028339">Foundations of Technocracy</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Social Media</h3>
                 <ul>
-                    <li><a href="https://videos.xo.je">YouTube</a></li>
+                    <li><a href="https://videos.xo.je">YouTube Channel</a></li>
+                    <li><a href="https://nwo.likesyou.org">Podcast Show</a></li>
                     <li><a href="https://x.com/WW3Precognition">Twitter (X)</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Electric Technocracy Pioneers Community</p>
+            <p>&copy; 2026 Electric Technocracy Pioneers Community.</p>
         </div>
     </footer>
-    
+
     <script>
         function toggleMenu() {
             document.getElementById("navSidebar").classList.toggle("open");
             document.getElementById("navOverlay").classList.toggle("active");
         }
-        
+
         const articlesIndexUrl = "wiki_encyclopedia/articles.json";
-        
-        async function fetchArticleData(url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) return null;
-                
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-                
-                doc.querySelectorAll('script, style').forEach(el => el.remove());
-                
-                const title = (doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title"))?.textContent.trim() || "";
-                const content = doc.body.textContent || "";
-                
-                return { url, title, content };
-            } catch (e) {
-                return null;
-            }
-        }
-        
-        async function performSearch(event) {
-            event.preventDefault();
-            
-            const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-            const resultsContainer = document.getElementById('searchResults');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            const searchInfo = document.getElementById('searchInfo');
-            
-            if (!searchTerm) return;
-            
-            resultsContainer.innerHTML = '';
-            loadingIndicator.style.display = 'block';
-            searchInfo.style.display = 'none';
-            
+        let articles = [];
+
+        async function loadArticles() {
             try {
                 const res = await fetch(articlesIndexUrl);
-                if (!res.ok) throw new Error('articles.json not found');
-                
-                const list = await res.json();
-                const results = [];
-                
-                for (const entry of list) {
-                    const articleData = await fetchArticleData(entry.path);
-                    if (!articleData) continue;
-                    
-                    const titleMatch = articleData.title.toLowerCase().includes(searchTerm);
-                    const contentMatch = articleData.content.toLowerCase().includes(searchTerm);
-                    
-                    if (titleMatch || contentMatch) {
-                        const contentLower = articleData.content.toLowerCase();
-                        const index = contentLower.indexOf(searchTerm);
-                        const start = Math.max(0, index - 100);
-                        const end = Math.min(articleData.content.length, index + 200);
-                        let snippet = articleData.content.substring(start, end);
-                        
-                        if (start > 0) snippet = '...' + snippet;
-                        if (end < articleData.content.length) snippet = snippet + '...';
-                        
-                        const regex = new RegExp(`(${searchTerm})`, 'gi');
-                        snippet = snippet.replace(regex, '<mark>$1</mark>');
-                        
-                        results.push({
-                            title: articleData.title,
-                            url: articleData.url,
-                            snippet: snippet
-                        });
+                if (res.ok) {
+                    articles = await res.json();
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const query = urlParams.get('q');
+                    if (query) {
+                        document.getElementById('searchInput').value = query;
+                        performSearch();
                     }
                 }
-                
-                loadingIndicator.style.display = 'none';
-                
-                if (results.length === 0) {
-                    resultsContainer.innerHTML = '<div class="no-results">No results found for "' + searchTerm + '"</div>';
-                } else {
-                    searchInfo.style.display = 'block';
-                    searchInfo.textContent = `Found ${results.length} result${results.length > 1 ? 's' : ''} for "${searchTerm}"`;
-                    
-                    results.forEach(result => {
-                        const item = document.createElement('div');
-                        item.className = 'result-item';
-                        item.innerHTML = `
-                            <h3><a href="${result.url}">${result.title}</a></h3>
-                            <p class="result-snippet">${result.snippet}</p>
-                        `;
-                        resultsContainer.appendChild(item);
-                    });
-                }
-                
-            } catch (error) {
-                loadingIndicator.style.display = 'none';
-                resultsContainer.innerHTML = '<div class="no-results">Error searching articles. Please try again.</div>';
-                console.error('Search error:', error);
-            }
+            } catch (e) { console.error("Search index load error", e); }
         }
-        
-        window.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const query = params.get('q');
-            if (query) {
-                document.getElementById('searchInput').value = query;
-                performSearch(new Event('submit'));
+
+        function handleSearch(e) {
+            if (e.key === 'Enter') performSearch();
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsDiv = document.getElementById('searchResults');
+            const countDiv = document.getElementById('resultsCount');
+            
+            if (!query) {
+                resultsDiv.innerHTML = "";
+                countDiv.textContent = "";
+                return;
             }
-        });
+
+            const filtered = articles.filter(a => 
+                a.path.toLowerCase().includes(query) || 
+                (a.title && a.title.toLowerCase().includes(query))
+            );
+
+            countDiv.textContent = `Found ${filtered.length} matching articles`;
+            resultsDiv.innerHTML = filtered.map(a => `
+                <div class="result-item">
+                    <a href="${a.path}">${a.title || a.path.split('/').pop()}</a>
+                    <p>Wiki Encyclopedia Article</p>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', loadArticles);
     </script>
 </body>
 </html>
