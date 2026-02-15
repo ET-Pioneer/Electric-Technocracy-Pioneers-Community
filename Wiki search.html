@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory Index - Electric Technocracy Encyclopedia">
-    <title>Directory Listing - Electric Technocracy Encyclopedia</title>
+    <meta name="description" content="Search Electric Technocracy Encyclopedia">
+    <title>Search - Electric Technocracy Encyclopedia</title>
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
@@ -141,63 +141,139 @@
         }
         .nav-overlay.active { opacity: 1; visibility: visible; }
         
-        .directory-container {
+        .search-container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 800px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
         
-        .directory-card {
+        .search-box {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             width: 100%;
         }
         
-        .directory-card h1 {
+        .search-box h1 {
             color: var(--pearl-blue);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-size: 2rem;
-            border-bottom: 3px solid var(--pearl-blue);
-            padding-bottom: 0.5rem;
             word-wrap: break-word;
         }
         
-        .directory-list {
-            list-style: none;
+        .search-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
             width: 100%;
         }
         
-        .directory-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid var(--gray-light);
+        .search-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray-medium);
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
             transition: var(--transition);
+        }
+        
+        .search-form input:focus {
+            border-color: var(--pearl-blue);
+            box-shadow: 0 0 0 3px rgba(16, 44, 84, 0.1);
+        }
+        
+        .search-form button {
+            background: var(--pearl-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .search-form button:hover {
+            background: var(--pearl-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 44, 84, 0.3);
+        }
+        
+        .search-info {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            word-wrap: break-word;
+        }
+        
+        .search-results {
+            margin-top: 2rem;
+            width: 100%;
+        }
+        
+        .result-item {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--pearl-blue);
+            transition: var(--transition);
+            width: 100%;
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
         
-        .directory-item:hover {
-            background: var(--gray-light);
-            transform: translateX(10px);
+        .result-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .directory-item a {
+        .result-item h3 {
             color: var(--pearl-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            flex: 1;
+            margin-bottom: 0.5rem;
             word-wrap: break-word;
         }
         
-        .directory-item .file-meta {
+        .result-item h3 a {
+            color: var(--pearl-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .result-item h3 a:hover {
+            color: var(--pearl-blue-light);
+        }
+        
+        .result-snippet {
             color: var(--gray-dark);
-            font-size: 0.85rem;
-            margin-left: 1rem;
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .result-snippet mark {
+            background: #ffeb3b;
+            padding: 0.2rem;
+            border-radius: 3px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--gray-dark);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--pearl-blue);
+            font-style: italic;
         }
         
         footer {
@@ -242,10 +318,38 @@
         }
         
         @media (max-width: 640px) {
-            .directory-card { padding: 1.5rem 1rem; }
-            .directory-card h1 { font-size: 1.5rem; }
-            .directory-item { flex-direction: column; align-items: flex-start; }
-            .directory-item .file-meta { margin-left: 0; margin-top: 0.3rem; }
+            .search-container {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+            
+            .search-box {
+                padding: 1.5rem 1rem;
+            }
+            
+            .search-box h1 {
+                font-size: 1.5rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .search-form input,
+            .search-form button {
+                width: 100%;
+                padding: 0.9rem 1rem;
+            }
+            
+            .result-item {
+                padding: 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -301,35 +405,15 @@
         </ul>
     </aside>
 
-    <div class="directory-container">
-        <div class="directory-card">
-            <h1>Directory Index</h1>
-            <ul class="directory-list">
-                <li class="directory-item">
-                    <a href="encyclopedia.html">encyclopedia.html</a>
-                    <span class="file-meta">Main Index Page</span>
-                </li>
-                <li class="directory-item">
-                    <a href="Wiki search.html">Wiki search.html</a>
-                    <span class="file-meta">Search Engine</span>
-                </li>
-                <li class="directory-item">
-                    <a href="wiki_encyclopedia/wikihome.html">wiki_encyclopedia/wikihome.html</a>
-                    <span class="file-meta">Wiki Homepage</span>
-                </li>
-                <li class="directory-item">
-                    <a href="directory.html">directory.html</a>
-                    <span class="file-meta">Current Page</span>
-                </li>
-                <li class="directory-item">
-                    <a href="robots.txt">robots.txt</a>
-                    <span class="file-meta">Search Engine Rules</span>
-                </li>
-                <li class="directory-item">
-                    <a href="sitemap.xml">sitemap.xml</a>
-                    <span class="file-meta">Site Structure</span>
-                </li>
-            </ul>
+    <div class="search-container">
+        <div class="search-box">
+            <h1>Encyclopedia Search</h1>
+            <form class="search-form" id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search articles..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="searchInfo" class="search-info"></div>
+            <div id="searchResults" class="search-results"></div>
         </div>
     </div>
 
@@ -370,6 +454,100 @@
             document.getElementById("navSidebar").classList.toggle("open");
             document.getElementById("navOverlay").classList.toggle("active");
         }
+
+        const wikiArticles = [
+            "wiki_encyclopedia/wikihome.html",
+            "wiki_encyclopedia/Juridical-Singularity.html",
+            "wiki_encyclopedia/Implementation-Roadmap.html",
+            "wiki_encyclopedia/Technology-Stack.html",
+            "wiki_encyclopedia/Electric-Technocracy.html",
+            "wiki_encyclopedia/Direct-Digital-Democracy.html",
+            "wiki_encyclopedia/Artificial-Superintelligence.html",
+            "wiki_encyclopedia/Post-Scarcity-Economics.html"
+        ];
+
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchInfo = document.getElementById('searchInfo');
+
+        async function performSearch(query) {
+            if (!query) return;
+            
+            searchResults.innerHTML = '<div class="loading">Searching articles...</div>';
+            searchInfo.textContent = `Searching for: "${query}"`;
+            
+            const results = [];
+            const term = query.toLowerCase();
+
+            for (const path of wikiArticles) {
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) continue;
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    const title = (doc.querySelector('h1') || doc.querySelector('title')).textContent;
+                    const content = doc.body.textContent;
+                    
+                    if (title.toLowerCase().includes(term) || content.toLowerCase().includes(term)) {
+                        let snippet = "";
+                        const index = content.toLowerCase().indexOf(term);
+                        if (index !== -1) {
+                            const start = Math.max(0, index - 60);
+                            const end = Math.min(content.length, index + term.length + 100);
+                            snippet = content.substring(start, end).replace(/\s+/g, ' ').trim();
+                            snippet = '...' + snippet.replace(new RegExp(term, 'gi'), (match) => `<mark>${match}</mark>`) + '...';
+                        }
+                        
+                        results.push({
+                            title: title,
+                            path: path,
+                            snippet: snippet || "No preview available"
+                        });
+                    }
+                } catch (e) {
+                    console.error("Search error for " + path, e);
+                }
+            }
+
+            searchResults.innerHTML = '';
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No articles found matching your search.</div>';
+            } else {
+                searchInfo.textContent = `Found ${results.length} result(s) for: "${query}"`;
+                results.forEach(res => {
+                    const item = document.createElement('div');
+                    item.className = 'result-item';
+                    item.innerHTML = `
+                        <h3><a href="${res.path}">${res.title}</a></h3>
+                        <div class="result-snippet">${res.snippet}</div>
+                    `;
+                    searchResults.appendChild(item);
+                });
+            }
+        }
+
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                const url = new URL(window.location);
+                url.searchParams.set('q', query);
+                window.history.pushState({}, '', url);
+                performSearch(query);
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                searchInput.value = query;
+                performSearch(query);
+            }
+        });
     </script>
 </body>
 </html>
