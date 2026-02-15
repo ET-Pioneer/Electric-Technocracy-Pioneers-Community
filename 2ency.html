@@ -31,14 +31,12 @@
     <title>Electric Technocracy Encyclopedia</title>
     
     <style>
-        /* CSS Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* RAL 5020 Ocean Blue */
-            --ocean-blue: #1D334A;
-            --ocean-blue-dark: #162838;
-            --ocean-blue-light: #2A4A68;
+            --pearl-blue: #102C54;
+            --pearl-blue-dark: #0A1F3D;
+            --pearl-blue-light: #1A3D6B;
             --white: #FFFFFF;
             --black: #000000;
             --gray-light: #F5F5F5;
@@ -54,9 +52,8 @@
             line-height: 1.6;
         }
         
-        /* Header */
         header {
-            background-color: var(--ocean-blue);
+            background-color: var(--pearl-blue);
             color: var(--white);
             padding: 1rem 1.5rem;
             display: flex;
@@ -69,12 +66,14 @@
         }
         
         .header-left { display: flex; align-items: center; gap: 1rem; }
-        .header-logo { height: 40px; width: auto; object-fit: contain; transition: var(--transition); }
+        .header-logo-link { display: flex; align-items: center; text-decoration: none; }
+        .header-logo { height: 40px; width: auto; object-fit: contain; transition: var(--transition); cursor: pointer; }
         .header-logo:hover { transform: scale(1.05); }
         
         .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
+        .header-search form { display: flex; gap: 0.5rem; }
         .header-search input {
-            width: 100%;
+            flex: 1;
             padding: 0.6rem 1.2rem;
             border: none;
             border-radius: 25px;
@@ -83,6 +82,20 @@
             transition: var(--transition);
         }
         .header-search input:focus { box-shadow: 0 0 0 3px rgba(255,255,255,0.3); }
+        .header-search button {
+            background: var(--white);
+            color: var(--pearl-blue);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .header-search button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
         
         .hamburger-menu {
             background: none;
@@ -95,12 +108,11 @@
         }
         .hamburger-menu:hover { transform: scale(1.1); opacity: 0.8; }
         
-        /* Navigation Sidebar (Hamburger) */
         .nav-sidebar {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 320px;
+            width: 350px;
             max-width: 85vw;
             height: 100vh;
             background-color: var(--white);
@@ -120,31 +132,36 @@
             border: none;
             font-size: 2rem;
             cursor: pointer;
-            color: var(--ocean-blue);
+            color: var(--pearl-blue);
         }
         
         .nav-sidebar h2 {
-            color: var(--ocean-blue);
-            margin-bottom: 1.5rem;
+            color: var(--pearl-blue);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--ocean-blue);
-            font-size: 1.2rem;
+            border-bottom: 2px solid var(--pearl-blue);
+            font-size: 1.1rem;
             text-transform: uppercase;
         }
         
+        .nav-sidebar h2:first-of-type { margin-top: 0; }
+        
         .nav-sidebar ul { list-style: none; }
-        .nav-sidebar li { margin-bottom: 0.8rem; }
+        .nav-sidebar li { margin-bottom: 0.6rem; }
         .nav-sidebar a {
             color: var(--black);
             text-decoration: none;
-            display: block;
-            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.8rem;
             border-radius: 5px;
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .nav-sidebar a:hover {
-            background-color: var(--ocean-blue);
+            background-color: var(--pearl-blue);
             color: var(--white);
             transform: translateX(-5px);
         }
@@ -163,16 +180,15 @@
         }
         .nav-overlay.active { opacity: 1; visibility: visible; }
         
-        /* Hero Box - NEUE GESTALTUNG */
         .hero-box {
-            background: linear-gradient(135deg, var(--ocean-blue-dark), var(--ocean-blue-light));
+            background: linear-gradient(135deg, var(--pearl-blue-dark), var(--pearl-blue-light));
             color: var(--white);
             padding: 3rem 2rem;
             text-align: center;
             margin: 2rem auto;
             max-width: 1200px;
-            border-radius: 20px; /* Runde Ecken */
-            box-shadow: 0 8px 30px rgba(29, 51, 74, 0.3); /* Schatten */
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(16, 44, 84, 0.3);
         }
         
         .hero-box h1 {
@@ -195,7 +211,6 @@
             line-height: 1.7;
         }
         
-        /* Main Layout */
         .page-shell {
             display: flex;
             max-width: 1400px;
@@ -204,7 +219,6 @@
             padding: 0 1.5rem;
         }
         
-        /* Wiki Sidebar */
         .wiki-sidebar {
             width: 280px;
             flex-shrink: 0;
@@ -219,11 +233,11 @@
         }
         
         .wiki-sidebar h3 {
-            color: var(--ocean-blue);
+            color: var(--pearl-blue);
             font-size: 1.2rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--ocean-blue);
+            border-bottom: 2px solid var(--pearl-blue);
             text-transform: uppercase;
         }
         
@@ -239,19 +253,15 @@
         }
         
         .sidebar-link:hover {
-            background-color: var(--ocean-blue);
+            background-color: var(--pearl-blue);
             color: var(--white);
             transform: translateX(5px);
         }
         
         .sidebar-link.active {
-            background-color: var(--ocean-blue-light);
+            background-color: var(--pearl-blue-light);
             color: var(--white);
             font-weight: 600;
-        }
-        
-        .sidebar-link.hidden {
-            display: none;
         }
         
         .loading {
@@ -262,7 +272,6 @@
             font-size: 0.9rem;
         }
         
-        /* Main Content */
         .main-content {
             flex: 1;
             background-color: var(--white);
@@ -273,13 +282,13 @@
         }
         
         .main-content h1 {
-            color: var(--ocean-blue);
+            color: var(--pearl-blue);
             font-size: 2rem;
             margin-bottom: 1.5rem;
         }
         
         .main-content h2 {
-            color: var(--ocean-blue-dark);
+            color: var(--pearl-blue-dark);
             font-size: 1.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
@@ -299,9 +308,8 @@
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
         
-        /* Footer */
         footer {
-            background-color: var(--ocean-blue-dark);
+            background-color: var(--pearl-blue-dark);
             color: var(--white);
             padding: 3rem 1.5rem 1rem;
             margin-top: 4rem;
@@ -319,7 +327,7 @@
             font-size: 1.1rem;
             margin-bottom: 1rem;
             color: var(--white);
-            border-bottom: 2px solid var(--ocean-blue-light);
+            border-bottom: 2px solid var(--pearl-blue-light);
             padding-bottom: 0.5rem;
         }
         
@@ -340,21 +348,11 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid var(--ocean-blue);
+            border-top: 1px solid var(--pearl-blue);
             color: var(--gray-medium);
             font-size: 0.9rem;
         }
         
-        /* Search Results */
-        .search-no-results {
-            color: var(--gray-dark);
-            font-style: italic;
-            padding: 1rem;
-            text-align: center;
-            display: none;
-        }
-        
-        /* Responsive */
         @media (max-width: 968px) {
             .page-shell { flex-direction: column; }
             .wiki-sidebar {
@@ -380,58 +378,73 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-left">
-            <img src="images/logo/et-pioneers.png" alt="Electric Technocracy Pioneers Community" class="header-logo" onerror="this.onerror=null; this.src='images/logo/et-pioneers.jpg';">
+            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" class="header-logo-link" target="_blank">
+                <img src="images/logo/et-pioneers.png" alt="Electric Technocracy Pioneers Community" class="header-logo" onerror="this.onerror=null; this.src='images/logo/et-pioneers.jpg';">
+            </a>
         </div>
         
         <div class="header-search">
-            <input type="text" id="wikiSearch" placeholder="Search articles..." aria-label="Search">
+            <form action="wikisearch.html" method="get">
+                <input type="text" name="q" id="searchInput" placeholder="Search articles..." aria-label="Search" required>
+                <button type="submit">Search</button>
+            </form>
         </div>
         
         <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
     </header>
     
-    <!-- Navigation Overlay & Sidebar -->
     <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
     <aside class="nav-sidebar" id="navSidebar">
         <button class="nav-sidebar-close" onclick="toggleMenu()">×</button>
-        <h2>Internal Links</h2>
+        
+        <h2>🪢 Electric Technocracy</h2>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="encyclopedia.html">Encyclopedia Index</a></li>
-            <li><a href="dir.html">Directory Listing</a></li>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="encyclopedia.html">📚 Encyclopedia</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">💡 GitHub Page</a></li>
+            <li><a href="https://repository.ct.ws">💡 GitHub Repository</a></li>
+            <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Community WIKI</a></li>
         </ul>
-        <h2 style="margin-top:2rem">External Links</h2>
+        
+        <h2>🌍 One World Archive</h2>
         <ul>
-            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/">GitHub Page</a></li>
-            <li><a href="https://repository.ct.ws">GitHub Repository</a></li>
-            <li><a href="https://wiki.free.nf/">International Treaty Law WIKI</a></li>
-            <li><a href="https://worldsold.wixsite.com/world-sold">World Succession Deed HQ</a></li>
-            <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
+            <li><a href="https://mranonymousnwo.github.io/One_World/">🌎 Archive Vault & PDF Viewer</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/">🌏 GitHub Repository</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/wiki">🌍 GitHub WIKI</a></li>
+        </ul>
+        
+        <h2>📚 Knowledge Resources</h2>
+        <ul>
+            <li><a href="https://wiki.free.nf/">📚 Treaty Law WIKI</a></li>
+            <li><a href="https://worldsold.wixsite.com/global-archive">📑 Treaty Archive HQ</a></li>
+            <li><a href="https://worldsold.wixsite.com/world-sold">🗺️ World Succession Deed HQ</a></li>
+            <li><a href="https://paradise.gt.tc">🚀 WSD & Electric Paradise</a></li>
+        </ul>
+        
+        <h2>🔍 Navigation</h2>
+        <ul>
+            <li><a href="wikisearch.html">🔎 Search</a></li>
+            <li><a href="dir.html">📁 Directory</a></li>
+            <li><a href="directory.html">📑 Linklist</a></li>
         </ul>
     </aside>
     
-    <!-- Hero Box -->
     <section class="hero-box">
         <h1>Electric Technocracy Encyclopedia</h1>
         <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/2a826caf3cc845112e2fda3895bb785c9883f2ea/images/gif/etwiki.gif?raw=true" alt="Encyclopedia Animation" class="hero-gif">
         <p>An organized encyclopedia curated by the Electric Technocracy Pioneers Community, providing structured reference materials, documentation, and officially published records maintained by the designated custodian.</p>
     </section>
     
-    <!-- Main Content Layout -->
     <main class="page-shell">
-        <!-- Left Sidebar (Dynamic Articles) -->
         <aside class="wiki-sidebar">
             <h3>📚 Wiki Articles</h3>
             <div class="loading">Loading articles...</div>
-            <div class="search-no-results">No articles found</div>
             <div id="sidebar-links"></div>
         </aside>
         
-        <!-- Main Content -->
-        <article class="main-content" id="articleContent">
+        <article class="main-content">
             <h1>Electric Technocracy Pioneers Community Headquarter</h1>
             
             <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png?raw=true" alt="Electric Technocracy Pioneers Community WIKI" style="max-width: 400px; margin: 2rem 0;">
@@ -446,7 +459,6 @@
         </article>
     </main>
     
-    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
@@ -489,125 +501,61 @@
         </div>
     </footer>
     
-    <!-- JavaScript -->
     <script>
-        // ============================================
-        // HAMBURGER MENU
-        // ============================================
         function toggleMenu() {
             document.getElementById("navSidebar").classList.toggle("open");
             document.getElementById("navOverlay").classList.toggle("active");
         }
         
-        // ============================================
-        // ARTIKEL-DATEN GLOBAL SPEICHERN
-        // ============================================
-        let articlesData = [];
-        
         const articlesIndexUrl = "wiki_encyclopedia/articles.json";
         
-        /**
-         * Titel aus HTML extrahieren
-         */
         async function fetchArticleTitle(url) {
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
-                    return url.split("/").pop()
-                        .replace(".html", "")
-                        .replace(/-/g, " ")
-                        .replace(/_/g, " ");
+                    return url.split("/").pop().replace(".html", "").replace(/-/g, " ").replace(/_/g, " ");
                 }
                 
                 const html = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
                 
-                const heading =
-                    doc.querySelector("h1") ||
-                    doc.querySelector("h2") ||
-                    doc.querySelector("title");
+                const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
                 
                 return heading && heading.textContent.trim()
                     ? heading.textContent.trim()
                     : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
                     
             } catch (e) {
-                return url.split("/").pop()
-                    .replace(".html", "")
-                    .replace(/-/g, " ");
+                return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
             }
         }
         
-        /**
-         * Volltext aus HTML extrahieren (für Suche)
-         */
-        async function fetchArticleContent(url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) return "";
-                
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-                
-                // Entferne Scripte und Styles
-                doc.querySelectorAll('script, style').forEach(el => el.remove());
-                
-                return doc.body.textContent || "";
-            } catch (e) {
-                return "";
-            }
-        }
-        
-        /**
-         * Sidebar aufbauen
-         */
         async function buildSidebar() {
             const container = document.getElementById("sidebar-links");
             const loading = document.querySelector(".loading");
-            const noResults = document.querySelector(".search-no-results");
             
-            if (!container) {
-                console.error("❌ Sidebar container not found!");
-                return;
-            }
+            if (!container) return;
             
             try {
                 const res = await fetch(articlesIndexUrl);
-                
-                if (!res.ok) {
-                    throw new Error(`articles.json not found: ${res.status}`);
-                }
+                if (!res.ok) throw new Error(`articles.json not found`);
                 
                 const list = await res.json();
-                
-                console.log(`✅ ${list.length} articles loaded from JSON`);
-                
                 if (loading) loading.remove();
                 
                 list.sort((a, b) => a.path.localeCompare(b.path));
                 
                 const currentPath = window.location.pathname.split('/').pop();
                 
-                // Artikel laden und Daten speichern
                 for (const entry of list) {
                     const url = entry.path;
                     const title = await fetchArticleTitle(url);
-                    const content = await fetchArticleContent(url);
-                    
-                    // Daten global speichern
-                    articlesData.push({
-                        url: url,
-                        title: title,
-                        content: content.toLowerCase()
-                    });
                     
                     const link = document.createElement("a");
                     link.href = url;
                     link.textContent = title;
                     link.className = "sidebar-link";
-                    link.dataset.title = title.toLowerCase();
                     
                     if (url.endsWith(currentPath) || window.location.pathname.endsWith(url)) {
                         link.classList.add("active");
@@ -616,10 +564,8 @@
                     container.appendChild(link);
                 }
                 
-                console.log(`✅ Sidebar built with ${list.length} articles`);
-                
             } catch (error) {
-                console.error("❌ Error loading sidebar:", error);
+                console.error("Error loading sidebar:", error);
                 if (loading) {
                     loading.textContent = "⚠️ Articles could not be loaded";
                     loading.style.color = "#cc0000";
@@ -627,64 +573,7 @@
             }
         }
         
-        /**
-         * VOLLTEXTSUCHE in Artikeln
-         */
-        function initSearch() {
-            const searchInput = document.getElementById("wikiSearch");
-            const noResults = document.querySelector(".search-no-results");
-            
-            if (!searchInput) return;
-            
-            searchInput.addEventListener("input", function(e) {
-                const searchTerm = e.target.value.toLowerCase().trim();
-                const links = document.querySelectorAll(".sidebar-link");
-                
-                if (searchTerm === "") {
-                    // Zeige alle Artikel
-                    links.forEach(link => {
-                        link.classList.remove("hidden");
-                    });
-                    noResults.style.display = "none";
-                    return;
-                }
-                
-                let foundCount = 0;
-                
-                // Durchsuche Titel UND Inhalt
-                articlesData.forEach((article, index) => {
-                    const link = links[index];
-                    const matchTitle = article.title.includes(searchTerm);
-                    const matchContent = article.content.includes(searchTerm);
-                    
-                    if (matchTitle || matchContent) {
-                        link.classList.remove("hidden");
-                        foundCount++;
-                    } else {
-                        link.classList.add("hidden");
-                    }
-                });
-                
-                // Zeige "Keine Ergebnisse" wenn nichts gefunden
-                if (foundCount === 0) {
-                    noResults.style.display = "block";
-                } else {
-                    noResults.style.display = "none";
-                }
-                
-                console.log(`🔍 Search "${searchTerm}": ${foundCount} results`);
-            });
-        }
-        
-        /**
-         * Initialisierung
-         */
-        document.addEventListener("DOMContentLoaded", async function() {
-            console.log("🚀 Encyclopedia initializing...");
-            await buildSidebar();
-            initSearch();
-            console.log("✅ Encyclopedia ready");
-        });
+        document.addEventListener("DOMContentLoaded", buildSidebar);
     </script>
 </body>
 </html>
