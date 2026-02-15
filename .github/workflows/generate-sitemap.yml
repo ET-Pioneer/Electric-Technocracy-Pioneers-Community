@@ -45,7 +45,6 @@ jobs:
 
           for ext in $EXTENSIONS; do
             shopt -s nullglob
-            # 🔥 WICHTIG: Wiki-Dateien aus wiki_temp lesen
             for file in wiki_temp/*.$ext; do
               base="${file##*/}"
               base="${base%.$ext}"
@@ -74,6 +73,21 @@ jobs:
             done
             shopt -u nullglob
           done
+
+      # ⭐ NEU: JSON-LISTE FÜR DIE SIDEBAR GENERIEREN
+      - name: Generate articles.json for sidebar
+        run: |
+          echo "[" > wiki_encyclopedia/articles.json
+          FIRST=true
+          for file in wiki_encyclopedia/*.html; do
+            if [ "$FIRST" = true ]; then
+              FIRST=false
+            else
+              echo "," >> wiki_encyclopedia/articles.json
+            fi
+            printf '  { "path": "%s" }' "$file" >> wiki_encyclopedia/articles.json
+          done
+          echo "]" >> wiki_encyclopedia/articles.json
 
       # 🔥 TEMPORÄRES WIKI WIRD WIEDER GELÖSCHT
       - name: Cleanup temporary wiki
