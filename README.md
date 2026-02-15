@@ -153,7 +153,7 @@ No programming experience is required — only curiosity and willingness to shar
 
 <div align="center">
   <img 
-    src="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/images/logo/et-pioneers.png"
+    src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/49121717c54fb24d58594eb9b96cdfd51324dc63/images/gif/etpc.gif"
     width="250"
     style="clip-path: circle(50% at 50% 50%);"
     alt="Electric Technocracy Pioneers Community"
