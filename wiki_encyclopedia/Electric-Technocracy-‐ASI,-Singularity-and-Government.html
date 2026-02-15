@@ -7,23 +7,20 @@
     <meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial, intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
     <meta name="author" content="Electric Technocracy Pioneers Community">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia.html">
     <meta property="og:title" content="Electric Technocracy Encyclopedia - Wiki Article">
     <meta property="og:description" content="Read this wiki article from the Electric Technocracy Pioneers Community Encyclopedia.">
     <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia.html">
     <meta property="twitter:title" content="Electric Technocracy Encyclopedia - Wiki Article">
     <meta property="twitter:description" content="Read this wiki article from the Electric Technocracy Pioneers Community Encyclopedia.">
     <meta property="twitter:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <title>Electric Technocracy Encyclopedia - Wiki Article</title>
     
@@ -273,22 +270,6 @@
             border: 1px solid var(--gray-medium);
         }
         
-        .article-content table {
-            width: 100%;
-            max-width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            overflow-x: auto;
-            display: block;
-        }
-        
-        .article-content th, .article-content td {
-            border: 1px solid var(--gray-medium);
-            padding: 0.8rem;
-            text-align: left;
-            word-wrap: break-word;
-        }
-        
         footer {
             background-color: var(--pearl-blue-dark);
             color: var(--white);
@@ -353,7 +334,7 @@
         </div>
         
         <div class="header-search">
-            <form action="Wiki search.html" method="GET">
+            <form action="wikisearch.html" method="GET">
                 <input type="text" name="q" placeholder="Search Encyclopedia..." aria-label="Search">
             </form>
         </div>
@@ -370,7 +351,7 @@
             <li><a href="index.html">🏠 Home</a></li>
             <li><a href="encyclopedia.html">📖 Encyclopedia Index</a></li>
             <li><a href="wiki_encyclopedia/wikihome.html">🏠 Wiki Home</a></li>
-            <li><a href="Wiki search.html">🔎 Search</a></li>
+            <li><a href="wikisearch.html">🔎 Search</a></li>
             <li><a href="directory.html">📁 Directory / Linklist</a></li>
         </ul>
 
@@ -398,6 +379,8 @@
         <h2>🚀 Resources</h2>
         <ul>
             <li><a href="https://paradise.gt.tc" target="_blank">🚀 Start-Page WSD & Paradise</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html" target="_blank">🔎 Search (External)</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/dir.html" target="_blank">📁 Directory (External)</a></li>
         </ul>
     </aside>
     
@@ -849,26 +832,17 @@ English Wikipedia page on Kreuzbergkaserne.</li>
             document.getElementById("navOverlay").classList.toggle("active");
         }
         
-        // Correct path for articles.json when inside wiki_encyclopedia directory
-        const articlesIndexUrl = "articles.json"; 
+        const articlesIndexUrl = "wiki_encyclopedia/articles.json"; 
         
         async function fetchArticleTitle(url) {
             try {
                 const response = await fetch(url);
-                if (!response.ok) {
-                    return url.split("/").pop().replace(".html", "").replace(/-/g, " ").replace(/_/g, " ");
-                }
-                
+                if (!response.ok) return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
                 const html = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
-                
                 const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
-                
-                return heading && heading.textContent.trim()
-                    ? heading.textContent.trim()
-                    : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
-                    
+                return heading ? heading.textContent.trim() : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
             } catch (e) {
                 return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
             }
@@ -877,37 +851,24 @@ English Wikipedia page on Kreuzbergkaserne.</li>
         async function buildSidebar() {
             const container = document.getElementById("sidebar-links");
             if (!container) return;
-            
             try {
                 const res = await fetch(articlesIndexUrl);
                 if (!res.ok) throw new Error(`articles.json not found`);
-                
                 const list = await res.json();
                 list.sort((a, b) => a.path.localeCompare(b.path));
-                
                 const currentPath = window.location.pathname.split('/').pop();
-                
                 for (const entry of list) {
                     const url = entry.path;
                     const title = await fetchArticleTitle(url);
-                    
                     const link = document.createElement("a");
                     link.href = url;
                     link.textContent = title;
                     link.className = "sidebar-link";
-                    
-                    if (url.endsWith(currentPath) || window.location.pathname.endsWith(url)) {
-                        link.classList.add("active");
-                    }
-                    
+                    if (url.endsWith(currentPath)) link.classList.add("active");
                     container.appendChild(link);
                 }
-                
-            } catch (error) {
-                console.error("Error loading sidebar:", error);
-            }
+            } catch (error) { console.error("Error loading sidebar:", error); }
         }
-        
         document.addEventListener("DOMContentLoaded", buildSidebar);
     </script>
 </body>
