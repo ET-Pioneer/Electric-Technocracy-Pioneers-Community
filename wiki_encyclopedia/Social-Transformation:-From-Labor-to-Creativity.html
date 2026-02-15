@@ -1,258 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Electric Technocracy Encyclopedia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
-    :root {
-      --bg-body: #05060a;
-      --bg-surface: #0c0f18;
-      --bg-surface-alt: #111624;
-      --border-subtle: #252a3a;
-      --accent: #4fd1c5;
-      --accent-soft: rgba(79, 209, 197, 0.12);
-      --text-main: #f5f7ff;
-      --text-muted: #a0aec0;
-      --text-soft: #7b8499;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      --max-width: 1200px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--bg-body);
-      color: var(--text-main);
-      font-family: system-ui, sans-serif;
-    }
-
-    /* HEADER */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background: #05060a;
-      border-bottom: 1px solid rgba(79, 209, 197, 0.25);
-      padding: 1rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .back-home {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 1rem;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .hamburger {
-      font-size: 1.6rem;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    /* HAMBURGER MENU */
-    .menu-panel {
-      position: fixed;
-      top: 0;
-      right: -350px;
-      width: 350px;
-      height: 100vh;
-      background: #0c0f18;
-      border-left: 1px solid var(--border-subtle);
-      padding: 1.5rem;
-      overflow-y: auto;
-      transition: right 0.3s ease;
-      z-index: 2000;
-    }
-
-    .menu-panel.open { right: 0; }
-
-    .menu-title {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .menu-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .menu-list a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 0.4rem;
-      display: block;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-
-    .menu-list a:hover {
-      background: rgba(79, 209, 197, 0.15);
-      color: var(--text-main);
-    }
-
-    /* LAYOUT */
-    .page-shell {
-      max-width: var(--max-width);
-      margin: 2rem auto;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 2rem;
-    }
-
-    @media (max-width: 900px) {
-      .page-shell {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      background: var(--bg-surface-alt);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 1rem;
-      max-height: calc(100vh - 120px);
-      overflow-y: auto;
-    }
-
-    .sidebar-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-soft);
-      margin-bottom: 0.5rem;
-    }
-
-    .sidebar-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .sidebar-list a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 0.35rem;
-      border-radius: 6px;
-      display: block;
-      transition: background 0.2s;
-    }
-
-    .sidebar-list a:hover {
-      background: rgba(79, 209, 197, 0.15);
-      color: var(--text-main);
-    }
-
-    .is-active {
-      background: var(--accent-soft);
-      color: var(--accent) !important;
-    }
-
-    /* CONTENT */
-    .content {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      line-height: 1.7;
-    }
-
-    .content img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    /* FOOTER */
-    .site-footer {
-      max-width: var(--max-width);
-      margin: 2rem auto;
-      padding: 0 1rem;
-      text-align: center;
-      color: var(--text-soft);
-    }
-
-    .footer-links {
-      margin-top: 1rem;
-    }
-
-    .footer-links a {
-      color: var(--accent);
-      text-decoration: none;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      background: var(--accent-soft);
-      transition: background 0.2s;
-    }
-
-    .footer-links a:hover {
-      background: rgba(79, 209, 197, 0.25);
-    }
-  </style>
-
-  <script>
-    function toggleMenu() {
-      document.querySelector(".menu-panel").classList.toggle("open");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electric Technocracy Pioneers Community Encyclopedia">
+    <meta name="keywords" content="Electric Technocracy, AI Governance, Judicial Singularity, Encyclopedia, Wiki">
+    <meta name="author" content="Electric Technocracy Pioneers Community">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <title>Electric Technocracy Encyclopedia</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --pearl-blue: #102C54;
+            --pearl-blue-dark: #0A1F3D;
+            --pearl-blue-light: #1A3D6B;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-light: #F5F5F5;
+            --gray-medium: #CCCCCC;
+            --gray-dark: #666666;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .header-logo-link { display: flex; align-items: center; text-decoration: none; }
+        .header-logo { height: 40px; width: auto; cursor: pointer; transition: var(--transition); }
+        .header-logo:hover { transform: scale(1.05); }
+        
+        .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
+        .header-search form { display: flex; gap: 0.5rem; }
+        .header-search input {
+            flex: 1;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+        }
+        .header-search button {
+            background: var(--white);
+            color: var(--pearl-blue);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .hamburger-menu {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 350px;
+            max-width: 85vw;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.4s ease;
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+        .nav-sidebar.open { right: 0; }
+        
+        .nav-sidebar-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--pearl-blue);
+        }
+        
+        .nav-sidebar h2 {
+            color: var(--pearl-blue);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pearl-blue);
+            font-size: 1.1rem;
+        }
+        .nav-sidebar h2:first-of-type { margin-top: 0; }
+        .nav-sidebar ul { list-style: none; }
+        .nav-sidebar li { margin-bottom: 0.6rem; }
+        .nav-sidebar a {
+            color: var(--black);
+            text-decoration: none;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .nav-sidebar a:hover {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+        }
+        
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1999;
+        }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        
+        .page-shell {
+            display: flex;
+            max-width: 1400px;
+            margin: 2rem auto;
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+        
+        .wiki-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: sticky;
+            top: 80px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+        
+        .wiki-sidebar h3 {
+            color: var(--pearl-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pearl-blue);
+        }
+        
+        .sidebar-link {
+            color: var(--black);
+            text-decoration: none;
+            display: block;
+            padding: 0.6rem 0.8rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-link:hover {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-link.active {
+            background-color: var(--pearl-blue-light);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .article-content {
+            flex: 1;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .article-content h1 {
+            color: var(--pearl-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h2 {
+            color: var(--pearl-blue-dark);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content h3 {
+            color: var(--pearl-blue);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content a {
+            color: var(--pearl-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--pearl-blue-light);
+            transition: var(--transition);
+        }
+        
+        .article-content a:hover {
+            color: var(--pearl-blue-light);
+            border-bottom-color: var(--pearl-blue);
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .article-content code {
+            background: var(--gray-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background: var(--gray-light);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--pearl-blue);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--gray-dark);
+            font-style: italic;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .article-content th,
+        .article-content td {
+            border: 1px solid var(--gray-medium);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .article-content th {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+        }
+        
+        footer {
+            background-color: var(--pearl-blue-dark);
+            color: var(--white);
+            padding: 3rem 1.5rem 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--pearl-blue-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a {
+            color: var(--gray-medium);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .footer-section a:hover { color: var(--white); }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--pearl-blue);
+            color: var(--gray-medium);
+        }
+        
+        @media (max-width: 968px) {
+            .page-shell { flex-direction: column; }
+            .wiki-sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+            .header-search { display: none; }
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div style="display:flex;align-items:center;gap:1rem;">
-      <a href="/Electric-Technocracy-Pioneers-Community/index.html" class="back-home">⬅ Home</a>
-      <div class="logo">Electric Technocracy Encyclopedia</div>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  </header>
-
-  <!-- HAMBURGER MENU (EXTERNAL LINKS – optional, vom Workflow befüllbar) -->
-  <aside class="menu-panel">
-    <div class="menu-title">External Links</div>
-    <ul class="menu-list">
-      <!-- Hier kannst du statisch oder per Workflow deine externen Links einfügen -->
-    </ul>
-  </aside>
-
-  <!-- PAGE LAYOUT -->
-  <main class="page-shell">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sidebar-title">Wiki Articles</div>
-      <ul class="sidebar-list" id="wikiSidebar"></ul>
+    <header>
+        <div class="header-left">
+            <a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" class="header-logo-link" target="_blank">
+                <img src="../images/logo/et-pioneers.png" alt="Electric Technocracy Pioneers" class="header-logo" onerror="this.src='../images/logo/et-pioneers.jpg';">
+            </a>
+        </div>
+        
+        <div class="header-search">
+            <form action="../wikisearch.html" method="get">
+                <input type="text" name="q" placeholder="Search..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+    </header>
+    
+    <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+    <aside class="nav-sidebar" id="navSidebar">
+        <button class="nav-sidebar-close" onclick="toggleMenu()">×</button>
+        
+        <h2>🪢 Electric Technocracy</h2>
+        <ul>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="../encyclopedia.html">📚 Encyclopedia</a></li>
+            <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki">💡 Community WIKI</a></li>
+        </ul>
+        
+        <h2>🔍 Navigation</h2>
+        <ul>
+            <li><a href="../wikisearch.html">🔎 Search</a></li>
+            <li><a href="../dir.html">📁 Directory</a></li>
+        </ul>
     </aside>
-
-    <!-- CONTENT (WORKFLOW SETZT HIER DEN ARTIKEL EIN) -->
-    <section class="content" id="articleContent">
+    
+    <main class="page-shell">
+        <aside class="wiki-sidebar">
+            <h3>📚 Wiki Articles</h3>
+            <div id="sidebar-links"></div>
+        </aside>
+        
+        <article class="article-content">
 <h1
 id="liberation-from-compulsory-work-social-transformation-from-labor-to-creative-work">Liberation
 from Compulsory Work — Social Transformation from Labor to Creative
@@ -792,53 +935,101 @@ International Treaties, Third-Party Custody, Zenodo Electric
 Technocracy, Micronations Made Easy, Post-National Society, KI
 Revolution, Welt verkauft, Protest Music, Direct Digital Democracy,
 Bedingungsloses Grundeinkommen</p>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div>Electric Technocracy Pioneers Community</div>
-    <div class="footer-links">
-      <a href="all_links.html">📚 All Links</a>
-    </div>
-  </footer>
-
-  <!-- DYNAMIC SIDEBAR: H1-TITEL AUS ALLEN WIKI-HTML-SEITEN -->
-  <script>
-    // Alle Wiki-HTML-Dateien im Ordner wiki_encyclopedia
-    const wikiFiles = [
-      "Home.html",
-      "Juridical-Singularity.html",
-      "Implementation-Roadmap.html",
-      "Technology-Stack.html",
-      "all_links.html"
-    ];
-
-    const sidebar = document.getElementById("wikiSidebar");
-
-    // Verzeichnis-Pfad dynamisch aus der aktuellen URL ableiten
-    // z.B. /Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/
-    const dirPath = location.pathname.replace(/[^\/]+$/, "");
-
-    const currentFile = location.pathname.split("/").pop();
-
-    wikiFiles.forEach(file => {
-      const url = dirPath + file;
-
-      fetch(url)
-        .then(res => res.ok ? res.text() : "")
-        .then(html => {
-          if (!html) return;
-          const doc = new DOMParser().parseFromString(html, "text/html");
-          const h1 = doc.querySelector("h1");
-          const title = h1 ? h1.textContent.trim() : file.replace(".html", "");
-          const active = (file === currentFile) ? "is-active" : "";
-          sidebar.innerHTML += `<li><a href="${file}" class="${active}">${title}</a></li>`;
-        })
-        .catch(err => console.log("Fehler beim Laden:", url, err));
-    });
-  </script>
-
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Core Resources</h3>
+                <ul>
+                    <li><a href="https://world.rf.gd">World Succession Deed</a></li>
+                    <li><a href="https://ep.ct.ws">Electric Technocracy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Knowledge Base</h3>
+                <ul>
+                    <li><a href="https://wiki.free.nf/">Treaty Law WIKI</a></li>
+                    <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Publications</h3>
+                <ul>
+                    <li><a href="https://doi.org/10.5281/zenodo.18073084">The Next Civilization</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.18028339">Foundations of Technocracy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://videos.xo.je">YouTube</a></li>
+                    <li><a href="https://x.com/WW3Precognition">Twitter (X)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Electric Technocracy Pioneers Community</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("navSidebar").classList.toggle("open");
+            document.getElementById("navOverlay").classList.toggle("active");
+        }
+        
+        async function fetchArticleTitle(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
+                
+                const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
+                return heading?.textContent.trim() || url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+            } catch (e) {
+                return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+            }
+        }
+        
+        async function buildSidebar() {
+            const container = document.getElementById("sidebar-links");
+            if (!container) return;
+            
+            try {
+                const res = await fetch("articles.json");
+                if (!res.ok) throw new Error("articles.json not found");
+                
+                const list = await res.json();
+                list.sort((a, b) => a.path.localeCompare(b.path));
+                
+                const currentFile = location.pathname.split('/').pop();
+                
+                for (const entry of list) {
+                    const filename = entry.path.split('/').pop();
+                    const title = await fetchArticleTitle(filename);
+                    
+                    const link = document.createElement("a");
+                    link.href = filename;
+                    link.textContent = title;
+                    link.className = "sidebar-link";
+                    
+                    if (filename === currentFile) {
+                        link.classList.add("active");
+                    }
+                    
+                    container.appendChild(link);
+                }
+            } catch (error) {
+                console.error("Error loading sidebar:", error);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", buildSidebar);
+    </script>
 </body>
 </html>
