@@ -7,7 +7,6 @@
     <meta name="keywords" content="Electric Technocracy, AI Governance, Judicial Singularity, Encyclopedia, Wiki">
     <meta name="author" content="Electric Technocracy Pioneers Community">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     
@@ -15,6 +14,12 @@
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
         
         :root {
             --pearl-blue: #102C54;
@@ -46,17 +51,23 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
         }
         
         .header-left { display: flex; align-items: center; gap: 1rem; }
         .header-logo-link { display: flex; align-items: center; text-decoration: none; }
-        .header-logo { height: 40px; width: auto; cursor: pointer; transition: var(--transition); }
+        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; transition: var(--transition); }
         .header-logo:hover { transform: scale(1.05); }
         
-        .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
+        .header-search { 
+            flex: 1; 
+            max-width: 500px; 
+            margin: 0 1.5rem;
+        }
         .header-search form { display: flex; gap: 0.5rem; }
         .header-search input {
             flex: 1;
+            min-width: 0;
             padding: 0.6rem 1.2rem;
             border: none;
             border-radius: 25px;
@@ -70,6 +81,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
+            white-space: nowrap;
         }
         
         .hamburger-menu {
@@ -151,6 +163,7 @@
         .page-shell {
             display: flex;
             max-width: 1400px;
+            width: 100%;
             margin: 2rem auto;
             gap: 2rem;
             padding: 0 1.5rem;
@@ -185,6 +198,7 @@
             transition: var(--transition);
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
+            word-wrap: break-word;
         }
         
         .sidebar-link:hover {
@@ -201,16 +215,20 @@
         
         .article-content {
             flex: 1;
+            min-width: 0;
             background-color: var(--white);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
         
         .article-content h1 {
             color: var(--pearl-blue);
             font-size: 2rem;
             margin-bottom: 1.5rem;
+            word-wrap: break-word;
         }
         
         .article-content h2 {
@@ -218,6 +236,7 @@
             font-size: 1.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
+            word-wrap: break-word;
         }
         
         .article-content h3 {
@@ -225,11 +244,14 @@
             font-size: 1.2rem;
             margin-top: 1.5rem;
             margin-bottom: 0.8rem;
+            word-wrap: break-word;
         }
         
         .article-content p {
             margin-bottom: 1rem;
             line-height: 1.8;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .article-content ul, .article-content ol {
@@ -239,6 +261,7 @@
         
         .article-content li {
             margin-bottom: 0.5rem;
+            word-wrap: break-word;
         }
         
         .article-content a {
@@ -246,6 +269,8 @@
             text-decoration: none;
             border-bottom: 1px solid var(--pearl-blue-light);
             transition: var(--transition);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .article-content a:hover {
@@ -266,6 +291,7 @@
             padding: 0.2rem 0.4rem;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
+            word-wrap: break-word;
         }
         
         .article-content pre {
@@ -274,6 +300,11 @@
             border-radius: 8px;
             overflow-x: auto;
             margin: 1rem 0;
+        }
+        
+        .article-content pre code {
+            background: none;
+            padding: 0;
         }
         
         .article-content blockquote {
@@ -286,8 +317,11 @@
         
         .article-content table {
             width: 100%;
+            max-width: 100%;
             border-collapse: collapse;
             margin: 1rem 0;
+            overflow-x: auto;
+            display: block;
         }
         
         .article-content th,
@@ -295,6 +329,7 @@
             border: 1px solid var(--gray-medium);
             padding: 0.8rem;
             text-align: left;
+            word-wrap: break-word;
         }
         
         .article-content th {
@@ -307,11 +342,12 @@
             color: var(--white);
             padding: 3rem 1.5rem 1rem;
             margin-top: 4rem;
+            width: 100%;
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             max-width: 1400px;
             margin: 0 auto 2rem;
@@ -331,6 +367,7 @@
             text-decoration: none;
             transition: var(--transition);
             font-size: 0.9rem;
+            word-wrap: break-word;
         }
         .footer-section a:hover { color: var(--white); }
         
@@ -342,14 +379,48 @@
         }
         
         @media (max-width: 968px) {
-            .page-shell { flex-direction: column; }
+            .page-shell { 
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+            
             .wiki-sidebar {
                 width: 100%;
                 position: relative;
                 top: 0;
                 max-height: none;
             }
-            .header-search { display: none; }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .header-search { 
+                display: none;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .page-shell {
+                padding: 0 0.5rem;
+                margin: 1rem auto;
+            }
+            
+            .article-content {
+                padding: 1rem;
+            }
+            
+            .article-content h1 {
+                font-size: 1.5rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.3rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
