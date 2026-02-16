@@ -7,23 +7,20 @@
     <meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial, intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
     <meta name="author" content="Electric Technocracy Pioneers Community">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia.html">
     <meta property="og:title" content="Electric Technocracy Encyclopedia - Wiki Article">
     <meta property="og:description" content="Read this wiki article from the Electric Technocracy Pioneers Community Encyclopedia.">
     <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia.html">
     <meta property="twitter:title" content="Electric Technocracy Encyclopedia - Wiki Article">
     <meta property="twitter:description" content="Read this wiki article from the Electric Technocracy Pioneers Community Encyclopedia.">
     <meta property="twitter:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     
     <title>Electric Technocracy Encyclopedia - Wiki Article</title>
     
@@ -71,10 +68,7 @@
         
         .header-left { display: flex; align-items: center; gap: 1rem; }
         .header-logo-link { display: flex; align-items: center; text-decoration: none; }
-        .header-home { color: var(--white); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 5px; background: rgba(255,255,255,0.1); transition: var(--transition); font-size: 0.9rem; }
-        .header-home:hover { background: rgba(255,255,255,0.2); }
-        
-        .header-logo { height: 40px; width: auto; cursor: pointer; transition: var(--transition); }
+        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; transition: var(--transition); }
         .header-logo:hover { transform: scale(1.05); }
         
         .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
@@ -101,8 +95,8 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 400px;
-            max-width: 90vw;
+            width: 350px;
+            max-width: 85vw;
             height: 100vh;
             background-color: var(--white);
             box-shadow: -5px 0 15px rgba(0,0,0,0.2);
@@ -131,7 +125,6 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--pearl-blue);
             font-size: 1.1rem;
-            text-transform: uppercase;
         }
         .nav-sidebar h2:first-of-type { margin-top: 0; }
         .nav-sidebar ul { list-style: none; }
@@ -140,19 +133,15 @@
             color: var(--black);
             text-decoration: none;
             display: flex;
-            align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 0.8rem;
             border-radius: 5px;
             transition: var(--transition);
             font-size: 0.9rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
         }
         .nav-sidebar a:hover {
             background-color: var(--pearl-blue);
             color: var(--white);
-            transform: translateX(-5px);
         }
         
         .nav-overlay {
@@ -222,6 +211,14 @@
             font-weight: 600;
         }
         
+        .loading {
+            color: var(--gray-dark);
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
         .article-content {
             flex: 1;
             min-width: 0;
@@ -235,36 +232,115 @@
         
         .article-content h1 {
             color: var(--pearl-blue);
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--pearl-blue);
-            padding-bottom: 0.5rem;
             word-wrap: break-word;
         }
         
         .article-content h2 {
             color: var(--pearl-blue-dark);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
             word-wrap: break-word;
         }
         
+        .article-content h3 {
+            color: var(--pearl-blue);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            word-wrap: break-word;
+        }
+        
         .article-content p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             line-height: 1.8;
-            font-size: 1.05rem;
             word-wrap: break-word;
             overflow-wrap: break-word;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+        
+        .article-content a {
+            color: var(--pearl-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--pearl-blue-light);
+            transition: var(--transition);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .article-content a:hover {
+            color: var(--pearl-blue-light);
+            border-bottom-color: var(--pearl-blue);
         }
         
         .article-content img {
             max-width: 100%;
             height: auto;
+            margin: 2rem 0;
             border-radius: 8px;
-            margin: 1.5rem 0;
-            border: 1px solid var(--gray-medium);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .article-content code {
+            background: var(--gray-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            word-wrap: break-word;
+        }
+        
+        .article-content pre {
+            background: var(--gray-light);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--pearl-blue);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--gray-dark);
+            font-style: italic;
+        }
+        
+        .article-content table {
+            width: 100%;
+            max-width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            overflow-x: auto;
             display: block;
+        }
+        
+        .article-content th,
+        .article-content td {
+            border: 1px solid var(--gray-medium);
+            padding: 0.8rem;
+            text-align: left;
+            word-wrap: break-word;
+        }
+        
+        .article-content th {
+            background-color: var(--pearl-blue);
+            color: var(--white);
         }
         
         footer {
@@ -308,31 +384,32 @@
             color: var(--gray-medium);
         }
         
-        @media (max-width: 900px) {
-            .page-shell { flex-direction: column; }
-            .wiki-sidebar { width: 100%; position: static; max-height: none; }
+        @media (max-width: 968px) {
+            .page-shell { flex-direction: column; padding: 0 1rem; }
+            .wiki-sidebar { width: 100%; position: relative; top: 0; max-height: none; }
+            .article-content { padding: 1.5rem; }
             .header-search { display: none; }
         }
         
-        @media (max-width: 600px) {
-            .article-content { padding: 1.5rem 1rem; }
-            .article-content h1 { font-size: 1.8rem; }
-            header { padding: 0.8rem 1rem; }
-            .article-content img { max-width: 100%; }
+        @media (max-width: 640px) {
+            .page-shell { padding: 0 0.5rem; margin: 1rem auto; }
+            .article-content { padding: 1rem; }
+            .article-content h1 { font-size: 1.5rem; }
+            .article-content h2 { font-size: 1.3rem; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-left">
-            <a href="index.html" class="header-home">🏠 Home</a>
-            <a href="index.html" class="header-logo-link">
-                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Logo" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg'">
+            <a href="../index.html" class="header-logo-link">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Electric Technocracy Pioneers" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg';">
             </a>
         </div>
         
         <div class="header-search">
-            <form action="wikisearch.html" method="GET">
+            <form action="../wikisearch.html" method="GET">
                 <input type="text" name="q" placeholder="Search Encyclopedia..." aria-label="Search">
             </form>
         </div>
@@ -346,11 +423,11 @@
         
         <h2>Main Navigation</h2>
         <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="encyclopedia.html">📖 Encyclopedia Index</a></li>
-            <li><a href="wiki_encyclopedia/wikihome.html">🏠 Wiki Home</a></li>
-            <li><a href="wikisearch.html">🔎 Search</a></li>
-            <li><a href="directory.html">📁 Directory / Linklist</a></li>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="../encyclopedia.html">📖 Encyclopedia Index</a></li>
+            <li><a href="wikihome.html">🏠 Wiki Home</a></li>
+            <li><a href="../wikisearch.html">🔎 Search</a></li>
+            <li><a href="../directory.html">📁 Directory / Linklist</a></li>
         </ul>
 
         <h2>🪢 Pioneers Community</h2>
@@ -384,11 +461,12 @@
     
     <main class="page-shell">
         <aside class="wiki-sidebar">
-            <h3>Wiki Articles</h3>
-            <ul id="sidebar-links"></ul>
+            <h3>📚 Wiki Articles</h3>
+            <div class="loading">Loading articles...</div>
+            <div id="sidebar-links"></div>
         </aside>
         
-        <article class="article-content" id="articleContent">
+        <article class="article-content">
 <h1 id="guiding-principles-and-core-values">Guiding Principles and Core
 Values</h1>
 <hr />
@@ -919,7 +997,6 @@ Bedingungsloses Grundeinkommen</p>
                 <h3>Core Resources</h3>
                 <ul>
                     <li><a href="https://world.rf.gd">World Succession Deed</a></li>
-                    <li><a href="https://global-archive.rf.gd">Legal Succession Archive</a></li>
                     <li><a href="https://ep.ct.ws">Electric Technocracy</a></li>
                 </ul>
             </div>
@@ -927,21 +1004,26 @@ Bedingungsloses Grundeinkommen</p>
                 <h3>Knowledge Base</h3>
                 <ul>
                     <li><a href="https://wiki.free.nf/">Treaty Law WIKI</a></li>
-                    <li><a href="https://4u.free.nf">eBooks & PDF Downloads</a></li>
                     <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Publications</h3>
+                <ul>
+                    <li><a href="https://doi.org/10.5281/zenodo.18073084">The Next Civilization</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.18028339">Foundations of Technocracy</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Social Media</h3>
                 <ul>
-                    <li><a href="https://videos.xo.je">YouTube Channel</a></li>
-                    <li><a href="https://nwo.likesyou.org">Podcast Show</a></li>
+                    <li><a href="https://videos.xo.je">YouTube</a></li>
                     <li><a href="https://x.com/WW3Precognition">Twitter (X)</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Electric Technocracy Pioneers Community.</p>
+            <p>&copy; 2026 Electric Technocracy Pioneers Community</p>
         </div>
     </footer>
     
@@ -951,17 +1033,21 @@ Bedingungsloses Grundeinkommen</p>
             document.getElementById("navOverlay").classList.toggle("active");
         }
         
-        const articlesIndexUrl = "wiki_encyclopedia/articles.json"; 
+        document.getElementById("navOverlay").addEventListener("click", toggleMenu);
+        
+        const articlesIndexUrl = "articles.json";
         
         async function fetchArticleTitle(url) {
             try {
                 const response = await fetch(url);
                 if (!response.ok) return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                
                 const html = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
+                
                 const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
-                return heading ? heading.textContent.trim() : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                return heading?.textContent.trim() || url.split("/").pop().replace(".html", "").replace(/-/g, " ");
             } catch (e) {
                 return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
             }
@@ -969,25 +1055,46 @@ Bedingungsloses Grundeinkommen</p>
         
         async function buildSidebar() {
             const container = document.getElementById("sidebar-links");
+            const loading = document.querySelector(".loading");
+            
             if (!container) return;
+            
             try {
                 const res = await fetch(articlesIndexUrl);
-                if (!res.ok) throw new Error(`articles.json not found`);
+                if (!res.ok) throw new Error("articles.json not found");
+                
                 const list = await res.json();
+                
+                if (loading) loading.remove();
+                
                 list.sort((a, b) => a.path.localeCompare(b.path));
-                const currentPath = window.location.pathname.split('/').pop();
+                
+                const currentFile = location.pathname.split('/').pop();
+                
                 for (const entry of list) {
-                    const url = entry.path;
-                    const title = await fetchArticleTitle(url);
+                    const filename = entry.path.split('/').pop();
+                    const title = await fetchArticleTitle(filename);
+                    
                     const link = document.createElement("a");
-                    link.href = url;
+                    link.href = filename;
                     link.textContent = title;
                     link.className = "sidebar-link";
-                    if (url.endsWith(currentPath)) link.classList.add("active");
+                    
+                    if (filename === currentFile) {
+                        link.classList.add("active");
+                    }
+                    
                     container.appendChild(link);
                 }
-            } catch (error) { console.error("Error loading sidebar:", error); }
+            } catch (error) {
+                console.error("Error loading sidebar:", error);
+                if (loading) {
+                    loading.textContent = "⚠️ Articles could not be loaded";
+                    loading.style.color = "#cc0000";
+                }
+            }
         }
+        
         document.addEventListener("DOMContentLoaded", buildSidebar);
     </script>
 </body>
