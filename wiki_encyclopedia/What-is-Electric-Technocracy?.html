@@ -22,8 +22,8 @@
     <meta property="twitter:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <title>Electric Technocracy Encyclopedia - Wiki Article</title>
     
@@ -70,19 +70,12 @@
         }
         
         .header-left { display: flex; align-items: center; gap: 1rem; }
-        .back-home {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background: rgba(255,255,255,0.1);
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-        .back-home:hover { background: rgba(255,255,255,0.2); }
+        .header-logo-link { display: flex; align-items: center; text-decoration: none; }
+        .header-home { color: var(--white); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 5px; background: rgba(255,255,255,0.1); transition: var(--transition); font-size: 0.9rem; }
+        .header-home:hover { background: rgba(255,255,255,0.2); }
         
-        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; }
+        .header-logo { height: 40px; width: auto; cursor: pointer; transition: var(--transition); }
+        .header-logo:hover { transform: scale(1.05); }
         
         .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
         .header-search form { display: flex; gap: 0.5rem; }
@@ -332,8 +325,8 @@
 <body>
     <header>
         <div class="header-left">
-            <a href="index.html" class="back-home">⬅ Home</a>
-            <a href="index.html">
+            <a href="index.html" class="header-home">🏠 Home</a>
+            <a href="index.html" class="header-logo-link">
                 <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Logo" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg'">
             </a>
         </div>
