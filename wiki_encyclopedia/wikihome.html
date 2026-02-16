@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electric Technocracy Pioneers Community Encyclopedia Home - Open scientific research hub for exploring Electric Technocracy, AI Governance, and the Judicial Singularity.">
+    <meta name="keywords" content="International Law, Treaty, Law, NATO, United Nations, Treaty Chain, Artificial, intelligence, ASI, AGI, Superintelligence, Technocracy, Governance, Government, Digital, Electric, Direct Digital Democracy, Judicial Singularity, Singularity, Technology, Longevity, State Succession, World Succession Deed, Kaufvertrag Urkundenrolle, 1400/98, Encyclopedia, Wiki">
+    <meta name="author" content="Electric Technocracy Pioneers Community">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/wikihome.html">
+    <meta property="og:title" content="Electric Technocracy Encyclopedia - Home">
+    <meta property="og:description" content="Welcome to the Electric Technocracy Pioneers Community Encyclopedia - Your comprehensive resource for understanding the future of governance and technology.">
+    <meta property="og:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/wiki_encyclopedia/wikihome.html">
+    <meta property="twitter:title" content="Electric Technocracy Encyclopedia - Home">
+    <meta property="twitter:description" content="Welcome to the Electric Technocracy Pioneers Community Encyclopedia - Your comprehensive resource for understanding the future of governance and technology.">
+    <meta property="twitter:image" content="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png">
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <title>Electric Technocracy Encyclopedia - Home</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        :root {
+            --pearl-blue: #102C54;
+            --pearl-blue-dark: #0A1F3D;
+            --pearl-blue-light: #1A3D6B;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-light: #F5F5F5;
+            --gray-medium: #CCCCCC;
+            --gray-dark: #666666;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .back-home {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .back-home:hover { background: rgba(255,255,255,0.2); }
+        
+        .header-logo { height: 40px; width: auto; max-width: 150px; cursor: pointer; }
+        
+        .header-search { flex: 1; max-width: 500px; margin: 0 1.5rem; }
+        .header-search form { display: flex; gap: 0.5rem; }
+        .header-search input {
+            flex: 1;
+            min-width: 0;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .hamburger-menu {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.4s ease;
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+        .nav-sidebar.open { right: 0; }
+        
+        .nav-sidebar-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--pearl-blue);
+        }
+        
+        .nav-sidebar h2 {
+            color: var(--pearl-blue);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pearl-blue);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+        .nav-sidebar h2:first-of-type { margin-top: 0; }
+        .nav-sidebar ul { list-style: none; }
+        .nav-sidebar li { margin-bottom: 0.6rem; }
+        .nav-sidebar a {
+            color: var(--black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .nav-sidebar a:hover {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+        
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1999;
+        }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+        
+        .page-shell {
+            display: flex;
+            max-width: 1400px;
+            width: 100%;
+            margin: 2rem auto;
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+        
+        .wiki-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: sticky;
+            top: 80px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+        
+        .wiki-sidebar h3 {
+            color: var(--pearl-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pearl-blue);
+        }
+        
+        .sidebar-link {
+            color: var(--black);
+            text-decoration: none;
+            display: block;
+            padding: 0.6rem 0.8rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+        
+        .sidebar-link:hover {
+            background-color: var(--pearl-blue);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-link.active {
+            background-color: var(--pearl-blue-light);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .article-content {
+            flex: 1;
+            min-width: 0;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        
+        .article-content h1 {
+            color: var(--pearl-blue);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--pearl-blue);
+            padding-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+        
+        .article-content h2 {
+            color: var(--pearl-blue-dark);
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--gray-medium);
+        }
+        
+        footer {
+            background-color: var(--pearl-blue-dark);
+            color: var(--white);
+            padding: 3rem 1.5rem 1rem;
+            margin-top: 4rem;
+            width: 100%;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--pearl-blue-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a {
+            color: var(--gray-medium);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            word-wrap: break-word;
+        }
+        .footer-section a:hover { color: var(--white); }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--pearl-blue);
+            color: var(--gray-medium);
+        }
+        
+        @media (max-width: 900px) {
+            .page-shell { flex-direction: column; }
+            .wiki-sidebar { width: 100%; position: static; max-height: none; }
+            .header-search { display: none; }
+        }
+        
+        @media (max-width: 600px) {
+            .article-content { padding: 1.5rem 1rem; }
+            .article-content h1 { font-size: 1.8rem; }
+            header { padding: 0.8rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="back-home">⬅ Home</a>
+            <a href="../index.html">
+                <img src="https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.png" alt="Logo" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/11219c08cb2759bd11808d8985519696b9723cab/images/logo/et-pioneers.jpg'">
+            </a>
+        </div>
+        
+        <div class="header-search">
+            <form action="../wikisearch.html" method="GET">
+                <input type="text" name="q" placeholder="Search Encyclopedia..." aria-label="Search">
+            </form>
+        </div>
+        
+        <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+    </header>
+    
+    <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+    <aside class="nav-sidebar" id="navSidebar">
+        <button class="nav-sidebar-close" onclick="toggleMenu()">×</button>
+        
+        <h2>Main Navigation</h2>
+        <ul>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="../encyclopedia.html">📖 Encyclopedia Index</a></li>
+            <li><a href="wikihome.html">🏠 Wiki Home</a></li>
+            <li><a href="../wikisearch.html">🔎 Search</a></li>
+            <li><a href="../directory.html">📁 Directory / Linklist</a></li>
+        </ul>
+
+        <h2>🪢 Pioneers Community</h2>
+        <ul>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/" target="_blank">💡 GitHub Page Pioneers Community</a></li>
+            <li><a href="https://repository.ct.ws" target="_blank">💡 GitHub Repository</a></li>
+            <li><a href="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/wiki" target="_blank">💡 Community WIKI</a></li>
+        </ul>
+
+        <h2>🌎 One World Project</h2>
+        <ul>
+            <li><a href="https://mranonymousnwo.github.io/One_World/" target="_blank">🌎 One World Archive Vault</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/" target="_blank">🌏 One World GitHub Repository</a></li>
+            <li><a href="https://github.com/MrAnonymousNWO/One_World/wiki" target="_blank">🌍 One World GitHub WIKI</a></li>
+        </ul>
+
+        <h2>⚖️ Legal & International</h2>
+        <ul>
+            <li><a href="https://wiki.free.nf/" target="_blank">📚 International Treaty Law WIKI</a></li>
+            <li><a href="https://worldsold.wixsite.com/global-archive" target="_blank">📑 International Treaty Archive HQ</a></li>
+            <li><a href="https://worldsold.wixsite.com/world-sold" target="_blank">🗺️ World Succession Deed HQ</a></li>
+        </ul>
+
+        <h2>🚀 Resources</h2>
+        <ul>
+            <li><a href="https://paradise.gt.tc" target="_blank">🚀 Start-Page WSD & Paradise</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/search.html" target="_blank">🔎 Search (External)</a></li>
+            <li><a href="https://et-pioneer.github.io/Electric-Technocracy-Pioneers-Community/dir.html" target="_blank">📁 Directory (External)</a></li>
+        </ul>
+    </aside>
+    
+    <main class="page-shell">
+        <aside class="wiki-sidebar">
+            <h3>Wiki Articles</h3>
+            <ul id="wikiSidebar"></ul>
+        </aside>
+        
+        <article class="article-content" id="articleContent">
+            <h1>Electric Technocracy Pioneers Community Headquarter</h1>
+            
+            <img src="https://github.com/ET-Pioneer/Electric-Technocracy-Pioneers-Community/blob/11219c08cb2759bd11808d8985519696b9723cab/images/logo/og-image.png?raw=true" alt="Electric Technocracy Pioneers Community WIKI" style="max-width: 400px; margin: 2rem 0;">
+            
+            <h2>Welcome to the Wiki Home</h2>
+            <p>The Electric Technocracy Pioneers Community Encyclopedia is an open scientific research hub and free‑access wiki repository dedicated to exploring the future of governance, technology, and society. Our platform serves as a comprehensive resource for understanding Electric Technocracy, AI Governance, the Judicial Singularity, and the vision of a United World of Abundance beyond traditional nation‑states.</p>
+            
+            <p>This wiki hosts openly licensed documents, research papers, wiki articles, encyclopedia entries, audio recordings, video presentations, images, and slide decks. We support global collaboration on post‑scarcity economic models, future governance frameworks, and transparent digital systems.</p>
+            
+            <h3>Core Research Areas</h3>
+            <ul>
+                <li><strong>Electric Technocracy:</strong> Post-scarcity resource management.</li>
+                <li><strong>Judicial Singularity:</strong> Automated legal systems and AI governance.</li>
+                <li><strong>Direct Digital Democracy:</strong> Real-time participation in governance.</li>
+                <li><strong>United World of Abundance:</strong> Global cooperation beyond nation-states.</li>
+            </ul>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Core Resources</h3>
+                <ul>
+                    <li><a href="https://world.rf.gd">World Succession Deed</a></li>
+                    <li><a href="https://global-archive.rf.gd">Legal Succession Archive</a></li>
+                    <li><a href="https://ep.ct.ws">Electric Technocracy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Knowledge Base</h3>
+                <ul>
+                    <li><a href="https://wiki.free.nf/">Treaty Law WIKI</a></li>
+                    <li><a href="https://4u.free.nf">eBooks & PDF Downloads</a></li>
+                    <li><a href="https://paradise.gt.tc">Electric Paradise</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://videos.xo.je">YouTube Channel</a></li>
+                    <li><a href="https://nwo.likesyou.org">Podcast Show</a></li>
+                    <li><a href="https://x.com/WW3Precognition">Twitter (X)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Electric Technocracy Pioneers Community.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("navSidebar").classList.toggle("open");
+            document.getElementById("navOverlay").classList.toggle("active");
+        }
+        
+        const wikiArticles = [
+            "wikihome.html",
+            "Juridical-Singularity.html",
+            "Implementation-Roadmap.html",
+            "Technology-Stack.html",
+            "Electric-Technocracy.html",
+            "Direct-Digital-Democracy.html",
+            "Artificial-Superintelligence.html",
+            "Post-Scarcity-Economics.html"
+        ];
+        
+        const sidebar = document.getElementById("wikiSidebar");
+        const currentFile = location.pathname.split("/").pop();
+
+        async function fetchArticleTitle(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+                const htmlText = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, "text/html");
+                const heading = doc.querySelector("h1") || doc.querySelector("h2") || doc.querySelector("title");
+                return heading ? heading.textContent.trim() : url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+            } catch (e) {
+                return url.split("/").pop().replace(".html", "").replace(/-/g, " ");
+            }
+        }
+
+        async function buildSidebar() {
+            sidebar.innerHTML = "";
+            for (const path of wikiArticles) {
+                const title = await fetchArticleTitle(path);
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = path;
+                a.textContent = title;
+                a.className = "sidebar-link";
+                if (path.split("/").pop() === currentFile) a.classList.add("active");
+                li.appendChild(a);
+                sidebar.appendChild(li);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", buildSidebar);
+    </script>
+</body>
+</html>
